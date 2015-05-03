@@ -2,7 +2,7 @@ body {
     background: #0C0C18;
     font-family: monospace;
     font-size: large;
-    color: #ffffff;
+    color: #fff9f9;
 }
 #PageContainer {
     /*height: 100%;*/
@@ -55,7 +55,8 @@ a:link {
 /* visited link */
 
 a:visited {
-    color: #9966bb;
+      color: #8866BB;  
+    /*color: #9966bb;*/
 }
 /* mouse over link */
 
