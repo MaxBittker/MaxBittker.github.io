@@ -27,6 +27,14 @@ body {
 
 opacity: 0.75
 }
+
+@media only screen and (max-width: 40em) {
+
+	#Content {
+		width: 85%;
+	}
+	
+}
 * {
     margin: 0;
     padding: 0;
