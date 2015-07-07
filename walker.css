@@ -3,6 +3,7 @@ body {
     font-family: monospace;
     font-size: large;
     color: #ccc9c9;
+
 }
 
 #PageContainer {
@@ -29,7 +30,15 @@ body {
     
     word-wrap: break-word;
     min-height: 100%;
-    background: rgba(50, 50, 60, .7);
+    background: rgba(50, 50, 60, .6);
+   background-image: linear-gradient(
+    to right top,
+    transparent 33%,
+    black 33%,
+    black 66%,
+    transparent 66%
+);
+background-size: 3px 3px;
     /*opacity: 0.75*/
 }
 
