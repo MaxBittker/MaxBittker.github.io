@@ -33,7 +33,7 @@ body {
     /*opacity: 0.75*/
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 810px) {
     #Content {
         width: 90%;
     }
