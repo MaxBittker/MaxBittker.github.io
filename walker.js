@@ -10,7 +10,7 @@
           canvas.height = window.innerHeight;
       }
       resizeCanvas();
-      var interval = 1000 / (25 /* fps */ );
+      var interval = 1000 / (15 /* fps */ );
       var frame = 1;
       var n = 5;
 
@@ -28,7 +28,7 @@
               this.y += Math.floor((Math.random() * 3) - 1);
               if (this.x < 0) this.x += canvas.width;
               if (this.y < 0) this.y += canvas.height;
-              this.hue =  (this.hue%360) + Math.floor(Math.random() * 3 - 1);
+              this.hue = (this.hue % 360) + Math.floor(Math.random() * 3 - 1);
               this.color = husl.p.toRGB(this.hue, 150, 50);
           }
       };
@@ -80,8 +80,8 @@
               this.writePixel(4 * ((walker.x + 2) % canvas.width + ((walker.y + 1) % canvas.height * canvas.width)), walker.color);
               this.writePixel(4 * ((walker.x + 1) % canvas.width + (walker.y % canvas.height * canvas.width)), walker.color);
               this.writePixel(4 * ((walker.x + 1) % canvas.width + ((walker.y + 2) % canvas.height * canvas.width)), walker.color);
-            this.writePixel(4 * ((walker.x + 1) % canvas.width + ((walker.y + 1) % canvas.height * canvas.width)), walker.color);
-                
+              this.writePixel(4 * ((walker.x + 1) % canvas.width + ((walker.y + 1) % canvas.height * canvas.width)), walker.color);
+
           },
           drawFrame: function() {
               this.imageData = this.context.getImageData(0, 0, canvas.width, canvas.height);
@@ -94,8 +94,14 @@
               this.context.putImageData(this.imageData, 0, 0);
           }
       };
-      var requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-              window.setTimeout(callback, 0);
-          };
+      var requestAnimFrame = 
+      window.requestAnimationFrame || 
+      window.webkitRequestAnimationFrame || 
+      window.mozRequestAnimationFrame || 
+      window.oRequestAnimationFrame || 
+      window.msRequestAnimationFrame || 
+      function(callback) {
+          window.setTimeout(callback, 0);
+      };
       return Ocean;
   })();
