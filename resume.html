@@ -1,402 +1,845 @@
 <!DOCTYPE html>
 <html>
-  <head><meta charset="utf-8">
-    <title>Max Bittker CV</title>
-    <style>
-      code {
-        color: #c7254e;
-        background-color: #f9f2f4;
-        border-radius: 4px;
-      }
-      code,
-      kbd {
-        padding: 2px 4px;
-      }
-      kbd {
-        color: #fff;
-        background-color: #333;
-        border-radius: 3px;
-        box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-      }
-      kbd kbd {
-        padding: 0;
-        font-size: 100%;
-        box-shadow: none;
-      }
-      pre {
-        display: block;
-        margin: 0 0 10px;
-        word-break: break-all;
-        word-wrap: break-word;
-        color: #333;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-      pre code {
-        padding: 0;
-        font-size: inherit;
-        color: inherit;
-        white-space: pre-wrap;
-        background-color: transparent;
-        border-radius: 0;
-      }
-      .clearfix:before,
-      .clearfix:after {
-        content: " ";
-        display: table;
-      }
-      .clearfix:after {
-        clear: both;
-      }
-      .center-block {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .pull-right {
-        float: right!important;
-      }
-      .pull-left {
-        float: left!important;
-      }
-      .hide {
-        display: none!important;
-      }
-      .show {
-        display: block!important;
-      }
-      .invisible {
-        visibility: hidden;
-      }
-      .text-hide {
-        font: 0/0 a;
-        color: transparent;
-        text-shadow: none;
-        background-color: transparent;
-        border: 0;
-      }
-      .hidden {
-        display: none!important;
-        visibility: hidden!important;
-      }
-      .affix {
-        position: fixed;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-      }
-      .hljs {
-        display: block;
-        overflow-x: auto;
-        padding: 0.5em;
-        background: #002b36;
-        color: #839496;
-        -webkit-text-size-adjust: none;
-      }
-      .hljs-keyword,
-      .hljs-winutils,
-      .method,
-      .hljs-addition,
-      .css .hljs-tag,
-      .hljs-request,
-      .hljs-status,
-      .nginx .hljs-title {
-        color: #859900;
-      }
-      .hljs-number,
-      .hljs-command,
-      .hljs-string,
-      .hljs-tag .hljs-value,
-      .hljs-rules .hljs-value,
-      .hljs-phpdoc,
-      .hljs-dartdoc,
-      .tex .hljs-formula,
-      .hljs-regexp,
-      .hljs-hexcolor,
-      .hljs-link_url {
-        color: #2aa198;
-      }
-      .hljs-title,
-      .hljs-localvars,
-      .hljs-chunk,
-      .hljs-decorator,
-      .hljs-built_in,
-      .hljs-identifier,
-      .vhdl .hljs-literal,
-      .hljs-id,
-      .css .hljs-function {
-        color: #268bd2;
-      }
-      .hljs-attribute,
-      .hljs-variable,
-      .lisp .hljs-body,
-      .smalltalk .hljs-number,
-      .hljs-constant,
-      .hljs-class .hljs-title,
-      .hljs-parent,
-      .hljs-type,
-      .hljs-link_reference {
-        color: #b58900;
-      }
-      .hljs-preprocessor,
-      .hljs-preprocessor .hljs-keyword,
-      .hljs-pragma,
-      .hljs-shebang,
-      .hljs-symbol,
-      .hljs-symbol .hljs-string,
-      .diff .hljs-change,
-      .hljs-special,
-      .hljs-attr_selector,
-      .hljs-subst,
-      .hljs-cdata,
-      .css .hljs-pseudo,
-      .hljs-header {
-        color: #cb4b16;
-      }
-      .hljs-deletion,
-      .hljs-important {
-        color: #dc322f;
-      }
-      .hljs-link_label {
-        color: #6c71c4;
-      }
-      .tex .hljs-formula {
-        background: #073642;
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
-      html {
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-      }
-      body {
-        margin: 0;
-      }
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      hgroup,
-      main,
-      nav,
-      section,
-      summary {
-        display: block;
-      }
-      audio,
-      canvas,
-      progress,
-      video {
-        display: inline-block;
-        vertical-align: baseline;
-      }
-      audio:not([controls]) {
-        display: none;
-        height: 0;
-      }
-      [hidden],
-      template {
-        display: none;
-      }
-      a {
-        background: 0 0;
-      }
-      a:active,
-      a:hover {
-        outline: 0;
-      }
-      abbr[title] {
-        border-bottom: 1px dotted;
-      }
-      b,
-      strong {
-        font-weight: 700;
-      }
-      dfn {
-        font-style: italic;
-      }
-      h1 {
-        margin: 0.67em 0;
-      }
-      mark {
-        background: #ff0;
-        color: #000;
-      }
-      small {
-        font-size: 80%;
-      }
-      sub,
-      sup {
-        font-size: 75%;
-        line-height: 0;
-        position: relative;
-        vertical-align: baseline;
-      }
-      sup {
-        top: -.5em;
-      }
-      sub {
-        bottom: -.25em;
-      }
-      images {
-        border: 0;
-      }
-      svg:not(:root) {
-        overflow: hidden;
-      }
-      figure {
-        margin: 1em 40px;
-      }
-      hr {
-        box-sizing: content-box;
-        height: 0;
-      }
-      pre {
-        overflow: auto;
-      }
-      code,
-      kbd {
-        font-size: 1em;
-      }
-      code,
-      kbd,
-      pre,
-      samp {
-        font-family: monospace,monospace;
-      }
-      samp {
-        font-size: 1em;
-      }
-      button,
-      input,
-      optgroup,
-      select,
-      textarea {
-        color: inherit;
-        font: inherit;
-        margin: 0;
-      }
-      button {
-        overflow: visible;
-      }
-      button,
-      select {
-        text-transform: none;
-      }
 
-      legend {
-        border: 0;
-        padding: 0;
+<head>
+  <meta charset="utf-8">
+  <title>Max Bittker CV</title>
+  <style>
+    code {
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+
+    code,
+    kbd {
+      padding: 2px 4px;
+    }
+
+    kbd {
+      color: #fff;
+      background-color: #333;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+    }
+
+    kbd kbd {
+      padding: 0;
+      font-size: 100%;
+      box-shadow: none;
+    }
+
+    pre {
+      display: block;
+      margin: 0 0 10px;
+      word-break: break-all;
+      word-wrap: break-word;
+      color: #333;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    pre code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      white-space: pre-wrap;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      content: " ";
+      display: table;
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    .center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pull-right {
+      float: right!important;
+    }
+
+    .pull-left {
+      float: left!important;
+    }
+
+    .hide {
+      display: none!important;
+    }
+
+    .show {
+      display: block!important;
+    }
+
+    .invisible {
+      visibility: hidden;
+    }
+
+    .text-hide {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .hidden {
+      display: none!important;
+      visibility: hidden!important;
+    }
+
+    .affix {
+      position: fixed;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #002b36;
+      color: #839496;
+      -webkit-text-size-adjust: none;
+    }
+
+    .hljs-keyword,
+    .hljs-winutils,
+    .method,
+    .hljs-addition,
+    .css .hljs-tag,
+    .hljs-request,
+    .hljs-status,
+    .nginx .hljs-title {
+      color: #859900;
+    }
+
+    .hljs-number,
+    .hljs-command,
+    .hljs-string,
+    .hljs-tag .hljs-value,
+    .hljs-rules .hljs-value,
+    .hljs-phpdoc,
+    .hljs-dartdoc,
+    .tex .hljs-formula,
+    .hljs-regexp,
+    .hljs-hexcolor,
+    .hljs-link_url {
+      color: #2aa198;
+    }
+
+    .hljs-title,
+    .hljs-localvars,
+    .hljs-chunk,
+    .hljs-decorator,
+    .hljs-built_in,
+    .hljs-identifier,
+    .vhdl .hljs-literal,
+    .hljs-id,
+    .css .hljs-function {
+      color: #268bd2;
+    }
+
+    .hljs-attribute,
+    .hljs-variable,
+    .lisp .hljs-body,
+    .smalltalk .hljs-number,
+    .hljs-constant,
+    .hljs-class .hljs-title,
+    .hljs-parent,
+    .hljs-type,
+    .hljs-link_reference {
+      color: #b58900;
+    }
+
+    .hljs-preprocessor,
+    .hljs-preprocessor .hljs-keyword,
+    .hljs-pragma,
+    .hljs-shebang,
+    .hljs-symbol,
+    .hljs-symbol .hljs-string,
+    .diff .hljs-change,
+    .hljs-special,
+    .hljs-attr_selector,
+    .hljs-subst,
+    .hljs-cdata,
+    .css .hljs-pseudo,
+    .hljs-header {
+      color: #cb4b16;
+    }
+
+    .hljs-deletion,
+    .hljs-important {
+      color: #dc322f;
+    }
+
+    .hljs-link_label {
+      color: #6c71c4;
+    }
+
+    .tex .hljs-formula {
+      background: #073642;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+
+    audio,
+    canvas,
+    progress,
+    video {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+
+    [hidden],
+    template {
+      display: none;
+    }
+
+    a {
+      background: 0 0;
+    }
+
+    a:active,
+    a:hover {
+      outline: 0;
+    }
+
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    dfn {
+      font-style: italic;
+    }
+
+    h1 {
+      margin: 0.67em 0;
+    }
+
+    mark {
+      background: #ff0;
+      color: #000;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sup {
+      top: -.5em;
+    }
+
+    sub {
+      bottom: -.25em;
+    }
+
+    images {
+      border: 0;
+    }
+
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    figure {
+      margin: 1em 40px;
+    }
+
+    hr {
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    code,
+    kbd {
+      font-size: 1em;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, monospace;
+    }
+
+    samp {
+      font-size: 1em;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    button {
+      overflow: visible;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    legend {
+      border: 0;
+      padding: 0;
+    }
+
+    optgroup {
+      font-weight: 700;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ir {
+      background-color: transparent;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .ir::before {
+      content: '';
+      display: block;
+      height: 150%;
+      width: 0;
+    }
+
+    html {
+      font-size: 0.875em;
+      background: #fafafa;
+      color: #373D49;
+    }
+
+    html,
+    body {
+      font-family: Georgia, Cambria, serif;
+      height: 100%;
+    }
+
+    body {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 2rem;
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0.83999rem;
+      padding-top: 0.16001rem;
+    }
+
+    li {
+      -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      margin-left: 1rem;
+    }
+
+    li>ul,
+    li>ol {
+      margin-bottom: 0;
+    }
+
+    p {
+      padding-top: 0.66001rem;
+      -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      margin-top: 0;
+    }
+
+    p,
+    pre {
+      margin-bottom: 1.33999rem;
+    }
+
+    pre {
+      font-size: 1rem;
+      padding: 0.66001rem 9.5px 9.5px;
+      line-height: 2rem;
+      background: -webkit-linear-gradient(top, #fff 0, #fff .75rem, #f5f7fa .75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+      background: linear-gradient(to bottom, #fff 0, #fff .75rem, #f5f7fa .75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+      background-size: 100% 4rem;
+      border-color: #D3DAEA;
+    }
+
+    blockquote {
+      margin: 0;
+    }
+
+    blockquote p {
+      font-size: 1rem;
+      margin-bottom: 0.33999rem;
+      font-style: italic;
+      padding: 0.66001rem 1rem 1rem;
+      border-left: 3px solid #A0AABF;
+    }
+
+    th,
+    td {
+      padding: 12px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    h1 {
+      line-height: 3rem;
+      font-size: 2.0571429rem;
+      margin-bottom: 0.21999rem;
+      padding-top: 0.78001rem;
+    }
+
+    h2 {
+      font-size: 1.953125rem;
+      margin-bottom: 0.1835837rem;
+      padding-top: 0.8164163rem;
+    }
+
+    h2,
+    h3 {
+      line-height: 3rem;
+    }
+
+    h3 {
+      font-size: 1.6457143rem;
+      margin-bottom: 0.07599rem;
+      padding-top: 0.92401rem;
+    }
+
+    h4 {
+      font-size: 1.5625rem;
+      margin-bottom: 0.546865rem;
+      padding-top: 0.453135rem;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+      margin-bottom: -.56251rem;
+      padding-top: 0.56251rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+      margin-bottom: -.65001rem;
+      padding-top: 0.65001rem;
+    }
+
+    a {
+      cursor: pointer;
+      color: #35D7BB;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      border-bottom-color: #35D7BB;
+      color: #dff9f4;
+    }
+
+    .sp-center {
+      position: relative;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    .open-menu>.wrapper {
+      overflow-x: hidden;
+    }
+
+    .page {
+      margin: 0 auto;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      background-color: #fff;
+      padding-top: 51px;
+      will-change: left;
+    }
+
+    .open-menu .page {
+      left: 270px;
+    }
+
+    .title {
+      line-height: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.77999rem;
+      padding-top: 0.22001rem;
+      font-weight: 500;
+      color: #A0AABF;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 1rem;
+    }
+
+    .split-preview .title {
+      padding-left: 0;
+    }
+
+    .title-document {
+      line-height: 1rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.89999rem;
+      padding-top: 0.10001rem;
+      font-weight: 400;
+      font-family: "Ubuntu Mono", Monaco;
+      color: #373D49;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: 80%;
+      min-width: 300px;
+      outline: 0;
+      border: none;
+    }
+
+    .icon {
+      display: block;
+      margin: 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .icon svg {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .icon-preview {
+      background-color: #373D49;
+      line-height: 40px;
+    }
+
+    .icon-preview svg {
+      width: 19px;
+      height: 12px;
+    }
+
+    .icon-settings {
+      background-color: #373D49;
+      line-height: 44px;
+    }
+
+    .icon-settings svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .icon-link {
+      width: 16px;
+      height: 16px;
+      line-height: 1;
+      margin-right: 24px;
+      text-align: right;
+    }
+
+    .navbar {
+      background-color: #373D49;
+      height: 51px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 6;
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      will-change: left;
+    }
+
+    .navbar:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .open-menu .navbar {
+      left: 270px;
+    }
+
+    .navbar-brand {
+      float: left;
+      margin: 0 0 0 24px;
+      padding: 0;
+      line-height: 42px;
+    }
+
+    .navbar-brand svg {
+      width: 85px;
+      height: 11px;
+    }
+
+    .nav-left {
+      float: left;
+    }
+
+    .nav-right {
+      float: right;
+    }
+
+    .nav-sidebar {
+      width: 100%;
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu a {
+      border: 0;
+      color: #A0AABF;
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      outline: none;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover {
+      color: #35D7BB;
+    }
+
+    .menu .menu-item {
+      border: 0;
+      display: none;
+      float: left;
+      margin: 0;
+      position: relative;
+    }
+
+    .menu .menu-item>a {
+      display: block;
+      font-size: 12px;
+      height: 51px;
+      letter-spacing: 1px;
+      line-height: 51px;
+      padding: 0 24px;
+    }
+
+    #preview {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #preview a {
+      color: #A0AABF;
+      text-decoration: underline;
+    }
+
+    .sr-only {
+      visibility: hidden;
+      text-overflow: 110%;
+      overflow: hidden;
+      top: -100px;
+      position: absolute;
+    }
+
+    .mnone {
+      margin: 0 !important;
+    }
+
+    @media (min-width:768px) {
+      .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
       }
-      optgroup {
-        font-weight: 700;
+      .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
       }
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
+      .form-inline .input-group {
+        display: inline-table;
+        vertical-align: middle;
       }
-      .ellipsis {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+      .form-inline .input-group .input-group-addon,
+      .form-inline .input-group .input-group-btn,
+      .form-inline .input-group .form-control {
+        width: auto;
       }
-      .ir {
-        background-color: transparent;
-        border: 0;
-        overflow: hidden;
+      .form-inline .input-group>.form-control {
+        width: 100%;
       }
-      .ir::before {
-        content: '';
-        display: block;
-        height: 150%;
-        width: 0;
+      .form-inline .control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
       }
+      .form-inline .radio,
+      .form-inline .checkbox {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+      .form-inline .radio label,
+      .form-inline .checkbox label {
+        padding-left: 0;
+      }
+      .form-inline .radio input[type="radio"],
+      .form-inline .checkbox input[type="checkbox"] {
+        position: relative;
+        margin-left: 0;
+      }
+      .form-inline .has-feedback .form-control-feedback {
+        top: 0;
+      }
+      .form-horizontal .control-label {
+        text-align: right;
+        margin-bottom: 0;
+        padding-top: 7px;
+      }
+      .form-horizontal .form-group-lg .control-label {
+        padding-top: 14.3px;
+      }
+      .form-horizontal .form-group-sm .control-label {
+        padding-top: 6px;
+      }
+      .modal-dialog {
+        width: 600px;
+        margin: 30px auto;
+      }
+      .modal-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      }
+      .modal-sm {
+        width: 300px;
+      }
+    }
+
+    @media (min-width:992px) {
+      .modal-lg {
+        width: 900px;
+      }
+    }
+
+    @media screen and (min-width:27.5em) {
       html {
         font-size: 0.875em;
-        background: #fafafa;
-        color: #373D49;
-      }
-      html,
-      body {
-        font-family: Georgia,Cambria,serif;
-        height: 100%;
       }
       body {
         font-size: 1rem;
-        font-weight: 400;
-        line-height: 2rem;
       }
       ul,
       ol {
         margin-bottom: 0.83999rem;
         padding-top: 0.16001rem;
       }
-      li {
-        -webkit-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        -moz-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        margin-left: 1rem;
-      }
-      li>ul,
-      li>ol {
-        margin-bottom: 0;
-      }
       p {
         padding-top: 0.66001rem;
-        -webkit-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        -moz-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
-        margin-top: 0;
       }
       p,
       pre {
         margin-bottom: 1.33999rem;
       }
-      pre {
-        font-size: 1rem;
-        padding: 0.66001rem 9.5px 9.5px;
-        line-height: 2rem;
-        background: -webkit-linear-gradient(top,#fff 0,#fff .75rem,#f5f7fa .75rem,#f5f7fa 2.75rem,#fff 2.75rem,#fff 4rem);
-        background: linear-gradient(to bottom,#fff 0,#fff .75rem,#f5f7fa .75rem,#f5f7fa 2.75rem,#fff 2.75rem,#fff 4rem);
-        background-size: 100% 4rem;
-        border-color: #D3DAEA;
-      }
-      blockquote {
-        margin: 0;
-      }
+      pre,
       blockquote p {
         font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
         margin-bottom: 0.33999rem;
-        font-style: italic;
-        padding: 0.66001rem 1rem 1rem;
-        border-left: 3px solid #A0AABF;
-      }
-      th,
-      td {
-        padding: 12px;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-        -webkit-font-feature-settings: 'dlig' 1,'liga' 1,'lnum' 1,'kern' 1;
-        -moz-font-feature-settings: 'dlig' 1,'liga' 1,'lnum' 1,'kern' 1;
-        font-feature-settings: 'dlig' 1,'liga' 1,'lnum' 1,'kern' 1;
-        font-style: normal;
-        font-weight: 600;
-        margin-top: 0;
       }
       h1 {
-        line-height: 3rem;
         font-size: 2.0571429rem;
         margin-bottom: 0.21999rem;
         padding-top: 0.78001rem;
@@ -405,10 +848,6 @@
         font-size: 1.953125rem;
         margin-bottom: 0.1835837rem;
         padding-top: 0.8164163rem;
-      }
-      h2,
-      h3 {
-        line-height: 3rem;
       }
       h3 {
         font-size: 1.6457143rem;
@@ -430,747 +869,440 @@
         margin-bottom: -.65001rem;
         padding-top: 0.65001rem;
       }
-      a {
-        cursor: pointer;
-        color: #35D7BB;
-        text-decoration: none;
+      .title-document {
+        margin-bottom: 0.89999rem;
+        padding-top: 0.10001rem;
       }
-      a:hover,
-      a:focus {
-        border-bottom-color: #35D7BB;
-        color: #dff9f4;
+      .title-document,
+      .settings a {
+        font-size: 1.25rem;
       }
-      .sp-center {
-        position: relative;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        top: 50%;
-      }
-      .open-menu>.wrapper {
-        overflow-x: hidden;
-      }
-      .page {
-        margin: 0 auto;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        -webkit-transition: all 0.25s ease-in-out;
-        transition: all 0.25s ease-in-out;
-        background-color: #fff;
-        padding-top: 51px;
-        will-change: left;
-      }
-      .open-menu .page {
-        left: 270px;
-      }
-      .title {
-        line-height: 1rem;
+      .words {
         font-size: 0.8rem;
         margin-bottom: 0.77999rem;
         padding-top: 0.22001rem;
-        font-weight: 500;
-        color: #A0AABF;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding-left: 16px;
-        padding-right: 16px;
-        margin-top: 1rem;
       }
-      .split-preview .title {
-        padding-left: 0;
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #zen {
+        width: 400px;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width:46.25em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+      .splashscreen p {
+        font-size: 1.25rem;
+        margin-bottom: 1.43749rem;
+        padding-top: 0.56251rem;
+      }
+      .title {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
       }
       .title-document {
-        line-height: 1rem;
         font-size: 1.25rem;
         margin-bottom: 0.89999rem;
         padding-top: 0.10001rem;
-        font-weight: 400;
-        font-family: "Ubuntu Mono",Monaco;
-        color: #373D49;
-        padding-left: 16px;
+      }
+      .settings a {
+        font-size: 1.25rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog {
+        font-size: 1.25rem;
+      }
+      .split-editor {
+        border-right: 1px solid #E8E8E8;
+        float: left;
+        height: calc(100vh - 172px);
+        -webkit-overflow-scrolling: touch;
         padding-right: 16px;
-        width: 80%;
-        min-width: 300px;
-        outline: 0;
-        border: none;
+        width: 50%;
       }
-      .icon {
+      .show-preview .split-editor {
         display: block;
-        margin: 0 auto;
-        width: 36px;
-        height: 36px;
-        border-radius: 3px;
-        text-align: center;
       }
-      .icon svg {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .icon-preview {
-        background-color: #373D49;
-        line-height: 40px;
-      }
-      .icon-preview svg {
-        width: 19px;
-        height: 12px;
-      }
-      .icon-settings {
-        background-color: #373D49;
-        line-height: 44px;
-      }
-      .icon-settings svg {
-        width: 18px;
-        height: 18px;
-      }
-      .icon-link {
-        width: 16px;
-        height: 16px;
-        line-height: 1;
-        margin-right: 24px;
-        text-align: right;
-      }
-      .navbar {
-        background-color: #373D49;
-        height: 51px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 6;
-        -webkit-transition: all 0.25s ease-in-out;
-        transition: all 0.25s ease-in-out;
-        will-change: left;
-      }
-      .navbar:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .open-menu .navbar {
-        left: 270px;
-      }
-      .navbar-brand {
-        float: left;
-        margin: 0 0 0 24px;
-        padding: 0;
-        line-height: 42px;
-      }
-      .navbar-brand svg {
-        width: 85px;
-        height: 11px;
-      }
-      .nav-left {
-        float: left;
-      }
-      .nav-right {
+      .split-preview {
+        display: block;
         float: right;
-      }
-      .nav-sidebar {
-        width: 100%;
-      }
-      .menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .menu a {
-        border: 0;
-        color: #A0AABF;
-        font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-        outline: none;
-        text-transform: uppercase;
-      }
-      .menu a:hover {
-        color: #35D7BB;
-      }
-      .menu .menu-item {
-        border: 0;
-        display: none;
-        float: left;
-        margin: 0;
+        height: calc(100vh - 172px);
+        -webkit-overflow-scrolling: touch;
         position: relative;
+        top: 0;
+        width: 50%;
       }
-      .menu .menu-item>a {
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width:62.5em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #zen {
+        width: 700px;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width:87.5em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+      .splashscreen-dillinger {
+        width: 800px;
+      }
+      .splashscreen p {
+        font-size: 1.25rem;
+        margin-bottom: 1.43749rem;
+        padding-top: 0.56251rem;
+      }
+      .title {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .title-document {
+        margin-bottom: 0.89999rem;
+        padding-top: 0.10001rem;
+      }
+      .title-document,
+      .settings a {
+        font-size: 1.25rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (max-width:46.1875em) {
+      .editor-header {
+        display: none;
+      }
+      .editor-header--first {
         display: block;
-        font-size: 12px;
-        height: 51px;
-        letter-spacing: 1px;
-        line-height: 51px;
-        padding: 0 24px;
+        width: 100%;
       }
+    }
 
-      #preview {
-        padding: 30px;
-        max-width: 900px;
-        margin: auto;
-      }
-      #preview a {
-        color: #A0AABF;
-        text-decoration: underline;
-      }
-      .sr-only {
-        visibility: hidden;
-        text-overflow: 110%;
-        overflow: hidden;
-        top: -100px;
-        position: absolute;
-      }
-      .mnone {
-        margin: 0 !important;
-      }
-      @media (min-width:768px) {
-        .form-inline .form-group {
-          display: inline-block;
-          margin-bottom: 0;
-          vertical-align: middle;
-        }
-        .form-inline .form-control {
-          display: inline-block;
-          width: auto;
-          vertical-align: middle;
-        }
-        .form-inline .input-group {
-          display: inline-table;
-          vertical-align: middle;
-        }
-        .form-inline .input-group .input-group-addon,
-        .form-inline .input-group .input-group-btn,
-        .form-inline .input-group .form-control {
-          width: auto;
-        }
-        .form-inline .input-group>.form-control {
-          width: 100%;
-        }
-        .form-inline .control-label {
-          margin-bottom: 0;
-          vertical-align: middle;
-        }
-        .form-inline .radio,
-        .form-inline .checkbox {
-          display: inline-block;
-          margin-top: 0;
-          margin-bottom: 0;
-          vertical-align: middle;
-        }
-        .form-inline .radio label,
-        .form-inline .checkbox label {
-          padding-left: 0;
-        }
-        .form-inline .radio input[type="radio"],
-        .form-inline .checkbox input[type="checkbox"] {
-          position: relative;
-          margin-left: 0;
-        }
-        .form-inline .has-feedback .form-control-feedback {
-          top: 0;
-        }
-        .form-horizontal .control-label {
-          text-align: right;
-          margin-bottom: 0;
-          padding-top: 7px;
-        }
-        .form-horizontal .form-group-lg .control-label {
-          padding-top: 14.3px;
-        }
-        .form-horizontal .form-group-sm .control-label {
-          padding-top: 6px;
-        }
-        .modal-dialog {
-          width: 600px;
-          margin: 30px auto;
-        }
-        .modal-content {
-          box-shadow: 0 5px 15px rgba(0,0,0,.5);
-        }
-        .modal-sm {
-          width: 300px;
-        }
-      }
-      @media (min-width:992px) {
-        .modal-lg {
-          width: 900px;
-        }
-      }
-      @media screen and (min-width:27.5em) {
-        html {
-          font-size: 0.875em;
-        }
-        body {
-          font-size: 1rem;
-        }
-        ul,
-        ol {
-          margin-bottom: 0.83999rem;
-          padding-top: 0.16001rem;
-        }
-        p {
-          padding-top: 0.66001rem;
-        }
-        p,
-        pre {
-          margin-bottom: 1.33999rem;
-        }
-        pre,
-        blockquote p {
-          font-size: 1rem;
-          padding-top: 0.66001rem;
-        }
-        blockquote p {
-          margin-bottom: 0.33999rem;
-        }
-        h1 {
-          font-size: 2.0571429rem;
-          margin-bottom: 0.21999rem;
-          padding-top: 0.78001rem;
-        }
-        h2 {
-          font-size: 1.953125rem;
-          margin-bottom: 0.1835837rem;
-          padding-top: 0.8164163rem;
-        }
-        h3 {
-          font-size: 1.6457143rem;
-          margin-bottom: 0.07599rem;
-          padding-top: 0.92401rem;
-        }
-        h4 {
-          font-size: 1.5625rem;
-          margin-bottom: 0.546865rem;
-          padding-top: 0.453135rem;
-        }
-        h5 {
-          font-size: 1.25rem;
-          margin-bottom: -.56251rem;
-          padding-top: 0.56251rem;
-        }
-        h6 {
-          font-size: 1rem;
-          margin-bottom: -.65001rem;
-          padding-top: 0.65001rem;
-        }
+    .contactbox {
+      float: right;
+      text-align: right;
+      margin-right: 20px;
+    }
 
-        .title-document {
-          margin-bottom: 0.89999rem;
-          padding-top: 0.10001rem;
-        }
-        .title-document,
-        .settings a {
-          font-size: 1.25rem;
-        }
-        .words {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .modal--dillinger.about .modal-dialog,
-        #zen {
-          font-size: 1.25rem;
-        }
-        #zen {
-          width: 400px;
-        }
-        #editor {
-          font-size: 1rem;
-        }
-      }
-      @media screen and (min-width:46.25em) {
-        html {
-          font-size: 0.875em;
-        }
-        body {
-          font-size: 1rem;
-        }
-        ul,
-        ol {
-          margin-bottom: 0.83999rem;
-          padding-top: 0.16001rem;
-        }
-        p {
-          padding-top: 0.66001rem;
-        }
-        p,
-        pre {
-          margin-bottom: 1.33999rem;
-        }
-        pre,
-        blockquote p {
-          font-size: 1rem;
-          padding-top: 0.66001rem;
-        }
-        blockquote p {
-          margin-bottom: 0.33999rem;
-        }
-        h1 {
-          font-size: 2.0571429rem;
-          margin-bottom: 0.21999rem;
-          padding-top: 0.78001rem;
-        }
-        h2 {
-          font-size: 1.953125rem;
-          margin-bottom: 0.1835837rem;
-          padding-top: 0.8164163rem;
-        }
-        h3 {
-          font-size: 1.6457143rem;
-          margin-bottom: 0.07599rem;
-          padding-top: 0.92401rem;
-        }
-        h4 {
-          font-size: 1.5625rem;
-          margin-bottom: 0.546865rem;
-          padding-top: 0.453135rem;
-        }
-        h5 {
-          font-size: 1.25rem;
-          margin-bottom: -.56251rem;
-          padding-top: 0.56251rem;
-        }
-        h6 {
-          font-size: 1rem;
-          margin-bottom: -.65001rem;
-          padding-top: 0.65001rem;
-        }
+    .floatleft {
+      float: left;
+      margin-right: 40px;
+    }
 
-        .splashscreen p {
-          font-size: 1.25rem;
-          margin-bottom: 1.43749rem;
-          padding-top: 0.56251rem;
-        }
-        .title {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .title-document {
-          font-size: 1.25rem;
-          margin-bottom: 0.89999rem;
-          padding-top: 0.10001rem;
-        }
-        .settings a {
-          font-size: 1.25rem;
-        }
-        .words {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .modal--dillinger.about .modal-dialog {
-          font-size: 1.25rem;
-        }
-        .split-editor {
-          border-right: 1px solid #E8E8E8;
-          float: left;
-          height: calc(100vh - 172px);
-          -webkit-overflow-scrolling: touch;
-          padding-right: 16px;
-          width: 50%;
-        }
-        .show-preview .split-editor {
-          display: block;
-        }
-        .split-preview {
-          display: block;
-          float: right;
-          height: calc(100vh - 172px);
-          -webkit-overflow-scrolling: touch;
-          position: relative;
-          top: 0;
-          width: 50%;
-        }
-        #editor {
-          font-size: 1rem;
-        }
-      }
-      @media screen and (min-width:62.5em) {
-        html {
-          font-size: 0.875em;
-        }
-        body {
-          font-size: 1rem;
-        }
-        ul,
-        ol {
-          margin-bottom: 0.83999rem;
-          padding-top: 0.16001rem;
-        }
-        p {
-          padding-top: 0.66001rem;
-        }
-        p,
-        pre {
-          margin-bottom: 1.33999rem;
-        }
-        pre,
-        blockquote p {
-          font-size: 1rem;
-          padding-top: 0.66001rem;
-        }
-        blockquote p {
-          margin-bottom: 0.33999rem;
-        }
-        h1 {
-          font-size: 2.0571429rem;
-          margin-bottom: 0.21999rem;
-          padding-top: 0.78001rem;
-        }
-        h2 {
-          font-size: 1.953125rem;
-          margin-bottom: 0.1835837rem;
-          padding-top: 0.8164163rem;
-        }
-        h3 {
-          font-size: 1.6457143rem;
-          margin-bottom: 0.07599rem;
-          padding-top: 0.92401rem;
-        }
-        h4 {
-          font-size: 1.5625rem;
-          margin-bottom: 0.546865rem;
-          padding-top: 0.453135rem;
-        }
-        h5 {
-          font-size: 1.25rem;
-          margin-bottom: -.56251rem;
-          padding-top: 0.56251rem;
-        }
-        h6 {
-          font-size: 1rem;
-          margin-bottom: -.65001rem;
-          padding-top: 0.65001rem;
-        }
+    .floatclear {
+      clear: both;
+    }
+  </style>
+</head>
 
-        .words {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .modal--dillinger.about .modal-dialog,
-        #zen {
-          font-size: 1.25rem;
-        }
-        #zen {
-          width: 700px;
-        }
-        #editor {
-          font-size: 1rem;
-        }
-      }
-      @media screen and (min-width:87.5em) {
-        html {
-          font-size: 0.875em;
-        }
-        body {
-          font-size: 1rem;
-        }
-        ul,
-        ol {
-          margin-bottom: 0.83999rem;
-          padding-top: 0.16001rem;
-        }
-        p {
-          padding-top: 0.66001rem;
-        }
-        p,
-        pre {
-          margin-bottom: 1.33999rem;
-        }
-        pre,
-        blockquote p {
-          font-size: 1rem;
-          padding-top: 0.66001rem;
-        }
-        blockquote p {
-          margin-bottom: 0.33999rem;
-        }
-        h1 {
-          font-size: 2.0571429rem;
-          margin-bottom: 0.21999rem;
-          padding-top: 0.78001rem;
-        }
-        h2 {
-          font-size: 1.953125rem;
-          margin-bottom: 0.1835837rem;
-          padding-top: 0.8164163rem;
-        }
-        h3 {
-          font-size: 1.6457143rem;
-          margin-bottom: 0.07599rem;
-          padding-top: 0.92401rem;
-        }
-        h4 {
-          font-size: 1.5625rem;
-          margin-bottom: 0.546865rem;
-          padding-top: 0.453135rem;
-        }
-        h5 {
-          font-size: 1.25rem;
-          margin-bottom: -.56251rem;
-          padding-top: 0.56251rem;
-        }
-        h6 {
-          font-size: 1rem;
-          margin-bottom: -.65001rem;
-          padding-top: 0.65001rem;
-        }
-        .splashscreen-dillinger {
-          width: 800px;
-        }
-        .splashscreen p {
-          font-size: 1.25rem;
-          margin-bottom: 1.43749rem;
-          padding-top: 0.56251rem;
-        }
-        .title {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .title-document {
-          margin-bottom: 0.89999rem;
-          padding-top: 0.10001rem;
-        }
-        .title-document,
-        .settings a {
-          font-size: 1.25rem;
-        }
-        .words {
-          font-size: 0.8rem;
-          margin-bottom: 0.77999rem;
-          padding-top: 0.22001rem;
-        }
-        .modal--dillinger.about .modal-dialog,
-        #zen {
-          font-size: 1.25rem;
-        }
-        #editor {
-          font-size: 1rem;
-        }
-      }
-      @media screen and (max-width:46.1875em) {
-        .editor-header {
-          display: none;
-        }
-        .editor-header--first {
-          display: block;
-          width: 100%;
-        }
-      }
-      .contactbox {
-        float: right;
-        text-align: right;
-        margin-right: 20px;
-      }
-      .floatleft {
-        float: left;
-        margin-right: 40px;
-      }
-      .floatclear{
-        clear: both;
-      }
-    </style>
-  </head>
-  <body id="preview">
-    <div class="contactbox">
-      <p>Website &amp; Portfolio:&nbsp;&nbsp;<a href="http://maxbittker.github.io">maxbittker.github.io</a><br>
-        Github:&nbsp;<a href="http://github.com/maxbittker">github.com/maxbittker</a><br>
-        <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a><br>
-      </p>
-    </div>
+<body id="preview">
+  <div class="contactbox">
+    <p>Website &amp; Portfolio:&nbsp;&nbsp;<a href="http://maxbittker.github.io">maxbittker.github.io</a>
+      <br> Github:&nbsp;
+      <a href="http://github.com/maxbittker">github.com/maxbittker</a>
+      <br>
+      <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a>
+      <br>
+    </p>
+  </div>
 
-    <h1>
+  <h1>
       <a id="Max_Bittker_1"></a>Max Bittker</h1>
-    <h2>
+  <h2>
       <a id="Software_Engineer_2"></a>Software Engineer</h2>
-    <p>Building things is my passion, and computing has been an incredibly rewarding outlet in my life. I want to bring my experience and motivation to an environment where I can collaborate with talented people building impactful software that they care
-      about. Building new skills is important to me and I always aim to be challenged by my surroundings. If you are doing exciting things in the realms of technology, learning, media, and the arts, please feel free to contact me.</p>
-    <h3>
+  <p>Building things is my passion, and computing has been an incredibly rewarding outlet in my life. I want to bring my experience and motivation to an environment where I can collaborate with talented people building impactful software that they care about.
+    Building new skills is important to me and I always aim to be challenged by my surroundings. If you are doing exciting things in the realms of technology, learning, media, and the arts, please feel free to contact me.</p>
+  <h3>
       <a id="Qualifications_13"></a>Qualifications</h3>
-    <hr>
-    <p>Strong web application development experience using modern tools including Node.js, React, ES6, LESS, Functional Paradigms, Clojure &amp; Go</p>
-    <p>Solid academic fundamentals in Data Structures, Algorithms, UNIX, C/C++, Networking, Microprocessors, Databases, Data Mining, and Neural Networks</p>
-    <p>Serious experience building real software, applications, and web connected embedded systems</p>
-    <h3>
+  <hr>
+  <p>Strong web application development experience using modern tools including Node.js, React, ES6, LESS, Functional Paradigms, Clojure &amp; Go</p>
+  <p>Solid academic fundamentals in Data Structures, Algorithms, UNIX, C/C++, Networking, Microprocessors, Databases, Data Mining, and Neural Networks</p>
+  <p>Serious experience building real software, applications, and web connected embedded systems</p>
+  <h3>
       <a id="Work_Experience_21"></a>Work Experience</h3>
-    <hr>
-    <span class="contactbox">May 2015 – September 2015</span>
+  <hr>
+  <span class="contactbox">May 2015 – September 2015</span>
 
-    <h5>
+  <h5>
       <a id="Key_Storage_Inc_23"></a>Key Storage Inc.</h5>
-    <h6>
+  <h6>
       <a id="Web_development_Intern_25"></a>Web development Intern</h6>
-    <p>Internet Connected Safe &amp; Asset Tracking Manufacturer</p>
-    <ul>
-      <li>Worked in a self-directed environment to retrofit large website with many pages of content</li>
-      <li>Node.js, Gulp, Bootstrap, jQuery, Less</li>
-    </ul>
-    <h5>
+  <p>Internet Connected Safe &amp; Asset Tracking Manufacturer</p>
+  <ul>
+    <li>Worked in a self-directed environment to retrofit large website with many pages of content</li>
+    <li>Node.js, Gulp, Bootstrap, jQuery, Less</li>
+  </ul>
+  <h5>
       <a id="PharmAdva_31"></a>PharmAdva</h5>
-      <span class="contactbox">June 2014 – December 2014</span>
-    <h6>
+  <span class="contactbox">June 2014 – December 2014</span>
+  <h6>
       <a id="Software_Intern_33"></a>Software Intern</h6>
-    <p>Medical device manufacturer, member of the START-UP NY development program</p>
-    <ul>
-      <li>Worked as engineer #2, prototyping advanced embedded Linux system + touchscreen UI</li>
-      <li>C++, BeagleBone, Linux, Mechatronics, UI design, shell scripting, Gtk</li>
-    </ul>
-    <h5>
+  <p>Medical device manufacturer, member of the START-UP NY development program</p>
+  <ul>
+    <li>Worked as engineer #2, prototyping advanced embedded Linux system + touchscreen UI</li>
+    <li>C++, BeagleBone, Linux, Mechatronics, UI design, shell scripting, Gtk</li>
+  </ul>
+  <h5>
       <a id="Contract_Work_39"></a>Contract Work</h5>
-    <ul>
-      <li>Prototyped cost-effective WiFi current sensor and analytic dashboard for an innovative manufacturing environment using C, Javascript, and D3</li>
-      <li>Developed clean responsive modern website for energy efficiency venture using Gulp, LESS, and Bootstrap</li>
-    </ul>
-    <h3>
+  <ul>
+    <li>Prototyped cost-effective WiFi current sensor and analytic dashboard for an innovative manufacturing environment using C, Javascript, and D3</li>
+    <li>Developed clean responsive modern website for energy efficiency venture using Gulp, LESS, and Bootstrap</li>
+  </ul>
+  <h3>
       <a id="Projects_42"></a>Projects</h3>
-    <hr>
-    <h6>
+  <hr>
+  <h6>
       <a id="Open_Journalism_Project_Fellowship_44"></a>Open Journalism Project Fellowship</h6>
-    <p>Embedded in the Queen’s Journal working to innovate student journalistic process, assist with web content and run technology workshops.</p>
-    <h6>
-      <a id="LectureSquat_47"></a>LectureSquat</h6>
-    <p>A tool for quickly browsing Queen’s University lectures by time, proximity and description to help inquisitive minds get the most out of their education. React, JS, PostgREST. Leverages course scraping tool qcumber-scraper which I helped maintain.
-      <a href="http://maxbittker.github.io/LectureSquat">LectureSquat</a>
-    </p>
-    <h6>
+  <p>Embedded in the Queen’s Journal working to innovate student journalistic process, assist with web content and run technology workshops.</p>
+  <h6>
+      <a id=""></a>SlaQ</h6>
+  <p>Slack clone with Queen's University login, places you in live chat rooms with other students enrolled in your courses. Implements many features of Slack + popular plugins. Built on React, Websockets, Go &amp SQL.
+    <a href="http://devpost.com/software/slaq-eq1bmt">LectureSquat</a>
+  </p>
+
+  <h6>
       <a id="HIVE_49"></a>HIVE</h6>
-    <p>A browser-based programming game about resource collection and distributed intelligence. Built in 36 hours for Hack Western. Won 1st place, “most polished”, and “best use of AI” JS and HTML5 canvas.
-      <a href="http://Hivega.me">Hivega.me</a>
-    </p>
-    <h6>
+  <p>A browser-based programming game about resource collection and distributed intelligence. Built in 36 hours for Hack Western. Won 1st place, “most polished”, and “best use of AI” JS and HTML5 canvas.
+    <a href="http://Hivega.me">Hivega.me</a>
+  </p>
+  <h6>
       <a id="Propagate_52"></a>Propagate</h6>
-    <p>Digital community aquarium, where pixel flora grow and interact. Each species is defined by a user by writing code in a simple lua api. State is persistent, synchronized, and server-side.Go backend with web client. Top placement at Hack the North,
-      Canada’s largest hackathon.
-      <a href="http://devpost.com/software/propagate">DevPost</a>
-    </p>
-    <h6>
+  <p>Digital community aquarium, where pixel flora grow and interact. Each species is defined by a user by writing code in a simple lua api. State is persistent, synchronized, and server-side.Go backend with web client. Top placement at Hack the North, Canada’s
+    largest hackathon.
+    <a href="http://devpost.com/software/propagate">DevPost</a>
+  </p>
+  <h6>
+    <a id="LectureSquat_47"></a>LectureSquat</h6>
+  <p>A tool for quickly browsing Queen’s University lectures by time, proximity and description to help inquisitive minds get the most out of their education. React, JS, PostgREST. Leverages course scraping tool qcumber-scraper which I helped maintain.
+    <a href="http://maxbittker.github.io/LectureSquat">LectureSquat</a>
+  </p>
+  <h6>
       <a id="Mojulo_55"></a>Mojulo</h6>
-    <p>Math visualization sandbox. Renders a grid of pixels based on an equation input by the user.Built using JS and HTML5 Canvas. Featured on front page of Hacker News and 40k+ page views.
-      <a href="http://maxbittker.github.io/Mojulo/">maxbittker.github.io/Mojulo</a>
-    </p>
-    <h3>
+  <p>Math visualization sandbox. Renders a grid of pixels based on an equation input by the user.Built using JS and HTML5 Canvas. Featured on front page of Hacker News and 40k+ page views.
+    <a href="http://maxbittker.github.io/Mojulo/">maxbittker.github.io/Mojulo</a>
+  </p>
+  <h3>
       <a id="Queens_University_60"></a>Queen’s University</h3>
-    <h5>
+  <h5>
       <a id="Computer_Engineering_20122016_61"></a>Computer Engineering 2012-2016</h5>
-    <p>Bachelor of Science GPA: 3.25</p>
-    <ul>
-      <div class="floatleft">
+  <p>Bachelor of Science GPA: 3.25</p>
+  <ul>
+    <div class="floatleft">
       <li>Neural And Genetic Computing</li>
       <li>Programming Language Processors</li>
       <li>Computer Networks</li>
       <li>Digital Systems Engineering</li>
     </div>
-        <li>Performance Analysis</li>
-        <li>Database Management Systems</li>
-        <li>Operating Systems</li>
-      <div class="floatclear"></div>
-    </ul>
-    <h5>
+    <li>Performance Analysis</li>
+    <li>Database Management Systems</li>
+    <li>Operating Systems</li>
+    <div class="floatclear"></div>
+  </ul>
+  <h5>
       <a id="Interests_73"></a>Interests</h5>
-    <p>Help organize QCC, FKA “Queen’s Hack Nights”, a inclusive space for collaboration and discussion.<br>Enjoy art, strategy games, hiking, intersectional feminism, science fiction, bouldering and distance running.</p>
+  <p>Help organize QCC, FKA “Queen’s Hack Nights”, a inclusive space for collaboration and discussion.
+    <br>Enjoy art, strategy games, hiking, intersectional feminism, science fiction, bouldering and distance running.</p>
 
-  </body>
+</body>
+
 </html>
