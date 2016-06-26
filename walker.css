@@ -8,35 +8,39 @@ body {
 
 #PageContainer {
     /*height: 100%;*/
-    
+
     position: relative;
     margin: 0 auto;
     min-height: 100%;
 }
 
+h2{
+  border-bottom: medium dashed #ccc9c9;
+}
 #Content {
+
     padding-left: 7px;
     position: absolute;
     width: 800px;
     right: 0;
     left: 0;
-    margin: auto;
+    /*margin: auto;*/
     z-index: 2;
     /*background-color: #111111;*/
     /*overflow-y: auto;*/
-    
-    overflow-x: visible;
+
+    /*overflow-x: wr;*/
     /*height: 100%;*/
-    
+
     word-wrap: break-word;
     min-height: 100%;
-    background: rgba(50, 50, 60, .6);
-   background-image: linear-gradient(
-    to right top,
-    transparent 33%,
-    black 33%,
-    black 66%,
-    transparent 66%
+    background: rgba(50, 50, 60, .1);
+   /*background-image: linear-gradient(*/
+    /*to right top,*/
+    /*transparent 33%,*/
+    /*black 33%,*/
+    /*black 66%,*/
+    /*transparent 66%*/
 );
 background-size: 3px 3px;
     /*opacity: 0.75*/
@@ -44,7 +48,10 @@ background-size: 3px 3px;
 
 @media only screen and (max-width: 810px) {
     #Content {
-        width: 90%;
+        width: 100%;
+        padding: 5px;
+        background: rgba(0, 0, 0, .4);
+
     }
     p,
     a {
@@ -71,6 +78,7 @@ background-size: 3px 3px;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 /* to remove the top and left whitespace */
 
@@ -80,10 +88,10 @@ body {
     height: 100%;
 }
 
-canvas {
+#canvas {
     /*display: block;*/
-    
-    position: absolute;
+
+    position: fixed;
     z-index: 1
 }
 /* To remove the scrollbars */

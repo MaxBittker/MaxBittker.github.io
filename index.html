@@ -9,43 +9,44 @@
     </head>
     <body>
         <div id="PageContainer">
-            <canvas id="canvas" width="1200" height="640"></canvas>
+            <div id="canvas"></div>
             <div id="Content" class="TopLayer">
                 <h2> Max Bittker </h2>
                 <p>
-                <br> Hello! I'm a student + programmer + person. I love to tinker at the intersection of code, art and learning. 
-                </p>
-                <a href="http://qhack.ca/ants/" >Hive</a><br>
-                <p>
-                A programming game about resource collection and distributed intelligence. Built by myself, Michael Layzell, Erik Pilkington & Jake Pittis in 36 hours for Hack Western. Designed to be a fun challenge for both new and experienced coders <br>
+                <br> Hello! I'm a student + programmer + person. I love to tinker at the intersection of code, art and learning.
                 </p>
                 <a href="http://maxbittker.github.io/Mojulo/" >Mojulo</a>
                 <p>
                 Math visualization sandbox. Renders a grid of pixels based on an equation input by the user. You can use it to explore mathematics, or just enjoy the colors. All creations are easily share-able by copying the URL. Check out the   <a href="http://maxbittker.github.io/Mojulo/gallery.html" >gallery</a>! And tweet your creations at #Mojulo
                     <br>
                 </p>
-                 <a href="http://devpost.com/software/propagate">Propagate</a>
+                <a href="http://maxbittker.github.io/pond/" >Pond</a>
                 <p>
-               	Community aquarium, where colorful pixel flora grow and interact. Each species is defined by a user by writing code a simple lua api. State is persistent, synchronized, and server-side. Currently has an issue where it develops into a monoculture over time...<br>
-                </p>
-                <a href="http://maxbittker.github.io/LectureSquat" >LectureSquat</a>
-                <p>
-                LectureSquat is a tool for curious minds to get the most of Queen's University's academic offerings. Lectures are a rich resource and they deserve to utilized! Sit in on a lecture to expose yourself to new subjects or simply as a focused work enviroment. Browse by time and location.
+                  An agent-based neuro-genetic simulation. Creatures are controlled by a neural network and over time the population evolves to efficiently find food.
                     <br>
+                </p>
+                <a href="http://maxbittker.github.io/fridgepoet/" >Fridge Poet</a>
+                <p>
+                A web toy for writing fridge-magnet style poetry. Word suggestions are based on markov chain analysis of famous poets, and you can select which model to run.
                 </p>
                 <a href="http://maxbittker.github.io/dust/" >Dust</a>
                 <p>
-                Incarnation of my intense nostalgia for the falling sand genre of games. Light on element choices compared to some of the classics, but as far as I know this is the only HTML5 implementation. Try out the fluid dynamics and the "Glitch" element<br>
+                  Homage to the falling sand genre of games. Light on element choices compared to some of the classics, but as far as I know (not very far) this was the first JS implementation. Try out the fluid dynamics and the "Glitch" element<br>
                 </p>
-                <a href="http://maxbittker.github.io/fish/" >Ethical Fishing Simulator</a>
+                <a href="http://qhack.ca/ants/" >Hive</a><br>
                 <p>
-                This is a simple local two player game exploring overfishing and the tragedy of the commons. Underneath the social commentary, there's a nice boids-style swarming algorithm<br>
+                A programming game about resource collection and distributed intelligence. Built by myself, Michael Layzell, Erik Pilkington &amp Jake Pittis in 36 hours for Hack Western. Designed to be a fun challenge for both new and experienced coders <br>
+              </p>
+                <a href="http://devpost.com/software/propagate">Propagate</a>
+                <p>
+                  Community aquarium, where colorful pixel flora grow and interact. Each species is defined by a user by writing code a simple lua api. State is persistent, synchronized, and server-side. <br>
+                  <br>
                 </p>
 
                 <!-- <a href="http://maxbittker.github.io/Conduit/" > Dig Dug thing</a> <br> -->
                 <br>Other interests:<br>
                 <p>
-                altgames, biking, cooking, electronics, fiction, folk punk / post rock / hip hop, intersectional feminism, math, netrunner, podcasts, queen's hack nights, running, starcraft, twitter bots, UNIX, vegetables
+                the recurse center,  altgames, biking, cooking, electronics, fiction, folk punk / post rock / hip hop, intersectional feminism, math, netrunner, podcasts, running, starcraft, twitter bots, UNIX, vegetables
                 </p>
 
                 <br>
@@ -58,11 +59,6 @@
                 <a href="https://twitter.com/MaxBittker" target="_top">( _ヲ</a> <br>
             </div>
         </div>
-        <script src="husl.js" type="text/javascript"></script>
-        <script src="walker.js" type="text/javascript"></script>
-        <script> window.onLoad = function() {
-                                                                var ocean = new Ocean('0', document.getElementById('canvas'));
-                                                                ocean.play();
-        }(); </script>
+        <script src="orbs/dist/bundle.js" type="text/javascript"></script>
     </body>
 </html>
