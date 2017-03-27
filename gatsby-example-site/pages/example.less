@@ -1,0 +1,76 @@
+/* Variables */
+@color: pink;
+
+/* Mixin */
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.less-nav-example {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    background: @color;
+    .border-radius(3px);
+    display: block;
+    margin-right: 6px;
+    padding: 3px 9px;
+    text-decoration: none;
+  }
+}
+.the-less-class {
+  text-decoration: underline;
+}
+
+.headroom *{
+  // background: #badbae !important;
+  // border-bottom: medium dashed;
+  color: #382e31 !important;
+
+}
+body{
+  background: #f4eaed;
+}
+
+body {
+    // background: #0C0C18;
+    // color: #ccc9c9;
+}
+
+h1{
+  border-bottom: medium dashed black;
+}
+
+#canvas {
+    position: fixed;
+    z-index: 1
+}
+
+a {
+    color: #5555ee;
+    text-decoration: none;
+}
+
+a:link {
+    color: #5588CC;
+}
+
+a:visited {
+    color: #9977CC;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+a:active {
+    color: #0000FF;
+}
