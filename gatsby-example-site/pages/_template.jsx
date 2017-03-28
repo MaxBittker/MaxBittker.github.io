@@ -21,7 +21,7 @@ module.exports = React.createClass({
     if(this.props.location.pathname !== '/'){
         headerStyle = {
           transition: 'background-color 0.3s ease',
-          background: '#badbae',
+          background: `hsl(${Math.random()*255},45%,80%)`
         }
     }
     return (
@@ -46,7 +46,7 @@ module.exports = React.createClass({
                 textDecoration: 'none',
               }}
             >
-             max bittker ∙
+             max bittker ∙&nbsp;
             </Link>
             <Link
               to={prefixLink('/about/')}
@@ -55,7 +55,7 @@ module.exports = React.createClass({
                 textDecoration: 'none',
               }}
             >
-             about ∙
+             about ∙&nbsp;
             </Link>
             <Link
               to={prefixLink('/art/')}
@@ -64,7 +64,7 @@ module.exports = React.createClass({
                 textDecoration: 'none',
               }}
             >
-             art ∙
+             art ∙&nbsp;
             </Link>
             <Link
               to={prefixLink('/blog/')}
@@ -73,26 +73,8 @@ module.exports = React.createClass({
                 textDecoration: 'none',
               }}
             >
-              blog ∙
+              blog
             </Link>
-            <a
-              href='https://twitter.com/MaxBittker'
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              twitter ∙
-            </a>
-            <a
-              href='https://github.com/MaxBittker'
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              github
-            </a>
 
           </Container>
         </Headroom>
@@ -105,7 +87,6 @@ module.exports = React.createClass({
         >
           {this.props.children}
         </Container>
-        <script src="https://www.recurse-scout.com/loader.js?t=3a128824cb3dacb3e5bf25cec6f3b40e"/>
       </div>
     )
   },
