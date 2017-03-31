@@ -36628,7 +36628,7 @@
 	          style: { height: '80%',
 	            width: '80%',
 	            margin: 'auto' } },
-	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, { url: 'https://instagr.am/p/' + loc, maxWidth: 920 }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
+	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, { url: 'https://instagr.am/p/' + loc, maxWidth: 720 }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
 	      );
 	    });
 	
