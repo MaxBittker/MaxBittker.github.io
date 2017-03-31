@@ -94,12 +94,12 @@
 	
 	var _createRoutes2 = _interopRequireDefault(_createRoutes);
 	
-	var _gatsbyBrowser = __webpack_require__(502);
+	var _gatsbyBrowser = __webpack_require__(508);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/*  weak */
-	var loadContext = __webpack_require__(503);
+	var loadContext = __webpack_require__(509);
 	
 	function loadConfig(cb) {
 	  var stuff = __webpack_require__(381);
@@ -575,7 +575,7 @@
 
 /***/ },
 /* 6 */
-[534, 7],
+[540, 7],
 /* 7 */
 /***/ function(module, exports) {
 
@@ -5595,7 +5595,7 @@
 
 /***/ },
 /* 47 */
-[534, 32],
+[540, 32],
 /* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -35721,12 +35721,12 @@
 		"./html.js": 456,
 		"./json": 462,
 		"./json.js": 462,
-		"./md": 463,
-		"./md.js": 463,
-		"./toml": 464,
-		"./toml.js": 464,
-		"./yaml": 466,
-		"./yaml.js": 466
+		"./md": 469,
+		"./md.js": 469,
+		"./toml": 470,
+		"./toml.js": 470,
+		"./yaml": 472,
+		"./yaml.js": 472
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -36589,9 +36589,11 @@
 	
 	var _gatsbyHelpers = __webpack_require__(380);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _reactInstagramEmbed = __webpack_require__(463);
 	
-	// import InstagramEmbed from 'react-instagram-embed'
+	var _reactInstagramEmbed2 = _interopRequireDefault(_reactInstagramEmbed);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var iposts = ['BRkXPqAF4k8', 'BRkWobilG3s', 'BRkH1GqFf8K', 'BRj6ObglyAV', 'BQw80pWlAXn', 'BQwMWc-F05R', 'BQvyTPMFv-C', 'BQutvtKFlaL', 'BQt8DSNlYvr', 'BQrSnwml5fY', 'BQrH0NKlrrI', 'BQqyuDMFP', 'BQqtXolFqIw', 'BPzE9fhAIFU', 'BPl4Mm7A898', 'BPl0xl2ANXF', 'BPVzIArgxqV', 'BPTsg38AyQ9', 'BOgJf9bgDXO'].map(function (url) {
 	  return { name: 'ipost', loc: url };
@@ -36626,7 +36628,7 @@
 	          style: { height: '80%',
 	            width: '80%',
 	            margin: 'auto' } },
-	        name === 'ipost' ? _react2.default.createElement('div', { url: 'https://instagr.am/p/' + loc, maxWidth: 720 }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
+	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, { url: 'https://instagr.am/p/' + loc, maxWidth: 920 }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
 	      );
 	    });
 	
@@ -36657,6 +36659,914 @@
 
 /***/ },
 /* 463 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _jsonpP = __webpack_require__(464);
+	
+	var _jsonpP2 = _interopRequireDefault(_jsonpP);
+	
+	var _queryString = __webpack_require__(193);
+	
+	var _queryString2 = _interopRequireDefault(_queryString);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var InstagramEmbed = function (_Component) {
+	  _inherits(InstagramEmbed, _Component);
+	
+	  function InstagramEmbed() {
+	    var _ref;
+	
+	    var _temp, _this2, _ret;
+	
+	    _classCallCheck(this, InstagramEmbed);
+	
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = InstagramEmbed.__proto__ || Object.getPrototypeOf(InstagramEmbed)).call.apply(_ref, [this].concat(args))), _this2), _initialiseProps.call(_this2), _temp), _possibleConstructorReturn(_this2, _ret);
+	  }
+	
+	  _createClass(InstagramEmbed, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this3 = this;
+	
+	      if (window.instgrm || document.getElementById('react-instagram-embed-script')) {
+	        this.fetchEmbed(this.getQueryParams(this.props));
+	      } else {
+	        var protocolToUse = window.location.protocol.indexOf('file') === 0 ? this.props.protocol : '';
+	
+	        var s = document.createElement('script');
+	        s.async = s.defer = true;
+	        s.src = protocolToUse + '//platform.instagram.com/en_US/embeds.js';
+	        s.id = 'react-instagram-embed-script';
+	        document.body.appendChild(s);
+	        this.checkAPI().then(function () {
+	          return _this3.fetchEmbed(_this3.getQueryParams(_this3.props));
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var _props = this.props,
+	          url = _props.url,
+	          hideCaption = _props.hideCaption,
+	          maxWidth = _props.maxWidth,
+	          containerTagName = _props.containerTagName;
+	
+	      if (nextProps.url !== url || nextProps.hideCaption !== hideCaption || nextProps.maxWidth !== maxWidth || nextProps.containerTagName !== containerTagName) {
+	        this.jsonp.cancel();
+	        this.fetchEmbed(this.getQueryParams(nextProps));
+	      }
+	    }
+	  }, {
+	    key: 'shouldComponentUpdate',
+	    value: function shouldComponentUpdate(nextProps, nextState) {
+	      var _props2 = this.props,
+	          url = _props2.url,
+	          hideCaption = _props2.hideCaption,
+	          maxWidth = _props2.maxWidth,
+	          containerTagName = _props2.containerTagName,
+	          onLoading = _props2.onLoading,
+	          onSuccess = _props2.onSuccess,
+	          onFailure = _props2.onFailure;
+	      var __html = this.state.__html;
+	
+	      if (nextProps.url !== url || nextProps.hideCaption !== hideCaption || nextProps.maxWidth !== maxWidth || nextProps.containerTagName !== containerTagName || nextProps.onLoading !== onLoading || nextProps.onSuccess !== onSuccess || nextProps.onFailure !== onFailure || nextState.__html !== __html) {
+	        return true;
+	      }
+	      return false;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(this.props.containerTagName, _extends({
+	        dangerouslySetInnerHTML: { __html: this.state.__html } }, this.omitComponentProps()));
+	    }
+	  }, {
+	    key: 'omitComponentProps',
+	    value: function omitComponentProps() {
+	      // eslint-disable-next-line no-unused-vars
+	      var _props3 = this.props,
+	          url = _props3.url,
+	          hideCaption = _props3.hideCaption,
+	          maxWidth = _props3.maxWidth,
+	          containerTagName = _props3.containerTagName,
+	          onLoading = _props3.onLoading,
+	          onSuccess = _props3.onSuccess,
+	          onFailure = _props3.onFailure,
+	          protocol = _props3.protocol,
+	          rest = _objectWithoutProperties(_props3, ['url', 'hideCaption', 'maxWidth', 'containerTagName', 'onLoading', 'onSuccess', 'onFailure', 'protocol']);
+	
+	      return rest;
+	    }
+	  }, {
+	    key: 'checkAPI',
+	    value: function checkAPI() {
+	      var _this4 = this;
+	
+	      return new Promise(function (resolve) {
+	        (function checkAPI(_this) {
+	          _this._timer = setTimeout(function () {
+	            if (window.instgrm) {
+	              clearTimeout(_this._timer);
+	              resolve();
+	            } else {
+	              checkAPI(_this);
+	            }
+	          }, 20);
+	        })(_this4);
+	      });
+	    }
+	  }, {
+	    key: 'fetchEmbed',
+	    value: function fetchEmbed(queryParams) {
+	      this.jsonp = (0, _jsonpP2.default)('https://api.instagram.com/oembed/?' + queryParams);
+	      this.props.onLoading && this.props.onLoading();
+	      this.jsonp.promise.then(this.handleFetchSuccess).catch(this.handleFetchFailure);
+	    }
+	  }, {
+	    key: 'getQueryParams',
+	    value: function getQueryParams(_ref2) {
+	      var url = _ref2.url,
+	          hideCaption = _ref2.hideCaption,
+	          maxWidth = _ref2.maxWidth;
+	
+	      return _queryString2.default.stringify({
+	        url: url,
+	        hidecaption: hideCaption,
+	        maxwidth: typeof maxWidth === 'number' && maxWidth >= 320 ? maxWidth : undefined,
+	        omitscript: true
+	      });
+	    }
+	
+	    // Public
+	
+	  }]);
+	
+	  return InstagramEmbed;
+	}(_react.Component);
+	
+	InstagramEmbed.defaultProps = { hideCaption: false, containerTagName: 'div', protocol: 'https:' };
+	
+	var _initialiseProps = function _initialiseProps() {
+	  var _this5 = this;
+	
+	  this.state = { __html: null };
+	
+	  this.handleFetchSuccess = function (response) {
+	    _this5.props.onSuccess && _this5.props.onSuccess(response);
+	    _this5.setState({ __html: response.html }, function () {
+	      return window.instgrm.Embeds.process();
+	    });
+	  };
+	
+	  this.handleFetchFailure = function () {
+	    var _props4;
+	
+	    clearTimeout(_this5._timer);
+	    _this5.props.onFailure && (_props4 = _this5.props).onFailure.apply(_props4, arguments);
+	  };
+	
+	  this.cancel = function () {
+	    return _this5.jsonp.cancel();
+	  };
+	};
+	
+	exports.default = InstagramEmbed;
+
+/***/ },
+/* 464 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = jsonpP;
+	
+	var _jsonp = __webpack_require__(465);
+	
+	var _jsonp2 = _interopRequireDefault(_jsonp);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * jsonpP
+	 *
+	 * @param {String} url Request url.
+	 * @param {Object} config jsonp config options.
+	 *   https://github.com/webmodules/jsonp#jsonpurl-opts-fn
+	 *     param: 'callback',
+	 *     timeout: 60000,
+	 *     prefix: '__jp',
+	 *     name: prefix + Incremented counter
+	 * @returns {Object} { promise, cancel }
+	 */
+	function jsonpP(url, config) {
+	  var cancel = void 0;
+	  var promise = new Promise(function (resolve, reject) {
+	    var originalCancel = (0, _jsonp2.default)(url, config, function (err, res) {
+	      if (err) {
+	        reject(err);
+	      }
+	      resolve(res);
+	    });
+	    cancel = function cancel() {
+	      originalCancel();
+	      reject(new Error('Canceled'));
+	    };
+	  });
+	  return { promise: promise, cancel: cancel };
+	} /*!
+	   * @license jsonp-p
+	   * (c) sugarshin
+	   * License: MIT
+	   */
+
+/***/ },
+/* 465 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Module dependencies
+	 */
+	
+	var debug = __webpack_require__(466)('jsonp');
+	
+	/**
+	 * Module exports.
+	 */
+	
+	module.exports = jsonp;
+	
+	/**
+	 * Callback index.
+	 */
+	
+	var count = 0;
+	
+	/**
+	 * Noop function.
+	 */
+	
+	function noop(){}
+	
+	/**
+	 * JSONP handler
+	 *
+	 * Options:
+	 *  - param {String} qs parameter (`callback`)
+	 *  - prefix {String} qs parameter (`__jp`)
+	 *  - name {String} qs parameter (`prefix` + incr)
+	 *  - timeout {Number} how long after a timeout error is emitted (`60000`)
+	 *
+	 * @param {String} url
+	 * @param {Object|Function} optional options / callback
+	 * @param {Function} optional callback
+	 */
+	
+	function jsonp(url, opts, fn){
+	  if ('function' == typeof opts) {
+	    fn = opts;
+	    opts = {};
+	  }
+	  if (!opts) opts = {};
+	
+	  var prefix = opts.prefix || '__jp';
+	
+	  // use the callback name that was passed if one was provided.
+	  // otherwise generate a unique name by incrementing our counter.
+	  var id = opts.name || (prefix + (count++));
+	
+	  var param = opts.param || 'callback';
+	  var timeout = null != opts.timeout ? opts.timeout : 60000;
+	  var enc = encodeURIComponent;
+	  var target = document.getElementsByTagName('script')[0] || document.head;
+	  var script;
+	  var timer;
+	
+	
+	  if (timeout) {
+	    timer = setTimeout(function(){
+	      cleanup();
+	      if (fn) fn(new Error('Timeout'));
+	    }, timeout);
+	  }
+	
+	  function cleanup(){
+	    if (script.parentNode) script.parentNode.removeChild(script);
+	    window[id] = noop;
+	    if (timer) clearTimeout(timer);
+	  }
+	
+	  function cancel(){
+	    if (window[id]) {
+	      cleanup();
+	    }
+	  }
+	
+	  window[id] = function(data){
+	    debug('jsonp got', data);
+	    cleanup();
+	    if (fn) fn(null, data);
+	  };
+	
+	  // add qs component
+	  url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id);
+	  url = url.replace('?&', '?');
+	
+	  debug('jsonp req "%s"', url);
+	
+	  // create script
+	  script = document.createElement('script');
+	  script.src = url;
+	  target.parentNode.insertBefore(script, target);
+	
+	  return cancel;
+	}
+
+
+/***/ },
+/* 466 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+	
+	exports = module.exports = __webpack_require__(467);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+	
+	/**
+	 * Colors.
+	 */
+	
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+	
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+	
+	function useColors() {
+	  // NB: In an Electron preload script, document will be defined but not fully
+	  // initialized. Since we know we're in Chrome, we'll just detect this case
+	  // explicitly
+	  if (typeof window !== 'undefined' && window && typeof window.process !== 'undefined' && window.process.type === 'renderer') {
+	    return true;
+	  }
+	
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+	  return (typeof document !== 'undefined' && document && 'WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (typeof window !== 'undefined' && window && window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (typeof navigator !== 'undefined' && navigator && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
+	    // double check webkit in userAgent just in case we are in a worker
+	    (typeof navigator !== 'undefined' && navigator && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
+	}
+	
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+	
+	exports.formatters.j = function(v) {
+	  try {
+	    return JSON.stringify(v);
+	  } catch (err) {
+	    return '[UnexpectedJSONParseError]: ' + err.message;
+	  }
+	};
+	
+	
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+	
+	function formatArgs(args) {
+	  var useColors = this.useColors;
+	
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+	
+	  if (!useColors) return;
+	
+	  var c = 'color: ' + this.color;
+	  args.splice(1, 0, c, 'color: inherit')
+	
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-zA-Z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+	
+	  args.splice(lastC, 0, c);
+	}
+	
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+	
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+	
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+	
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+	
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+	
+	function load() {
+	  try {
+	    return exports.storage.debug;
+	  } catch(e) {}
+	
+	  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+	  if (typeof process !== 'undefined' && 'env' in process) {
+	    return ({"NODE_ENV":"production"}).DEBUG;
+	  }
+	}
+	
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+	
+	exports.enable(load());
+	
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+	
+	function localstorage() {
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(110)))
+
+/***/ },
+/* 467 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+	
+	exports = module.exports = createDebug.debug = createDebug['default'] = createDebug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(468);
+	
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+	
+	exports.names = [];
+	exports.skips = [];
+	
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	 */
+	
+	exports.formatters = {};
+	
+	/**
+	 * Previous log timestamp.
+	 */
+	
+	var prevTime;
+	
+	/**
+	 * Select a color.
+	 * @param {String} namespace
+	 * @return {Number}
+	 * @api private
+	 */
+	
+	function selectColor(namespace) {
+	  var hash = 0, i;
+	
+	  for (i in namespace) {
+	    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
+	    hash |= 0; // Convert to 32bit integer
+	  }
+	
+	  return exports.colors[Math.abs(hash) % exports.colors.length];
+	}
+	
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+	
+	function createDebug(namespace) {
+	
+	  function debug() {
+	    // disabled?
+	    if (!debug.enabled) return;
+	
+	    var self = debug;
+	
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+	
+	    // turn the `arguments` into a proper Array
+	    var args = new Array(arguments.length);
+	    for (var i = 0; i < args.length; i++) {
+	      args[i] = arguments[i];
+	    }
+	
+	    args[0] = exports.coerce(args[0]);
+	
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %O
+	      args.unshift('%O');
+	    }
+	
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+	
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+	
+	    // apply env-specific formatting (colors, etc.)
+	    exports.formatArgs.call(self, args);
+	
+	    var logFn = debug.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	
+	  debug.namespace = namespace;
+	  debug.enabled = exports.enabled(namespace);
+	  debug.useColors = exports.useColors();
+	  debug.color = selectColor(namespace);
+	
+	  // env-specific initialization logic for debug instances
+	  if ('function' === typeof exports.init) {
+	    exports.init(debug);
+	  }
+	
+	  return debug;
+	}
+	
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+	
+	function enable(namespaces) {
+	  exports.save(namespaces);
+	
+	  exports.names = [];
+	  exports.skips = [];
+	
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+	
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+	
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+	
+	function disable() {
+	  exports.enable('');
+	}
+	
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+	
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+	
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+	
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+/* 468 */
+/***/ function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+	
+	var s = 1000
+	var m = s * 60
+	var h = m * 60
+	var d = h * 24
+	var y = d * 365.25
+	
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} options
+	 * @throws {Error} throw an error if val is not a non-empty string or a number
+	 * @return {String|Number}
+	 * @api public
+	 */
+	
+	module.exports = function (val, options) {
+	  options = options || {}
+	  var type = typeof val
+	  if (type === 'string' && val.length > 0) {
+	    return parse(val)
+	  } else if (type === 'number' && isNaN(val) === false) {
+	    return options.long ?
+				fmtLong(val) :
+				fmtShort(val)
+	  }
+	  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
+	}
+	
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+	
+	function parse(str) {
+	  str = String(str)
+	  if (str.length > 10000) {
+	    return
+	  }
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
+	  if (!match) {
+	    return
+	  }
+	  var n = parseFloat(match[1])
+	  var type = (match[2] || 'ms').toLowerCase()
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n
+	    default:
+	      return undefined
+	  }
+	}
+	
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+	
+	function fmtShort(ms) {
+	  if (ms >= d) {
+	    return Math.round(ms / d) + 'd'
+	  }
+	  if (ms >= h) {
+	    return Math.round(ms / h) + 'h'
+	  }
+	  if (ms >= m) {
+	    return Math.round(ms / m) + 'm'
+	  }
+	  if (ms >= s) {
+	    return Math.round(ms / s) + 's'
+	  }
+	  return ms + 'ms'
+	}
+	
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+	
+	function fmtLong(ms) {
+	  return plural(ms, d, 'day') ||
+	    plural(ms, h, 'hour') ||
+	    plural(ms, m, 'minute') ||
+	    plural(ms, s, 'second') ||
+	    ms + ' ms'
+	}
+	
+	/**
+	 * Pluralization helper.
+	 */
+	
+	function plural(ms, n, name) {
+	  if (ms < n) {
+	    return
+	  }
+	  if (ms < n * 1.5) {
+	    return Math.floor(ms / n) + ' ' + name
+	  }
+	  return Math.ceil(ms / n) + ' ' + name + 's'
+	}
+
+
+/***/ },
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36701,7 +37611,7 @@
 	});
 
 /***/ },
-/* 464 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36710,7 +37620,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tomlJs = __webpack_require__(465);
+	var _tomlJs = __webpack_require__(471);
 	
 	var _tomlJs2 = _interopRequireDefault(_tomlJs);
 	
@@ -36753,7 +37663,7 @@
 	});
 
 /***/ },
-/* 465 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// TOML parser implementation, v0.0.8
@@ -37066,7 +37976,7 @@
 
 
 /***/ },
-/* 466 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37075,7 +37985,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _jsYaml = __webpack_require__(467);
+	var _jsYaml = __webpack_require__(473);
 	
 	var _jsYaml2 = _interopRequireDefault(_jsYaml);
 	
@@ -37118,27 +38028,27 @@
 	});
 
 /***/ },
-/* 467 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	var yaml = __webpack_require__(468);
+	var yaml = __webpack_require__(474);
 	
 	
 	module.exports = yaml;
 
 
 /***/ },
-/* 468 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	var loader = __webpack_require__(469);
-	var dumper = __webpack_require__(501);
+	var loader = __webpack_require__(475);
+	var dumper = __webpack_require__(507);
 	
 	
 	function deprecated(name) {
@@ -37148,25 +38058,25 @@
 	}
 	
 	
-	module.exports.Type                = __webpack_require__(475);
-	module.exports.Schema              = __webpack_require__(474);
-	module.exports.FAILSAFE_SCHEMA     = __webpack_require__(478);
-	module.exports.JSON_SCHEMA         = __webpack_require__(477);
-	module.exports.CORE_SCHEMA         = __webpack_require__(476);
-	module.exports.DEFAULT_SAFE_SCHEMA = __webpack_require__(473);
-	module.exports.DEFAULT_FULL_SCHEMA = __webpack_require__(496);
+	module.exports.Type                = __webpack_require__(481);
+	module.exports.Schema              = __webpack_require__(480);
+	module.exports.FAILSAFE_SCHEMA     = __webpack_require__(484);
+	module.exports.JSON_SCHEMA         = __webpack_require__(483);
+	module.exports.CORE_SCHEMA         = __webpack_require__(482);
+	module.exports.DEFAULT_SAFE_SCHEMA = __webpack_require__(479);
+	module.exports.DEFAULT_FULL_SCHEMA = __webpack_require__(502);
 	module.exports.load                = loader.load;
 	module.exports.loadAll             = loader.loadAll;
 	module.exports.safeLoad            = loader.safeLoad;
 	module.exports.safeLoadAll         = loader.safeLoadAll;
 	module.exports.dump                = dumper.dump;
 	module.exports.safeDump            = dumper.safeDump;
-	module.exports.YAMLException       = __webpack_require__(471);
+	module.exports.YAMLException       = __webpack_require__(477);
 	
 	// Deprecated schema names from JS-YAML 2.0.x
-	module.exports.MINIMAL_SCHEMA = __webpack_require__(478);
-	module.exports.SAFE_SCHEMA    = __webpack_require__(473);
-	module.exports.DEFAULT_SCHEMA = __webpack_require__(496);
+	module.exports.MINIMAL_SCHEMA = __webpack_require__(484);
+	module.exports.SAFE_SCHEMA    = __webpack_require__(479);
+	module.exports.DEFAULT_SCHEMA = __webpack_require__(502);
 	
 	// Deprecated functions from JS-YAML 1.x.x
 	module.exports.scan           = deprecated('scan');
@@ -37176,18 +38086,18 @@
 
 
 /***/ },
-/* 469 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable max-len,no-use-before-define*/
 	
-	var common              = __webpack_require__(470);
-	var YAMLException       = __webpack_require__(471);
-	var Mark                = __webpack_require__(472);
-	var DEFAULT_SAFE_SCHEMA = __webpack_require__(473);
-	var DEFAULT_FULL_SCHEMA = __webpack_require__(496);
+	var common              = __webpack_require__(476);
+	var YAMLException       = __webpack_require__(477);
+	var Mark                = __webpack_require__(478);
+	var DEFAULT_SAFE_SCHEMA = __webpack_require__(479);
+	var DEFAULT_FULL_SCHEMA = __webpack_require__(502);
 	
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -38773,7 +39683,7 @@
 
 
 /***/ },
-/* 470 */
+/* 476 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -38838,7 +39748,7 @@
 
 
 /***/ },
-/* 471 */
+/* 477 */
 /***/ function(module, exports) {
 
 	// YAML error class. http://stackoverflow.com/questions/8458984
@@ -38887,13 +39797,13 @@
 
 
 /***/ },
-/* 472 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	var common = __webpack_require__(470);
+	var common = __webpack_require__(476);
 	
 	
 	function Mark(name, buffer, position, line, column) {
@@ -38969,7 +39879,7 @@
 
 
 /***/ },
-/* 473 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// JS-YAML's default schema for `safeLoad` function.
@@ -38982,37 +39892,37 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(474);
+	var Schema = __webpack_require__(480);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(476)
+	    __webpack_require__(482)
 	  ],
 	  implicit: [
-	    __webpack_require__(486),
-	    __webpack_require__(487)
+	    __webpack_require__(492),
+	    __webpack_require__(493)
 	  ],
 	  explicit: [
-	    __webpack_require__(488),
-	    __webpack_require__(493),
 	    __webpack_require__(494),
-	    __webpack_require__(495)
+	    __webpack_require__(499),
+	    __webpack_require__(500),
+	    __webpack_require__(501)
 	  ]
 	});
 
 
 /***/ },
-/* 474 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable max-len*/
 	
-	var common        = __webpack_require__(470);
-	var YAMLException = __webpack_require__(471);
-	var Type          = __webpack_require__(475);
+	var common        = __webpack_require__(476);
+	var YAMLException = __webpack_require__(477);
+	var Type          = __webpack_require__(481);
 	
 	
 	function compileList(schema, name, result) {
@@ -39117,12 +40027,12 @@
 
 
 /***/ },
-/* 475 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var YAMLException = __webpack_require__(471);
+	var YAMLException = __webpack_require__(477);
 	
 	var TYPE_CONSTRUCTOR_OPTIONS = [
 	  'kind',
@@ -39184,7 +40094,7 @@
 
 
 /***/ },
-/* 476 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Standard YAML's Core schema.
@@ -39197,18 +40107,18 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(474);
+	var Schema = __webpack_require__(480);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(477)
+	    __webpack_require__(483)
 	  ]
 	});
 
 
 /***/ },
-/* 477 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Standard YAML's JSON schema.
@@ -39222,24 +40132,24 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(474);
+	var Schema = __webpack_require__(480);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(478)
+	    __webpack_require__(484)
 	  ],
 	  implicit: [
-	    __webpack_require__(482),
-	    __webpack_require__(483),
-	    __webpack_require__(484),
-	    __webpack_require__(485)
+	    __webpack_require__(488),
+	    __webpack_require__(489),
+	    __webpack_require__(490),
+	    __webpack_require__(491)
 	  ]
 	});
 
 
 /***/ },
-/* 478 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Standard YAML's Failsafe schema.
@@ -39249,25 +40159,25 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(474);
+	var Schema = __webpack_require__(480);
 	
 	
 	module.exports = new Schema({
 	  explicit: [
-	    __webpack_require__(479),
-	    __webpack_require__(480),
-	    __webpack_require__(481)
+	    __webpack_require__(485),
+	    __webpack_require__(486),
+	    __webpack_require__(487)
 	  ]
 	});
 
 
 /***/ },
-/* 479 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	module.exports = new Type('tag:yaml.org,2002:str', {
 	  kind: 'scalar',
@@ -39276,12 +40186,12 @@
 
 
 /***/ },
-/* 480 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	module.exports = new Type('tag:yaml.org,2002:seq', {
 	  kind: 'sequence',
@@ -39290,12 +40200,12 @@
 
 
 /***/ },
-/* 481 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	module.exports = new Type('tag:yaml.org,2002:map', {
 	  kind: 'mapping',
@@ -39304,12 +40214,12 @@
 
 
 /***/ },
-/* 482 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveYamlNull(data) {
 	  if (data === null) return true;
@@ -39344,12 +40254,12 @@
 
 
 /***/ },
-/* 483 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveYamlBoolean(data) {
 	  if (data === null) return false;
@@ -39385,13 +40295,13 @@
 
 
 /***/ },
-/* 484 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var common = __webpack_require__(470);
-	var Type   = __webpack_require__(475);
+	var common = __webpack_require__(476);
+	var Type   = __webpack_require__(481);
 	
 	function isHexCode(c) {
 	  return ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) ||
@@ -39559,13 +40469,13 @@
 
 
 /***/ },
-/* 485 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var common = __webpack_require__(470);
-	var Type   = __webpack_require__(475);
+	var common = __webpack_require__(476);
+	var Type   = __webpack_require__(481);
 	
 	var YAML_FLOAT_PATTERN = new RegExp(
 	  // 2.5e4, 2.5 and integers
@@ -39676,12 +40586,12 @@
 
 
 /***/ },
-/* 486 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	var YAML_DATE_REGEXP = new RegExp(
 	  '^([0-9][0-9][0-9][0-9])'          + // [1] year
@@ -39770,12 +40680,12 @@
 
 
 /***/ },
-/* 487 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveYamlMerge(data) {
 	  return data === '<<' || data === null;
@@ -39788,7 +40698,7 @@
 
 
 /***/ },
-/* 488 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;'use strict';
@@ -39800,10 +40710,10 @@
 	try {
 	  // A trick for browserified version, to not include `Buffer` shim
 	  var _require = require;
-	  NodeBuffer = __webpack_require__(489).Buffer;
+	  NodeBuffer = __webpack_require__(495).Buffer;
 	} catch (__) {}
 	
-	var Type       = __webpack_require__(475);
+	var Type       = __webpack_require__(481);
 	
 	
 	// [ 64, 65, 66 ] -> [ padding, CR, LF ]
@@ -39932,7 +40842,7 @@
 
 
 /***/ },
-/* 489 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -39945,9 +40855,9 @@
 	
 	'use strict'
 	
-	var base64 = __webpack_require__(490)
-	var ieee754 = __webpack_require__(491)
-	var isArray = __webpack_require__(492)
+	var base64 = __webpack_require__(496)
+	var ieee754 = __webpack_require__(497)
+	var isArray = __webpack_require__(498)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -41728,7 +42638,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 490 */
+/* 496 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -41848,7 +42758,7 @@
 
 
 /***/ },
-/* 491 */
+/* 497 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -41938,7 +42848,7 @@
 
 
 /***/ },
-/* 492 */
+/* 498 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -41949,12 +42859,12 @@
 
 
 /***/ },
-/* 493 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
 	var _toString       = Object.prototype.toString;
@@ -41999,12 +42909,12 @@
 
 
 /***/ },
-/* 494 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	var _toString = Object.prototype.toString;
 	
@@ -42058,12 +42968,12 @@
 
 
 /***/ },
-/* 495 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
 	
@@ -42093,7 +43003,7 @@
 
 
 /***/ },
-/* 496 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// JS-YAML's default schema for `load` function.
@@ -42108,28 +43018,28 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(474);
+	var Schema = __webpack_require__(480);
 	
 	
 	module.exports = Schema.DEFAULT = new Schema({
 	  include: [
-	    __webpack_require__(473)
+	    __webpack_require__(479)
 	  ],
 	  explicit: [
-	    __webpack_require__(497),
-	    __webpack_require__(498),
-	    __webpack_require__(499)
+	    __webpack_require__(503),
+	    __webpack_require__(504),
+	    __webpack_require__(505)
 	  ]
 	});
 
 
 /***/ },
-/* 497 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveJavascriptUndefined() {
 	  return true;
@@ -42158,12 +43068,12 @@
 
 
 /***/ },
-/* 498 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveJavascriptRegExp(data) {
 	  if (data === null) return false;
@@ -42224,7 +43134,7 @@
 
 
 /***/ },
-/* 499 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;'use strict';
@@ -42241,13 +43151,13 @@
 	try {
 	  // workaround to exclude package from browserify list.
 	  var _require = require;
-	  esprima = __webpack_require__(500);
+	  esprima = __webpack_require__(506);
 	} catch (_) {
 	  /*global window */
 	  if (typeof window !== 'undefined') esprima = window.esprima;
 	}
 	
-	var Type = __webpack_require__(475);
+	var Type = __webpack_require__(481);
 	
 	function resolveJavascriptFunction(data) {
 	  if (data === null) return false;
@@ -42314,7 +43224,7 @@
 
 
 /***/ },
-/* 500 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -48720,17 +49630,17 @@
 	;
 
 /***/ },
-/* 501 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable no-use-before-define*/
 	
-	var common              = __webpack_require__(470);
-	var YAMLException       = __webpack_require__(471);
-	var DEFAULT_FULL_SCHEMA = __webpack_require__(496);
-	var DEFAULT_SAFE_SCHEMA = __webpack_require__(473);
+	var common              = __webpack_require__(476);
+	var YAMLException       = __webpack_require__(477);
+	var DEFAULT_FULL_SCHEMA = __webpack_require__(502);
+	var DEFAULT_SAFE_SCHEMA = __webpack_require__(479);
 	
 	var _toString       = Object.prototype.toString;
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -49527,13 +50437,13 @@
 
 
 /***/ },
-/* 502 */
+/* 508 */
 /***/ function(module, exports) {
 
 	"use strict";
 
 /***/ },
-/* 503 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49543,7 +50453,7 @@
 	// files from your pages directory.
 	
 	module.exports = function (callback) {
-	  var context = __webpack_require__(504); // eslint-disable-line
+	  var context = __webpack_require__(510); // eslint-disable-line
 	  if (false) {
 	    module.hot.accept(context.id, function () {
 	      context = require.context('./pages', true, /(coffee|cjsx|ts|tsx|jsx|js|md|rmd|mkdn?|mdwn|mdown|markdown|litcoffee|ipynb|html|json|yaml|toml)$/); // eslint-disable-line
@@ -49554,18 +50464,18 @@
 	};
 
 /***/ },
-/* 504 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./404.md": 505,
+		"./404.md": 511,
 		"./_template.jsx": 383,
-		"./about.js": 506,
-		"./art.json": 511,
-		"./blog.js": 512,
-		"./html.html": 523,
-		"./index.js": 524,
-		"./post1.md": 533
+		"./about.js": 512,
+		"./art.json": 517,
+		"./blog.js": 518,
+		"./html.html": 529,
+		"./index.js": 530,
+		"./post1.md": 539
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -49578,17 +50488,17 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 504;
+	webpackContext.id = 510;
 
 
 /***/ },
-/* 505 */
+/* 511 */
 /***/ function(module, exports) {
 
 	module.exports = {"path":"/404.html","body":"<h1>NOT FOUND</h1>\n<p>This route doesn’t exist – I probably messed up a link.</p>\n"}
 
 /***/ },
-/* 506 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49613,15 +50523,15 @@
 	
 	var _config = __webpack_require__(381);
 	
-	var _webgl = __webpack_require__(507);
+	var _webgl = __webpack_require__(513);
 	
 	var _webgl2 = _interopRequireDefault(_webgl);
 	
-	var _rcscout = __webpack_require__(509);
+	var _rcscout = __webpack_require__(515);
 	
 	var _rcscout2 = _interopRequireDefault(_rcscout);
 	
-	__webpack_require__(510);
+	__webpack_require__(516);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49792,7 +50702,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 507 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49805,7 +50715,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _fragmentShader = __webpack_require__(508);
+	var _fragmentShader = __webpack_require__(514);
 	
 	var _fragmentShader2 = _interopRequireDefault(_fragmentShader);
 	
@@ -50073,7 +50983,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 508 */
+/* 514 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50087,7 +50997,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 509 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50128,9 +51038,9 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 510 */
+/* 516 */
 403,
-/* 511 */
+/* 517 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -50259,7 +51169,7 @@
 	};
 
 /***/ },
-/* 512 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50294,7 +51204,7 @@
 	
 	var _config = __webpack_require__(381);
 	
-	var _includes = __webpack_require__(513);
+	var _includes = __webpack_require__(519);
 	
 	var _includes2 = _interopRequireDefault(_includes);
 	
@@ -50366,14 +51276,14 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 513 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIndexOf = __webpack_require__(514),
+	var baseIndexOf = __webpack_require__(520),
 	    isArrayLike = __webpack_require__(273),
 	    isString = __webpack_require__(382),
-	    toInteger = __webpack_require__(518),
-	    values = __webpack_require__(521);
+	    toInteger = __webpack_require__(524),
+	    values = __webpack_require__(527);
 	
 	/* Built-in method references for those with the same name as other `lodash` methods. */
 	var nativeMax = Math.max;
@@ -50425,12 +51335,12 @@
 
 
 /***/ },
-/* 514 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseFindIndex = __webpack_require__(515),
-	    baseIsNaN = __webpack_require__(516),
-	    strictIndexOf = __webpack_require__(517);
+	var baseFindIndex = __webpack_require__(521),
+	    baseIsNaN = __webpack_require__(522),
+	    strictIndexOf = __webpack_require__(523);
 	
 	/**
 	 * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
@@ -50451,7 +51361,7 @@
 
 
 /***/ },
-/* 515 */
+/* 521 */
 /***/ function(module, exports) {
 
 	/**
@@ -50481,7 +51391,7 @@
 
 
 /***/ },
-/* 516 */
+/* 522 */
 /***/ function(module, exports) {
 
 	/**
@@ -50499,7 +51409,7 @@
 
 
 /***/ },
-/* 517 */
+/* 523 */
 /***/ function(module, exports) {
 
 	/**
@@ -50528,10 +51438,10 @@
 
 
 /***/ },
-/* 518 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toFinite = __webpack_require__(519);
+	var toFinite = __webpack_require__(525);
 	
 	/**
 	 * Converts `value` to an integer.
@@ -50570,10 +51480,10 @@
 
 
 /***/ },
-/* 519 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toNumber = __webpack_require__(520);
+	var toNumber = __webpack_require__(526);
 	
 	/** Used as references for various `Number` constants. */
 	var INFINITY = 1 / 0,
@@ -50618,7 +51528,7 @@
 
 
 /***/ },
-/* 520 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(275),
@@ -50690,10 +51600,10 @@
 
 
 /***/ },
-/* 521 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseValues = __webpack_require__(522),
+	var baseValues = __webpack_require__(528),
 	    keys = __webpack_require__(247);
 	
 	/**
@@ -50730,7 +51640,7 @@
 
 
 /***/ },
-/* 522 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayMap = __webpack_require__(353);
@@ -50755,13 +51665,13 @@
 
 
 /***/ },
-/* 523 */
+/* 529 */
 /***/ function(module, exports) {
 
 	module.exports = {"title":"HTML <u>still</u> ROCKS!","body":"<!--\ntitle: HTML <u>still</u> ROCKS!\n-->\n<p>You can also author content in raw HTML if that's your flavoring. Gatsby handles\nthat just fine.</p>\n"}
 
 /***/ },
-/* 524 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50786,19 +51696,19 @@
 	
 	var _config = __webpack_require__(381);
 	
-	var _ravenJs = __webpack_require__(525);
+	var _ravenJs = __webpack_require__(531);
 	
 	var _ravenJs2 = _interopRequireDefault(_ravenJs);
 	
-	var _webgl = __webpack_require__(507);
+	var _webgl = __webpack_require__(513);
 	
 	var _webgl2 = _interopRequireDefault(_webgl);
 	
-	var _ravenJsExposedNull = __webpack_require__(532);
+	var _ravenJsExposedNull = __webpack_require__(538);
 	
 	var _ravenJsExposedNull2 = _interopRequireDefault(_ravenJsExposedNull);
 	
-	__webpack_require__(510);
+	__webpack_require__(516);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -50843,7 +51753,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 525 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -50854,7 +51764,7 @@
 	
 	'use strict';
 	
-	var RavenConstructor = __webpack_require__(526);
+	var RavenConstructor = __webpack_require__(532);
 	
 	// This is to be defensive in environments where window does not exist (see https://github.com/getsentry/raven-js/pull/785)
 	var _window = typeof window !== 'undefined' ? window
@@ -50883,21 +51793,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 526 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*global XDomainRequest:false, __DEV__:false*/
 	'use strict';
 	
-	var TraceKit = __webpack_require__(527);
-	var stringify = __webpack_require__(529);
-	var RavenConfigError = __webpack_require__(530);
-	var utils = __webpack_require__(528);
+	var TraceKit = __webpack_require__(533);
+	var stringify = __webpack_require__(535);
+	var RavenConfigError = __webpack_require__(536);
+	var utils = __webpack_require__(534);
 	
 	var isError = utils.isError,
 	    isObject = utils.isObject;
 	
-	var wrapConsoleMethod = __webpack_require__(531).wrapMethod;
+	var wrapConsoleMethod = __webpack_require__(537).wrapMethod;
 	
 	var dsnKeys = 'source protocol user pass host port path'.split(' '),
 	    dsnPattern = /^(?:(\w+):)?\/\/(?:(\w+)(:\w+)?@)?([\w\.-]+)(?::(\d+))?(\/.*)/;
@@ -52864,12 +53774,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 527 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
-	var utils = __webpack_require__(528);
+	var utils = __webpack_require__(534);
 	
 	/*
 	 TraceKit - Cross brower stack traces
@@ -53487,7 +54397,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 528 */
+/* 534 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53512,7 +54422,7 @@
 	};
 
 /***/ },
-/* 529 */
+/* 535 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53565,7 +54475,7 @@
 
 
 /***/ },
-/* 530 */
+/* 536 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53581,7 +54491,7 @@
 
 
 /***/ },
-/* 531 */
+/* 537 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53624,7 +54534,7 @@
 
 
 /***/ },
-/* 532 */
+/* 538 */
 /***/ function(module, exports) {
 
 	const exposedNullRE = /undefined|NaN|\[object Object\]/;
@@ -53705,13 +54615,13 @@
 
 
 /***/ },
-/* 533 */
+/* 539 */
 /***/ function(module, exports) {
 
 	module.exports = {"title":"hello world","body":"<p>this is one of those blog posts about how I’m going to start blogging… watch this space or whatever!\ndata is code</p>\n<h2>You can have lists</h2>\n<h3>Numbered</h3>\n<ol>\n<li>me first!</li>\n<li>I’m second!</li>\n<li>third :(</li>\n</ol>\n<h3>Unordered</h3>\n<ul>\n<li>Cheese</li>\n<li>is actually</li>\n<li>really good</li>\n</ul>\n<p>And <strong>lots</strong> of other <em>fun</em> stuff.</p>\n<blockquote>\n<p>Block quotes are\nwritten like so.</p>\n<p>They can span multiple paragraphs,\nif you like.</p>\n</blockquote>\n<h2>Enable additional syntax with Markdown-it plugins</h2>\n<p>You can add additional Markdown-it plugins with\n<a href=\"https://github.com/gatsbyjs/gatsby-starter-default/blob/master/loaders/markdown-loader/index.js#L22-L32\">a custom markdown loader</a>.</p>\n<h3>Subscript</h3>\n<p>H<sub>2</sub>0</p>\n<h3>Footnote</h3>\n<p>Here is an inline note.<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<h3>Definition lists</h3>\n<dl>\n<dt>Term 1</dt>\n<dd>\n<p>Definition 1</p>\n</dd>\n<dt>Term 2 with <em>inline markup</em></dt>\n<dd>\n<p>Definition 2</p>\n<pre><code>  { some code, part of Definition 2 }\n</code></pre>\n<p>Third paragraph of definition 2.</p>\n</dd>\n</dl>\n<h3>Abbreviation</h3>\n<p>The <abbr title=\"Hyper Text Markup Language\">HTML</abbr> specification\nis maintained by the <abbr title=\"World Wide Web Consortium\">W3C</abbr>.</p>\n<h3>Add a class or other attributes to content.</h3>\n<p class=\"warning\">here be dragons</p>\n<h2>Some code</h2>\n<p>Javascript</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">$initHighlight</span>(<span class=\"hljs-params\">block, flags</span>) </span>{\n  <span class=\"hljs-keyword\">try</span> {\n    <span class=\"hljs-keyword\">if</span> (block.className.search(<span class=\"hljs-regexp\">/\\bno\\-highlight\\b/</span>) != <span class=\"hljs-number\">-1</span>)\n      <span class=\"hljs-keyword\">return</span> processBlock(block, <span class=\"hljs-literal\">true</span>, <span class=\"hljs-number\">0x0F</span>) + <span class=\"hljs-string\">' class=\"\"'</span>;\n  } <span class=\"hljs-keyword\">catch</span> (e) {\n    <span class=\"hljs-comment\">/* handle exception */</span>\n  }\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">0</span> / <span class=\"hljs-number\">2</span>; i &lt; classes.length; i++) { <span class=\"hljs-comment\">// \"0 / 2\" should not be parsed as regexp</span>\n    <span class=\"hljs-keyword\">if</span> (checkCondition(classes[i]) === <span class=\"hljs-literal\">undefined</span>)\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-regexp\">/\\d+/g</span>;\n  }\n}\n</code></pre>\n<p>Python</p>\n<pre><code class=\"language-python\"><span class=\"hljs-keyword\">import</span> time\n<span class=\"hljs-comment\"># Quick, count to ten!</span>\n<span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">10</span>):\n    <span class=\"hljs-comment\"># (but not *too* quick)</span>\n    time.sleep(<span class=\"hljs-number\">0.5</span>)\n    <span class=\"hljs-keyword\">print</span> i\n</code></pre>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Inlines notes are easier to write, since\nyou don't have to pick an identifier and move down to type the\nnote. <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"}
 
 /***/ },
-/* 534 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__, __webpack_module_template_argument_0__) {
 
 	/**
