@@ -372,7 +372,7 @@ float sceneSDF(vec3 p){
  vec3 q = opRep(p,vec3(2.0) );
 float f = (sin(time*0.7)) * 15.;
 float a = 20.;
-return torusBall(p, vec2(.4+(mouse.x*0.1), .04+(mouse.y*0.1)))
+return torusBall(p, vec2(.4, .04))
  + sin(f*p.x)*
    sin(f*p.y)*
    sin(f*p.z)*0.1;
@@ -439,10 +439,11 @@ void main () {
 
 
     vec3 viewDir = rayDirection(45.0, vec2(1.0), st);
-     vec3 eye = normalize(vec3(sin(time/4.+3.),
-                               sin(time/4.+2.),
-                               sin(time/4.+1.)
-                          ))*2.5;
+     vec3 eye = normalize(vec3(
+      sin(time/4.+3.),
+      sin(time/4.+2.),
+      sin(time/4.+1.)
+      ))*2.5;
 
     mat4 viewToWorld = viewMatrix(eye, vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0));
 
@@ -463,13 +464,15 @@ void main () {
         {
           float fi = float(i) / float(maxSteps);
           vec3 angle = rgb2hsv(estimateNormal(p));
-          angle.r += time/10.;
-          angle.g = 0.3;
-          angle.b = 0.9;
+
+          angle.r += time/(8.0+mouse.y)+mouse.x;//h
+          angle.g = 0.3;//s
+          angle.b = 0.9;//v
           // angle.
           angle = hsv2rgb(angle);
           color = vec4(angle, 1.0) ; // Sphere color
           found = 1;
+
           // color/.a = 0.9;
           break;
         }
@@ -481,8 +484,9 @@ void main () {
     vec2 jitter = vec2(0.005, 0.00) * (noise(st*100.*time)- vec2(0.5));
     vec2 fall = vec2(0.0, 0.005) * (noise(st*1000.+time));
     // vec2 suction = vec2(0.);
-
-    vec2 sampleLoc = jitter + fall +  stN;// + fall + suction;
+    // vec2 push = (mouse / resolution) *0.5;
+    // vec2
+    vec2 sampleLoc = jitter + fall + stN;// + push;// + fall + suction;
 
     vec4 g = texture2D(backBuffer, sampleLoc).rgba;
     // color +=
