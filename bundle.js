@@ -54881,7 +54881,7 @@
 	    let s = e.nodeName;
 	    if (s) s = s.toLowerCase();
 	    if (e.id) s += '#' + e.id;
-	    if (e.className) s += '.' + className;
+	    if (e.className) s += '.' + e.className;
 	    return s;
 	  });
 	}
