@@ -1,7 +1,8 @@
 import React, {PropTypes} from "react";
 import fShaderSource from "./fragmentShader.js"
 
-const vsSource = ` attribute vec3 aPosition;
+const vsSource = `
+attribute vec3 aPosition;
 varying vec2 uvN;
 void main()
 {
@@ -56,7 +57,7 @@ export default React.createClass({
       state.mouse = {x: 0, y: 0};
       this.loadProgram();
     }
-    
+
     if(this.state.ready){
       init();
     }else{

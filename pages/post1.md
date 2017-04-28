@@ -1,88 +1,119 @@
 ---
-title: hello world
+title: Thinking about Color
 ---
 
-this is one of those blog posts about how I'm going to start blogging... watch this space or whatever!
-data is code
-## You can have lists
+When you build things on the web, you get to choose colors, which is incredible and fun, but can also be a huge challenge.
 
-### Numbered
-1. me first!
-2. I'm second!
-3. third :(
+Choosing colors shares two things with many other difficult decisions:
+there are a **lot** of choices, and there's no direct criteria for evaluating your decisions.
 
-### Unordered
-* Cheese
-* is actually
-* really good
+Reducing your choices to some cohesive subset of the 16,777,216 available colors certainly helps. People do this all the time, by selecting from [prebuilt](http://materialuicolors.co/) [pallets](https://www.w3schools.com/colors/colors_names.asp), and it's an effective aid, but also a limiting one.
 
-And **lots** of other *fun* stuff.
+The second question, evaluating a color choice, is a lot more interesting, and something that's always bothered me! Knowing when something looks <span class=red>bad</span> is easy, but knowing why isn't. It's frustrating to waffle back and forth on color decisions, unsure whether you're making things better. Color is something that people use a lot of intuition for, and I felt like I didn't have it.
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+![Interactions of Color](https://images-na.ssl-images-amazon.com/images/I/71OmBWr2ijL.jpg)
+This frustration and lack of understanding of color is one of the reasons I picked up the book *Interactions of Color* by Joesph Albers. I'm glad I did, because while there's no epiphany or set of rules that will make you into the hex code Henri Matisse, I learned some tools for thinking about how color operates that lend structure and confidence to my decisions.
 
-## Enable additional syntax with Markdown-it plugins
+Albers's central thesis that color's power and effects all come from their interactions. The book doesn't discuss the comparative merits of mint green, or burnt umber. Instead, it focuses on stressing the extreme relativity of the way we experience color, through a series of experiments and optical puzzles.
 
-You can add additional Markdown-it plugins with
-[a custom markdown loader](https://github.com/gatsbyjs/gatsby-starter-default/blob/master/loaders/markdown-loader/index.js#L22-L32).
+* why color paper
+* Intesity
+* 1 becomes 2, 2 become 1, etc
+* color boundaries and distance (vibrating and disapearing)
+* optical mixture
+* weber-fechner law
+<div class="plate">
+  <div class="ground ground-left">
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+  </div>
+  <div class="ground ground-right">
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+  </div>
+</div>
 
-### Subscript
-H~2~0
+<div class="plate-two">
+  <div class="ground ground-left">
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+  </div>
+  <div class="ground ground-right">
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+  </div>
+</div>
+
+<div class="plate-three">
+  <div class="ground ground-left">
+    <div class="paper gradient">
+      <div class="layer"></div>
+    </div>
+    <div class="paper gradient">
+    <!-- <div class="layer"></div> -->
+    <div class="layer"></div>
+    </div>
+    <div class="paper gradient">
+      <!-- <div class="layer"></div> -->
+      <!-- <div class="layer"></div> -->
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+    <div class="paper gradient">
+      <!-- <div class="layer"></div> -->
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+    <div class="paper gradient">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+  </div>
+  <div class="ground ground-right">
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+    <div class="paper gradient"></div>
+  </div>
+</div>
+
+>“...Good teaching is more a giving of right questions than a
+>giving of right answers.”
+
 
 ### Footnote
 Here is an inline note.^[Inlines notes are easier to write, since
 you don't have to pick an identifier and move down to type the
 note.]
-
-### Definition lists
-Term 1
-
-:   Definition 1
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-### Abbreviation
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium
-The HTML specification
-is maintained by the W3C.
-
-### Add a class or other attributes to content.
-here be dragons {.warning}
-
-## Some code
-
-Javascript
-```javascript
-function $initHighlight(block, flags) {
-  try {
-    if (block.className.search(/\bno\-highlight\b/) != -1)
-      return processBlock(block, true, 0x0F) + ' class=""';
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) { // "0 / 2" should not be parsed as regexp
-    if (checkCondition(classes[i]) === undefined)
-      return /\d+/g;
-  }
-}
-```
-
-Python
-```python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-```

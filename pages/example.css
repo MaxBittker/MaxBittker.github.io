@@ -24,3 +24,8 @@
 .the-postcss-class {
   text-decoration: underline;
 }
+
+.Embedheader{
+  display: none;
+  height: 100px
+}
