@@ -94,12 +94,12 @@
 	
 	var _createRoutes2 = _interopRequireDefault(_createRoutes);
 	
-	var _gatsbyBrowser = __webpack_require__(511);
+	var _gatsbyBrowser = __webpack_require__(512);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/*  weak */
-	var loadContext = __webpack_require__(512);
+	var loadContext = __webpack_require__(513);
 	
 	function loadConfig(cb) {
 	  var stuff = __webpack_require__(384);
@@ -590,7 +590,7 @@
 
 /***/ }),
 /* 6 */
-[543, 7],
+[544, 7],
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -5777,7 +5777,7 @@
 
 /***/ }),
 /* 50 */
-[543, 35],
+[544, 35],
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31350,7 +31350,26 @@
 				"requirePath": "post1.md",
 				"path": "/post1/",
 				"data": {
-					"title": "hello world"
+					"title": "Thinking about Color (WIP)"
+				}
+			},
+			{
+				"file": {
+					"root": "",
+					"dir": "",
+					"base": "post2.md",
+					"ext": "md",
+					"name": "post2",
+					"extname": ".md",
+					"basename": "post2.md",
+					"dirname": "",
+					"stem": "post2",
+					"path": "post2.md"
+				},
+				"requirePath": "post2.md",
+				"path": "/post2/",
+				"data": {
+					"title": "Merging Maps"
 				}
 			}
 		]
@@ -35987,12 +36006,12 @@
 		"./html.js": 459,
 		"./json": 465,
 		"./json.js": 465,
-		"./md": 472,
-		"./md.js": 472,
-		"./toml": 473,
-		"./toml.js": 473,
-		"./yaml": 475,
-		"./yaml.js": 475
+		"./md": 473,
+		"./md.js": 473,
+		"./toml": 474,
+		"./toml.js": 474,
+		"./yaml": 476,
+		"./yaml.js": 476
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -36859,9 +36878,11 @@
 	
 	var _reactInstagramEmbed2 = _interopRequireDefault(_reactInstagramEmbed);
 	
+	__webpack_require__(472);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var iposts = ['BSsEwCaljLZ', 'BSr_6pzFOxz', 'BSp3AeEl_0M', 'BSp1S1SlMZ9', 'BSovCWQl4ZF', 'BSZ2CsXF6tw', 'BRkXPqAF4k8', 'BRkWobilG3s', 'BRkH1GqFf8K', 'BRj6ObglyAV', 'BQw80pWlAXn', 'BQwMWc-F05R', 'BQvyTPMFv-C', 'BQutvtKFlaL', 'BQt8DSNlYvr', 'BQrSnwml5fY', 'BQrH0NKlrrI', 'BQqyuDMFP', 'BQqtXolFqIw', 'BPzE9fhAIFU', 'BPl4Mm7A898', 'BPl0xl2ANXF', 'BPVzIArgxqV', 'BPTsg38AyQ9', 'BOgJf9bgDXO'].map(function (url) {
+	var iposts = ['BSsEwCaljLZ', 'BSr_6pzFOxz', 'BSp3AeEl_0M', 'BSp1S1SlMZ9', 'BSovCWQl4ZF', 'BSZ2CsXF6tw', 'BRkXPqAF4k8', 'BRkWobilG3s', 'BRkH1GqFf8K', 'BRj6ObglyAV', 'BQw80pWlAXn', 'BQwMWc-F05R', 'BQvyTPMFv-C', 'BQutvtKFlaL', 'BQt8DSNlYvr', 'BQrSnwml5fY', 'BQrH0NKlrrI', 'BQqyuDMFP-x', 'BQqtXolFqIw', 'BPzE9fhAIFU', 'BPl4Mm7A898', 'BPl0xl2ANXF', 'BPVzIArgxqV', 'BPTsg38AyQ9', 'BOgJf9bgDXO'].map(function (url) {
 	  return { name: 'ipost', loc: url };
 	});
 	
@@ -36890,29 +36911,32 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        { key: i,
-	          style: { height: '80%',
-	            width: '80%',
-	            margin: 'auto' } },
-	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, { url: 'https://instagr.am/p/' + loc, maxWidth: 640 }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
+	        {
+	          key: i,
+	          style: {
+	            // height: '80%',
+	            width: '30%',
+	            minWidth: '200px',
+	            margin: 'auto'
+	          }
+	        },
+	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, {
+	          url: 'https://instagr.am/p/' + loc,
+	          maxWidth: 300,
+	          hideCaption: true,
+	          ref: ''
+	        }) : _react2.default.createElement('img', { src: (0, _gatsbyHelpers.prefixLink)('/screenshots/' + loc) })
 	      );
 	    });
 	
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_reactHelmet2.default, {
-	        title: _config.config.siteTitle + ' | ' + data.title
-	      }),
+	      _react2.default.createElement(_reactHelmet2.default, { title: _config.config.siteTitle + ' | ' + data.title }),
 	      _react2.default.createElement(
 	        'h1',
 	        null,
 	        'Generative Artwork'
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        'mostly built with clojurescript, reagent, svg, a pen plotter, and WebGL.'
 	      ),
 	      _react2.default.createElement(
 	        'div',
@@ -37032,7 +37056,8 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(this.props.containerTagName, _extends({
-	        dangerouslySetInnerHTML: { __html: this.state.__html } }, this.omitComponentProps()));
+	        dangerouslySetInnerHTML: { __html: this.state.__html }
+	      }, this.omitComponentProps()));
 	    }
 	  }, {
 	    key: 'omitComponentProps',
@@ -37107,6 +37132,7 @@
 	
 	  this.handleFetchSuccess = function (response) {
 	    _this5.props.onSuccess && _this5.props.onSuccess(response);
+	    console.log(response.html);
 	    _this5.setState({ __html: response.html }, function () {
 	      return window.instgrm.Embeds.process();
 	    });
@@ -37833,6 +37859,8 @@
 
 /***/ }),
 /* 472 */
+406,
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37877,7 +37905,7 @@
 	});
 
 /***/ }),
-/* 473 */
+/* 474 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37886,7 +37914,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tomlJs = __webpack_require__(474);
+	var _tomlJs = __webpack_require__(475);
 	
 	var _tomlJs2 = _interopRequireDefault(_tomlJs);
 	
@@ -37929,7 +37957,7 @@
 	});
 
 /***/ }),
-/* 474 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// TOML parser implementation, v0.0.8
@@ -38242,7 +38270,7 @@
 
 
 /***/ }),
-/* 475 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38251,7 +38279,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _jsYaml = __webpack_require__(476);
+	var _jsYaml = __webpack_require__(477);
 	
 	var _jsYaml2 = _interopRequireDefault(_jsYaml);
 	
@@ -38294,27 +38322,27 @@
 	});
 
 /***/ }),
-/* 476 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	var yaml = __webpack_require__(477);
-	
-	
-	module.exports = yaml;
-
-
-/***/ }),
 /* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	var loader = __webpack_require__(478);
-	var dumper = __webpack_require__(510);
+	var yaml = __webpack_require__(478);
+	
+	
+	module.exports = yaml;
+
+
+/***/ }),
+/* 478 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	
+	var loader = __webpack_require__(479);
+	var dumper = __webpack_require__(511);
 	
 	
 	function deprecated(name) {
@@ -38324,25 +38352,25 @@
 	}
 	
 	
-	module.exports.Type                = __webpack_require__(484);
-	module.exports.Schema              = __webpack_require__(483);
-	module.exports.FAILSAFE_SCHEMA     = __webpack_require__(487);
-	module.exports.JSON_SCHEMA         = __webpack_require__(486);
-	module.exports.CORE_SCHEMA         = __webpack_require__(485);
-	module.exports.DEFAULT_SAFE_SCHEMA = __webpack_require__(482);
-	module.exports.DEFAULT_FULL_SCHEMA = __webpack_require__(505);
+	module.exports.Type                = __webpack_require__(485);
+	module.exports.Schema              = __webpack_require__(484);
+	module.exports.FAILSAFE_SCHEMA     = __webpack_require__(488);
+	module.exports.JSON_SCHEMA         = __webpack_require__(487);
+	module.exports.CORE_SCHEMA         = __webpack_require__(486);
+	module.exports.DEFAULT_SAFE_SCHEMA = __webpack_require__(483);
+	module.exports.DEFAULT_FULL_SCHEMA = __webpack_require__(506);
 	module.exports.load                = loader.load;
 	module.exports.loadAll             = loader.loadAll;
 	module.exports.safeLoad            = loader.safeLoad;
 	module.exports.safeLoadAll         = loader.safeLoadAll;
 	module.exports.dump                = dumper.dump;
 	module.exports.safeDump            = dumper.safeDump;
-	module.exports.YAMLException       = __webpack_require__(480);
+	module.exports.YAMLException       = __webpack_require__(481);
 	
 	// Deprecated schema names from JS-YAML 2.0.x
-	module.exports.MINIMAL_SCHEMA = __webpack_require__(487);
-	module.exports.SAFE_SCHEMA    = __webpack_require__(482);
-	module.exports.DEFAULT_SCHEMA = __webpack_require__(505);
+	module.exports.MINIMAL_SCHEMA = __webpack_require__(488);
+	module.exports.SAFE_SCHEMA    = __webpack_require__(483);
+	module.exports.DEFAULT_SCHEMA = __webpack_require__(506);
 	
 	// Deprecated functions from JS-YAML 1.x.x
 	module.exports.scan           = deprecated('scan');
@@ -38352,18 +38380,18 @@
 
 
 /***/ }),
-/* 478 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable max-len,no-use-before-define*/
 	
-	var common              = __webpack_require__(479);
-	var YAMLException       = __webpack_require__(480);
-	var Mark                = __webpack_require__(481);
-	var DEFAULT_SAFE_SCHEMA = __webpack_require__(482);
-	var DEFAULT_FULL_SCHEMA = __webpack_require__(505);
+	var common              = __webpack_require__(480);
+	var YAMLException       = __webpack_require__(481);
+	var Mark                = __webpack_require__(482);
+	var DEFAULT_SAFE_SCHEMA = __webpack_require__(483);
+	var DEFAULT_FULL_SCHEMA = __webpack_require__(506);
 	
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -39949,7 +39977,7 @@
 
 
 /***/ }),
-/* 479 */
+/* 480 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -40014,7 +40042,7 @@
 
 
 /***/ }),
-/* 480 */
+/* 481 */
 /***/ (function(module, exports) {
 
 	// YAML error class. http://stackoverflow.com/questions/8458984
@@ -40063,13 +40091,13 @@
 
 
 /***/ }),
-/* 481 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	
-	var common = __webpack_require__(479);
+	var common = __webpack_require__(480);
 	
 	
 	function Mark(name, buffer, position, line, column) {
@@ -40145,7 +40173,7 @@
 
 
 /***/ }),
-/* 482 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// JS-YAML's default schema for `safeLoad` function.
@@ -40158,37 +40186,37 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(483);
+	var Schema = __webpack_require__(484);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(485)
+	    __webpack_require__(486)
 	  ],
 	  implicit: [
-	    __webpack_require__(495),
-	    __webpack_require__(496)
+	    __webpack_require__(496),
+	    __webpack_require__(497)
 	  ],
 	  explicit: [
-	    __webpack_require__(497),
-	    __webpack_require__(502),
+	    __webpack_require__(498),
 	    __webpack_require__(503),
-	    __webpack_require__(504)
+	    __webpack_require__(504),
+	    __webpack_require__(505)
 	  ]
 	});
 
 
 /***/ }),
-/* 483 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable max-len*/
 	
-	var common        = __webpack_require__(479);
-	var YAMLException = __webpack_require__(480);
-	var Type          = __webpack_require__(484);
+	var common        = __webpack_require__(480);
+	var YAMLException = __webpack_require__(481);
+	var Type          = __webpack_require__(485);
 	
 	
 	function compileList(schema, name, result) {
@@ -40293,12 +40321,12 @@
 
 
 /***/ }),
-/* 484 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var YAMLException = __webpack_require__(480);
+	var YAMLException = __webpack_require__(481);
 	
 	var TYPE_CONSTRUCTOR_OPTIONS = [
 	  'kind',
@@ -40360,7 +40388,7 @@
 
 
 /***/ }),
-/* 485 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// Standard YAML's Core schema.
@@ -40373,18 +40401,18 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(483);
+	var Schema = __webpack_require__(484);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(486)
+	    __webpack_require__(487)
 	  ]
 	});
 
 
 /***/ }),
-/* 486 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// Standard YAML's JSON schema.
@@ -40398,24 +40426,24 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(483);
+	var Schema = __webpack_require__(484);
 	
 	
 	module.exports = new Schema({
 	  include: [
-	    __webpack_require__(487)
+	    __webpack_require__(488)
 	  ],
 	  implicit: [
-	    __webpack_require__(491),
 	    __webpack_require__(492),
 	    __webpack_require__(493),
-	    __webpack_require__(494)
+	    __webpack_require__(494),
+	    __webpack_require__(495)
 	  ]
 	});
 
 
 /***/ }),
-/* 487 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// Standard YAML's Failsafe schema.
@@ -40425,29 +40453,15 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(483);
+	var Schema = __webpack_require__(484);
 	
 	
 	module.exports = new Schema({
 	  explicit: [
-	    __webpack_require__(488),
 	    __webpack_require__(489),
-	    __webpack_require__(490)
+	    __webpack_require__(490),
+	    __webpack_require__(491)
 	  ]
-	});
-
-
-/***/ }),
-/* 488 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var Type = __webpack_require__(484);
-	
-	module.exports = new Type('tag:yaml.org,2002:str', {
-	  kind: 'scalar',
-	  construct: function (data) { return data !== null ? data : ''; }
 	});
 
 
@@ -40457,11 +40471,11 @@
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
-	module.exports = new Type('tag:yaml.org,2002:seq', {
-	  kind: 'sequence',
-	  construct: function (data) { return data !== null ? data : []; }
+	module.exports = new Type('tag:yaml.org,2002:str', {
+	  kind: 'scalar',
+	  construct: function (data) { return data !== null ? data : ''; }
 	});
 
 
@@ -40471,11 +40485,11 @@
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
-	module.exports = new Type('tag:yaml.org,2002:map', {
-	  kind: 'mapping',
-	  construct: function (data) { return data !== null ? data : {}; }
+	module.exports = new Type('tag:yaml.org,2002:seq', {
+	  kind: 'sequence',
+	  construct: function (data) { return data !== null ? data : []; }
 	});
 
 
@@ -40485,7 +40499,21 @@
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
+	
+	module.exports = new Type('tag:yaml.org,2002:map', {
+	  kind: 'mapping',
+	  construct: function (data) { return data !== null ? data : {}; }
+	});
+
+
+/***/ }),
+/* 492 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var Type = __webpack_require__(485);
 	
 	function resolveYamlNull(data) {
 	  if (data === null) return true;
@@ -40520,12 +40548,12 @@
 
 
 /***/ }),
-/* 492 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	function resolveYamlBoolean(data) {
 	  if (data === null) return false;
@@ -40561,13 +40589,13 @@
 
 
 /***/ }),
-/* 493 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var common = __webpack_require__(479);
-	var Type   = __webpack_require__(484);
+	var common = __webpack_require__(480);
+	var Type   = __webpack_require__(485);
 	
 	function isHexCode(c) {
 	  return ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) ||
@@ -40739,13 +40767,13 @@
 
 
 /***/ }),
-/* 494 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var common = __webpack_require__(479);
-	var Type   = __webpack_require__(484);
+	var common = __webpack_require__(480);
+	var Type   = __webpack_require__(485);
 	
 	var YAML_FLOAT_PATTERN = new RegExp(
 	  // 2.5e4, 2.5 and integers
@@ -40861,12 +40889,12 @@
 
 
 /***/ }),
-/* 495 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	var YAML_DATE_REGEXP = new RegExp(
 	  '^([0-9][0-9][0-9][0-9])'          + // [1] year
@@ -40955,12 +40983,12 @@
 
 
 /***/ }),
-/* 496 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	function resolveYamlMerge(data) {
 	  return data === '<<' || data === null;
@@ -40973,7 +41001,7 @@
 
 
 /***/ }),
-/* 497 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var require;'use strict';
@@ -40985,10 +41013,10 @@
 	try {
 	  // A trick for browserified version, to not include `Buffer` shim
 	  var _require = require;
-	  NodeBuffer = __webpack_require__(498).Buffer;
+	  NodeBuffer = __webpack_require__(499).Buffer;
 	} catch (__) {}
 	
-	var Type       = __webpack_require__(484);
+	var Type       = __webpack_require__(485);
 	
 	
 	// [ 64, 65, 66 ] -> [ padding, CR, LF ]
@@ -41117,7 +41145,7 @@
 
 
 /***/ }),
-/* 498 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -41130,9 +41158,9 @@
 	
 	'use strict'
 	
-	var base64 = __webpack_require__(499)
-	var ieee754 = __webpack_require__(500)
-	var isArray = __webpack_require__(501)
+	var base64 = __webpack_require__(500)
+	var ieee754 = __webpack_require__(501)
+	var isArray = __webpack_require__(502)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -42913,7 +42941,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 499 */
+/* 500 */
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -43033,7 +43061,7 @@
 
 
 /***/ }),
-/* 500 */
+/* 501 */
 /***/ (function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -43123,7 +43151,7 @@
 
 
 /***/ }),
-/* 501 */
+/* 502 */
 /***/ (function(module, exports) {
 
 	var toString = {}.toString;
@@ -43134,12 +43162,12 @@
 
 
 /***/ }),
-/* 502 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
 	var _toString       = Object.prototype.toString;
@@ -43184,12 +43212,12 @@
 
 
 /***/ }),
-/* 503 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	var _toString = Object.prototype.toString;
 	
@@ -43243,12 +43271,12 @@
 
 
 /***/ }),
-/* 504 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
 	
@@ -43278,7 +43306,7 @@
 
 
 /***/ }),
-/* 505 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// JS-YAML's default schema for `load` function.
@@ -43293,28 +43321,28 @@
 	'use strict';
 	
 	
-	var Schema = __webpack_require__(483);
+	var Schema = __webpack_require__(484);
 	
 	
 	module.exports = Schema.DEFAULT = new Schema({
 	  include: [
-	    __webpack_require__(482)
+	    __webpack_require__(483)
 	  ],
 	  explicit: [
-	    __webpack_require__(506),
 	    __webpack_require__(507),
-	    __webpack_require__(508)
+	    __webpack_require__(508),
+	    __webpack_require__(509)
 	  ]
 	});
 
 
 /***/ }),
-/* 506 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	function resolveJavascriptUndefined() {
 	  return true;
@@ -43343,12 +43371,12 @@
 
 
 /***/ }),
-/* 507 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	function resolveJavascriptRegExp(data) {
 	  if (data === null) return false;
@@ -43409,7 +43437,7 @@
 
 
 /***/ }),
-/* 508 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var require;'use strict';
@@ -43426,13 +43454,13 @@
 	try {
 	  // workaround to exclude package from browserify list.
 	  var _require = require;
-	  esprima = __webpack_require__(509);
+	  esprima = __webpack_require__(510);
 	} catch (_) {
 	  /*global window */
 	  if (typeof window !== 'undefined') esprima = window.esprima;
 	}
 	
-	var Type = __webpack_require__(484);
+	var Type = __webpack_require__(485);
 	
 	function resolveJavascriptFunction(data) {
 	  if (data === null) return false;
@@ -43499,7 +43527,7 @@
 
 
 /***/ }),
-/* 509 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -49905,17 +49933,17 @@
 	;
 
 /***/ }),
-/* 510 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	/*eslint-disable no-use-before-define*/
 	
-	var common              = __webpack_require__(479);
-	var YAMLException       = __webpack_require__(480);
-	var DEFAULT_FULL_SCHEMA = __webpack_require__(505);
-	var DEFAULT_SAFE_SCHEMA = __webpack_require__(482);
+	var common              = __webpack_require__(480);
+	var YAMLException       = __webpack_require__(481);
+	var DEFAULT_FULL_SCHEMA = __webpack_require__(506);
+	var DEFAULT_SAFE_SCHEMA = __webpack_require__(483);
 	
 	var _toString       = Object.prototype.toString;
 	var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -50712,13 +50740,13 @@
 
 
 /***/ }),
-/* 511 */
+/* 512 */
 /***/ (function(module, exports) {
 
 	"use strict";
 
 /***/ }),
-/* 512 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50728,7 +50756,7 @@
 	// files from your pages directory.
 	
 	module.exports = function (callback) {
-	  var context = __webpack_require__(513); // eslint-disable-line
+	  var context = __webpack_require__(514); // eslint-disable-line
 	  if (false) {
 	    module.hot.accept(context.id, function () {
 	      context = require.context('./pages', true, /(coffee|cjsx|ts|tsx|jsx|js|md|rmd|mkdn?|mdwn|mdown|markdown|litcoffee|ipynb|html|json|yaml|toml)$/); // eslint-disable-line
@@ -50739,18 +50767,19 @@
 	};
 
 /***/ }),
-/* 513 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./404.md": 514,
+		"./404.md": 515,
 		"./_template.jsx": 386,
-		"./about.js": 515,
+		"./about.js": 516,
 		"./art.json": 520,
 		"./blog.js": 521,
 		"./html.html": 532,
 		"./index.js": 533,
-		"./post1.md": 542
+		"./post1.md": 542,
+		"./post2.md": 543
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -50763,17 +50792,17 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 513;
+	webpackContext.id = 514;
 
 
 /***/ }),
-/* 514 */
+/* 515 */
 /***/ (function(module, exports) {
 
 	module.exports = {"path":"/404.html","body":"<h1>NOT FOUND</h1>\n<p>This route doesn’t exist – I probably messed up a link.</p>\n"}
 
 /***/ }),
-/* 515 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50798,15 +50827,15 @@
 	
 	var _config = __webpack_require__(384);
 	
-	var _webgl = __webpack_require__(516);
+	var _webgl = __webpack_require__(517);
 	
 	var _webgl2 = _interopRequireDefault(_webgl);
 	
-	var _rcscout = __webpack_require__(518);
+	var _rcscout = __webpack_require__(519);
 	
 	var _rcscout2 = _interopRequireDefault(_rcscout);
 	
-	__webpack_require__(519);
+	__webpack_require__(472);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -50977,7 +51006,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 516 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50990,7 +51019,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _fragmentShader = __webpack_require__(517);
+	var _fragmentShader = __webpack_require__(518);
 	
 	var _fragmentShader2 = _interopRequireDefault(_fragmentShader);
 	
@@ -51258,7 +51287,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 517 */
+/* 518 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -51272,7 +51301,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 518 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51313,8 +51342,6 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 519 */
-406,
 /* 520 */
 /***/ (function(module, exports) {
 
@@ -51975,7 +52002,7 @@
 	
 	var _ravenJs2 = _interopRequireDefault(_ravenJs);
 	
-	var _webgl = __webpack_require__(516);
+	var _webgl = __webpack_require__(517);
 	
 	var _webgl2 = _interopRequireDefault(_webgl);
 	
@@ -51983,7 +52010,7 @@
 	
 	var _ravenJsExposedNull2 = _interopRequireDefault(_ravenJsExposedNull);
 	
-	__webpack_require__(519);
+	__webpack_require__(472);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -54964,10 +54991,16 @@
 /* 542 */
 /***/ (function(module, exports) {
 
-	module.exports = {"title":"hello world","body":"<p>this is one of those blog posts about how I’m going to start blogging… watch this space or whatever!\ndata is code</p>\n<h2>You can have lists</h2>\n<h3>Numbered</h3>\n<ol>\n<li>me first!</li>\n<li>I’m second!</li>\n<li>third :(</li>\n</ol>\n<h3>Unordered</h3>\n<ul>\n<li>Cheese</li>\n<li>is actually</li>\n<li>really good</li>\n</ul>\n<p>And <strong>lots</strong> of other <em>fun</em> stuff.</p>\n<blockquote>\n<p>Block quotes are\nwritten like so.</p>\n<p>They can span multiple paragraphs,\nif you like.</p>\n</blockquote>\n<h2>Enable additional syntax with Markdown-it plugins</h2>\n<p>You can add additional Markdown-it plugins with\n<a href=\"https://github.com/gatsbyjs/gatsby-starter-default/blob/master/loaders/markdown-loader/index.js#L22-L32\">a custom markdown loader</a>.</p>\n<h3>Subscript</h3>\n<p>H<sub>2</sub>0</p>\n<h3>Footnote</h3>\n<p>Here is an inline note.<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<h3>Definition lists</h3>\n<dl>\n<dt>Term 1</dt>\n<dd>\n<p>Definition 1</p>\n</dd>\n<dt>Term 2 with <em>inline markup</em></dt>\n<dd>\n<p>Definition 2</p>\n<pre><code>  { some code, part of Definition 2 }\n</code></pre>\n<p>Third paragraph of definition 2.</p>\n</dd>\n</dl>\n<h3>Abbreviation</h3>\n<p>The <abbr title=\"Hyper Text Markup Language\">HTML</abbr> specification\nis maintained by the <abbr title=\"World Wide Web Consortium\">W3C</abbr>.</p>\n<h3>Add a class or other attributes to content.</h3>\n<p class=\"warning\">here be dragons</p>\n<h2>Some code</h2>\n<p>Javascript</p>\n<pre><code class=\"language-javascript\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">$initHighlight</span>(<span class=\"hljs-params\">block, flags</span>) </span>{\n  <span class=\"hljs-keyword\">try</span> {\n    <span class=\"hljs-keyword\">if</span> (block.className.search(<span class=\"hljs-regexp\">/\\bno\\-highlight\\b/</span>) != <span class=\"hljs-number\">-1</span>)\n      <span class=\"hljs-keyword\">return</span> processBlock(block, <span class=\"hljs-literal\">true</span>, <span class=\"hljs-number\">0x0F</span>) + <span class=\"hljs-string\">' class=\"\"'</span>;\n  } <span class=\"hljs-keyword\">catch</span> (e) {\n    <span class=\"hljs-comment\">/* handle exception */</span>\n  }\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">0</span> / <span class=\"hljs-number\">2</span>; i &lt; classes.length; i++) { <span class=\"hljs-comment\">// \"0 / 2\" should not be parsed as regexp</span>\n    <span class=\"hljs-keyword\">if</span> (checkCondition(classes[i]) === <span class=\"hljs-literal\">undefined</span>)\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-regexp\">/\\d+/g</span>;\n  }\n}\n</code></pre>\n<p>Python</p>\n<pre><code class=\"language-python\"><span class=\"hljs-keyword\">import</span> time\n<span class=\"hljs-comment\"># Quick, count to ten!</span>\n<span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">10</span>):\n    <span class=\"hljs-comment\"># (but not *too* quick)</span>\n    time.sleep(<span class=\"hljs-number\">0.5</span>)\n    <span class=\"hljs-keyword\">print</span> i\n</code></pre>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Inlines notes are easier to write, since\nyou don't have to pick an identifier and move down to type the\nnote. <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"}
+	module.exports = {"title":"Thinking about Color (WIP)","body":"<p>(WIP)\nWhen you build things on the web, you get to choose colors, which is incredible and fun, but can also be a huge challenge.</p>\n<p>Choosing colors shares two things with many other difficult decisions:\nthere are a <strong>lot</strong> of choices, and there’s no direct criteria for evaluating your decisions.</p>\n<p>Reducing your choices to some cohesive subset of the 16,777,216 available colors certainly helps. People do this all the time, by selecting from <a href=\"http://materialuicolors.co/\">prebuilt</a> <a href=\"https://www.w3schools.com/colors/colors_names.asp\">pallets</a>, and it’s an effective aid, but also a limiting one.</p>\n<p>The second question, evaluating a color choice, is a lot more interesting, and something that’s always bothered me! Knowing when something looks <span class=red>bad</span> is easy, but knowing why isn’t. It’s frustrating to waffle back and forth on color decisions, unsure whether you’re making things better. Color is something that people use a lot of intuition for, and I felt like I didn’t have it.</p>\n<p><img src=\"https://images-na.ssl-images-amazon.com/images/I/71OmBWr2ijL.jpg\" alt=\"Interactions of Color\">\nThis frustration and lack of understanding of color is one of the reasons I picked up the book <em>Interactions of Color</em> by Joesph Albers. I’m glad I did, because while there’s no epiphany or set of rules that will make you into the hex code Henri Matisse, I learned some tools for thinking about how color operates that lend structure and confidence to my decisions.</p>\n<p>Albers’s central thesis that color’s power and effects all come from their interactions. The book doesn’t discuss the comparative merits of mint green, or burnt umber. Instead, it focuses on stressing the extreme relativity of the way we experience color, through a series of experiments and optical puzzles.</p>\n<ul>\n<li>why color paper</li>\n<li>Intesity</li>\n<li>1 becomes 2, 2 become 1, etc</li>\n<li>color boundaries and distance (vibrating and disapearing)</li>\n<li>optical mixture</li>\n<li>weber-fechner law</li>\n</ul>\n<div class=\"plate\">\n  <div class=\"ground ground-left\">\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n  </div>\n  <div class=\"ground ground-right\">\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n  </div>\n</div>\n<div class=\"plate-two\">\n  <div class=\"ground ground-left\">\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n  </div>\n  <div class=\"ground ground-right\">\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n  </div>\n</div>\n<div class=\"plate-three\">\n  <div class=\"ground ground-left\">\n    <div class=\"paper gradient\">\n      <div class=\"layer\"></div>\n    </div>\n    <div class=\"paper gradient\">\n    <!-- <div class=\"layer\"></div> -->\n    <div class=\"layer\"></div>\n    </div>\n    <div class=\"paper gradient\">\n      <!-- <div class=\"layer\"></div> -->\n      <!-- <div class=\"layer\"></div> -->\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n    </div>\n    <div class=\"paper gradient\">\n      <!-- <div class=\"layer\"></div> -->\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n    </div>\n    <div class=\"paper gradient\">\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n      <div class=\"layer\"></div>\n    </div>\n  </div>\n  <div class=\"ground ground-right\">\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n    <div class=\"paper gradient\"></div>\n  </div>\n</div>\n<blockquote>\n<p>“…Good teaching is more a giving of right questions than a\ngiving of right answers.”</p>\n</blockquote>\n<h3>Footnote</h3>\n<p>Here is an inline note.<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p>Inlines notes are easier to write, since\nyou don't have to pick an identifier and move down to type the\nnote. <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"}
 
 /***/ }),
 /* 543 */
+/***/ (function(module, exports) {
+
+	module.exports = {"title":"Merging Maps","body":"<blockquote>\n<p>“If I were going to give you a quick summary of what our codebase is like, I’d say it’s procedural code that manipulates maps.” <sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup></p>\n</blockquote>\n<p>Maps or <em>“Associative arrays”</em> are a ubiquitous abstraction in software development. They allow us to flexibly model data in a form that lends itself to manipulation, inspection, and portability.</p>\n<p>If you’re looking, you’ll see maps everywhere – in databases, file systems, serialization formats, object oriented programing languages, and most likely, all over your codebase.</p>\n<p>…Except you may not call them “maps” — key value data structures inexplicably have a different name in every single programming language:</p>\n<pre><code>{\n<span class=\"hljs-symbol\">  Python:</span> <span class=\"hljs-string\">\"Dictionary\"</span>,\n<span class=\"hljs-symbol\">  Javascript:</span> <span class=\"hljs-string\">\"Object\"</span>,\n<span class=\"hljs-symbol\">  Lua:</span> <span class=\"hljs-string\">\"Table\"</span>,\n<span class=\"hljs-symbol\">  Ruby:</span> <span class=\"hljs-string\">\"Hash\"</span>,\n<span class=\"hljs-symbol\">  Java:</span> <span class=\"hljs-string\">\"HashMap\"</span>,\n<span class=\"hljs-symbol\">  Clojure:</span> <span class=\"hljs-string\">\"Map\"</span>,\n<span class=\"hljs-symbol\">  Go:</span> <span class=\"hljs-string\">\"... also Map.\"</span>\n}\n</code></pre>\n<p>It’s not just the names. I’ve found the tradeoffs and ergonomics provided around maps to be a significant point of asymmetry between languages. The idea behind this post is to compare languages “fluency” in map processing through a common operation: merging multiple maps into one.</p>\n<h2>Merging Maps?</h2>\n<p>Merge is not a primitive operation on key value data structures in the same way that get, set, or enumeration are. That being said, building the union of two maps is unavoidable from mathematical and practical perspectives. So - what does it mean to me to have first class support for merging maps? Ideally, I’d like to see a single method that’s:</p>\n<dl>\n<dt>Composable</dt>\n<dd>Can you use it as an expression and nest it with other expressions?</dd>\n<dt>Varadic</dt>\n<dd>Can it merge more than two maps in a single invocation?</dd>\n<dt>Extensible</dt>\n<dd>Can you customize the value resolution strategy for key collisions?</dd>\n<dt>Preserving</dt>\n<dd>Does it mutate the original map, or return a new one?</dd>\n</dl>\n<p>You might read this analysis and feel that it’s meaningless to judge the quality of built-in merge functions, when any sort of merge functionality could be ‘trivially’ implemented, imported, or coaxed out of a slick one-liner from stack overflow.\nThis is all completely true – but I still hope you’ll find this comparison to be an interesting lens to the priorities and baseline “quality of life” of these languages.</p>\n<h3>Javascript:</h3>\n<pre><code class=\"language-javascript\">    <span class=\"hljs-built_in\">Object</span>.assign(\n      {<span class=\"hljs-attr\">shoulders</span>: <span class=\"hljs-number\">2</span>},\n      {<span class=\"hljs-attr\">knees</span>: <span class=\"hljs-number\">2</span>},\n      {<span class=\"hljs-attr\">toes</span>: <span class=\"hljs-number\">10</span>}\n    )\n</code></pre>\n<p><strong>composable, varadic, and preserving</strong></p>\n<p>Not Bad - slightly esoteric invocation, but it takes any number of dictionaries. The return value is the mutated first argument, but to side-step that, you can pass an empty object literal <strong><code>{}</code></strong> in the first position.</p>\n<p>It’s worth mentioning that being varadic is useful for javascript at runtime as well, because you can use the <strong><code>...</code></strong> spread operator to merge a dynamic number of objects from an array.</p>\n<p>No way to customize merge strategies with this function, you’ll need to defer to a helper library, or drop down to a <code>reduce</code> one-liner.</p>\n<p>Worth mentioning that like everything in javascript, there’s a caveat: This was part of the ECMAScript 2015 standard, and isn’t available in some older environments. <sup class=\"footnote-ref\"><a href=\"#fn2\" id=\"fnref2\">[2]</a></sup> in all JS environments.</p>\n<h3>Ruby:</h3>\n<pre><code class=\"language-ruby\">    mapA.merge(mapB)\n    <span class=\"hljs-comment\"># with collision resolution block:</span>\n    mapA.merge(mapB){<span class=\"hljs-params\">|key, valA, valB|</span> valA + valB}\n</code></pre>\n<p><strong>composable, extensible and preserving</strong></p>\n<p>There’s also a version <strong><code>merge!</code></strong> with the same api that <em>does</em> mutate the array, which is pretty sweet. In order to merge multiple hashes, you can invoke merge with <code>inject</code> (aka reduce aka fold) like this:</p>\n<pre><code class=\"language-ruby\">  [mapA, mapB, mapC].inject({}, <span class=\"hljs-symbol\">:merge</span>)\n</code></pre>\n<h3>Python:</h3>\n<pre><code class=\"language-python\">  dictB = {**dictA, **dictB, **dictC}\n</code></pre>\n<p><strong>composable, varadic, and preserving</strong></p>\n<p>This is quite nice - but only works in python 3.5+, taking advantage of the <strong><code>**</code></strong> dictionary unpacking operator. This makes it slightly harder to take advantage of if you have an array of dictionaries to merge.</p>\n<p>You can merge dictionaries in python 2.7 like so:</p>\n<pre><code class=\"language-python\">    dict(dictA.items() + dictB.items())\n</code></pre>\n<p>but be warned that <em>this one</em> doesn’t work in python 3.</p>\n<h3>Clojure:</h3>\n<pre><code class=\"language-clojure\">    (<span class=\"hljs-name\"><span class=\"hljs-builtin-name\">merge</span></span> {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">1</span>} {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">2</span> <span class=\"hljs-symbol\">:b</span> <span class=\"hljs-number\">3</span>} {<span class=\"hljs-symbol\">:c</span> <span class=\"hljs-number\">4</span>})\n    <span class=\"hljs-comment\">;;=&gt; {:a 2, :b 3, :c 4}</span>\n    (<span class=\"hljs-name\">merge-with</span> +\n      {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">1</span>  <span class=\"hljs-symbol\">:b</span> <span class=\"hljs-number\">2</span>}\n      {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">9</span>  <span class=\"hljs-symbol\">:b</span> <span class=\"hljs-number\">98</span> <span class=\"hljs-symbol\">:c</span> <span class=\"hljs-number\">0</span>})   \n    <span class=\"hljs-comment\">;;=&gt; {:a 10, :b 100, :c 0}</span>\n    (<span class=\"hljs-name\">merge-with</span> vector\n      {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">1</span>  <span class=\"hljs-symbol\">:b</span> <span class=\"hljs-number\">2</span>}\n      {<span class=\"hljs-symbol\">:a</span> <span class=\"hljs-number\">9</span>  <span class=\"hljs-symbol\">:b</span> <span class=\"hljs-number\">98</span> <span class=\"hljs-symbol\">:c</span> <span class=\"hljs-number\">0</span>})   \n    <span class=\"hljs-comment\">;;=&gt;{:a [1 9], :b [2 98], :c 0}</span>\n</code></pre>\n<p><strong>composable, varadic, extensible, and preserving</strong></p>\n<p>Because clojure syntax is just but clojure data structures in the first place, everything is an expression and so everything is composable - there <em>are</em> no statements. Map literals are often used as an argument syntax for functions with optional named arguments, and merge is a convenient way to override a map of defaults with a map of arguments.</p>\n<p>Clojure functions tend to follow a 0-1-many rule<sup class=\"footnote-ref\"><a href=\"#fn3\" id=\"fnref3\">[3]</a></sup> on how many arguments (of a certain type) they’ll accept, and there are a host of nice patterns like spreading, applying and destructuring to take full advantage of these varadic functions. It’s a language where it’s idiomatic to add a list of numbers by shoving them all into to a single <strong><code>+</code></strong> expression.</p>\n<p><code>merge-with</code> accepts a strategy for resolution, similar to ruby’s. The difference is that ruby’s block provides three arguments (key, valueA, valueB), where clojure has a simpler signature - just the values. This is actually a boon in many situations, because it means that you can skip writing an anonymous function and just make direct use of existing functions, like <strong><code>+</code></strong> and <strong><code>vector</code></strong> in the example.</p>\n<p>There’s one more hidden bonus here - clojure’s maps are backed by an immutable data structure that lets us non-destructively build a new map in less than linear time and memory, by internally pointing to old values where possible.</p>\n<h3>Java:</h3>\n<pre><code class=\"language-java\">    mapA.putAll(mapB);\n</code></pre>\n<p><strong>None of the above.</strong>\nBecause this function is a side effect with no return value, it can’t even be composed with other expressions. It’s worth mentioning that Java is world where people are likely to use other implementations of the <strong><code>Map&lt;K,V&gt;</code></strong> interface, like Guava’s <code>ImmutableMap</code>.</p>\n<h3>Go:</h3>\n<pre><code class=\"language-go\">    <span class=\"hljs-keyword\">for</span> k, v := <span class=\"hljs-keyword\">range</span> b {\n        a[k] = v\n    }\n</code></pre>\n<h3>Lua:</h3>\n<pre><code class=\"language-lua\">    <span class=\"hljs-keyword\">for</span> k, v <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">ipairs</span>(tableB) <span class=\"hljs-keyword\">do</span>\n      tableA.<span class=\"hljs-built_in\">insert</span>(k, v)\n    <span class=\"hljs-keyword\">end</span>\n</code></pre>\n<p>Go and Lua have no standard library implementations for merging their maps. Obviously writing things out imperativly gets the job done, but the performance and simplicity of these languages means you swallow productivity tradeoffs like this. <sup class=\"footnote-ref\"><a href=\"#fn4\" id=\"fnref4\">[4]</a></sup></p>\n<h3>C:</h3>\n<pre><code>    ¯\\<span class=\"hljs-keyword\">_</span>(ツ)<span class=\"hljs-keyword\">_</span>/¯\n</code></pre>\n<p>In C, there’s not even a built-in concept of a map. Either make do with arrays and the fixed-layout struct, import a library, or write your own tree/hash algorithm implementation.</p>\n<h2>Thanks for Reading!</h2>\n<p>I hope I’ve convinced you this was an worthwhile point of comparison. If you feel that your favorite language’s honor has been irreparably damaged by my ignorance, let me know - I’ll do my best to apply updates!</p>\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\" class=\"footnote-item\"><p><a href=\"https://blog.skyliner.io/fourteen-months-with-clojure-beb8b3e4bf00\"><em>Fourteen Months with Clojure</em></a> by Dan McKinley <a href=\"#fnref1\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn2\" class=\"footnote-item\"><p>If you need you Object.assign to work across all browsers, you need to polyfill or import a utility library <a href=\"#fnref2\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn3\" class=\"footnote-item\"><p><a href=\"https://en.wikipedia.org/wiki/Zero_one_infinity_rule\">Zero one infinity rule</a> <a href=\"#fnref3\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n<li id=\"fn4\" class=\"footnote-item\"><p>Most big Go or Lua projects end up pulling in dependencies like <a href=\"https://github.com/imdario/mergo\">mergo</a> or <a href=\"https://stevedonovan.github.io/Penlight/api/libraries/pl.tablex.html#Merging\">penlight tablex</a> <a href=\"#fnref4\" class=\"footnote-backref\">↩︎</a></p>\n</li>\n</ol>\n</section>\n"}
+
+/***/ }),
+/* 544 */
 /***/ (function(module, exports, __webpack_require__, __webpack_module_template_argument_0__) {
 
 	/**
