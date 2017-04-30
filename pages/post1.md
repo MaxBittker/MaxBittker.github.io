@@ -1,7 +1,8 @@
 ---
-title: Thinking about Color
+title: Thinking about Color (WIP)
 ---
 
+(WIP)
 When you build things on the web, you get to choose colors, which is incredible and fun, but can also be a huge challenge.
 
 Choosing colors shares two things with many other difficult decisions:
