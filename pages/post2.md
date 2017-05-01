@@ -122,7 +122,7 @@ There's one more hidden bonus here - clojure's maps are backed by an immutable d
     mapA.putAll(mapB);
 ```
 **None of the above.**
-Because this function is a side effect with no return value, it can't even be composed with other expressions. It's worth mentioning that Java is world where people are likely to use other implementations of the **`Map<K,V>`** interface, like Guava's `ImmutableMap`.
+Because this function is a side effect with no return value, it can't even be composed with other expressions. It's worth mentioning that Java is a world where people are likely to use other implementations of the **`Map<K,V>`** interface, like Guava's `ImmutableMap`.
 
 ### Go:
 ```go
@@ -136,7 +136,7 @@ Because this function is a side effect with no return value, it can't even be co
       tableA.insert(k, v)
     end
 ```
-Go and Lua have no standard library implementations for merging their maps. Obviously writing things out imperativly gets the job done, but the performance and simplicity of these languages means you swallow productivity tradeoffs like this. ^[Most big Go or Lua projects end up pulling in dependencies like [mergo](https://github.com/imdario/mergo) or [penlight tablex](https://stevedonovan.github.io/Penlight/api/libraries/pl.tablex.html#Merging)]
+Go and Lua have no standard library implementations for merging their maps. Writing things out imperatively gets the job done and doesn't hide any details, but the simplicity of these languages means you give up conveniences like high level map operations. ^[Most big Go or Lua projects end up pulling in dependencies like [mergo](https://github.com/imdario/mergo) or [penlight tablex](https://stevedonovan.github.io/Penlight/api/libraries/pl.tablex.html#Merging)]
 
 ### C:
 ```
