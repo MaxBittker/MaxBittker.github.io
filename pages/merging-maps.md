@@ -6,7 +6,7 @@ title: Merging Maps
 
 Maps or *"Associative arrays"* are a ubiquitous abstraction in software development. They allow us to flexibly model data in a form that lends itself to manipulation, inspection, and portability.
 
- If you're looking, you'll see maps everywhere -- in databases, file systems, serialization formats, object oriented programing languages, and most likely, all over your codebase.
+ If you're looking, you'll see maps everywhere -- in databases, file systems, serialization formats, object oriented programming languages, and most likely, all over your codebase.
 
 ...Except you may not call them "maps" --- key value data structures inexplicably have a different name in every single programming language:
 
@@ -15,6 +15,7 @@ Maps or *"Associative arrays"* are a ubiquitous abstraction in software developm
   Python: "Dictionary",
   Javascript: "Object",
   Lua: "Table",
+  PHP: "Associative Array",
   Ruby: "Hash",
   Java: "HashMap",
   Clojure: "Map",
@@ -31,7 +32,7 @@ Composable
 
 : Can you use it as an expression and nest it with other expressions?
 
-Varadic
+variadic
 
 : Can it merge more than two maps in a single invocation?
 
@@ -56,15 +57,15 @@ This is all completely true -- but I still hope you'll find this comparison to b
       {toes: 10}
     )
 ```
-**composable, varadic, and preserving**
+**composable, variadic, and preserving**
 
 Not Bad - slightly esoteric invocation, but it takes any number of dictionaries. The return value is the mutated first argument, but to side-step that, you can pass an empty object literal **`{}`** in the first position.
 
-It's worth mentioning that being varadic is useful for javascript at runtime as well, because you can use the **`...`** spread operator to merge a dynamic number of objects from an array.
+It's worth mentioning that being variadic is useful for javascript at runtime as well, because you can use the **`...`** spread operator to merge a dynamic number of objects from an array.
 
 No way to customize merge strategies with this function, you'll need to defer to a helper library, or drop down to a `reduce` one-liner.
 
-Worth mentioning that like everything in javascript, there's a caveat: This was part of the ECMAScript 2015 standard, and isn't available in some older environments. ^[If you need you Object.assign to work across all browsers, you need to polyfill or import a utility library] in all JS environments.
+Worth mentioning that like everything in javascript, there's a caveat: This was part of the ECMAScript 2015 standard, and isn't available in all JS environments. ^[If you need you Object.assign to work across all browsers, you need to polyfill or import a utility library]
 
 
 ### Ruby:
@@ -82,17 +83,32 @@ There's also a version **`merge!`** with the same api that *does* mutate the arr
 
 ### Python:
 ```python
-  dictB = {**dictA, **dictB, **dictC}
+  dictD = {**dictA, **dictB, **dictC}
 ```
-**composable, varadic, and preserving**
+**composable, variadic, and preserving**
 
-This is quite nice - but only works in python 3.5+, taking advantage of the **`**`** dictionary unpacking operator. This makes it slightly harder to take advantage of if you have an array of dictionaries to merge.
+This is quite nice - but only works in python 3.5+, taking advantage of the **`**`** "splat" unpacking operator. This makes it incompatible with situations where you have a *list* of dictionaries to merge, because the same splat operator is also used for spreading lists out into function arguments, and to my knowledge you can't double splat.
 
 You can merge dictionaries in python 2.7 like so:
 ```python
     dict(dictA.items() + dictB.items())
 ```
 but be warned that *this one* doesn't work in python 3.
+
+### PHP:
+```PHP
+    $arrayD = array_merge($arrayA, $arrayB, $arrayC);
+```
+**composable, variadic, and preserving**
+
+PHP uses a single data structure for associative and indexed arrays, and so its standard library methods have mixed behavior depending on which kind of keys are used (strings vs numbers). In this case, `array_merge` will overwrite string key collisions with their "rightmost" occurrence, but *renumber* numeric keys, similar to an array append in other languages. There's also the union operator **`+`**:
+```PHP
+    $arrayC = $arrayA + $arrayB;
+```
+which takes the *leftmost* value in cases of string and numeric key collisions, with no renumbering. Finally, the PHP includes a functionality in its standard library that none of the other languages here do: a deep merge. ??array_replace??
+```PHP
+      $arrayD = array_merge_recursive($arrayA, $arrayB, $arrayC);
+```
 
 ### Clojure:
 ```clojure
@@ -107,15 +123,15 @@ but be warned that *this one* doesn't work in python 3.
       {:a 9  :b 98 :c 0})   
     ;;=>{:a [1 9], :b [2 98], :c 0}
 ```
-**composable, varadic, extensible, and preserving**
+**composable, variadic, extensible, and preserving**
 
-Because clojure syntax is just but clojure data structures in the first place, everything is an expression and so everything is composable - there *are* no statements. Map literals are often used as an argument syntax for functions with optional named arguments, and merge is a convenient way to override a map of defaults with a map of arguments.
+Everything in clojure is an expression and so everything is composable - there *are* no statements. Map literals are often used as an argument syntax for functions with optional named arguments, and merge is a convenient way to override a map of defaults with a map of arguments.
 
-Clojure functions tend to follow a 0-1-many rule^[[Zero one infinity rule](https://en.wikipedia.org/wiki/Zero_one_infinity_rule)] on how many arguments (of a certain type) they'll accept, and there are a host of nice patterns like spreading, applying and destructuring to take full advantage of these varadic functions. It's a language where it's idiomatic to add a list of numbers by shoving them all into to a single **`+`** expression.
+Clojure functions tend to accept many arguments whenever possible, and there are a host of nice patterns like spreading, applying and destructuring to take full advantage of these variadic functions. It's a language where it's idiomatic to add a list of numbers by shoving them all into to a single **`+`** expression.
 
 `merge-with` accepts a strategy for resolution, similar to ruby's. The difference is that ruby's block provides three arguments (key, valueA, valueB), where clojure has a simpler signature - just the values. This is actually a boon in many situations, because it means that you can skip writing an anonymous function and just make direct use of existing functions, like **`+`** and **`vector`** in the example.
 
-There's one more hidden bonus here - clojure's maps are backed by an immutable data structure that lets us non-destructively build a new map in less than linear time and memory, by internally pointing to old values where possible.
+There's one more hidden bonus here - clojure's maps are backed by an immutable data structure that lets us non-destructively build a new map in less than linear time and memory, by internally pointing to old values where possible. This means otherwise expensive merges can be very cheap!
 
 ### Java:
 ```java
@@ -132,7 +148,7 @@ Because this function is a side effect with no return value, it can't even be co
 ```
 ### Lua:
 ```lua
-    for k, v in ipairs(tableB) do
+    for k, v in pairs(tableB) do
       tableA.insert(k, v)
     end
 ```
