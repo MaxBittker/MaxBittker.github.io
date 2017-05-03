@@ -60,15 +60,7 @@ module.exports = React.createClass({
     let posts = iposts.concat(data.screenshots);
     let scs = posts.map(({name, loc}, i) => {
       return (
-        <div
-          key={i}
-          style={{
-            // height: '80%',
-            width: '30%',
-            minWidth: '200px',
-            margin: 'auto'
-          }}
-        >
+        <div key={i} className="art-card">
           {/* <h3> {name}</h3> */}
           {name === 'ipost'
             ? <InstagramEmbed
@@ -84,7 +76,7 @@ module.exports = React.createClass({
 
     return (
       <div>
-        <Helmet title={`${config.siteTitle} | ${data.title}`} />
+        <Helmet title="artwork" />
         <h1>Generative Artwork</h1>
         {/* <h3>mostly built with clojurescript, reagent, svg, a pen plotter, and WebGL.</h3> */}
 

@@ -99,16 +99,18 @@ but be warned that *this one* doesn't work in python 3.
 ```PHP
     $arrayD = array_merge($arrayA, $arrayB, $arrayC);
 ```
-**composable, variadic, and preserving**
+**composable, variadic, preserving, and confusing**
 
 PHP uses a single data structure for associative and indexed arrays, and so its standard library methods have mixed behavior depending on which kind of keys are used (strings vs numbers). In this case, `array_merge` will overwrite string key collisions with their "rightmost" occurrence, but *renumber* numeric keys, similar to an array append in other languages. There's also the union operator **`+`**:
 ```PHP
     $arrayC = $arrayA + $arrayB;
 ```
-which takes the *leftmost* value in cases of string and numeric key collisions, with no renumbering. Finally, the PHP includes a functionality in its standard library that none of the other languages here do: a deep merge. ??array_replace??
-```PHP
-      $arrayD = array_merge_recursive($arrayA, $arrayB, $arrayC);
-```
+which takes the *leftmost* value in cases of string and numeric key collisions, with no renumbering ... or you could use `array_replace`, which takes the *rightmost* value like `array_merge`, but doesn't renumber numeric keys.^[Had trouble keeping the PHP merging methods straight? There's a great picture [here.](https://softonsofa.com/php-array_merge-vs-array_replace-vs-plus-aka-union/)]
+
+PHP also includes a functionality in its standard library that none of the other languages here do: **deep** merging. `array_merge_recursive` will recursively call merge on string key collisions. When the values to be merged aren't arrays, it wraps them in arrays with the key `0`, which can then be merged -- but this means renumbering/concatenating happens instead of ending up with one value or the other. I'll only touch on one more function- `array_replace_recursive`. It operates under the same idea as its sibling `array_merge_recursive`, allowing you to merge nested arrays, but doesn't try to coerce and renumbering on collisions, so you won't find values changing type.
+
+The way PHP blurs the line between index and associative arrays allows for some interesting merging mechanics, but there are also cognitive costs to having so many subtly different operations.
+ ^[There are illustrative examples of array_replace_recursive vs array_merge_recursive [here:](https://jontai.me/blog/2011/12/array_merge_recursive-vs-array_replace_recursive/)]
 
 ### Clojure:
 ```clojure
