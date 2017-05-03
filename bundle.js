@@ -36911,15 +36911,7 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        {
-	          key: i,
-	          style: {
-	            // height: '80%',
-	            width: '30%',
-	            minWidth: '200px',
-	            margin: 'auto'
-	          }
-	        },
+	        { key: i, className: 'art-card' },
 	        name === 'ipost' ? _react2.default.createElement(_reactInstagramEmbed2.default, {
 	          url: 'https://instagr.am/p/' + loc,
 	          maxWidth: 300,
