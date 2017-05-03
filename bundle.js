@@ -36924,7 +36924,7 @@
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_reactHelmet2.default, { title: _config.config.siteTitle + ' | ' + data.title }),
+	      _react2.default.createElement(_reactHelmet2.default, { title: 'artwork' }),
 	      _react2.default.createElement(
 	        'h1',
 	        null,
