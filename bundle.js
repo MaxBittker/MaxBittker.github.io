@@ -52030,7 +52030,10 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	_ravenJs2.default.config('https://5e62397e864445799609ae7109b0c2b5@sentry.io/169778').install();
+	_ravenJs2.default.config('https://5e62397e864445799609ae7109b0c2b5@sentry.io/169778', {
+	  release: '1.3.0',
+	  enviroment: 'production'
+	}).install();
 	
 	_ravenJs2.default.setUserContext({
 	  foo: 'bar',
