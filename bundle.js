@@ -590,7 +590,7 @@
 
 /***/ }),
 /* 6 */
-[544, 7],
+[545, 7],
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -5777,7 +5777,7 @@
 
 /***/ }),
 /* 50 */
-[544, 35],
+[545, 35],
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31371,6 +31371,23 @@
 				"data": {
 					"title": "Thinking about Color (WIP)"
 				}
+			},
+			{
+				"file": {
+					"root": "",
+					"dir": "",
+					"base": "test.js",
+					"ext": "js",
+					"name": "test",
+					"extname": ".js",
+					"basename": "test.js",
+					"dirname": "",
+					"stem": "test",
+					"path": "test.js"
+				},
+				"requirePath": "test.js",
+				"path": "/test/",
+				"data": {}
 			}
 		]
 	}
@@ -50771,7 +50788,8 @@
 		"./html.html": 532,
 		"./index.js": 533,
 		"./merging-maps.md": 542,
-		"./post1.md": 543
+		"./post1.md": 543,
+		"./test.js": 544
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52012,10 +52030,13 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	_ravenJs2.default.config('https://2040043382ae40bab0c89cad3204fab4@sentry.io/153842').install();
-	try {
-	  (0, _ravenJsExposedNull2.default)(_ravenJs2.default);
-	} catch (e) {}
+	_ravenJs2.default.config('https://5e62397e864445799609ae7109b0c2b5@sentry.io/169778').install();
+	
+	_ravenJs2.default.setUserContext({
+	  foo: 'bar',
+	  email: 'max@sentry.io',
+	  id: 123
+	});
 	
 	var Index = function (_React$Component) {
 	  _inherits(Index, _React$Component);
@@ -52032,9 +52053,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_reactHelmet2.default, {
-	          title: _config.config.siteTitle
-	        }),
+	        _react2.default.createElement(_reactHelmet2.default, { title: _config.config.siteTitle }),
 	        _react2.default.createElement(_webgl2.default, null)
 	      );
 	    }
@@ -54993,6 +55012,72 @@
 
 /***/ }),
 /* 544 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(472);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _react2.default.createClass({
+	  displayName: 'test',
+	  getInitialState: function getInitialState() {
+	    return {
+	      data: null
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.fetchData();
+	  },
+	  fetchData: function fetchData() {
+	    var _this = this;
+	
+	    fetch('https://httpbin.org/ip').then(function (response) {
+	      console.log(response);
+	      if (response.ok) {
+	        return response.json();
+	      }
+	    }).then(function (json) {
+	      _this.setState({ data: json });
+	    });
+	  },
+	  render: function render() {
+	    var data = this.state.data;
+	
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h4',
+	        null,
+	        'your ip is:'
+	      ),
+	      data && data.origin,
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'button',
+	        {
+	          onClick: function onClick() {
+	            foo.bar();
+	          } },
+	        'click me'
+	      )
+	    );
+	  }
+	});
+	module.exports = exports['default'];
+
+/***/ }),
+/* 545 */
 /***/ (function(module, exports, __webpack_require__, __webpack_module_template_argument_0__) {
 
 	/**
