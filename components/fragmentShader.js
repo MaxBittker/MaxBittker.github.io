@@ -372,7 +372,8 @@ float sceneSDF(vec3 p){
  vec3 q = opRep(p,vec3(2.0) );
 float f = (sin(time*0.7)) * 15.;
 float a = 20.;
-return torusBall(p, vec2(.4, .04))
+vec3 offset = vec3(0.0,-0.2,sin(time)*0.3);
+return torusBall(p+offset, vec2(.4, .04))
  + sin(f*p.x)*
    sin(f*p.y)*
    sin(f*p.z)*0.1;
@@ -440,8 +441,8 @@ void main () {
 
     vec3 viewDir = rayDirection(45.0, vec2(1.0), st);
      vec3 eye = normalize(vec3(
-      sin(time/4.+3.),
-      sin(time/4.+2.),
+      sin(time/4.+3.),// + mouse.x*4.,
+      sin(time/4.+2.),// + mouse.y*4.,
       sin(time/4.+1.)
       ))*2.5;
 
@@ -464,8 +465,12 @@ void main () {
         {
           float fi = float(i) / float(maxSteps);
           vec3 angle = rgb2hsv(estimateNormal(p));
-
-          angle.r += time/(8.0+mouse.y)+mouse.x;//h
+          angle.r = fract(angle.r*2.0)*0.5;
+          // angle.r = noise(angle.r*2.) * 0.3;
+          angle.r += time*0.1;
+          angle.r = float( int(angle.r*9.) )/9. * 0.9,
+          angle.r += time*0.1;
+          // angle.r*=10.0;
           angle.g = 0.3;//s
           angle.b = 0.9;//v
           // angle.
@@ -480,15 +485,23 @@ void main () {
         t += d;
     }
 
-
-    vec2 jitter = vec2(0.005, 0.00) * (noise(st*100.*time)- vec2(0.5));
-    vec2 fall = vec2(0.0, 0.005) * (noise(st*1000.+time));
+    float spread = 0.0075;
+    vec2 jitter = vec2(spread, 0.00) * noise(st * 100.*time);
+    jitter = jitter - vec2(spread*0.5,0.);
+    // jitter *=0.;
+    vec2 fall = vec2(0.0, spread*0.8) * (noise(st*1000.+time));
     // vec2 suction = vec2(0.);
     // vec2 push = (mouse / resolution) *0.5;
     // vec2
-    vec2 sampleLoc = jitter + fall + stN;// + push;// + fall + suction;
+
+    vec2 sampleLoc = jitter + fall + stN;// + push;// + fall +
+    sampleLoc = vec2(0.,1./resolution.y) + stN;// + push;// + fall + suction;
+    //  sampleLoc = vec2(1./resolution.x,0.) + stN;// + push;// + fall + suction;
 
     vec4 g = texture2D(backBuffer, sampleLoc).rgba;
+    // if( length(g) < 0.1){
+      // g = texture2D(backBuffer, sampleLoc).rgba;
+    // }
     // color +=
     if(found==0){
       color = g;
