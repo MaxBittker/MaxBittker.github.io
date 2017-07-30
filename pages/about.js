@@ -47,7 +47,7 @@ export default class About extends React.Component {
         <a href='https://twitter.com/MaxBittker'> twitter </a>
         <a href='https://github.com/MaxBittker'> github </a>
         <a href='https://goodreads.com/maxbittker'> goodreads </a>
-        <a href='https://www.instagram.com/spiderwar1/'> instagram </a>
+        <a href='https://www.instagram.com/maxbittker/'> instagram </a>
         </div>
 
         <h4>A few projects:</h4>
