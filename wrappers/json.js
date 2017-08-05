@@ -5,8 +5,17 @@ import {prefixLink} from 'gatsby-helpers';
 import InstagramEmbed from 'react-instagram-embed';
 
 import '../pages/example.less';
-
 const iposts = [
+  'BXUbX5bAAGp',
+  'BXR7Ej5ANuJ',
+  'BXMsS91ARCg',
+  'BWjy7vSAHkv',
+  'BV-MYxOgvrA',
+  'BVfOGaKAmq0',
+  'BVOFOGWFYn5',
+  'BVNyCp8F5JW',
+  'BU6M0AnlPIl',
+  'BTyFGnslsGx',
   'BSsEwCaljLZ',
   'BSr_6pzFOxz',
   'BSp3AeEl_0M',
