@@ -6,6 +6,8 @@ import InstagramEmbed from 'react-instagram-embed';
 
 import '../pages/example.less';
 const iposts = [
+  'BYURQ3ng6go',
+  'BXe5A6TAG4R',
   'BXUbX5bAAGp',
   'BXR7Ej5ANuJ',
   'BXMsS91ARCg',

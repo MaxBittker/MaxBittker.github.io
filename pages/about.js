@@ -51,6 +51,10 @@ export default class About extends React.Component {
         </div>
 
         <h4>A few projects:</h4>
+        <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
+        <p>
+         A twitter bot that records the first time The New York Times says a new word.
+        </p>
         <a href="http://maxbittker.github.io/pond/" >Pond</a>
         <p>
           An agent-based neuro-genetic simulation. Creatures are controlled by a neural network and over time the population evolves to efficiently find food.
@@ -62,10 +66,6 @@ export default class About extends React.Component {
         <a href="http://maxbittker.github.io/Mojulo/" >Mojulo</a>
         <p>
         Lo-fi math function visualization sandbox. Check out the <a href="http://maxbittker.github.io/Mojulo/gallery.html" >gallery</a>.
-        </p>
-        <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
-        <p>
-         A twitter bot that records the first time The New York Times says a new word. (WIP)
         </p>
         <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
         <p>
