@@ -1,6 +1,6 @@
 import React, {PropTypes} from "react";
 import fShaderSource from "./fragmentShader.js"
-
+import {throttle} from 'lodash'
 const vsSource = `
 attribute vec3 aPosition;
 varying vec2 uvN;
@@ -37,24 +37,25 @@ export default React.createClass({
     let init = () => {
       let canvas = this.canvas;
       let gl = this.gl = canvas.getContext("webgl");
+
       const state = this.state_ = {
         animationFrameRequest: null,
         bit: 0,
         fb: [null, null],
         time0: new Date() / 1000,
         textures: [],
-        videoTexture: null
+        videoTexture: null,
+        mouse :{x: 0, y: 0}
       };
 
-      function setMouse (event) {
+      let setMouse = (event)=> {
         var r = event.target.getBoundingClientRect();
-        state.mouse.x = (event.clientX - r.left) / (r.right - r.left) ;
-        state.mouse.y = (event.clientY - r.bottom) / (r.top - r.bottom) ;
+        this.state_.mouse.x = (event.clientX - r.left) / (r.right - r.left) ;
+        this.state_.mouse.y = (event.clientY - r.bottom) / (r.top - r.bottom) ;
       };
-      canvas.onmousemove = setMouse;
+      canvas.onmousemove = throttle(setMouse, 200);
       /* canvas.onmousedown = (event) => setMouse(event, 1); */
       /* canvas.onmouseup = (event) => setMouse(event, 0); */
-      state.mouse = {x: 0, y: 0};
       this.loadProgram();
     }
 
@@ -193,6 +194,8 @@ export default React.createClass({
       state.animationFrameRequest = requestAnimationFrame(this.animate);
     }
   },
+
+
   draw() {
     let gl = this.gl;
     let state = this.state_;
@@ -200,18 +203,10 @@ export default React.createClass({
     let WIDTH = this.state.width / 2;
     let HEIGHT = this.state.height / 2;
 
-    function updateTexture(videoTexture, videoElement) {
-      gl.bindTexture(gl.TEXTURE_2D, videoTexture);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA,
-            gl.UNSIGNED_BYTE, videoElement);
-    }
-
     gl.uniform1f(gl.time, (new Date().getTime() / 1000 - state.time0));
 
     gl.uniform2f(gl.mouse, state.mouse.x, state.mouse.y);
     gl.uniform2f(gl.resolution, WIDTH, HEIGHT);
-
     gl.uniform1i(gl.channel1, 1);
     gl.activeTexture(gl.TEXTURE0 + 1);
     gl.bindTexture(gl.TEXTURE_2D, state.textures[0]);
