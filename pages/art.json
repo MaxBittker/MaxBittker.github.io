@@ -2,6 +2,10 @@
     "screenshots": [
         {
             "name": "testTitle",
+            "loc": ".DS_Store"
+        },
+        {
+            "name": "testTitle",
             "loc": "Screenshot 2016-12-26 12.26.46.png"
         },
         {
@@ -191,18 +195,6 @@
         {
             "name": "testTitle",
             "loc": "Screenshot 2017-10-29 22.37.09.png"
-        },
-        {
-            "name": "testTitle",
-            "loc": "Screenshot 2017-10-29 22.49.26.png"
-        },
-        {
-            "name": "testTitle",
-            "loc": "Screenshot 2017-10-29 22.58.18.png"
-        },
-        {
-            "name": "testTitle",
-            "loc": "Screenshot 2017-10-29 22.58.24.png"
         }
     ]
 }
