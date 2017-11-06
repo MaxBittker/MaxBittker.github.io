@@ -3,9 +3,12 @@ import Helmet from 'react-helmet';
 import {config} from 'config';
 import {prefixLink} from 'gatsby-helpers';
 import InstagramEmbed from 'react-instagram-embed';
+import _ from 'lodash';
 
 import '../pages/example.less';
 const iposts = [
+  'Ba3Ha-sAoYd',
+  'BanuIyegKtw',
   'BYURQ3ng6go',
   'BXe5A6TAG4R',
   'BXUbX5bAAGp',
@@ -54,26 +57,31 @@ module.exports = React.createClass({
     };
   },
 
+  componentDidMount(){
+    this.expand = setInterval(()=>{
+      let {posts,lim} = this.state;
+      this.setState({lim:lim+9})
+      if(posts.length<lim){
+        clearInterval(this.expand)
+      }
+    }, 500)
+  },
+
   getInitialState() {
-    return {count: 0};
+    const data = this.props.route.page.data;
+    let posts = _.flatten(_.zip(iposts,data.screenshots)).filter(i=>i);
+    // let posts = _.shuffle(iposts.concat(data.screenshots));
+    return {posts, lim:9};
   },
 
-  handlePlusClick() {
-    this.setState({count: this.state.count + 1});
-  },
-
-  handleMinusClick() {
-    this.setState({count: this.state.count - 1});
-  },
 
   render() {
-    const data = this.props.route.page.data;
-    let posts = iposts.concat(data.screenshots);
-    let scs = posts.map(({name, loc}, i) => {
+    let {posts, lim } = this.state;
+    let scs = posts.slice(0,lim).map(({name, loc}, i) => {
+      let ipost = name === 'ipost';
       return (
-        <div key={i} className="art-card">
-          {/* <h3> {name}</h3> */}
-          {name === 'ipost'
+        <div key={i} className={"art-card " + (ipost ? "ipost" : "")}>
+          {ipost
             ? <InstagramEmbed
                 url={'https://instagr.am/p/' + loc}
                 maxWidth={300}
@@ -84,7 +92,6 @@ module.exports = React.createClass({
         </div>
       );
     });
-
     return (
       <div>
         <Helmet title="artwork" />
@@ -93,7 +100,7 @@ module.exports = React.createClass({
 
         {/* <button onClick={() => this.handleMinusClick()}>{'<'}</button> */}
         {/* <button onClick={() => this.handlePlusClick()}>{'>'}</button> */}
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="art-masonry">
           {scs}
         </div>
       </div>
