@@ -370,13 +370,13 @@ vec3 opRep( vec3 p, vec3 c )
 float sceneSDF(vec3 p){
 
  vec3 q = opRep(p,vec3(2.0) );
-float f = (sin(time*0.7)) * 15.;
+float f = (sin(time*0.7)) * 25.;
 float a = 20.;
 vec3 offset = vec3(0.0,-0.2,sin(time)*0.3);
 return torusBall(p+offset, vec2(.4, .04))
  + sin(f*p.x)*
    sin(f*p.y)*
-   sin(f*p.z)*0.1;
+   sin(f*p.z)*0.08;
 }
 
 vec3 estimateNormal(vec3 p) {
@@ -416,24 +416,6 @@ void main () {
 
     vec4 color = vec4(vec3(0.0,0.0,0.0), 0.0); // Sky color
 
-    // color = noise(uv) * vec4(1.0,1.0,0.5);
-    if( v > 2.9){
-
-
-    // } && (mod(u, 0.4) > 0.3)){
-      // float t = 0.9;//time /100.;
-      // (mouse/resolution)
-      vec3 c1 = hsv2rgb(vec3(0.0, 0.2,0.5));
-      vec3 c2 = hsv2rgb(vec3(0.3, 0.2,0.7));
-      // if(mod(time, 10.)>3.){
-      color = vec4(mix(c1, c2, noise(st*5.+time*1.)+0.5),
-                1.0);
-      // }
-      // if(length(color) < 1.2){
-        // color = vec4(vec3(0.0,0.0,0.0), 0.0);
-      // }
-    } else {
-
     vec3 up =      vec3(0, 1, 0);
     vec3 right =   vec3(1, 0, 0);
     vec3 forward = vec3(0 ,0, 1);
@@ -464,18 +446,20 @@ void main () {
         if(d < 0.01)
         {
           float fi = float(i) / float(maxSteps);
-          vec3 angle = rgb2hsv(estimateNormal(p));
-          angle.r = fract(angle.r*2.0)*0.5;
-          // angle.r = noise(angle.r*2.) * 0.3;
-          angle.r += time*0.1;
-          angle.r = float( int(angle.r*9.) )/9. * 0.9,
-          angle.r += time*0.1;
-          // angle.r*=10.0;
-          angle.g = 0.3;//s
-          angle.b = 0.9;//v
-          // angle.
-          angle = hsv2rgb(angle);
-          color = vec4(angle, 1.0) ; // Sphere color
+          vec3 angle = estimateNormal(p);
+          vec3 oil = angle;
+          oil.r = fract(oil.r*2.0)*0.2;
+          // oil.r = noise(oil.r*2.) * 0.3;
+          oil.r += time*0.1;
+          oil.r = float( int(oil.r*9.) )/9. * 0.9,
+          oil.r += time*0.1;
+          // oil.r*=10.0;
+          oil.g = 0.3;//s
+          oil.b = 0.8;//v
+          // oil.
+          oil = hsv2rgb(oil);
+          oil += dot(angle , up) * white*0.1;
+          color = vec4(oil, 1.0) ; // Sphere color
           found = 1;
 
           // color/.a = 0.9;
@@ -506,22 +490,9 @@ void main () {
     if(found==0){
       color = g;
       // color*=0.99;
-    }
-    // color = max(g,color);
-    // if( distance(mouse, stN) < ((noise(st*time)*0.1)+0.05)){
-    //   vec3 shifted = rgb2hsv(color.rgb);
-    //   shifted.r+=0.005;
-    //   color = vec4(hsv2rgb(shifted), color.a);
-    // }
-    // color = max(color, g);
-    }
-    // color.a *= 0.998;
-    // color *= 0.99;
-    // if(color.a<0.001){
-      // color = vec4(vec3(0.0,0.0,0.0), 0.0);
-    // }
-    // color += g;
-    gl_FragColor = color;
+        }
+
+        gl_FragColor = color;
 }`;
 
 export default fShaderSource;
