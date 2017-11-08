@@ -68,8 +68,9 @@ module.exports = React.createClass({
   },
 
   getInitialState() {
-    const data = this.props.route.page.data;
-    let posts = _.flatten(_.zip(iposts,_.reverse(data.screenshots))).filter(i=>i);
+    const {screenshots} = this.props.route.page.data;
+    let scs = _.reverse(screenshots.slice());
+    let posts = _.flatten(_.zip(iposts, scs)).filter(i=>i);
     // let posts = _.shuffle(iposts.concat(data.screenshots));
     return {posts, lim:9};
   },
