@@ -1,5 +1,6 @@
 ---
 title: Make Yourself Comfortable with Custom Styling
+date: 2017-11-24 00:00:00
 ---
 
 Any public place where programmers are allowed to comment on hyperlinks will be about 15% page design critique.
@@ -18,7 +19,12 @@ However, when it's not a matter of accessibility, complaining about web design i
 That said — these things can be really irksome! If you use the internet, there are times when a website you like or need does one thing that itches at you like the tag on a cheap novelty t-shirt.
 
 For instance, I find it ironic that twitter.com, built by the company who created bootstrap, does this when given less than a full screen. ^[Twitter does in fact have a low-bandwidth responsive site at m.twitter.com]
-![Twitter not being responsive](./twitter-before.png)
+
+
+<div style="display:inline-block; margin:auto; width:100%">
+<img style="margin:auto;float:none;" src="./twitter-before.png" alt="Twitter not being responsive">
+</div>
+
 
 This is the kind of thing that is easy to make fun of, and lots of time is already spent doing so. But luckily, if you know a bit about HTML and CSS selectors^[If you don't, you can find some helpful resources [here](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web)], you have another course of action: scratch your own itch with custom styles! 
 
@@ -39,7 +45,12 @@ Here's what I came up with to improve the behavior of twitter on small screens:
 }
 ```
 Which results in:
-![Twitter fixed](./twitter-after.png)
+
+
+<div style="display:inline-block; margin:auto; width:100%">
+<img style="margin:auto;float:none;" src="./twitter-after.png" alt="Twitter fixed">
+</div>
+
 
 Possibly not a good use of your time. But in my opinion: educational, weirdly satisfying, and better than complaining into the void.
 
