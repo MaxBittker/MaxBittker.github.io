@@ -10,7 +10,7 @@ title: First Order Retrievability with Hammerspoon
 
 One aspect of using computers that I don't enjoy is the feeling of fumbling through many windows to find the information or tool you need. I think that people commonly use ⌘+tab or alt+tab to cycle through their windows, which is better than using a mouse, but still results in an unconscious overhead many times per day, often at the moment you're moving from one thought to another and most susceptible to distraction.
 
-A very clean solution is to set up "absolute" hotkeys that will always bring you to the window you need, versus the "relative" navigation of tabbing or of window management systems. 
+A very clean solution is to set up "absolute" hotkeys that will always bring you to the window you need, versus the "relative" navigation of tabbing or of window management systems. I think this pattern is less popular than it should be, because of how well suited it is to clean navigation between the half-dozen tools you use most often.
 
 For me, that means using Hammerspoon (a lua API for Mac OS) to make a single set of hotkeys.
 
