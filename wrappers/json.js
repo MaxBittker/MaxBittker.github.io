@@ -7,6 +7,10 @@ import _ from 'lodash';
 
 import '../pages/example.less';
 const iposts = [
+  'BbtFGAwAk2d',
+  'Bbs-dHjgpKS',
+  'BbMzrN1gq0Q',
+  'BbJY58xgI3H',
   'Ba3Ha-sAoYd',
   'BanuIyegKtw',
   'BYURQ3ng6go',

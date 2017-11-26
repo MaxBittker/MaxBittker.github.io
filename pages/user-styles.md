@@ -52,9 +52,9 @@ Which results in:
 </div>
 
 
-Possibly not a good use of your time. But in my opinion: educational, weirdly satisfying, and better than complaining into the void.
+Possibly not a good use of your time. But in my opinion, taking control of your own browser like this is educational, weirdly satisfying, and better than complaining into the void.
 
-What's more, subtle (or flagrant) vandalism of pages that you'd appreciate reminders to spend less time on is a healthy outlet! ^[One nice example of vandalism would be [Chas Emerick's ancap-news](https://github.com/cemerick/ancap-news)] If you spend lots of energy trying to make interfaces look good, it's theraputic to screw someone else's up every once in a while.
+What's more, subtle (or flagrant) vandalism of pages that you'd appreciate reminders to spend less time on is a healthy outlet! ^[One nice example of vandalism would be [Chas Emerick's ancap-news](https://github.com/cemerick/ancap-news)] If you spend lots of energy trying to make interfaces look good, it's therapeutic to screw someone else's up every once in a while.
 
 
 Once you have a tool like this set up, lots of things start to look like nails! A few more examples I'd like to share:
