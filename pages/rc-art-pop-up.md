@@ -4,20 +4,22 @@ date: 2017-12-04 00:00:00
 ---
 > "There are many side-effects that the artist cannot imagine. These may be used as ideas for new works." - Sol Lewitt, 1969
 
-I'm in Berlin for the first time in my life! Compared to North America, the pigeons look the same, but the crows look different. It's cold and wet and the streets are beautiful and crammed with masonry, signage, posters and tags. Lots of hip parents biking their bundled up tots around.
+I'm in Berlin for the first time in my life! Compared to North America, the pigeons look the same, but the crows look different. It's cold and wet and the streets are beautiful and crammed with masonry, signage, posters and tags. 
+
+There are lots of hip-looking parents biking their bundled up tots around the neighborhood. An industrial noise show featuring two hunched figures grunting into WW1 gas masks took place in the bar below the workspace last night.
 
 <div style="display:flex; margin:auto; width:100%; justify-content:space-around;">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1161.JPG" alt="Berlin Streets">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1163.JPG" alt="Berlin Streets">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1165.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; height:auto; align-self: center;" src="./IMG_1161.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; height:auto; align-self: center;" src="./IMG_1163.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; height:auto; align-self: center;" src="./IMG_1165.JPG" alt="Berlin Streets">
 </div>
 
 Along with widening my narrow world experience and trying out my high-school german (es ist schlecht), I'm here to hang out with some Recurse Center alumnus in a cozy studio for a week and make computer art! It's a wonderful opportunity and I'm thankful + excited to learn from people here and devote time to making confusing, useless, and (hopefully) beautiful but at least entertaining things.
 
 <div style="display:flex; margin:auto; width:100%; justify-content:space-around;">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1155.JPG" alt="Berlin Streets">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1156.JPG" alt="Berlin Streets">
-    <img style="float: none; max-width:30%; height:auto;" src="./IMG_1158.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; align-self: center;" src="./IMG_1155.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; align-self: center;" src="./IMG_1156.JPG" alt="Berlin Streets">
+    <img style="float: none; max-width:30%; align-self: center;" src="./IMG_1158.JPG" alt="Berlin Streets">
 </div>
 
 Because of the limited time I have here, I'm going to try to stick to tools that I'm familiar with and yaks I've already shaved, so this means webgl, regl, clojure and svg. These tools have their own interesting limitations, but I'm feeling inspired by those more than constrained. Fragment shaders are very terse and may be the tool with the richest or densest possibility space I've ever used, by which I mean mistakes and bugs really frequently turn out interesting and fruitful. Cool unexpected emergent behavior / bugs may be one of my favorite parts of making art with computers. Life existing on earth is a cool bug.
