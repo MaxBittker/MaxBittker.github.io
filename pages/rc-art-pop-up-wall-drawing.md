@@ -27,13 +27,16 @@ I'm pleased with the results, particularly the way that they play out differentl
 
 Brutalism is a trend that has been making a comeback in web design, exposing the nature of the browser and laying bare the materials of HTML and CSS instead of working to conceal them, and I think this piece fits into that thought process.
 
-This code is packaged as a bookmarklet below, so you can try it out here or on any page yourself! 
+This code is packaged as a bookmarklet below, so you can try it out here or on any page yourself.
 
-<a id="thelink" href="javascript:(function(){window.s0=document.createElement('script');window.s0.setAttribute('type','text/javascript');window.s0.setAttribute('src','https://bookmarkify.it/bookmarklets/7722/raw');document.getElementsByTagName('body')[0].appendChild(window.s0);})();">I am the bookmarklet! Click me, or drag me to your bookmarks bar :)</a>
+This link is the bookmarklet, click or drag it to your bookmarks bar:
 
-[Script, hosted on github.](https://github.com/MaxBittker/mutagen/blob/master/51.js)
+<a id="thelink" href="javascript:(function(){window.s0=document.createElement('script');window.s0.setAttribute('type','text/javascript');window.s0.setAttribute('src','https://bookmarkify.it/bookmarklets/7722/raw');document.getElementsByTagName('body')[0].appendChild(window.s0);})();">51.js</a>
+
+If you're interested in the sourcecode or don't trust like that,check it out here:  [Script, hosted on github.](https://github.com/MaxBittker/mutagen/blob/master/51.js)
  (can be executed by pasting into console)
 
+Some more output:
 <div style="display:inline-block; margin:auto; width:100%">
 <img style="margin:auto;float: none; max-height:none;" src="./piratefsh.github.io_about_.png" alt="sher minn's about me">
 <img style="margin:auto;float: none; max-height:none;" src="./berkshirehathaway.png" alt="berkshirehathaway">
