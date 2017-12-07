@@ -1,5 +1,5 @@
 ---
-title: RC Pop-up Day 2 - wall drawing
+title: RC Pop-up Day 2 - Wall Drawings
 date: 2017-12-06 00:00:00
 ---
 > “The idea is the machine that makes the work of art” - Sol LeWitt

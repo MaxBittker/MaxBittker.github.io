@@ -1,5 +1,5 @@
 ---
-title: RC Pop-up Day 1 - webcam feedback
+title: RC Pop-up Day 1 - Webcam Feedback
 date: 2017-12-05 00:00:00
 ---
 > “In the end, we self-perceiving, self-inventing, locked-in mirages are little miracles of self-reference.” - Douglas R. Hofstadter
