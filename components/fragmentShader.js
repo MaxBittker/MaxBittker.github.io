@@ -372,11 +372,16 @@ float sceneSDF(vec3 p){
  vec3 q = opRep(p,vec3(2.0) );
 float f = (sin(time*0.7)) * 25.;
 float a = 20.;
-vec3 offset = vec3(0.0,-0.2,sin(time)*0.3);
-return torusBall(p+offset, vec2(.4, .04))
- + sin(f*p.x)*
+vec3 offset = vec3(0.0,-0.2,sin(time)*0.1);
+// return zsdTorus(p, vec2(0.3,0.2));
+float d =  torusBall(p + offset, vec2(.4 -  abs(f)*0.005, abs(f)*0.005));
+
+d += (sin(f*p.x)*
    sin(f*p.y)*
-   sin(f*p.z)*0.08;
+   sin(f*p.z)*0.03);
+
+ ${ /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "" : "d -= fbm(p*09.,5)*0.05;"}
+ return d;
 }
 
 vec3 estimateNormal(vec3 p) {
@@ -414,7 +419,7 @@ void main () {
     vec2 st = vec2(u, v) - vec2(0.5);
     vec2 stN = uv();
 
-    vec4 color = vec4(vec3(0.0,0.0,0.0), 0.0); // Sky color
+    vec4 color = vec4(vec3(0.0,0.0,1.0), 0.0); // Sky color
 
     vec3 up =      vec3(0, 1, 0);
     vec3 right =   vec3(1, 0, 0);
@@ -436,37 +441,45 @@ void main () {
     vec3 ro = eye;
     vec3 rd = worldDir;
     float t = 0.3;
-    const int maxSteps = 30;
+    const int maxSteps = 15;
     int found = 0;
     for(int i = 1; i < maxSteps; ++i)
     {
         vec3 p = ro + rd * t;
         float d = sceneSDF(p);
 
-        if(d < 0.01)
+        if(d < 0.04)
         {
-          float fi = float(i) / float(maxSteps);
+        //   float fi = float(i) / float(maxSteps);
           vec3 angle = estimateNormal(p);
-          vec3 oil = angle;
-          oil.r = fract(oil.r*2.0)*0.2;
-          // oil.r = noise(oil.r*2.) * 0.3;
+          vec3 oil = angle*0.1;
+        //   oil.r = fract(oil.r*2.0)*0.2;
           oil.r += time*0.1;
           oil.r = float( int(oil.r*9.) )/9. * 0.9,
-          oil.r += time*0.1;
-          // oil.r*=10.0;
-          oil.g = 0.3;//s
+          oil.g = 0.2;//s
           oil.b = 0.8;//v
-          // oil.
           oil = hsv2rgb(oil);
-          oil += dot(angle , up) * white*0.1;
-          color = vec4(oil, 1.0) ; // Sphere color
-          found = 1;
+          oil += dot(angle , up) * white*0.2;
 
-          // color/.a = 0.9;
+          color = vec4(oil, 1.0) ; // Sphere color
+
+          found = 1;
           break;
+          
+        }
+        if(d>3.0){
+            break;
         }
 
         t += d;
+    }
+
+    if(length(color) < 1.55){//2.5* noise((st*5000.)+time)){
+        // color = vec4(1.0);
+        // color = vec4(0.,0.,0.,1.);
+        
+    }else{
+        // color = vec4(0.,0.,0.,0.);
     }
 
     float spread = 0.0075;
@@ -483,16 +496,16 @@ void main () {
     //  sampleLoc = vec2(1./resolution.x,0.) + stN;// + push;// + fall + suction;
 
     vec4 g = texture2D(backBuffer, sampleLoc).rgba;
-    // if( length(g) < 0.1){
-      // g = texture2D(backBuffer, sampleLoc).rgba;
-    // }
+    if( length(g) < 0.1){
+      g = texture2D(backBuffer, sampleLoc).rgba;
+    }
     // color +=
-    if(found==0){
-      color = g;
-      // color*=0.99;
-        }
-
-        gl_FragColor = color;
+    if(found==0 && st.y < 0.9){
+        // color = vec4(vec3(1.0),1.0);
+         color = g;
+    //   color*=0.9;
+    }
+    gl_FragColor = color;
 }`;
 
 export default fShaderSource;
