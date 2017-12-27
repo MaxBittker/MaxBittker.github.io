@@ -441,14 +441,14 @@ void main () {
     vec3 ro = eye;
     vec3 rd = worldDir;
     float t = 0.3;
-    const int maxSteps = 15;
+    const int maxSteps = 18;
     int found = 0;
     for(int i = 1; i < maxSteps; ++i)
     {
         vec3 p = ro + rd * t;
         float d = sceneSDF(p);
 
-        if(d < 0.04)
+        if(d < 0.01)
         {
         //   float fi = float(i) / float(maxSteps);
           vec3 angle = estimateNormal(p);
