@@ -380,7 +380,7 @@ d += (sin(f*p.x)*
    sin(f*p.y)*
    sin(f*p.z)*0.03);
 
- ${ /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "" : "d -= fbm(p*09.,5)*0.05;"}
+ ${ typeof window !== 'undefined' && (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)) ? "" : "d -= fbm(p*09.,5)*0.05;"}
  return d;
 }
 

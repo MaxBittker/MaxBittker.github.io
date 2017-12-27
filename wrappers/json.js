@@ -75,7 +75,6 @@ module.exports = React.createClass({
       }
     }, 500)
   },
-
   getInitialState() {
     const {screenshots} = this.props.route.page.data;
     let scs = _.reverse(screenshots.slice());
@@ -83,7 +82,10 @@ module.exports = React.createClass({
     // let posts = _.shuffle(iposts.concat(data.screenshots));
     return {posts, lim:9};
   },
-
+  
+  componentWillUnmount(){
+    clearInterval(this.expand)
+  },
 
   render() {
     let {posts, lim } = this.state;

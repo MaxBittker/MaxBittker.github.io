@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import Headroom from 'react-headroom'
 import '../css/markdown-styles'
+import Favicon from "../components/favicon.js";
 
 import { rhythm } from '../utils/typography'
 
@@ -17,6 +18,7 @@ module.exports = React.createClass({
     let headerStyle = {
       transition: 'background-color 0.3s ease'
     }
+    Favicon()
 
     if(this.props.location.pathname !== '/'){
         headerStyle = {
