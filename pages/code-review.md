@@ -39,5 +39,8 @@ Or maybe, the desired behavior is mysterious and domain-specific, but you can st
 These approaches have helped me to both feel better about reviewing code I can't wrap my head around, and to provide more helpful feedback than a rubber stamp and a division of guilt to my team-members. It's still a skill that I'm working on, and I would love to hear other people's perspectives and approaches to the situation, because I think that it's a pretty common dilemma!
 
 
+<hr>
 
-*Image credit: [rachelbythebay](https://rachelbythebay.com/w/2012/03/10/review/)
+Thanks to Thais Laney and Veit Heller for suggestions and edits.
+
+Image credit: [rachelbythebay](https://rachelbythebay.com/w/2012/03/10/review/)
