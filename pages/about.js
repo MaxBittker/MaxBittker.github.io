@@ -36,6 +36,11 @@ export default class About extends React.Component {
         <p>
          A twitter bot that records the first time The New York Times says a new word.
         </p>
+        <a href="https://maxbittker.github.io/thumbsport/"> Thumbsport </a>
+        <p>
+         A local multiplayer game built with WebGL and JS.
+         Warning: autoplaying 8bit jazz, and requires gamepads to play. Laser socks demake.
+        </p>
         <a href="http://maxbittker.github.io/pond/" >Pond</a>
         <p>
           An agent-based neuro-genetic simulation. Creatures are controlled by a neural network and over time the population evolves to efficiently find food.
