@@ -1,5 +1,5 @@
 const fShaderSource = `
-precision mediump float;
+precision highp float;
 const float pi = 3.141592653589793238462643383;
 uniform float time;
 uniform vec2 mouse;
@@ -380,7 +380,7 @@ d += (sin(f*p.x)*
    sin(f*p.y)*
    sin(f*p.z)*0.03);
 
- ${ typeof window !== 'undefined' && (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)) ? "" : "d -= fbm(p*09.,5)*0.05;"}
+ d -= fbm(p*09.,5)*0.05;
  return d;
 }
 
