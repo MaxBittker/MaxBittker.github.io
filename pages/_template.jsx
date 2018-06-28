@@ -1,36 +1,36 @@
-import React from 'react'
-import { Container } from 'react-responsive-grid'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
-import Headroom from 'react-headroom'
-import '../css/markdown-styles'
+import React from "react";
+import { Container } from "react-responsive-grid";
+import { Link } from "react-router";
+import { prefixLink } from "gatsby-helpers";
+import Headroom from "react-headroom";
+import "../css/markdown-styles";
 import Favicon from "../components/favicon.js";
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from "../utils/typography";
 
 module.exports = React.createClass({
-  propTypes () {
+  propTypes() {
     return {
-      children: React.PropTypes.any,
-    }
+      children: React.PropTypes.any
+    };
   },
-  render () {
+  render() {
     let headerStyle = {
-      transition: 'background-color 0.3s ease'
-    }
-    Favicon()
+      transition: "background-color 0.3s ease"
+    };
+    Favicon();
 
-    if(this.props.location.pathname !== '/'){
-        headerStyle = {
-          transition: 'background-color 0.3s ease',
-          background: `hsl(${Math.random()*255},45%,80%)`
-        }
+    if (this.props.location.pathname !== "/") {
+      headerStyle = {
+        transition: "background-color 0.3s ease",
+        background: `hsl(${Math.random() * 255},45%,80%)`
+      };
     }
     return (
       <div>
         <Headroom
           wrapperStyle={{
-            marginBottom: rhythm(0.5),
+            marginBottom: rhythm(0.5)
           }}
           style={headerStyle}
         >
@@ -38,58 +38,67 @@ module.exports = React.createClass({
             style={{
               maxWidth: 960,
               paddingTop: 0,
-              padding: `${rhythm(1)} ${rhythm(3/4)}`,
+              padding: `${rhythm(1)} ${rhythm(3 / 4)}`
             }}
           >
             <Link
-              to={prefixLink('/')}
+              to={prefixLink("/")}
               style={{
-                color: 'black',
-                textDecoration: 'none',
+                color: "black",
+                textDecoration: "none"
               }}
             >
-             max bittker ∙&nbsp;
+              max bittker ∙&nbsp;
             </Link>
             <Link
-              to={prefixLink('/about/')}
+              to={prefixLink("/about/")}
               style={{
-                color: 'black',
-                textDecoration: 'none',
+                color: "black",
+                textDecoration: "none"
               }}
             >
-             about ∙&nbsp;
+              about ∙&nbsp;
             </Link>
+
             <Link
-              to={prefixLink('/art/')}
+              to={prefixLink("/games/")}
               style={{
-                color: 'black',
-                textDecoration: 'none',
+                color: "black",
+                textDecoration: "none"
               }}
             >
-             art ∙&nbsp;
+              games ∙&nbsp;
             </Link>
             <Link
-              to={prefixLink('/blog/')}
+              to={prefixLink("/art/")}
               style={{
-                color: 'black',
-                textDecoration: 'none',
+                color: "black",
+                textDecoration: "none"
+              }}
+            >
+              art ∙&nbsp;
+            </Link>
+            <Link
+              to={prefixLink("/blog/")}
+              style={{
+                color: "black",
+                textDecoration: "none"
               }}
             >
               blog
             </Link>
-
           </Container>
         </Headroom>
         <Container
           style={{
             maxWidth: 960,
-            padding: `${rhythm(1)} ${rhythm(3/4)}`,
-            paddingTop: 0,
+            padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
+            paddingTop: 0
           }}
         >
           {this.props.children}
         </Container>
       </div>
-    )
-  },
-})
+    );
+  }
+});

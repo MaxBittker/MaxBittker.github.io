@@ -1,12 +1,16 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { config } from "config";
 import { prefixLink } from "gatsby-helpers";
 import InstagramEmbed from "react-instagram-embed";
 import _ from "lodash";
 
 import "../pages/example.less";
 const iposts = [
+  "BkO5x2XFB4d",
+  "BkMTjCmlSmt",
+  "BkHGhiEFuK0",
+  "BjjAsRalv_o",
+  "BigTj4qFTRY",
   "Bh5per1FsEJ",
   "Bh2atUflmN",
   "Bhsy3q7FuyH",
@@ -100,14 +104,16 @@ module.exports = React.createClass({
       let ipost = name === "ipost";
       return (
         <div key={i} className={"art-card " + (ipost ? "ipost" : "")}>
-          {ipost
-            ? <InstagramEmbed
-                url={"https://instagr.am/p/" + loc}
-                maxWidth={300}
-                hideCaption={true}
-                ref=""
-              />
-            : <img src={prefixLink("/screenshots/" + loc)} />}
+          {ipost ? (
+            <InstagramEmbed
+              url={"https://instagr.am/p/" + loc}
+              maxWidth={300}
+              hideCaption={true}
+              ref=""
+            />
+          ) : (
+            <img src={prefixLink("/screenshots/" + loc)} />
+          )}
         </div>
       );
     });
@@ -119,9 +125,7 @@ module.exports = React.createClass({
 
         {/* <button onClick={() => this.handleMinusClick()}>{'<'}</button> */}
         {/* <button onClick={() => this.handlePlusClick()}>{'>'}</button> */}
-        <div className="art-masonry">
-          {scs}
-        </div>
+        <div className="art-masonry">{scs}</div>
       </div>
     );
   }

@@ -22,8 +22,8 @@ export default class About extends React.Component {
         </marquee>
         <p>
           I'm a person & developer thinking about art, learning, computation,
-          communities and systems. Lately, I work at Sentry, writing open source
-          tools to help people find and fix errors.
+          communities and systems. Previously, I worked at Sentry, writing open
+          source tools to help people find and fix errors.
         </p>
         <p>
           Thanks for stopping by... maybe I could interest you in some fine
@@ -48,11 +48,6 @@ export default class About extends React.Component {
           A twitter bot that records the first time The New York Times says a
           new word.
         </p>
-        <a href="https://maxbittker.github.io/thumbsport/"> Thumbsport </a>
-        <p>
-          A local multiplayer game built with WebGL and JS. Warning: autoplaying
-          8bit jazz, and requires gamepads to play. Laser socks demake.
-        </p>
         <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
           Webcam Shader Sketches{" "}
         </a>
@@ -60,6 +55,10 @@ export default class About extends React.Component {
           A collection of filters you can interact with via video input from
           your webcam. Implemented as fragment shaders using with regl and
           glslify.
+        </p>
+        <a href="http://159.203.112.6:8888/"> Spotify Song Block</a>
+        <p>
+          A small webservice for blocking songs, artists, or albums on Spotify.
         </p>
         <a href="http://maxbittker.github.io/pond/">Pond</a>
         <p>
@@ -78,10 +77,6 @@ export default class About extends React.Component {
           Lo-fi math function visualization sandbox. Check out the{" "}
           <a href="http://maxbittker.github.io/Mojulo/gallery.html">gallery</a>.
         </p>
-        <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
-        <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
-        <a href="http://maxbittker.github.io/dust/">Dust</a>
-        <p>Homage to the falling sand genre of games.</p>
         <p>
           Other interests: simulation, software design, lisp, weird videogames,
           democratized & distributed computing, biking, cooking, electronics,
