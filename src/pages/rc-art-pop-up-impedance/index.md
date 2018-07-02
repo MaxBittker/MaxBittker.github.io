@@ -1,7 +1,7 @@
 ---
 title: RC Pop-up - Impedance
 date: 2017-12-07 00:00:00
-path: rc-art-pop-up-wall-impedance
+path: rc-art-pop-up-impedance
 
 ---
 

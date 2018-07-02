@@ -242,10 +242,18 @@ float fbm(vec3 x, const in int it) {
     float v = 0.0;
     float a = 0.5;
     vec3 shift = vec3(100);
+    // Rotate to reduce axial bias
+    float c = cos(0.3);
+    float s = sin(0.3);
+    mat3 rot = mat3(
+        c, 0.0, -s,
+        0.0, 1.0, 0.0,
+        s, 0.0, c
+    );
     for (int i = 0; i < 32; ++i) {
         if(i<it) {
             v += a * noise(x);
-            x = x * 2.0 + shift;
+            x = rot * x * 2.0 + shift;
             a *= 0.5;
         }
     }
@@ -380,7 +388,7 @@ d += (sin(f*p.x)*
    sin(f*p.y)*
    sin(f*p.z)*0.03);
 
- d -= fbm(p*09.,5)*0.05;
+ d -= fbm(p * 035.,4)*0.03;
  return d;
 }
 
@@ -457,7 +465,7 @@ void main () {
           oil.r += time*0.1;
           oil.r = float( int(oil.r*9.) )/9. * 0.9,
           oil.g = 0.2;//s
-          oil.b = 0.8;//v
+          oil.b = 0.7;//v
           oil = hsv2rgb(oil);
           oil += dot(angle , up) * white*0.2;
 

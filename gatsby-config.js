@@ -28,6 +28,12 @@ module.exports = {
           "gatsby-remark-smartypants"
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/components/typography.js`
+      }
     }
   ]
 };

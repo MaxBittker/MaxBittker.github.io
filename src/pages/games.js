@@ -1,7 +1,7 @@
-import React from 'react'
-import RcScout from '../components/rcscout.js'
+import React from "react";
+import RcScout from "../components/rcscout.js";
 
-import './example.less'
+import "./example.less";
 
 export default class Games extends React.Component {
   render() {
@@ -25,6 +25,21 @@ export default class Games extends React.Component {
         </p>
         <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
         <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
+
+        <a href="http://maxbittker.github.io/fish/">
+          Ethical Fishing Simulator
+        </a>
+        <p>
+          Local two player game exploring tradgedy of the commons, with a cool2
+          flocking algorithm.
+        </p>
+
+        <a href="http://maxbittker.github.io/orbs/">Orbs</a>
+        <p>
+          This is an interactive swirling particle simulator that reacts to
+          touch. Is game a useful description?
+        </p>
+
         <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
           Phone Brain
         </a>
@@ -56,10 +71,10 @@ export default class Games extends React.Component {
           what are games
               </marquee>
             </marquee>
-`,
+`
           }}
         />
       </div>
-    )
+    );
   }
 }

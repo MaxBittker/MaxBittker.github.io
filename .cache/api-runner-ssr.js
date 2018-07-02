@@ -1,6 +1,9 @@
 var plugins = [{
       plugin: require('/home/max/workspace/MaxBittker.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/home/max/workspace/MaxBittker.github.io/node_modules/gatsby-plugin-typography/gatsby-ssr'),
+      options: {"plugins":[],"pathToConfigModule":"src/components/typography.js"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

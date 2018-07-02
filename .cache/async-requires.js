@@ -3,6 +3,7 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---src-templates-blog-template-js": require("gatsby-module-loader?name=component---src-templates-blog-template-js!/home/max/workspace/MaxBittker.github.io/src/templates/blogTemplate.js"),
+  "component---cache-dev-404-page-js": require("gatsby-module-loader?name=component---cache-dev-404-page-js!/home/max/workspace/MaxBittker.github.io/.cache/dev-404-page.js"),
   "component---src-pages-404-js": require("gatsby-module-loader?name=component---src-pages-404-js!/home/max/workspace/MaxBittker.github.io/src/pages/404.js"),
   "component---src-pages-about-js": require("gatsby-module-loader?name=component---src-pages-about-js!/home/max/workspace/MaxBittker.github.io/src/pages/about.js"),
   "component---src-pages-art-js": require("gatsby-module-loader?name=component---src-pages-art-js!/home/max/workspace/MaxBittker.github.io/src/pages/art.js"),
@@ -22,6 +23,7 @@ exports.json = {
   "user-styles.json": require("gatsby-module-loader?name=path---user-styles!/home/max/workspace/MaxBittker.github.io/.cache/json/user-styles.json"),
   "merging-maps.json": require("gatsby-module-loader?name=path---merging-maps!/home/max/workspace/MaxBittker.github.io/.cache/json/merging-maps.json"),
   "first-order-retrievability.json": require("gatsby-module-loader?name=path---first-order-retrievability!/home/max/workspace/MaxBittker.github.io/.cache/json/first-order-retrievability.json"),
+  "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/home/max/workspace/MaxBittker.github.io/.cache/json/dev-404-page.json"),
   "404.json": require("gatsby-module-loader?name=path---404!/home/max/workspace/MaxBittker.github.io/.cache/json/404.json"),
   "about.json": require("gatsby-module-loader?name=path---about!/home/max/workspace/MaxBittker.github.io/.cache/json/about.json"),
   "art.json": require("gatsby-module-loader?name=path---art!/home/max/workspace/MaxBittker.github.io/.cache/json/art.json"),

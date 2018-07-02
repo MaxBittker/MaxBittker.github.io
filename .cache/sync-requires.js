@@ -8,6 +8,7 @@ exports.layouts = {
 
 exports.components = {
   "component---src-templates-blog-template-js": preferDefault(require("/home/max/workspace/MaxBittker.github.io/src/templates/blogTemplate.js")),
+  "component---cache-dev-404-page-js": preferDefault(require("/home/max/workspace/MaxBittker.github.io/.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(require("/home/max/workspace/MaxBittker.github.io/src/pages/404.js")),
   "component---src-pages-about-js": preferDefault(require("/home/max/workspace/MaxBittker.github.io/src/pages/about.js")),
   "component---src-pages-art-js": preferDefault(require("/home/max/workspace/MaxBittker.github.io/src/pages/art.js")),
@@ -27,6 +28,7 @@ exports.json = {
   "user-styles.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/user-styles.json"),
   "merging-maps.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/merging-maps.json"),
   "first-order-retrievability.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/first-order-retrievability.json"),
+  "dev-404-page.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/dev-404-page.json"),
   "404.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/404.json"),
   "about.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/about.json"),
   "art.json": require("/home/max/workspace/MaxBittker.github.io/.cache/json/art.json"),
