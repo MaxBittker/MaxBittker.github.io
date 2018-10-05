@@ -1,3 +1,39 @@
+html, body { 
+  margin:0; 
+  padding:0; 
+  height:100%; 
+}
+.b-wrap{
+  border: black 1px solid;
+  padding: 5px;
+  display: inline-block;
+
+  // position: absolute;
+  // top:3px;
+  // bottom: 3px;
+  // right: 3px;
+  // left:3px;
+  // display: flex;
+}
+.b-wrap.fill{
+    display: flex;
+  align-items: stretch;
+  width:100%;
+  // border-color: #0f0;
+  // height: 100%;
+}
+@media screen and (max-width: 500px) {
+.b-wrap{
+  padding:2px;
+}
+}
+
+.index{
+  height: 100%;
+  width: 100%;
+  background-color: #0000ff;
+  border-radius: 100%;
+}
 /* Variables */
 @color: pink;
 
@@ -41,13 +77,10 @@ body {
   background: #f4eaed;
 }
 
-body {
-  // background: #0C0C18;
-  // color: #ccc9c9;
-}
 
 h1 {
   border-bottom: medium dashed black;
+  margin-top: 0.2em;
 }
 
 #canvas {
@@ -390,13 +423,17 @@ a:active {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 500px) {
+.art-masonry{
+margin: 0 -2.0em;
+}}
 
 .art-card {
   border: 2px solid #f4eaed;
   overflow: hidden;
   box-sizing: content-box;
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
 
   img {
     margin: 0;

@@ -1,38 +1,58 @@
-import React from 'react'
-import RcScout from '../components/rcscout.js'
-
-import './example.less'
+import React from "react";
+import RcScout from "../components/rcscout.js";
+import HRadio from "../components/hradio.js";
+import "./example.less";
 
 export default class About extends React.Component {
   render() {
     return (
       <div>
         <marquee>
-          <h1>
-            Welcome to my web page &lt;/marquee&gt;
-            {/* &lt;/marque> ^C exit :wq! ^D &lt;/markee> &lt;/scroll> &lt;/marky> */}
-          </h1>
+          <h1>Welcome to my web page &lt;/marquee&gt;</h1>
+          <HRadio n={80} />
         </marquee>
+
         <p>
-          I'm a person & developer thinking about art, learning, computation,
-          communities and systems. Previously, I worked at Sentry, writing open
-          source tools to help people find and fix errors.
+          I'm a developer & artist interested in democratized, distributed, and
+          de-militarized computing.
         </p>
         <p>
-          Thanks for stopping by... perhaps I could interest you in some fine
-          corporate-owned hyperlinks?
+          That sounds cool but it's mostly aspirational. I do make art and some
+          weird computer programs sometimes though, you can find some of that this website and on my social media.
+        </p>
+        <p>I also care a lot about learning, community, and communication</p>
+        <p>
+          I used to work at Sentry, writing open source tools to help people
+          find and fix errors. Lately, I'm employed by Google, doing stuff on
+          the Fuchsia operating system.
+        </p>
+        <p>
+          Thank you for taking the time to stop by... perhaps I could interest
+          you in some hyperlinks?
         </p>
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            marginBottom: '1em',
-          }}
-        >
-          <a href="https://twitter.com/MaxBittker"> twitter </a>
-          <a href="https://github.com/MaxBittker"> github </a>
-          <a href="https://goodreads.com/maxbittker"> goodreads </a>
-          <a href="https://www.instagram.com/maxbittker/"> instagram </a>
+            display: "flex",
+            flexWrap:"wrap",
+            justifyContent: "space-around",
+            marginBottom: "1em"
+          }}>
+          <a href="https://twitter.com/MaxBittker">
+            {" "}
+            twitter <small>(twitter)</small>
+          </a>
+          <a href="https://github.com/MaxBittker">
+            {" "}
+            github <small>(microsoft)</small>{" "}
+          </a>
+          <a href="https://www.instagram.com/maxbittker/">
+            {" "}
+            instagram <small>(facebook)</small>
+          </a>
+          <a href="https://goodreads.com/maxbittker">
+            {" "}
+            goodreads <small>(amazon)</small>
+          </a>
         </div>
 
         <p> Or in a few projects of mine?</p>
@@ -42,7 +62,7 @@ export default class About extends React.Component {
           new word.
         </p>
         <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
-          Webcam Shader Sketches{' '}
+          Webcam Shader Sketches{" "}
         </a>
         <p>
           A collection of filters you can interact with via video input from
@@ -67,42 +87,20 @@ export default class About extends React.Component {
         </p>
         <a href="http://maxbittker.github.io/Mojulo/">Mojulo</a>
         <p>
-          Lo-fi math function visualization sandbox. Check out the{' '}
+          Lo-fi math function visualization sandbox. Check out the{" "}
           <a href="http://maxbittker.github.io/Mojulo/gallery.html">gallery</a>.
         </p>
         <p>
-          Other interests: simulation, software design, lisp, weird videogames,
-          democratized & distributed computing, biking, cooking, electronics,
-          fiction, folk punk / post rock / hip hop, intersectional feminism,
-          math, twitter bots, unix, vegetables, machine learning, graphics,
+          Other interests: programming languages, weird videogames, riding a
+          bike, cooking, electronics, fiction, folk punk, intersectional
+          feminism, anarchism, math, operating systems, vegetables, graphics,
           watercolors
         </p>
+        <marquee>
+          <HRadio n={100} />
+        </marquee>
         <RcScout />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `
-            <marquee
-              behavior="alternate"
-              direction="down"
-              style="
-              position: absolute;
-              width: 100%;
-              height: 100vh;
-              left:0;"
-              >
-              <marquee behavior="alternate">
-                  <img
-                   src="./moon.jpag"
-                   width:"0";
-                   height:"0";
-                   margin-bottom:"0"/>
-                   thanks for visiting
-              </marquee>
-            </marquee>
-`,
-          }}
-        />
       </div>
-    )
+    );
   }
 }

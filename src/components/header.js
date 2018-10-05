@@ -1,95 +1,60 @@
-import Link from 'gatsby-link'
+import Link from "gatsby-link";
 
-import React from 'react'
-import { Container } from 'react-responsive-grid'
-import Headroom from 'react-headroom'
-import Favicon from '../components/favicon.js'
+import React from "react";
+import { Container } from "react-responsive-grid";
+import Favicon from "../components/favicon.js";
+import Wrap from "../components/wrap";
 
+let linkStyle = {
+  color: "black",
+  textDecoration: "none",
+  padding: "0px  3px"
+};
 module.exports = React.createClass({
   propTypes() {
     return {
       children: React.PropTypes.any,
-      siteTitle: React.PropTypes.string,
-    }
+      siteTitle: React.PropTypes.string
+    };
   },
 
   render() {
     let headerStyle = {
-      transition: 'background-color 0.3s ease',
-    }
-    Favicon()
-    if (typeof window != 'undefined') {
-      if (window.location.pathname !== '/') {
-        headerStyle = {
-          transition: 'background-color 0.3s ease',
-          background: `hsl(${Math.random() * 255},45%,80%)`,
-        }
+      transition: "background-color 0.3s ease"
+    };
+    Favicon();
+    if (typeof window != "undefined") {
+      if (window.location.pathname !== "/") {
       }
     }
     return (
       <div>
-        <Headroom
-          wrapperStyle={{
-            marginBottom: '15px',
-          }}
-          style={headerStyle}
-        >
-          <Container
-            style={{
-              maxWidth: 960,
-              paddingTop: 0,
-              padding: '1.65rem 1.2376rem',
-            }}
-          >
-            <Link
-              to={'/'}
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              max bittker ∙&nbsp;
+          <Wrap n={3}>
+            <Link to={"/"} style={linkStyle}>
+              max bittker
             </Link>
-            <Link
-              to={'/about/'}
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              about ∙&nbsp;
+          </Wrap>
+          <Wrap n={3}>
+            <Link to={"/about/"} style={linkStyle}>
+              about
             </Link>
-
-            <Link
-              to={'/games/'}
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              games ∙&nbsp;
+          </Wrap>
+          <Wrap n={3}>
+            <Link to={"/games/"} style={linkStyle}>
+              games
             </Link>
-            <Link
-              to={'/art/'}
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              art ∙&nbsp;
+          </Wrap>
+          <Wrap n={3}>
+            <Link to={"/art/"} style={linkStyle}>
+              art
             </Link>
-            <Link
-              to={'/blog/'}
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
+          </Wrap>
+          <Wrap n={3}>
+            <Link to={"/blog/"} style={linkStyle}>
               blog
             </Link>
-          </Container>
-        </Headroom>
+          </Wrap>
       </div>
-    )
-  },
-})
+    );
+  }
+});

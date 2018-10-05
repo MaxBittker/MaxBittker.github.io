@@ -20,7 +20,7 @@ export default React.createClass({
     try{
     return {
       width: Math.min(window.innerHeight, window.innerWidth),
-      height: window.innerHeight,
+      height: window.innerHeight-50,
       ready:true,
     };
   }catch(e){
@@ -73,7 +73,7 @@ export default React.createClass({
     let gl = this.gl;
     let state = this.state_;
     let WIDTH = this.state.width / 2;
-    let HEIGHT = this.state.height / 2;
+    let HEIGHT = (this.state.height / 2) ;
 
     // compileShader :: (gl, source, shaderType) -> Shader
     // throws Error on compilation error
@@ -253,10 +253,14 @@ export default React.createClass({
                 position:"absolute",
                 left:'50%',
                 marginLeft:-(this.state.width/2)+'px',
-                top:0,
+                top:50,
+                bottom:0,
                 height:this.state.height + 'px',
                 width:this.state.width + 'px',
-                // zIndex:-1,
+                // maxWidth:'100%',
+                // maxHeight: "60vh",
+                // maxHeight: 'calc(100vh - 185px)',
+                zIndex:-1,
               }}
               width={this.state.width/2}
               height={this.state.height/2}/>

@@ -482,12 +482,12 @@ void main () {
         t += d;
     }
 
-    if(length(color) < 1.55){//2.5* noise((st*5000.)+time)){
-        // color = vec4(1.0);
+    if(length(color) > 1.55){//2.5* noise((st*5000.)+time)){
+        color = vec4(1.0);
         // color = vec4(0.,0.,0.,1.);
         
     }else{
-        // color = vec4(0.,0.,0.,0.);
+        color = vec4(0.,0.,0.,0.);
     }
 
     float spread = 0.0075;
@@ -511,7 +511,7 @@ void main () {
     if(found==0 && st.y < 0.9){
         // color = vec4(vec3(1.0),1.0);
          color = g;
-    //   color*=0.9;
+      color*=0.999;
     }
     gl_FragColor = color;
 }`;
