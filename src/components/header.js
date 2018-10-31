@@ -29,31 +29,36 @@ module.exports = React.createClass({
     }
     return (
       <div>
-          <Wrap n={3}>
-            <Link to={"/"} style={linkStyle}>
-              max bittker
-            </Link>
-          </Wrap>
-          <Wrap n={3}>
-            <Link to={"/about/"} style={linkStyle}>
-              about
-            </Link>
-          </Wrap>
-          <Wrap n={3}>
-            <Link to={"/games/"} style={linkStyle}>
-              games
-            </Link>
-          </Wrap>
-          <Wrap n={3}>
-            <Link to={"/art/"} style={linkStyle}>
-              art
-            </Link>
-          </Wrap>
-          <Wrap n={3}>
-            <Link to={"/blog/"} style={linkStyle}>
-              blog
-            </Link>
-          </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/"} style={linkStyle}>
+            max bittker
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/about/"} style={linkStyle}>
+            about
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/projects/"} style={linkStyle}>
+            projects
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/games/"} style={linkStyle}>
+            games
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/art/"} style={linkStyle}>
+            art
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/blog/"} style={linkStyle}>
+            blog
+          </Link>
+        </Wrap>
       </div>
     );
   }

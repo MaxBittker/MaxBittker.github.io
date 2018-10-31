@@ -1,11 +1,13 @@
 import React, { PropTypes } from "react";
 const Wrap = React.createClass({
   render() {
-    let { n, children, fill } = this.props;
+    let { n, children, fill, pack } = this.props;
     let cn = "b-wrap";
-    console.log(fill);
     if (fill) {
       cn += " fill";
+    }
+    if (pack) {
+      cn += " pack";
     }
     if (n === 0) {
       return <div className={cn}>{children}</div>;

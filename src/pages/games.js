@@ -7,7 +7,10 @@ export default class Games extends React.Component {
   render() {
     return (
       <div>
-        <h1>Games!</h1>
+        <h1>Games</h1>
+        <a href="http://maxbittker.github.io/sandtable/">Sandtable</a>
+        <p>Modern web homage to the falling sand genre of games. </p>
+
         <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
           Hunt Night
         </a>
@@ -16,9 +19,6 @@ export default class Games extends React.Component {
           Can't Sleep
         </a>
         <p>A game about insomnia.</p>
-        <a href="http://maxbittker.github.io/dust/">Dust</a>
-        <p>Homage to the falling sand genre of games.</p>
- 
         <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
         <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
 
@@ -29,10 +29,10 @@ export default class Games extends React.Component {
           Local two player game exploring tradgedy of the commons, with a cool2
           flocking algorithm.
         </p>
-       <a href="https://maxbittker.github.io/thumbsport/"> Thumbsport </a>
+        <a href="https://maxbittker.github.io/thumbsport/"> Thumbsport </a>
         <p>
           A local multiplayer game built with WebGL and JS. Warning: autoplaying
-          8bit jazz, and requires gamepads to play. Laser socks demake.
+          8bit jazz, and requires gamepads to play! Laser socks demake.
         </p>
         <a href="http://maxbittker.github.io/orbs/">Orbs</a>
         <p>
