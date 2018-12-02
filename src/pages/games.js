@@ -10,7 +10,6 @@ export default class Games extends React.Component {
         <h1>Games</h1>
         <a href="http://maxbittker.github.io/sandtable/">Sandtable</a>
         <p>Modern web homage to the falling sand genre of games. </p>
-
         <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
           Hunt Night
         </a>
@@ -37,13 +36,17 @@ export default class Games extends React.Component {
         <a href="http://maxbittker.github.io/orbs/">Orbs</a>
         <p>
           This is an interactive swirling particle simulator that reacts to
-          touch. Is game a useful description?
+          touch.
         </p>
 
         <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
           Phone Brain
         </a>
-        <p>A flickgame about how PHONES are BAD.</p>
+        <p>A flickgame about phone looking.</p>
+
+        <a href="https://maxbittker.github.io/museum/">Museum Guard</a>
+        <p>An interactive demonstration of the art gallery problem.</p>
+
         <a href="https://www.flickgame.org/play.html?p=33819dc9191248a8661afd5a57ad2f80&a=1">
           Tomato Tomato
         </a>

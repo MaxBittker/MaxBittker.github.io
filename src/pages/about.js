@@ -86,9 +86,6 @@ export default class About extends React.Component {
         <marquee>
           <HRadio n={100} />
         </marquee>
-        <marquee>
-          <HRadio n={100} />
-        </marquee>
         <RcScout />
       </div>
     );

@@ -12,7 +12,7 @@ const IndexPage = ({
 
   return (
     <div>
-      <h1>Some of these posts are OK</h1>
+      <h1>Blogposts</h1>
       {Posts}
     </div>
   );

@@ -22,7 +22,7 @@
     "raven-js": "^3.26.3",
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
-    "react-instagram-embed": "latest",
+    "react-instagram-embed": "git+https://github.com/JokinenK/react-instagram-embed.git#release/1.4.0_json",
     "react-responsive-grid": "^0.3.4",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
