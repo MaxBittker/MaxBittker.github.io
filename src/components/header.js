@@ -1,7 +1,7 @@
 import Link from "gatsby-link";
 
 import React from "react";
-import { Container } from "react-responsive-grid";
+import createReactClass from "create-react-class";
 import Favicon from "../components/favicon.js";
 import Wrap from "../components/wrap";
 
@@ -10,7 +10,8 @@ let linkStyle = {
   textDecoration: "none",
   padding: "0px  3px"
 };
-module.exports = React.createClass({
+
+export default createReactClass({
   propTypes() {
     return {
       children: React.PropTypes.any,
@@ -19,9 +20,9 @@ module.exports = React.createClass({
   },
 
   render() {
-    let headerStyle = {
-      transition: "background-color 0.3s ease"
-    };
+    // let headerStyle = {
+    //   transition: "background-color 0.3s ease"
+    // };
     Favicon();
     if (typeof window != "undefined") {
       if (window.location.pathname !== "/") {

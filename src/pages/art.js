@@ -5,9 +5,19 @@ import _ from "lodash";
 import React from "react";
 import Helmet from "react-helmet";
 import InstagramEmbed from "react-instagram-embed";
+import createReactClass from "create-react-class";
 
 import data from "./art.json";
-
+let scriptInjected = false;
+function shouldInjectScript() {
+  if (scriptInjected) {
+    return false;
+  } else {
+    console.log("injecting");
+    scriptInjected = true;
+    return true;
+  }
+}
 const iposts = [
   "BoHPoazFQQw",
   "Bnh_qtblR_E",
@@ -79,7 +89,7 @@ const iposts = [
   return { name: "ipost", loc: url };
 });
 
-module.exports = React.createClass({
+export default createReactClass({
   propTypes() {
     return { route: React.PropTypes.object };
   },
@@ -116,11 +126,14 @@ module.exports = React.createClass({
               url={"https://instagr.am/p/" + loc}
               maxWidth={300}
               hideCaption={true}
-              injectScript={i == 0}
+              injectScript={false && shouldInjectScript()}
               ref=""
             />
           ) : (
-            <img src={withPrefix("/screenshots/" + loc)} />
+            <img
+              src={withPrefix("/screenshots/" + loc)}
+              alt="generatative art"
+            />
           )}
         </div>
       );

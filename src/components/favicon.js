@@ -1,5 +1,3 @@
-import React, { PropTypes } from "react";
-
 function setFavicon() {
   if (typeof window == "undefined") {
     return;
@@ -21,7 +19,10 @@ function setFavicon() {
   let color = Math.random() * 360;
 
   rgrd.addColorStop(0, `hsla(${color}, 60%, 50%, 0.3)`);
-  rgrd.addColorStop(1, `hsla(${(color + 20+ (Math.random()*100)) % 360}, 60%, 50%, 0.4)`);
+  rgrd.addColorStop(
+    1,
+    `hsla(${(color + 20 + Math.random() * 100) % 360}, 60%, 50%, 0.4)`
+  );
 
   ctx.fillStyle = lgrd;
   ctx.beginPath();

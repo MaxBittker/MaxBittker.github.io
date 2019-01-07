@@ -1,15 +1,15 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import get from "lodash/get";
 
-import { rhythm, scale } from '../components/typography'
+import typography from "../components/typography";
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const { previous, next } = this.props.pathContext
+    const post = this.props.data.markdownRemark;
+    const siteTitle = get(this.props, "data.site.siteMetadata.title");
+    const { previous, next } = this.props.pathContext;
 
     return (
       <div>
@@ -17,10 +17,10 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            ...typography.scale(-1 / 5),
+            display: "block",
+            marginBottom: typography.rhythm(1),
+            marginTop: typography.rhythm(-1)
           }}
         >
           {post.frontmatter.date}
@@ -28,16 +28,16 @@ class BlogPostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: typography.rhythm(1)
           }}
         />
         <ul
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            listStyle: "none",
+            padding: 0
           }}
         >
           {previous && (
@@ -57,11 +57,11 @@ class BlogPostTemplate extends React.Component {
           )}
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -79,4 +79,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

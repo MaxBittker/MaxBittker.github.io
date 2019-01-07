@@ -1,5 +1,7 @@
-import React, { PropTypes } from "react";
-const Wrap = React.createClass({
+import React from "react";
+import createReactClass from "create-react-class";
+
+const Wrap = createReactClass({
   render() {
     let { n, children, fill, pack } = this.props;
     let cn = "b-wrap";

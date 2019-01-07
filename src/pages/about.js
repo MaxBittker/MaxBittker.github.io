@@ -10,8 +10,8 @@ export default class About extends React.Component {
       <div>
         <marquee>
           <h1>Welcome to my web page &lt;/marquee&gt;</h1>
-          <HRadio n={80} />
         </marquee>
+        <HRadio n={150} />
 
         <p>
           I'm a developer & artist interested in democratized, distributed, and
@@ -83,9 +83,7 @@ export default class About extends React.Component {
           intersectional feminism, anarchism, math, operating systems,
           vegetables, graphics, watercolors
         </p>
-        <marquee>
-          <HRadio n={100} />
-        </marquee>
+        <HRadio n={150} flip />
         <RcScout />
       </div>
     );

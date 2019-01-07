@@ -7,27 +7,31 @@ import typography from "../components/typography";
 import Header from "../components/header";
 import Wrap from "../components/wrap";
 import "./index.css";
-
-const Layout = ({ children, data }) => (
+let title = "max-bittker";
+const Layout = ({ children }) => (
   <div>
     <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[{ name: "description", content: "Max's website" }]}>
+      title={title}
+      meta={[{ name: "description", content: "Max's website" }]}
+    >
+      <script src="//www.instagram.com/embed.js" />
+
       <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />
     </Helmet>
     <div className="b-wrap fill" style={{ minHeight: "100vh" }}>
       <Wrap n={4} fill={true}>
-        <div style={{width:"100%"}}>
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <div style={{ width: "100%" }}>
+          <Header siteTitle={title} />
           <div
             style={{
               margin: "0 auto",
               maxWidth: 960,
               padding: "0px 1.0875rem 1.45rem",
               paddingTop: 0
-            }}>
-            {children()}
+            }}
+          >
+            {children}
           </div>
         </div>
       </Wrap>
@@ -36,17 +40,7 @@ const Layout = ({ children, data }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.object
 };
 
 export default Layout;
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

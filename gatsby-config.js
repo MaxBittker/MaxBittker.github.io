@@ -3,9 +3,17 @@ module.exports = {
     title: "max-bittker"
   },
   plugins: [
+    "gatsby-plugin-layout",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-remove-trailing-slashes",
-    "gatsby-plugin-less",
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false
+        }
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
