@@ -2,7 +2,6 @@
 title: Merging Maps
 path: merging-maps
 date: 2017-11-00 00:00:00
-
 ---
 
 > "If I were going to give you a quick summary of what our codebase is like, I’d say it’s procedural code that manipulates maps."
@@ -56,7 +55,7 @@ This is all completely true -- but I still hope you'll find this comparison to b
 ### Javascript:
 
 ```javascript
-Object.assign({ shoulders: 2 }, { knees: 2 }, { toes: 10 })
+Object.assign({ shoulders: 2 }, { knees: 2 }, { toes: 10 });
 ```
 
 **composable, variadic, and preserving**

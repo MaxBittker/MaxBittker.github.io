@@ -8,8 +8,8 @@ export default class Games extends React.Component {
     return (
       <div>
         <h1>Games</h1>
-        <a href="http://maxbittker.github.io/sandtable/">Sandtable</a>
-        <p>Modern web homage to the falling sand genre of games. </p>
+        <a href="https://sandspiel.club/">Sandspiel</a>
+        <p>Loving homage to the falling sand genre of games. Rust + WebGL </p>
         <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
           Hunt Night
         </a>
