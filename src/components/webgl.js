@@ -3,6 +3,7 @@ import createReactClass from "create-react-class";
 
 import fShaderSource from "./fragmentShader.js";
 import { throttle } from "lodash";
+
 const vsSource = `
 attribute vec3 aPosition;
 varying vec2 uvN;

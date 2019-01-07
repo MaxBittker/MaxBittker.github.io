@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
       title={title}
       meta={[{ name: "description", content: "Max's website" }]}
     >
-      <script src="//www.instagram.com/embed.js" />
+      <script defer src="//www.instagram.com/embed.js" />
 
       <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />

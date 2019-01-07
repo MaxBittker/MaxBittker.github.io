@@ -36,6 +36,7 @@ let cursors = [
   "grab",
   "grabbing"
 ];
+var checkedradio;
 
 const HRadio = createReactClass({
   render() {
@@ -44,7 +45,7 @@ const HRadio = createReactClass({
     return (
       <div
         className="hradio"
-        ariaHidden="true"
+        aria-hidden="true"
         style={{
           flexWrap: flip ? "wrap-reverse" : "wrap"
         }}
@@ -54,6 +55,15 @@ const HRadio = createReactClass({
             key={i}
             type="radio"
             defaultChecked={i % 2}
+            onClick={e => {
+              let thisradio = e.target;
+              if (checkedradio == thisradio) {
+                thisradio.checked = false;
+                checkedradio = null;
+              } else {
+                checkedradio = thisradio;
+              }
+            }}
             style={{
               cursor: cursors[i % cursors.length]
             }}
