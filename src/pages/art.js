@@ -19,6 +19,7 @@ function shouldInjectScript() {
   }
 }
 const iposts = [
+  "BqFeGs9lODd",
   "BoHPoazFQQw",
   "Bnh_qtblR_E",
   "BmPy1vIFsWK",

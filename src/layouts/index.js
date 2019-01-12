@@ -7,6 +7,7 @@ import typography from "../components/typography";
 import Header from "../components/header";
 import Wrap from "../components/wrap";
 import "./index.css";
+
 let title = "max-bittker";
 const Layout = ({ children }) => (
   <div>

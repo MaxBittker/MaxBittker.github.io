@@ -1,6 +1,9 @@
 import React from "react";
 import PostLink from "../components/post-link";
 
+import "../layouts/index.css";
+import "../pages/example.less";
+
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges }

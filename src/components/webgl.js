@@ -38,9 +38,9 @@ export default createReactClass({
   componentDidMount() {
     let init = () => {
       let canvas = this.canvas;
-      let gl = (this.gl = canvas.getContext("webgl"));
+      this.gl = canvas.getContext("webgl");
 
-      const state = (this.state_ = {
+      this.state_ = {
         animationFrameRequest: null,
         bit: 0,
         fb: [null, null],
@@ -48,7 +48,7 @@ export default createReactClass({
         textures: [],
         videoTexture: null,
         mouse: { x: 0, y: 0 }
-      });
+      };
 
       let setMouse = event => {
         var r = event.target.getBoundingClientRect();

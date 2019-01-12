@@ -3,6 +3,9 @@ import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import get from "lodash/get";
 
+import "../layouts/index.css";
+import "../pages/example.less";
+
 import typography from "../components/typography";
 
 class BlogPostTemplate extends React.Component {
