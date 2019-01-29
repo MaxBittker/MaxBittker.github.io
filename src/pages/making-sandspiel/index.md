@@ -10,7 +10,7 @@ If you haven't played a falling sand game before, imagine a pixelated chemistry 
 
 ![screenshot](https://raw.githubusercontent.com/MaxBittker/sandspiel/master/Screenshot.png)
 
-## Why I love falling sand games
+## Why I love falling sand games 2/3
 
 I think I loved these games so much because their mode of play was creative and scientific in a way that activated my imagination. Playing with the elements means asking questions, building experiments, and inventing your own play.
 
@@ -28,7 +28,7 @@ The resulting interactions are engaging not only for their complexity, but becau
 
 > "Low-fidelity art is also appealingly open to interpretation. If a character is only eight pixels tall, a large part of what we see is within our own imagination." - Loren Schmidt
 
-### Microcommunity
+### Microcommunity 2/3
 
 The last component of my nostalgia for falling sand games that went into sandspiel are in their online communities.
 
@@ -52,7 +52,7 @@ Cool volcanos.
 Beautiful pixel-art architecture to destroy.
 ![castle](castle.png)
 
-## Building Sandspiel
+## Building Sandspiel 1/3
 
 Sandspiel was (at least) my third go at building an interactive falling sand simulation.
 
@@ -93,7 +93,7 @@ Implementing one idea multiple times was a huge strength in my ability to make b
 
 It also made writing in rust easier because I had a very good idea of what my datastructures would be and what types of APIS would be defined between components.
 
-### Architecture:
+### Architecture: 2/3
 
 The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe that holds my
 
@@ -187,7 +187,6 @@ gl.texImage2D(
 ```
 
 This is why it was so important that our Cell state was stored as an array of 4 byte chunks. WebGL has a lot of restrictions on the formats of data that can be used in textures, particularly on phones or older devices.
-![data](data.png)
 
 By storing our game state data in a way that happens to be a valid image texture, we can
 ship the whole thing over to the GPU with minimal repackaging and allocation! This was a big deal for making sandspiel's rendering performance so good- our rendering code blocks the CPU for less than 1 millisecond\* (Critical for meeting the strict 16ms budget to achieve 60FPS)
@@ -198,7 +197,7 @@ for the “logic” code in species.rs that defines how elements behave, i felt 
 
 an interesting anecdote here is that I unwittingly wrote most of the game with my rustc optimization strategy on “z”, optimize for binary size. once the project was already quite developed I realized this and switched it to o3 which things like inlining and gave me a big performance boost, where i had been being frugal!
 
-### Fluid Dynamics
+### Fluid Dynamics 2/3
 
 Sandspiel's fluid simulation is ripped from [Pavel Dobryakov's WebGL Navier-Stokes implementation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation). I'm extremely grateful for such a high quality open codebase to learn from, and in fact adapting this code was my most challenging technical hurdle I faced building the game.
 
@@ -212,7 +211,7 @@ There’s also a maximum # of bound texture units of 8, and I had to plug a lot 
 
 All of this was made worse by the fact that my only phone to test code on runs iOS, and Apple only allows you to connect to the mobile safari devtools from a mac. So I was debugging many of these WebGL device-specific limitations without so much as a console. Very frustrating and developer-hostile restriction placed by Apple here.
 
-### User Interface
+### User Interface 2/3
 
 I threw the interface together mostly in React. If you have one takeaway from this project, I want it to be that Web Assembly is not an all or nothing undertaking! The ability to put low-level and performance-critical logic into Rust and then handle browser stuff, glue code, and a high-quality UI in JS was critical to this project working out.
 
@@ -220,24 +219,34 @@ Leveraging the npm ecosystem for tools like React, Regl, and GLSLify, as well as
 
 Nothing I wrote in JS would have been _impossible_ to accomplish in rust, but it wouldn't have come together as quickly and I wouldn't have been able to test as many ideas along the way.
 
-That being said, building high quality interfaces is something I value and respect, but I really phoned it in for this part of the codebase and the experience suffers for it. There are a bunch of absent small touches like loading indicators, proper routing, visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job.
+That being said, building high quality interfaces is something I value and respect, but I feel that I mostly phoned it in for this part of the codebase and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing, visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job.
 
-### Sharing & Persistance
+### Sharing & Persistance 1/3
 
 Knowing that I wanted some sort of social sharing functionality, I decided to try using Firebase to handle my backend needs.
-I think it worked out really well! One design decision that turned out to be important here was that I wanted to avoid dealing with accounts and authorization. I find that stuff boring for the user and boring to implement so I went to great lengths to do without it.
+I think it worked out really well! One design decision that turned out to be important here was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
 
-A cool thing here is that I encode the game state as a PNG, which is compact and compressbile. Even cooler, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
+The way that I handled data security without auth was putting all data writing inside of cloud function endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enought to try to fight it.
 
-The basic architecture i
+A cool thing here about the backend is that I serialize the game state as a PNG, which is compact and very compressbile. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
+Here's what one looks like:
+![data](data.png)
+
+The basic architecture is something like this:
 ![firebase](firebase.png)
 
-serializeing state to a png worked really well- Because
-Vote counters
-IP adddresses
 Firebase cloud functions worked really well to handle demand (average 2 requests per second on the peak day)
 
-There were times when I was _really_ just wished I was writing a http server with a redis instance and dumping the files into a directory. But I don't want to be on the hook for DDos, failovers, upgrading dependencies - especially when the other things running on my VPS are already fragile, stateful, and ad-hoc. Firebase was harder to debug but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for a month (including the initial spike of traffic) has code about \$30 of my free credits, and I expect that at the current rate of traffic, it will be sustainable for me to keep running for the forseable future.
+There were times when I was really just wished I was writing a http server with a redis instance and dumping the files into a directory. But I don't want to be on the hook for DDos, failovers, upgrading dependencies - especially when the other things running on my VPS are already fragile, stateful, and ad-hoc. Firebase was harder to debug but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for a month (including the initial spike of traffic) has code about \$30 of my free credits, and I expect that at the current rate of traffic, it will be sustainable for me to keep running for the forseable future.
+
+### Community so far: 0/3
+
+SparkyKat
+Belp
+glitch liquid
+js api
+
+Thanks for reading!
 
 #Resources to check out:
 [The Book of Shaders](https://thebookofshaders.com/) I didn't specifically reference during this project, but I take any opportunity I can get to recommend the book of shaders to people interested in graphics programming.
