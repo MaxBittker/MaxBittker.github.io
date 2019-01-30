@@ -22,7 +22,7 @@ I think I loved these games so much because their mode of play was creative and 
 
 > "What happens if I do _this_?"
 
-The behavior of any single element is quite simple, but the resulting system is so rich for exploration because of the permutations of ways which elements can interact in different combinations and configurations.
+The behavior of any single element is quite simple, but the resulting system is so rich for exploration because of the many ways which elements can interact in different combinations and configurations.
 
 The resulting interactions are engaging not only for their complexity, but because of the ways your imagination sees reality reflected in them. Pouring some yellow pixels onto green ones can invoke a vivid scene in your mind far more engaging than what happens on the screen.
 
@@ -30,20 +30,18 @@ The resulting interactions are engaging not only for their complexity, but becau
 
 ### Microcommunity 2/3
 
-The last component of my nostalgia for falling sand games that went into sandspiel are in their online communities.
+People love to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, science demonstrations, propaganda, and art for one another to download and enjoy.
 
-People love to opine on their forgotten, weird corners of the internet, and mine is the (extremely active) upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, playgrounds, science demonstrations, propaganda, and art for one another to load locally and enjoy.
+Powder Game's upload galleries were beautiful place because the venue to build something and share it led to people inspiring eachother, riffing, showing off, and pushing the game in incredible directions! Sand games had so much staying power in my childhood in large part because of this weird community.
 
-Powder Game's upload galleries were beautiful place because the venue to build something and share it led to people inspiring eachother, riffing, showing off, and pushing the game in incredible directions!
-
-It's also important that this system was built right into the game -- every player had a immediate audience for their creation, versus a culture of a few famous youtubers or streamers. There was no comment section and a wide range of motivations for uploading.
+It's also important that this system was built right into the game -- every player had a immediate audience for their creation, versus a culture of a few famous youtubers or streamers. There was a wide variety of complexity and motivations among posters. Best of all, no comment section!
 
 Three archetypes of upload I remember fondly:
 
 Games for the player, often with empty promises of some reward for voting.
 ![mood ring](moodring.png)
 
-"Don't Smoke" educational demonstrations. (I think these were directly motivated by D.A.R.E. programs)
+"Don't Smoke" educational demonstrations. (I think these were directly fueled by children coming home after D.A.R.E. programs at school)
 ![dont smoke](dontsmoke3.png)
 
 Cool volcanos.
@@ -52,26 +50,29 @@ Cool volcanos.
 Beautiful pixel-art architecture to destroy.
 ![castle](castle.png)
 
+The creativity and imagination here were something I wanted to facilitate in sandspiel.
+
 ## Building Sandspiel 1/3
 
 Sandspiel was (at least) my third go at building an interactive falling sand simulation.
 
 ![dust](dust2.png)
 
-[My early attempt](https://maxbittker.github.io/dust/) was pure javascript in 2015. It was slow, used canvas APIs, and had a dissorganized mess of dynamic typing, switch statements, and global variables which made implementing and debugging each successive element's logic increasingly difficult, to the point that it even resulted in interesting bugs that I kept in the game, such as the "gitch" element. I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as improving or refactoring became more difficult and motivation to overcome these problems slipped away.
+[My early attempt](https://maxbittker.github.io/dust/) was pure javascript in 2015. It was slow, used canvas APIs, and had a dissorganized mess of dynamic typing, switch statements, and global variables which made implementing and debugging each successive element's logic increasingly difficult, to the point that it even resulted in interesting bugs that I kept in the game, such as the "gitch" element. I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as improving or refactoring became more difficult and motivation waned.
 
 ![lua](lua.png)
 
-The [second approach](https://github.com/MaxBittker/sand-toy) was in lua, and it evolved directly into my work on Sandspiel. A few things are briefly worth saying on this experience.
+The [second approach](https://github.com/MaxBittker/sand-toy) was in lua, and it evolved into my work on Sandspiel. A few things are briefly worth saying on this experience.
 First I want to say that luajit is super fast, and [LÖVE](https://love2d.org/) is an excellent tool for building games.
-Shaders, input handling -- pretty much everything clicked together and made life easy so I could get the game running quickly with minimal yak shaving and boilerplate.
-Coming from the browser, a tool which I have personally sunk _hundreds_ of hours into learning APIs, edge cases, and optimizitions, it was a shock to see how simple an effective a dedicated helpful programming environment for building games could be.
+Shaders, input handling, update and render loops -- pretty much everything clicked together and made life easy so I could get the game running quickly with minimal yak shaving and boilerplate.
+Coming from the browser, a tool which I have personally sunk _hundreds_ of hours into learning APIs, edge cases, and optimizitions, it was a shock to see how simple and effective an intentional programming environment for building games could be.
 
-Another important aspect of this attempt was that I was coming into it with several years of experience beyond what I had when building the pure javascript game. I also had a new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
+Another important aspect of this attempt was that I was coming into it with several years of experience beyond what I had when building the pure javascript game. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
 
-This was inspired by the idea to build a sand game with a safe "sandboxed API" that would allow people to not only share their compositions, like in the old games I loved, but also to code their own new elements against a simple API and share those!
+I was focusing on the ergonomics of defining elements with code because I was imagining a sand game with a sandboxed programming interface that would allow people to not only share their compositions, like in the old games I loved, but also to code their own new elements and share those!
 
-The first step of this process was still building a set of elements on my own, but I was thinking carefully about the needs of the element author and designing the engine to move as much complexity away from the responsibility of the individual elements in order to make the definition of a new element as simple and self-contained as possible.
+The first step of this process was still building a set of elements on my own, but I was thinking carefully about the needs of the element authors and designing the engine to move as much complexity away from being the responsibility of the individual elements.
+Everywhere that I could while designing the system, I tried to make the definition of a new element as simple and self-contained as possible, even when it meant just moving that complexity to into the "engine".
 
 ```lua
 function updateGas(p, getNeighbor, setNeighbor)
@@ -83,21 +84,19 @@ function updateGas(p, getNeighbor, setNeighbor)
 end
 ```
 
-This meant defining a contract that elements had to follow -- they're a single update method which will be called once per dot per frame by the system, and they can interact with the system only via special methods which allow safe reading and writing to their neighbors while abstracting away concerns such as the absolute position of the element in question (setNeightbor and getNeighbor deal in relative offsets), imposed limitations like how far away an element is allowed to mutate or inspect other elements from (in this case, only their direct neighbors, no "action at a distance") and also cleanly handling out of bounds accessses and relieving the individual elements from needing to take these concerns into their own logic.
+This meant defining a contract that elements had to follow -- they're a single update method which will be called once per dot per frame by the system, and they can interact with the system only via special methods which allow safe reading and writing to their neighbors while abstracting away concerns such as the absolute position of the element in question (setNeightbor and getNeighbor deal in relative offsets), observing limitations such as how far away an element is allowed to mutate or inspect other elements from (in this case, only their direct neighbors, no "action at a distance"), or handling out of bounds accessses. This work meant relieving the individual elements from needing to take these concerns into their own logic, and making the system more consistent, and critically faster and more fun to experiment with as I implemented my set of elements.
 
-Utimately, I was excited about this approach, but wanted to build in a an enviroment that would be easy to share. Despite everything good I had to say about LÖVE, the web is too special of a platform to pass up for me, and it's worth the difficulties imposed by its quirks and heterogenity of implementations.
+Utimately, I was excited about this approach, but wanted to build in a an enviroment that would be easy to share. Despite everything good I had to say about LÖVE, the web is too special of a platform to pass up for me, and it's worth the difficulties imposed by its quirks and warts.
 
-s soon as I had the basic system running, I realized that what I really wanted was the sharing power of the web, and so I
+I decided to put down the lua sand game and switch to rust and web assembly, but I was able to translate many of the lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIS would be defined between components made writing the rust version easier.
 
 Implementing one idea multiple times was a huge strength in my ability to make better tradeoffs, structure my codebase, and forsee pitfalls. I would strongly recommend this experience to anyone - If you have a project that you've attempted in the past but had to make compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and focus on aspects that you usually don't.
 
-It also made writing in rust easier because I had a very good idea of what my datastructures would be and what types of APIS would be defined between components.
-
 ### Architecture: 2/3
 
-The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe that holds my
+The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe. This is class handles the simulatoin and exposes a set of methods that get called by the javascript application, to do things like process a single tick or paint some pixels in response to an input event.
 
-Rust Universe Class
+This means that I don't try to handle an event loop or interact with the browser from inside the rust code - This is perfectly possible, but I chose to
 
 Data format
 
@@ -168,7 +167,9 @@ api.set(1, 0,
   );
 ```
 
-To send our game state from Web Assembly to WebGL, we create a [Javascript typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) view of the web assembly memory, and pass that to our fragment shader (GPU code) via a texture. s
+### Rendering
+
+To move the game state from Web Assembly to WebGL, we create a [Javascript typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) view of the web assembly memory, and pass that to our fragment shader (GPU code) via a texture.
 
 ```javascript
 // Typed Array is not a copy, it's a view of our web assembly array
@@ -186,10 +187,10 @@ gl.texImage2D(
 );
 ```
 
-This is why it was so important that our Cell state was stored as an array of 4 byte chunks. WebGL has a lot of restrictions on the formats of data that can be used in textures, particularly on phones or older devices.
-
 By storing our game state data in a way that happens to be a valid image texture, we can
 ship the whole thing over to the GPU with minimal repackaging and allocation! This was a big deal for making sandspiel's rendering performance so good- our rendering code blocks the CPU for less than 1 millisecond\* (Critical for meeting the strict 16ms budget to achieve 60FPS)
+
+This trick is also is why it was so important that our Cell state was stored as an array of 4 byte chunks. WebGL has a lot of restrictions on the formats of data that can be used in textures, particularly on phones or older devices.
 
 ![sand-trace](sand-trace.png)
 
@@ -199,11 +200,11 @@ an interesting anecdote here is that I unwittingly wrote most of the game with m
 
 ### Fluid Dynamics 2/3
 
-Sandspiel's fluid simulation is ripped from [Pavel Dobryakov's WebGL Navier-Stokes implementation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation). I'm extremely grateful for such a high quality open codebase to learn from, and in fact adapting this code was my most challenging technical hurdle I faced building the game.
+Sandspiel's fluid simulation is ripped from [Pavel Dobryakov's WebGL Navier-Stokes implementation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation). I'm extremely grateful for such a high quality open codebase to learn from, and in fact adapting this code was the most personally challenging technical hurdle I faced building the game.
 
 Adapting the code was difficult because, in order to have interactions between the wind (simulated on the GPU) and the particles (simulated on the CPU), I needed to pass data from Web Assembly to WebGL, and vice versa.
 
-I also needed to do this in a way that only used webgl features used by
+I also needed to do this in a way that only used webgl features available on phones - WebGl is a pretty complicated spec, and for hardware and driver reasons, not all of it is available on all devices.
 
 The texture types they support (the fluid sim is in floats, but on phone browsers I could only take data in or out of the shaders via unsigned byte textures, required some munging)
 
