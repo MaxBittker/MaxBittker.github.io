@@ -28,7 +28,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
+              maxWidth: 590,
+              showCaptions: true,
+              wrapperStyle: `text-decoration: none; background-image: none;`
             }
           },
           "gatsby-remark-prismjs",
