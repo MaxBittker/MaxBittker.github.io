@@ -30,6 +30,7 @@ module.exports = {
             options: {
               maxWidth: 590,
               showCaptions: true,
+              backgroundColor: "none",
               wrapperStyle: `text-decoration: none; background-image: none;`
             }
           },

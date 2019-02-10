@@ -257,21 +257,20 @@ That being said, building high quality interfaces is something I value and respe
 
 ### Sharing & Persistance 1/3
 
-Knowing that I wanted some sort of social sharing functionality, I decided to try using Firebase to handle my backend needs.
-I think it worked out really well! One design decision that turned out to be important here was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
+Knowing that I wanted some sort of social sharing functionality, I decided to try using Firebase to handle my backend needs. I think this worked out pretty well! One design decision that turned out to be important here was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
 
-The way that I handled data security without auth was putting all data writing inside of cloud function endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enought to try to fight it.
+The way that I handled data security without auth was putting all data writing inside of cloud function endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enough to try to fight it.
 
-A cool thing here about the backend is that I serialize the game state as a PNG, which is compact and very compressbile. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
-Here's what one looks like:
+A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is compact and highly compressbile. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
+Here's what the data looks like as a PNG: (remember, "red" is `species`, "green" is `ra`, and blue is `rb`)
 ![data](data.png)
 
 The basic architecture is something like this:
 ![firebase](firebase.png)
 
-Firebase cloud functions worked really well to handle demand (average 2 requests per second on the peak day)
+Firebase cloud functions worked really well to handle demand (average 2 requests per second on the peak day of the launch)
 
-There were times when I was really just wished I was writing a http server with a redis instance and dumping the files into a directory. But I don't want to be on the hook for DDos, failovers, upgrading dependencies - especially when the other things running on my VPS are already fragile, stateful, and ad-hoc. Firebase was harder to debug but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for a month (including the initial spike of traffic) has code about \$30 of my free credits, and I expect that at the current rate of traffic, it will be sustainable for me to keep running for the forseable future.
+There were times when I was really just wished I was writing a http server with a redis instance and dumping the files into a directory. But I don't want to be on the hook for DDoS and server management - especially when the other things running on my VPS are already fragile, stateful, and ad-hoc. Firebase was harder to debug but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for all of January cost about \$15, and 99% of that was "firestore reads" which I haven't tried to optimize for. I expect that at the current rate of traffic, it will be sustainable for me to keep running for quite a while.
 
 ### Community so far: 0/3
 
@@ -283,12 +282,20 @@ js api
 Thanks for reading!
 
 #Resources to check out:
+
+[The Rust Wasm Book](https://rustwasm.github.io/book/) is a _great_ succinct resource that covers all aspects of writing a hybrid JS & Rust application. I had basic rust knowledge before starting Sandspiel, but no knowledge of web assembly, and was able to follow this book to bootstrap the game. A lot of code from the book actually ended ended up in my game, since their example was cellular automota related.
+
 [The Book of Shaders](https://thebookofshaders.com/) I didn't specifically reference TBoS during this project, but I take any opportunity I can get to recommend it to anyone interested in learning graphics programming. I wish this book was a part of highschool math curiculums.
 
 [WebGL Fundementals](https://webglfundamentals.org/) & [WebGL2 Fundementals](https://webgl2fundamentals.org/) Really solid & complete explanations of WebGL basics, put into context of common tasks and patterns. Finding those two things together is rare!
 
-[The Rust Wasm Book](https://rustwasm.github.io/book/) is a _great_ succinct resource that covers all aspects of writing a hybrid JS & Rust application. I had basic rust knowledge before starting Sandspiel, but no knowledge of web assembly, and was able to follow this book to bootstrap the game. A lot of code from the book actually ended ended up in my game, since their example was cellular automota related.
-
 [Fast Fluid Dynamics Simulation on the GPU](http://developer.download.nvidia.com/books/HTML/gpugems/gpugems_ch38.html) is a chapter from the book _GPU Gems_, which details the math and mechanics that go into a beautiful and buttery Navier Stokes fluid simulation. It's really interesting how physical concepts like pressure, advection, and diffusion, all expressed as math operations on grids of floats, can be composed into a convincing asimulation.
 
 Also, thanks to Chris Crawford, Nikhilesh Sigatapu, Thais Correia, Pavel Dobryakov, the Rust WebAssembly working group, and ha55ii for inspiration, knowledge, code, and feedback!
+
+#Extra links:
+[sandspiel source code](https://github.com/MaxBittker/sandspiel)
+
+[sandspiel.club traffic statistics](https://simpleanalytics.io/sandspiel.club)
+
+[@sandspiel_feed twitter feed of uploads](https://twitter.com/sandspiel_feed)
