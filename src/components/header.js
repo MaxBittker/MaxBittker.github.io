@@ -8,7 +8,15 @@ import Wrap from "../components/wrap";
 let linkStyle = {
   color: "black",
   textDecoration: "none",
-  padding: "0px  3px"
+  padding: "0px  3px",
+  position: "relative",
+  zIndex: 100,
+  // backgroundColor: "#f4eeef"
+  textShadow: `
+  -2px -2px  #f4eeef,
+   2px -2px  #f4eeef,
+   -2px 2px  #f4eeef,
+  2px 2px  #f4eeef`
 };
 
 export default createReactClass({

@@ -57,16 +57,18 @@ const HRadio = createReactClass({
             defaultChecked={i % 2}
             onClick={e => {
               let thisradio = e.target;
-              if (checkedradio == thisradio) {
+              if (checkedradio === thisradio) {
                 thisradio.checked = false;
                 checkedradio = null;
               } else {
                 checkedradio = thisradio;
               }
             }}
-            style={{
-              cursor: cursors[i % cursors.length]
-            }}
+            style={
+              {
+                // cursor: cursors[i % cursors.length]
+              }
+            }
           />
         ))}
       </div>

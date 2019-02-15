@@ -2,8 +2,32 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+.loom {
+  // display: block;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: calc(100vw);
+  // bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  stroke: black;
+  stroke-width: 1px;
+  // shape-rendering: geometricPrecision;
+}
+.loom-row {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
 .hradio {
   line-height: 0px;
   margin-bottom: 1em;
@@ -15,6 +39,8 @@ body {
   border: black 1px solid;
   padding: 5px;
   display: inline-block;
+  background-color: #f4eeef;
+  z-index: 1;
 
   // position: absolute;
   // top:3px;
@@ -36,15 +62,15 @@ body {
 }
 @media screen and (max-width: 500px) {
   .b-wrap {
-    padding: 2px;
+    padding: 1px;
   }
 }
 
 .index {
   height: 100%;
   width: 100%;
-  background-color: #0000ff;
-  border-radius: 100%;
+  // background-color: #0000ff;
+  // border-radius: 100%;
 }
 /* Variables */
 @color: pink;
