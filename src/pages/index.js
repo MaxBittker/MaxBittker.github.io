@@ -1,6 +1,6 @@
 import React from "react";
 import Raven from "raven-js";
-import WebGL from "../components/webgl.js";
+// import WebGL from "../components/webgl.js";
 
 import "./example.less";
 import Loom from "../components/loom.js";

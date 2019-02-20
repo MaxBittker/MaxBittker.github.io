@@ -102,13 +102,13 @@ export default createReactClass({
       if (posts.length < lim) {
         clearInterval(this.expand);
       }
-    }, 1000);
+    }, 3000);
   },
   getInitialState() {
     const { screenshots } = data;
     let scs = _.reverse(screenshots.slice());
     let posts = _.flatten(_.zip(iposts, scs)).filter(i => i);
-    // let posts = _.shuffle(iposts.concat(data.screenshots));
+    posts = _.shuffle(posts);
     return { posts, lim: 9 };
   },
 

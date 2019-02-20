@@ -1,7 +1,7 @@
 ---
 title: Making Sandspiel (wip dont share pls)
 path: making-sandspiel
-date: 2019-01-06 00:00:00
+date: 2019-02-16 00:00:00
 ---
 
 [Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and experiences from that process.
@@ -37,11 +37,11 @@ The simulation is engaging not only for their complexity, but because of the way
 
 ### Microcommunity
 
-People love to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, science demonstrations, propaganda, and art for each other another to load and enjoy.
+People love to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, science demonstrations, propaganda, and art.
 
-Powder Game's upload galleries were beautiful place -- the venue to easily build something and share it led to people inspiring each other, riffing, and flexing the game in incredible directions! Sand games had so much staying power through my childhood in large part because of this weird community.
+Powder Game's upload galleries were a beautiful place -- the accessible venue to build something and share it led to people inspiring each other, riffing, and pushing the game in incredible directions! Sand games had so much staying power through my childhood in large part because of this weird community.
 
-It's also important that this system was built right into the game -- every player had a immediate audience for their creation, versus a culture of a few famous youtubers or streamers, or even the sort of self-selecting culture you find on forums. There was a wide variety of complexity and motivations among posters. All with no comment section!
+It's also important that this system was built right into the game -- every player had a immediate audience for their creation, in contrast to a culture built around a few famous youtubers or streamers, or even the sort of self-selecting community you find on enthusiast forums. There was a wide variety of complexity and motivations among posters. All with no comment section!
 
 Three archetypes of upload I remember fondly:
 
@@ -61,22 +61,26 @@ The added dimension of an audience brings so much depth to playing around with s
 
 ## Building Sandspiel
 
-Sandspiel was (at least) my third go at building an interactive falling sand simulation.
+Sandspiel was actually my third attempt at building an interactive falling sand simulation.
 
-[My early attempt](https://maxbittker.github.io/dust/) was pure javascript in 2015. It was slow, used canvas APIs, and was a disorganized mess of dynamic typing, switch statements, and global variables which made implementing and debugging each successive element's logic increasingly difficult, to the point that it even resulted in bugs that I kept in the game, such as the "gitch" element. I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as improving or refactoring became more difficult and motivation waned.
+[My early attempt](https://maxbittker.github.io/dust/) was pure javascript in 2015. It was slow, used canvas APIs, and was a disorganized mess of dynamic typing, switch statements, and global variables which made implementing and debugging each successive element's logic increasingly difficult, to the point that it even resulted in bugs that I kept in the game, such as the "gitch" element. I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned.
 
 ![dust](dust2.png)
 
-The [second approach](https://github.com/MaxBittker/sand-toy) was in lua, and it evolved into my work on Sandspiel. A few things are briefly worth saying on this experience.
-First I want to say that luajit is super fast, and [LÖVE](https://love2d.org/) is an excellent tool for building games.
-Shaders, input handling, update and render loops -- pretty much everything clicked together and made life easy so I could get the game running quickly with minimal yak shaving and boilerplate.
-Coming from the browser, a tool into which I have personally sunk _hundreds_ of hours into learning APIs, edge cases, and optimizations, it was a surprise to see how simple and effective a minimal programming environment for building games could be.
+The [second approach](https://github.com/MaxBittker/sand-toy) was in lua, and it evolved into my work on Sandspiel. A few things are briefly worth saying on this experience:
+First I have to say that luajit is super fast, and [LÖVE](https://love2d.org/) is an excellent tool for building games.
+Shaders, input handling, update and render loops -- everything clicked together and made life easy so I could get things running quickly with minimal yak shaving and boilerplate.
+Coming from the browser, a tool into which I have personally sunk _hundreds_ of hours into learning APIs, edge cases, and optimizations, it was a surprise to see how effective a minimal programming environment for building games could be. So much complexity that we put up with is due to legacy and sunk costs!
 
-![lua](lua.png)
+  <figure>
+<video muted controls width="100%" autoplay="true" loop="true" name="lua video" src="lua.MOV"></video>
 
-Another important aspect of this new attempt to build a sand game was that I was coming into it with several years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
+  <figcaption>First vaugely working moment of the lua demo</figcaption>
+</figure>
 
-I came in with a focus on the ergonomics of defining elements with code because I was trying to build a sand game with a fully sandboxed programming interface that would allow people to not only share their compositions, but also to _code their own new elements_ and share those!
+Another important aspect of this second attempt to build a sand game was that I was coming into it with several years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
+
+I approached the project with a focus on the ergonomics of defining elements with code because I was trying to build a sand game with a fully sandboxed programming interface that would allow people to not only share their compositions, but also to _code their own new elements_ and share those!
 
 My hope was that a community of people collaborating to build a plethora of weird elements would find really interesting design spaces that hadn't been covered in other sand games.
 
@@ -92,31 +96,42 @@ function updateGas(p, getNeighbor, setNeighbor)
 end
 ```
 
-todo: make this paragraph make sense:
+This meant defining a contract that elements had to follow -- I settled on a single update method which defines the behavior of a single particle during a single update tick. The code inside the method can interact with the system only via special methods which provide safe reading and writing to their neighbors.
+This API abstracts away concerns such as the particle's absolute position, interactions with the edges of the grid, and a maximum read or write neighborhood for the particles.
 
-Making the definition of a new element as simple and self-contained as possible ultimately paid off an made the system a lot more fun to iterate on.
-
-This meant defining a contract that elements had to follow -- they're a single update method which will be called by the system once per particle per frame, and they can interact with the system only via special methods which allow safe reading and writing to their neighbors. This API abstracts away concerns such as
-
+<!--
 - the absolute position of the particle in question (setNeighbor and getNeighbor deal in relative offsets),
 - observing limitations such as how far away an element is allowed to mutate or inspect other elements from (in this case, only their direct neighbors, no "action at a distance")
-- and handling out of bounds accesses.
+- and handling out of bounds accesses. -->
 
 This work relieved the individual elements from needing to take on these concerns into their own logic, and made the system more consistent and easier to experiment with as I implemented my set of elements.
 
-Ultimately, I was excited about this approach, but wanted to build in a an environment that would be easy to share. Despite everything good I had to say about LÖVE, the web is too special of a platform to pass up for me, and it's worth the difficulties imposed by its quirks and warts.
+Focusing on making the definition of a new element simple and self-contained ultimately paid off, even though I ened up being the only consumer of these APIs. The system being more fun to iterate on was reward enough to justify the extra care put into the architecture.
 
-I decided to put down the lua implementation and switch to rust and web assembly, but I was able to translate many of the lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIS would be defined between components made writing the rust version easier.
+Ultimately, I was excited about this approach, but wanted to build in a an environment that would be easy to share. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the difficulties imposed by its quirks and warts.
 
-Implementing one idea multiple times was a huge strength in my ability to structure my codebase, forsee pitfalls, and make more intentional tradeoffs. _I would strongly recommend this experience to anyone_ - If you have a project that you've attempted in the past but had to make compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and focus on aspects that you usually don't.
+![lua](lua.png)
+
+I decided to put down the lua implementation and switch to rust and web assembly, but I was able to directly translate many of the lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIs would be defined between components made writing the rust version easier.
+
+Implementing one idea multiple times was a huge strength in my ability to structure my codebase, forsee pitfalls, and make more intentional tradeoffs. _I would strongly recommend this experience to anyone_ - If you have a project that you've attempted in the past but didn't finish or made compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and focus on aspects that you usually don't.
 
 ### Architecture:
 
-The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe. This is class holds the game state and exposes a set of methods that get called by the javascript application, to do things like process a frame of the simulation, paint some pixels, or pass a pointer to the gamestate buffer.
+Sandspiel.club can be described as four main components
 
-This means that I don't try to handle an event loop or interact with the browser from inside the Rust code - This is all perfectly possible, but I'm very happy with this division of labor between the JS and Rust. Everything low level or CPU intensive happens within the Rust-generated web assembly code, and all of the the glue related to human interface, WebGL calls, and browser APIs takes place in the javascript.
+- the simulation code, writen in rust
+- user interface written in react & JS
+- a fluid simulation, written in WebGL & JS
+- a CRUD backend written in with typescript and firebase
+
+The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe. This is class holds the game state and exposes a set of methods that get called by the Javascript application, to do things like process a frame of the simulation, paint some pixels, or pass a pointer to the gamestate buffer.
+
+This means that I don't try to handle an event loop or interact with the browser from inside the Rust code - all of that would be perfectly possible, but I'm very happy with this division of labor between the JS and Rust. Everything low level or CPU intensive happens within the Rust-generated Web Assembly code, while all of the the glue related to human interface, WebGL calls, and browser APIs takes place in the javascript.
 
 #### Data format
+
+Another notable aspect of the architecture is the data format I used for the game state. By setting some constraints on the system, I was able to benefit from a compact and uniform format that performed and serialized well.
 
 The state for a single particle is represented as a 32 bit struct.
 
@@ -130,7 +145,7 @@ pub struct Cell {
 }
 ```
 
-The first field, species, is a custom type which represents the varieties of particles as numbers.
+The first field, `species`, is a custom enum type which represents the varieties of particles as numbers.
 
 ```rust
 #[wasm_bindgen]
@@ -155,7 +170,7 @@ You may have noticed that nowhere in this cell state struct is a concept of loca
 
 ### Update Function
 
-The most important pieces of code in the game are the functions that determine how each particle interacts with its neighbors each frame. Theoretically, you could delete the `species.rs` file and write a new one that transforms the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a cityscape, a paint canvas, or an aquarium.
+The most important pieces of code in the game are the set of functions, one per element type, that define how each particle interacts with its neighbors each frame. Theoretically, you could delete these functions (which live in [species.rs](https://github.com/MaxBittker/sandspiel/blob/master/crate/src/species.rs) ) and write a new set that transform the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a cityscape, a paint canvas, or an aquarium.
 
 Here's an example of how one of our elements is defined:
 
@@ -178,7 +193,7 @@ pub fn update_sand(cell: Cell, mut api: SandApi) {
 }
 ```
 
-SandApi a struct that holds the location of the element in a way that is transparent to the update function. It has two important functions: get and set, which accept relative coordinates and let you read and write to your neighboring cells. For instance, `api.get(0, 1).species` tells you the species of the particle below you, and
+SandApi a struct that holds the location of the element in a way that is transparent to the update function. It has two important functions: get and set, which accept relative coordinates and let you read and write to your neighboring cells. For instance, `api.get(0, 1).species` tells you the species of the particle below you, and calling
 
 ```rust
 api.set(0, 0,
@@ -191,7 +206,7 @@ api.set(0, 0,
   );
 ```
 
-Will write a `fire` particle to your current location (erasing yourself in the process).
+will write a `Fire` particle to your current location (erasing yourself in the process).
 
 Designing and tuning these update functions was a lot of fun, and I was able to test out a lot of ideas and play with different interactions. I didn't make use of syntax macros or anything as fancy as that, but the experience was a lot like that of building a system by first building a "Domain Specific Language" which encodes the shared behaviors and invariants of the system, and then scripting its inhabitants in that simplified DSL.
 

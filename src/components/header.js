@@ -54,8 +54,8 @@ export default createReactClass({
           </Link>
         </Wrap>
         <Wrap n={3} pack>
-          <Link to={"/games/"} style={linkStyle}>
-            games
+          <Link to={"/face/"} style={linkStyle}>
+            :-)
           </Link>
         </Wrap>
         <Wrap n={3} pack>

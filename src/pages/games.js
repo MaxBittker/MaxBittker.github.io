@@ -5,55 +5,6 @@ import "./example.less";
 
 export default class Games extends React.Component {
   render() {
-    return (
-      <div>
-        <h1>Games</h1>
-        <a href="https://sandspiel.club/">Sandspiel</a>
-        <p>Loving homage to the falling sand genre of games. Rust + WebGL </p>
-        <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
-          Hunt Night
-        </a>
-        <p>A short story game built in pico-8.</p>
-        <a href="https://www.flickgame.org/play.html?p=07885489aad75d09629dd9c52c07a229&a=1">
-          Can't Sleep
-        </a>
-        <p>A game about insomnia.</p>
-        <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
-        <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
-
-        <a href="http://maxbittker.github.io/fish/">
-          Ethical Fishing Simulator
-        </a>
-        <p>
-          Local two player game exploring tradgedy of the commons, with a cool2
-          flocking algorithm.
-        </p>
-        <a href="https://maxbittker.github.io/thumbsport/"> Thumbsport </a>
-        <p>
-          A local multiplayer game built with WebGL and JS. Warning: autoplaying
-          8bit jazz, and requires gamepads to play! Laser socks demake.
-        </p>
-        <a href="http://maxbittker.github.io/orbs/">Orbs</a>
-        <p>
-          This is an interactive swirling particle simulator that reacts to
-          touch.
-        </p>
-
-        <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
-          Phone Brain
-        </a>
-        <p>A flickgame about phone looking.</p>
-
-        <a href="https://maxbittker.github.io/museum/">Museum Guard</a>
-        <p>An interactive demonstration of the art gallery problem.</p>
-
-        <a href="https://www.flickgame.org/play.html?p=33819dc9191248a8661afd5a57ad2f80&a=1">
-          Tomato Tomato
-        </a>
-        <p>A flickgame about eating tomatos with salt.</p>
-
-        <RcScout />
-      </div>
-    );
+    return <div />;
   }
 }

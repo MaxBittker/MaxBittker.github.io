@@ -11,7 +11,6 @@ export default class About extends React.Component {
         <marquee>
           <h1>Welcome to my web page &lt;/marquee&gt;</h1>
         </marquee>
-        <HRadio n={80} />
 
         <p>
           I'm a developer & artist interested in democratized, distributed, and
