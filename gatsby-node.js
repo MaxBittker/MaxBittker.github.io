@@ -59,6 +59,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+  if (page.path.match("/art")) {
+    page.context.wide = true;
+    createPage(page);
+  }
+};
+
 var p = "./static/screenshots";
 fs.readdir(p, function(err, files) {
   if (err) {
@@ -71,7 +79,7 @@ fs.readdir(p, function(err, files) {
     })
     .map(function(file) {
       return {
-        name: "testTitle",
+        type: path.extname(file),
         loc: file
       };
     });

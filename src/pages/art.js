@@ -4,91 +4,28 @@ import { withPrefix } from "gatsby-link";
 import _ from "lodash";
 import React from "react";
 import Helmet from "react-helmet";
-import InstagramEmbed from "react-instagram-embed";
 import createReactClass from "create-react-class";
 
 import data from "./art.json";
-let scriptInjected = false;
-function shouldInjectScript() {
-  if (scriptInjected) {
-    return false;
-  } else {
-    console.log("injecting");
-    scriptInjected = true;
-    return true;
-  }
-}
-const iposts = [
-  "BqFeGs9lODd",
-  "BoHPoazFQQw",
-  "Bnh_qtblR_E",
-  "BmPy1vIFsWK",
-  "BmM-BorFpUF",
-  "Bkv9_t4lDtD",
-  "BkO5x2XFB4d",
-  "BkMTjCmlSmt",
-  "BkHGhiEFuK0",
-  "BjjAsRalv_o",
-  "BigTj4qFTRY",
-  "Bh5per1FsEJ",
-  "Bh2atUflmN",
-  "Bhsy3q7FuyH",
-  "BhSyQQoA8WU",
-  "BgbxR6Wj29K",
-  "BgaQx2iDXNT",
-  "BgaK_-rDgP6",
-  "BcZm5-Kg_sL",
-  "BcUIZa-At-O",
-  "BcUHC8fAyZv",
-  "BcRzsV7grXS",
-  "BcFhNEoAORl",
-  "BbtFGAwAk2d",
-  "Bbs-dHjgpKS",
-  "BbMzrN1gq0Q",
-  "BbJY58xgI3H",
-  "Ba3Ha-sAoYd",
-  "BanuIyegKtw",
-  "BYURQ3ng6go",
-  "BXe5A6TAG4R",
-  "BXUbX5bAAGp",
-  "BXR7Ej5ANuJ",
-  "BXMsS91ARCg",
-  "BWjy7vSAHkv",
-  "BV-MYxOgvrA",
-  "BVfOGaKAmq0",
-  "BVOFOGWFYn5",
-  "BVNyCp8F5JW",
-  "BU6M0AnlPIl",
-  "BTyFGnslsGx",
-  "BSsEwCaljLZ",
-  "BSr_6pzFOxz",
-  "BSp3AeEl_0M",
-  "BSp1S1SlMZ9",
-  "BSovCWQl4ZF",
-  "BSZ2CsXF6tw",
-  "BRkXPqAF4k8",
-  "BRkWobilG3s",
-  "BRkH1GqFf8K",
-  "BRj6ObglyAV",
-  "BQw80pWlAXn",
-  "BQwMWc-F05R",
-  "BQvyTPMFv-C",
-  "BQutvtKFlaL",
-  "BQt8DSNlYvr",
-  "BQrSnwml5fY",
-  "BQrH0NKlrrI",
-  "BQqyuDMFP-x",
-  "BQqtXolFqIw",
-  "BPzE9fhAIFU",
-  "BPl4Mm7A898",
-  "BPl0xl2ANXF",
-  "BPVzIArgxqV",
-  "BPTsg38AyQ9",
-  "BOgJf9bgDXO",
-  "BqFeGs9lODd"
-].map(url => {
-  return { name: "ipost", loc: url };
-});
+
+const VideoWorkaround = ({ src }) => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `
+    <video
+      muted
+      autoplay
+      playsinline
+      loop
+      controls
+      width="100%"
+      name="art video"
+      src="${src}"
+      />
+  `
+    }}
+  />
+);
 
 export default createReactClass({
   propTypes() {
@@ -98,16 +35,16 @@ export default createReactClass({
   componentDidMount() {
     this.expand = setInterval(() => {
       let { posts, lim } = this.state;
-      this.setState({ lim: lim + 3 });
+      this.setState({ lim: lim + 2 });
       if (posts.length < lim) {
         clearInterval(this.expand);
       }
-    }, 3000);
+    }, 2000);
   },
   getInitialState() {
     const { screenshots } = data;
     let scs = _.reverse(screenshots.slice());
-    let posts = _.flatten(_.zip(iposts, scs)).filter(i => i);
+    let posts = scs.filter(i => i);
     posts = _.shuffle(posts);
     return { posts, lim: 9 };
   },
@@ -118,18 +55,12 @@ export default createReactClass({
 
   render() {
     let { posts, lim } = this.state;
-    let scs = posts.slice(0, lim).map(({ name, loc }, i) => {
-      let ipost = name === "ipost";
+    let scs = posts.slice(0, lim).map(({ type, loc }, i) => {
+      let isVideo = type === ".mp4";
       return (
-        <div key={i} className={"art-card " + (ipost ? "ipost" : "")}>
-          {ipost ? (
-            <InstagramEmbed
-              url={"https://instagr.am/p/" + loc}
-              maxWidth={300}
-              hideCaption={true}
-              injectScript={false && shouldInjectScript()}
-              ref=""
-            />
+        <div key={i} className={"art-card"}>
+          {isVideo ? (
+            <VideoWorkaround src={withPrefix("/screenshots/" + loc)} />
           ) : (
             <img
               src={withPrefix("/screenshots/" + loc)}

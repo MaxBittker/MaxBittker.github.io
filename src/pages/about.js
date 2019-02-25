@@ -30,10 +30,7 @@ export default class About extends React.Component {
           }}
         >
           <Link to={"/projects/"} style={linkStyle}>
-            projects
-          </Link>
-          <Link to={"/games/"} style={linkStyle}>
-            games
+            projects & games
           </Link>
           <Link to={"/art/"} style={linkStyle}>
             art
@@ -78,11 +75,11 @@ export default class About extends React.Component {
         </p>
         <p>
           Other interests I have are programming languages, weird videogames,
-          riding a bike, cooking, electronics, fiction, folk punk,
-          intersectional feminism, anarchism, math, operating systems,
-          vegetables, graphics, watercolors
+          riding a bike, cooking, electronics, fiction, music, intersectional
+          feminism, anarchism, math, operating systems, vegetables, graphics,
+          watercolors, and weaving
         </p>
-        <HRadio n={80} flip />
+        <HRadio n={180} flip />
         <RcScout />
       </div>
     );

@@ -9,14 +9,12 @@ import Wrap from "../components/wrap";
 import "./index.css";
 
 let title = "max-bittker";
-const Layout = ({ children }) => (
+const Layout = ({ children, pageContext }) => (
   <div>
     <Helmet
       title={title}
       meta={[{ name: "description", content: "Max's website" }]}
     >
-      <script defer src="//www.instagram.com/embed.js" />
-
       <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />
     </Helmet>
@@ -27,7 +25,7 @@ const Layout = ({ children }) => (
           <div
             style={{
               margin: "0 auto",
-              maxWidth: 960,
+              maxWidth: pageContext.wide ? 1400 : 960,
               padding: "0px 0.5rem 1.45rem",
               paddingTop: 0
             }}
