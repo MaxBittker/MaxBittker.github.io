@@ -13,6 +13,10 @@ let linkStyle = {
   zIndex: 100,
   // backgroundColor: "#f4eeef"
   textShadow: `
+  -1px -1px  #f4eeef,
+   1px -1px  #f4eeef,
+   -1px 1px  #f4eeef,
+  1px 1px  #f4eeef,
   -2px -2px  #f4eeef,
    2px -2px  #f4eeef,
    -2px 2px  #f4eeef,
