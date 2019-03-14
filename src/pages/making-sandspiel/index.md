@@ -4,13 +4,13 @@ path: making-sandspiel
 date: 2019-02-16 00:00:00
 ---
 
-[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and experiences from that process.
+[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this and but you haven't played sandspiel, you should [go try it](https://sandspiel.club)!
 
 ![screenshot](https://raw.githubusercontent.com/MaxBittker/sandspiel/master/Screenshot.png)
 
 ## I love falling sand games.
 
-If you haven't played a falling sand game before, imagine a pixelated chemistry kit. You're given a palette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen and discover how they interact.
+If sandspiel is the first "falling sand game" you've played, it's important to understand that it fits into an entire family of games, independently developed, and usually distributed as free webgames in the form of flash or java applets. In each game, you're given a pallette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen with your cursor to discover how they interact.
 
 ![fsg](fsg.gif)
 
@@ -61,16 +61,35 @@ The added dimension of an audience brings so much depth to playing around with s
 
 ## Building Sandspiel
 
-Sandspiel was actually my third attempt at building an interactive falling sand simulation.
+The first thing you should know is that Sandspiel is actually my _third_ attempt at building an interactive falling sand simulation.
 
-[My early attempt](https://maxbittker.github.io/dust/) was pure javascript in 2015. It was slow, used canvas APIs, and was a disorganized mess of dynamic typing, switch statements, and global variables which made implementing and debugging each successive element's logic increasingly difficult, to the point that it even resulted in bugs that I kept in the game, such as the "gitch" element. I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned.
+### "HTML5"
+
+My first attempt was pure javascript in 2015. [(You can try it out here!)](https://maxbittker.github.io/dust/)
 
 ![dust](dust2.png)
 
-The [second approach](https://github.com/MaxBittker/sand-toy) was in lua, and it evolved into my work on Sandspiel. A few things are briefly worth saying on this experience:
-First I have to say that luajit is super fast, and [LÖVE](https://love2d.org/) is an excellent tool for building games.
+It's... a falling sand game! You can set things on fire, draw fountains, and there's ever a fluid simulation that allows particles to float around in the wind. I think my favorite things about this game was making pixel art with the rainbow "Dust" element, and the way that "Dirt" absorbs water to becomes mud.
+
+On the other hand, resolution is only 100x100 (Sandspiel has 9x more pixels), there's no mobile support, the interface is confusing and keyboard based, and the element logic is pretty janky.
+
+It's also rendered with canvas APIs, and the code is a disorganized mess. Plenty of dynamic typing, questionable abstractions, gnarly switch statements, and global variables. All of this made implementing and debugging each successive element's logic increasingly difficult-- to the point that it resulted in bugs that I domesticated and kept in the game, such as the elementg "Glitch" which behaves differently depending on what element you have selected.
+
+I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned. The last commit was kind of classic, and I never did follow up on that "impending refactor".
+
+![last dust commit](dust_commits_master.png)
+
+(Three years elapse, and I become slightly better at programming and interface design)
+
+###LÖVEly
+The [second approach](https://github.com/MaxBittker/sand-toy) was in Lua, and my work here turned out to become the direct prototype for Sandspiel.
+
+![lua](lua.png)
+
+A few things are briefly worth saying on this experience:
+First I need to gush that luajit is super fast, and [LÖVE](https://love2d.org/) is an excellent tool for building games.
 Shaders, input handling, update and render loops -- everything clicked together and made life easy so I could get things running quickly with minimal yak shaving and boilerplate.
-Coming from the browser, a tool into which I have personally sunk _hundreds_ of hours learning APIs, edge cases, and optimizations, it was a surprise to see how effective a minimal programming environment for building games could be. So much complexity that we put up with is due to legacy and sunk costs!
+Coming from the browser, a tool into which I have personally sunk _hundreds_ of hours learning APIs, edge cases, and performance characteristics, it was a surprise to see how effective a minimal programming environment for building games could be. So much complexity that we put up with is due to legacy and sunk costs!
 
   <figure>
 <video muted controls width="100%" autoplay="true" loop="true" name="lua video" src="lua.MOV"></video>
@@ -78,11 +97,11 @@ Coming from the browser, a tool into which I have personally sunk _hundreds_ of 
   <figcaption>First vaugely working moment of the lua demo</figcaption>
 </figure>
 
-Another important aspect of this second attempt to build a sand game was that I was coming into it with several years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
+Coming into this second attempt to build a sand game, I had several years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
 
-I approached the project with a focus on the ergonomics of defining elements with code because I was imaginging a new type of sand game with a fully sandboxed programming interface that would allow people to not only share their compositions, but also to _code their own new elements_ and share those!
+I approached the project with a focus on the ergonomics of defining elements with code because I was imagining a new type of sand game with a fully sandboxed programming interface that would allow people to not only share their compositions, but also to _code their own new elements_ and share those!
 
-My hope was that a community of people collaborating to build a plethora of weird elements would find really interesting design spaces that hadn't been covered in other sand games.
+My hope was that a community of people collaborating to build a plethora of weird elements would find really interesting interactions that hadn't been covered in other sand games.
 
 However, the first step of this process was still building out a set of elements on my own. While building, I was thinking carefully about the needs of the element authors. Viewing the game engine as a public API meant designing it to move as much complexity as possible inside the engine and away from being the responsibility of the individual elements.
 
@@ -96,7 +115,7 @@ function updateGas(p, getNeighbor, setNeighbor)
 end
 ```
 
-This meant defining a format that elements had to follow -- I settled on a single update method which defines the behavior of a single particle for a single update tick. The code inside the method can interact with the system only via special methods which provide safe reading and writing to their neighbors.
+This meant defining a format that elements were expressed in -- I settled on a single update method which defines the behavior of a single particle for a single update tick. The code inside the method can interact with the system only via special methods which provide safe reading and writing to their neighbors.
 This API abstracts away concerns such as the particle's absolute position, interactions with the edges of the grid, and a maximum read or write neighborhood for the particles.
 
 <!--
@@ -104,30 +123,28 @@ This API abstracts away concerns such as the particle's absolute position, inter
 - observing limitations such as how far away an element is allowed to mutate or inspect other elements from (in this case, only their direct neighbors, no "action at a distance")
 - and handling out of bounds accesses. -->
 
-That work relieved the individual elements from needing to take on these concerns into their own logic, and made the system more consistent and easier to experiment with as I implemented my set of elements.
+That work relieved the individual elements from needing to take on these concerns into their own logic, and made the system more consistent and easier to experiment with as I implemented my cast of elements.
 
-Focusing on making the definition of a new element simple and self-contained really paid off, even though I ened up being the only consumer of these APIs. The system being more fun to iterate on was reward enough to justify the extra care put into the architecture.
+Focusing on making the definition of a new element simple and self-contained really paid off, even though I ultimately ened up being the only person consuming these APIs. The system being more fun to iterate on was reward enough to justify the extra care put into the architecture.
 
-Ultimately, I was excited about this approach, but wanted to build in a an environment that would be easy to share. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the difficulties imposed by its quirks and warts.
+Ultimately, I was excited about this approach and it was working well, but wanted to build on a platform where I could reach users. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the quirks and warts.
 
-![lua](lua.png)
+I decided to put down the lua implementation and switch to Rust, but I was able to directly translate many lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIs would be defined between components made writing the Rust version much easier.
 
-I decided to put down the lua implementation and switch to Rust, but I was able to directly translate many of the lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIs would be defined between components made writing the Rust version easier.
-
-Implementing one idea multiple times was a huge strength in my ability to structure my codebase, forsee pitfalls, and make more intentional tradeoffs. _I would strongly recommend this experience to anyone_ - If you have a project that you've attempted in the past but either didn't finish or made compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and focus on new aspects.
+Implementing one idea multiple times was a huge strength in my ability to structure my codebase, forsee pitfalls, and make more thoughtful and intentional tradeoffs. _I would strongly recommend this experience to anyone_ - If you have a project that you've attempted in the past but either didn't finish or made compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and focus on new aspects.
 
 ### Architecture:
 
 Sandspiel.club can be described as four main components
 
-- the simulation code, writen in Rust
-- user interface written in react & JS
-- a fluid simulation, written in WebGL & JS
-- a CRUD backend written in with typescript and firebase
+- the particle simulation code, writen in Rust
+- a fluid simulation, written in JS & GLSL
+- user interface written in React & JS
+- a CRUD backend written with TypeScript and firebase
 
-The bulk of the simulation, including the movement and interactions of all of the elements, takes place in Rust in a class called Universe. This is class holds the game state and exposes a set of methods that get called by the Javascript application, to do things like process a frame of the simulation, paint some pixels, or pass a pointer to the gamestate buffer.
+The main simulation, controlling the movement and interactions of all of the elements, takes place in Rust in a class called Universe. This is the class holds the game state and exports a set of methods to be called by the Javascript application, which do things like process a frame of the simulation, paint some pixels, or return a pointer to the gamestate buffer.
 
-This means that I don't try to handle an event loop or interact with the browser from inside the Rust code - all of that would be perfectly possible, but I'm very happy with this division of labor between the JS and Rust. Everything low level or CPU intensive happens within the Rust-generated Web Assembly code, while all of the the glue related to human interface, WebGL calls, and browser APIs takes place in the javascript.
+This means that I don't try to handle an event loop, do rendering, or interact with the browser from inside the Rust code - all of that would be perfectly possible, but I'm very happy with this division of labor between the JS and Rust. Everything low level or CPU intensive happens within the Rust-generated Web Assembly code, while all of the the glue related to human interface, WebGL calls, and browser APIs takes place in the javascript.
 
 #### Data format
 
@@ -289,11 +306,11 @@ The basic architecture of my backend is something like this:
 
 Firebase cloud functions have worked really well to handle demand (average 2 requests per second on the peak day of the launch)
 
-There were times while debugging when I was really just wished I was writing a http server with a redis instance and dumping the files into a directory. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for all of January cost about \$15, and 99% of that was "firestore reads" which I haven't tried to optimize for. I expect that at the current rate of traffic, it will be sustainable for me to keep running for quite a while.
+There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for all of January cost about \$15, and 99% of that was "firestore reads" which I haven't tried to optimize for. I expect that at the current rate of traffic, it will be sustainable for me to keep running for quite a while.
 
 ### Community
 
-A couple thousand people play with Sandspiel every day now! The upload boards get spammed with all kinds of nonsense, and it warms my heart to see people playing and interacting, for the most part. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, and general nonsense.
+A (couple thousand)[https://simpleanalytics.io/sandspiel.club] people play with Sandspiel every day now! The upload boards get spammed with all kinds of nonsense, but it warms my heart to see people playing and interacting and having fun, for the most part. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, etc etc.
 
 People have uploaded sophisticated rube goldberg reactions,
 
@@ -319,7 +336,5 @@ Also, thanks to Chris Crawford, Nikhilesh Sigatapu, Thais Correia, Pavel Dobryak
 
 #Extra links:
 [sandspiel source code](https://github.com/MaxBittker/sandspiel)
-
-[sandspiel.club traffic statistics](https://simpleanalytics.io/sandspiel.club)
 
 [@sandspiel_feed twitter feed of uploads](https://twitter.com/sandspiel_feed)
