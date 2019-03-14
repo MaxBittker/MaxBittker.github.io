@@ -39,9 +39,7 @@ export default class About extends React.Component {
             blog
           </Link>
         </div>
-
         <p>and on my social media:</p>
-
         <div
           style={{
             display: "flex",

@@ -1,6 +1,6 @@
 import React from "react";
 import createReactClass from "create-react-class";
-import { shuffle } from "lodash";
+// import { shuffle } from "lodash";
 
 function sums(values) {
   let acc = 0;

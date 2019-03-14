@@ -1,5 +1,5 @@
 import React from "react";
-import RcScout from "../components/rcscout.js";
+// import RcScout from "../components/rcscout.js";
 
 import "./example.less";
 import face from "./face/face.jpg";
