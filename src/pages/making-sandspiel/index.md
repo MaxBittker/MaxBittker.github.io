@@ -286,8 +286,8 @@ Sandspiel's interface is actually much simpler than most falling sand games. Thi
 ![sandspiel ui](ui.png)
 
 I also put a lot of care into the line drawing itself - there's some fiddly code handling edge cases related to taps, drags, scrolling, and other interaction events on and around the canvas. This is the sort of tuning that should be invisible if it's working, but I ran into a lot of interaction scenarios while testing the game, and tried to sand them down.
-A regret is that I disabled pinch-to-zoom as part of this work (in favor of just providing multi-touch).
-After seeing people's intricate art, I wish I'd found a solution for interactions to be predictable and still zoomable, to let people draw at different scales.
+A regret is that I disabled pinch-to-zoom as part of this work.
+After seeing people's intricate art, I wish I'd found a solution for interactions to be predictable and still zoomable, to let people draw at different scales. Facilitating and disambiguating multiple gestures in a single arena is a complex and fascinating corner of algorithms and human computer interaction, and I have new respect for the the work that goes into building rich touch screen experiences.
 
 #### UI Code
 
