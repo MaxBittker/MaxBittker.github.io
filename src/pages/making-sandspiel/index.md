@@ -69,20 +69,18 @@ My first attempt was pure javascript in 2015. [(You can try it out here!)](https
 
 ![dust](dust2.png)
 
-It's... a falling sand game! You can set things on fire, draw fountains, and there's ever a fluid simulation that allows particles to float around in the wind. I think my favorite things about this game was making pixel art with the rainbow "Dust" element, and the way that "Dirt" absorbs water to becomes mud.
+It's... a falling sand game! You can set things on fire, draw fountains, and there's even a fluid simulation that allows particles to float around in the wind. I think my favorite things about this game was making pixel art with the rainbow "Dust" element, and the way that "Dirt" absorbs water to becomes mud.
 
-On the other hand, resolution is only 100x100 (Sandspiel has 9x more pixels), there's no mobile support, the interface is confusing and keyboard based, and the element logic is pretty janky.
+On the negative side, resolution is only 100x100 (Sandspiel has 9x more pixels), doesn't work on a phone, the interface is confusing and keyboard based, and the element logic is pretty janky.
 
-It's also rendered with canvas APIs, and the code is a disorganized mess. Plenty of dynamic typing, questionable abstractions, gnarly switch statements, and global variables. All of this made implementing and debugging each successive element's logic increasingly difficult-- to the point that it resulted in bugs that I domesticated and kept in the game, such as the elementg "Glitch" which behaves differently depending on what element you have selected.
+It's also rendered with canvas APIs, and the code is a naive mess. Plenty of dynamic typing, squishy abstractions, gnarly switch statements, and global variables. All of this made implementing and debugging each successive element's logic increasingly difficult-- to the point that it resulted in bugs that I domesticated and kept in the game, such as the element "Glitch" which behaves differently depending on what element you have selected.
 
-I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned. The last commit was kind of classic, and I never did follow up on that "impending refactor".
+I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned. The last commit message was kind of classic, and I never did follow up on that "impending refactor".
 
 ![last dust commit](dust_commits_master.png)
 
-(Three years elapse, and I become slightly better at programming and interface design)
-
 ###LÖVEly
-The [second approach](https://github.com/MaxBittker/sand-toy) was in Lua, and my work here turned out to become the direct prototype for Sandspiel.
+The [second approach](https://github.com/MaxBittker/sand-toy) was with Lua in 2018, and my work here turned out to be the direct prototype for Sandspiel.
 
 ![lua](lua.png)
 
@@ -97,7 +95,7 @@ Coming from the browser, a tool into which I have personally sunk _hundreds_ of 
   <figcaption>First vaugely working moment of the lua demo</figcaption>
 </figure>
 
-Coming into this second attempt to build a sand game, I had several years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
+Coming into this second attempt to build a sand game, I had 3 years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
 
 I approached the project with a focus on the ergonomics of defining elements with code because I was imagining a new type of sand game with a fully sandboxed programming interface that would allow people to not only share their compositions, but also to _code their own new elements_ and share those!
 
@@ -148,7 +146,7 @@ This means that I don't try to handle an event loop, do rendering, or interact w
 
 #### Data format
 
-The first most notable aspect of Sandspiel's architecture is the data format I used for the game state. By setting some constraints on the system, I was able to benefit from a compact and uniform format that performed and serialized well.
+The first most notable aspect of Sandspiel's architecture is the compact data format I used for the game state. By setting some constraints on the system, I was able to benefit from a uniform format that performed and serialized well. This came in handy several times!
 
 The state for a single particle is represented as a 32 bit struct.
 
@@ -269,13 +267,13 @@ This is also why it was so important that our Cell state was stored as an array 
 
 ### Fluid Dynamics
 
-Sandspiel's fluid simulation usually really stands out to people who play with it, which makes me feel a bit guilty, because it's largely ripped from [Pavel Dobryakov's WebGL Navier-Stokes implementation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation). I'm extremely grateful for such a quality codebase to learn from-- adapting this code was the most personally challenging technical hurdle I faced building the game.
+Sandspiel's fluid simulation usually really stands out to people who play with it, which makes me feel a little bit guilty, because it's largely ripped from [Pavel Dobryakov's WebGL Navier-Stokes implementation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation). I'm extremely grateful to have had such a quality implementation to learn from-- adapting this code was the most personally challenging technical hurdle I faced building the game.
 
-Adapting the code was difficult because, in order to have interactions between the wind (simulated on the GPU) and the particles (simulated on the CPU), I needed to pass data from Web Assembly to WebGL (in the same fashion as I mentioned for the rendering), and from WebGL back into to Web Assembly (this bit was trickier).
+Adapting the code was difficult because, in order to have interactions between the wind (simulated on the GPU) and the particles (simulated on the CPU), I needed to pass data from Web Assembly to WebGL (in the same fashion as I mentioned for the rendering), _and_ from WebGL back into to Web Assembly (this bit was trickier, as WebGL can by picky about which buffers are readable, and when you can read from them).
 
-I also needed to do this in a way that only used WebGL features available on phones - WebGl is a pretty complicated spec, and for hardware and driver reasons, not all of it is available on all devices.
+I also needed to do this in a way that used only the subset WebGL features supported on most phones - WebGl is a pretty large spec, and for hardware and driver reasons, not all of it is available on all devices.
 
-The texture types they support required some munging, because the fluid simulation is done with floats, but to support phones I could only move data in or out of the shaders via unsigned byte textures)
+The texture types they support required some munging, because the fluid simulation is done with floats, but to support phones I could only move data in or out of the shaders via unsigned byte textures.
 
 There’s also a maximum # of simultaneously bound texture units of 8, and I had to plug a lot of gaps in my knowledge of how OpenGL works in order to correctly bind textures for each shader and stay under that limit.
 
@@ -283,13 +281,23 @@ All of this was made worse by the fact that my only phone to test code on runs i
 
 ### User Interface
 
-I threw the interface together mostly in React. If you have one takeaway about Web Assembly from this project, I want it to be that wasm is not an all or nothing undertaking! Having the ability to put low-level and performance-critical logic into Rust and then handle all the browsery stuff, glue code, and UI in Javascript was critical to this project coming together quickly and having a nice interface.
+Sandspiel's interface is actually much simpler than most falling sand games. This was an intentional result of trying to keep the UI light and fun on a touch screen, by avoiding interactions that require multiple taps to complete. Some examples of this are that none of the tools require cycling through different settings or drop-down menus, and I dropped the system of multiple selection that other games use for elements like clone.
 
-Leveraging the npm ecosystem for tools like React, Regl, and GLSLify, as well as exercising Javascript's flexibility to throw data anywhere I needed it without much planning or refactoring enabled me patch things together quickly and loosely.
+![sandspiel ui](ui.png)
+
+I also put a lot of care into the line drawing itself - there's some fiddly code handling edge cases related to taps, drags, scrolling, and other interaction events on and around the canvas. This is the sort of tuning that should be invisible if it's working, but I ran into a lot of interaction scenarios while testing the game, and tried to sand them down.
+A regret is that I disabled pinch-to-zoom as part of this work (in favor of just providing multi-touch).
+After seeing people's intricate art, I wish I'd found a solution for interactions to be predictable and still zoomable, to let people draw at different scales.
+
+#### UI Code
+
+I threw the interface together mostly in React. If you have one takeaway about Web Assembly from this project, I want it to be that WASM is not an all or nothing undertaking! Having the ability to put low-level and performance-critical logic into Rust and still handle all the browsery stuff, glue code, and UI in Javascript was critical to this project coming together quickly and having a nice interface.
+
+Leveraging the npm ecosystem for tools like React, Regl, and GLSLify, as well as exercising Javascript's flexibility to toss data anywhere I needed it without much planning or refactoring enabled me patch things together quickly and loosely.
 
 Nothing I wrote in JS would have been _impossible_ to accomplish in Rust, but it wouldn't have come together as easily and I wouldn't have been able to test as many ideas along the way.
 
-That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for this part of the codebase (`ui.js` is a mess) and the experience suffers for it. There are _still_ a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now.
+That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for the React part of the codebase. `ui.js` is basically one huge class and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now. Hopefully, I'll come re-write this when I'm feeling motivated to add some features or learn about react hooks or something.
 
 ### Sharing & Persistence
 
@@ -306,11 +314,11 @@ The basic architecture of my backend is something like this:
 
 Firebase cloud functions have worked really well to handle demand (average 2 requests per second on the peak day of the launch)
 
-There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's cheap enough and reliable. Running the game for all of January cost about \$15, and 99% of that was "firestore reads" which I haven't tried to optimize for. I expect that at the current rate of traffic, it will be sustainable for me to keep running for quite a while.
+There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's reliable and (almost) cheap enough. Running the game for all of February cost about \$45, and 98% of that was "firestore reads" which I haven't tried to optimize for. I expect that once I re-design the browse functionality to paginate and be more frugal (it blindly pulls down 500 results, and most users probably don't look past the first 30), it will be sustainable for me to keep running for while at the current rate of traffic.
 
 ### Community
 
-A (couple thousand)[https://simpleanalytics.io/sandspiel.club] people play with Sandspiel every day now! The upload boards get spammed with all kinds of nonsense, but it warms my heart to see people playing and interacting and having fun, for the most part. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, etc etc.
+A (couple thousand)[https://simpleanalytics.io/sandspiel.club] people play with Sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, etc etc.
 
 People have uploaded sophisticated rube goldberg reactions,
 
