@@ -4,13 +4,13 @@ path: making-sandspiel
 date: 2019-02-16 00:00:00
 ---
 
-[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this and but you haven't played sandspiel, you should [go try it](https://sandspiel.club)!
+[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this and but you haven't played sandspiel, you should probably [go try it](https://sandspiel.club)!
 
 ![screenshot](https://raw.githubusercontent.com/MaxBittker/sandspiel/master/Screenshot.png)
 
 ## I love falling sand games.
 
-If sandspiel is the first "falling sand game" you've played, it's important to understand that it fits into an entire family of games, independently developed, and usually distributed as free webgames in the form of flash or java applets. In each game, you're given a pallette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen with your cursor to discover how they interact.
+If Sandspiel is the first "falling sand game" you've played, it's important to understand that it fits into an entire family of games, independently developed, which are usually distributed as free webgames in the form of flash or java applets. In each game, you're given a pallette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen with your cursor to discover how they interact.
 
 ![fsg](fsg.gif)
 
@@ -24,9 +24,9 @@ I think one reason I love these games so much because their mode of play is crea
 
 > "What happens if I do _this_?"
 
-The behavior of any single element is simple, but the resulting system is rich for exploration because of the many ways that elements can interact in different combinations and configurations.
+In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. It's interactions between the elements and ways they react with each other across space, where the depth of the system unfolds. The result is a system with suprising depth and variety to explore.
 
-The simulation is engaging not only for their complexity, but because of the ways your imagination sees reality reflected in it. Pouring some yellow pixels onto green ones can invoke a scene in your mind far more vivid than what happens on the screen.
+It's also important that this system is engaging not just for it's complexity, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is visualizing imaginary versions of what you see represented on screen. Much like playing with dolls or other simplistic simulations, pouring some yellow pixels onto some green ones can invoke a scene in your mind far more vivid than what happens on the screen.
 
 > "Low-fidelity art is also appealingly open to interpretation. If a character is only eight pixels tall, a large part of what we see is within our own imagination." - Loren Schmidt
 
@@ -37,7 +37,7 @@ The simulation is engaging not only for their complexity, but because of the way
 
 ### Microcommunity
 
-People love to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, demos, propaganda, and art.
+Every loves to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, demos, propaganda, and art.
 
 Powder Game's upload galleries were a special place -- the accessible venue to build something and share it led to people inspiring each other, riffing, and pushing the game in incredible directions! Sand games had so much staying power through my childhood in large part because of this weird community.
 
