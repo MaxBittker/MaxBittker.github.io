@@ -225,9 +225,7 @@ will write a `Fire` particle to your current location (erasing yourself in the p
 
 Designing and tuning these update functions was a lot of fun, and I was able to test out a lot of ideas and play with different interactions. I didn't make use of syntax macros or anything as fancy as that, but the experience was a lot like that of building a system by first building a "Domain Specific Language" which encodes the shared behaviors and invariants of the system, and then scripting its inhabitants in that simplified DSL.
 
-One weak point that I didn't elegantly solve in this design is that many of the elements have hardcoded inter-dependencies on each other. The best two examples are combustion and buoyancy. Several elements in the game have a similar behavior in that they burn when exposed to fire or lava. Instead of being able writing some general purpose "flammability" behavior and compose that into the elements, each one manually checks its neighbors for being `Species::Fire` or `Species::Lava`, and reacts accordingly. This means that today I couldn't add a "Spark" species which ignites flammable material without manually editing each of these update functions. I could have encoded some of this behavior into a shared helper function, or stored some global set of properties about each species besides their update functions.
-
-Another thing to note here is that these update methods, which hold so much of the game logic, are run thousands of time per frame! This means that they're simultaneously critical to the feel of the game, _and_ are some of the hottest lines of code in the project. Rust's commitment to enabling expressive, high level code without invisible performance cliffs really allowed me to write the logic how I wanted to write it, without accidentally causing a bunch of slow heap allocation or writing code that a JIT will choose not to optimize. It's probably possible that there are people out there who could craft some awesome high-performance javascript that would be competitive with my Rust code, but I was able to mostly "just code" and not worry too much about performance.
+Another thing to note here is that the update methods, which hold so much of the gameplay logic, are run thousands of time per frame! This means that they're simultaneously critical to the feel of the game, _and_ are some of the hottest lines of code in the project. Rust's commitment to enabling expressive, high level code without invisible performance cliffs really allowed me to write the logic how I wanted to write it, without accidentally causing a bunch of slow heap allocation or writing code that a JIT will choose not to optimize. It's probably possible that there are people out there who could craft some awesome high-performance javascript that would be competitive with my Rust code, but I was able to mostly "just code" and not worry too much about performance.
 
 Zero cost abstractions!
 
@@ -297,30 +295,28 @@ Leveraging the npm ecosystem for tools like React, Regl, and GLSLify, as well as
 
 Nothing I wrote in JS would have been _impossible_ to accomplish in Rust, but it wouldn't have come together as easily and I wouldn't have been able to test as many ideas along the way.
 
-That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for the React part of the codebase. `ui.js` is basically one huge class and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now. Hopefully, I'll come re-write this when I'm feeling motivated to add some features or learn about react hooks or something.
+That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for the React part of the codebase. `ui.js` is basically one huge class and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now. Hopefully, I'll come re-write this when I'm feeling motivated to add some features or learn about React hooks or something.
 
 ### Sharing & Persistence
 
-Knowing that I wanted some sort of social sharing functionality, I decided to try using Firebase to handle my backend needs. I think this worked out pretty well! One design decision that turned out to be important here was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
+To fully capture the creative micro-community of other falling sand games, I wanted there to be functionality for uploading creations, and browsing others' works. I decided to try using Firebase to handle my backend needs, and I think that worked out pretty well! One design decision that turned out to be important was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
 
-The way that I handled data security without auth was putting all data writing inside of cloud function endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enough to try to fight it.
+The way that I handled data security without auth was putting all data writing inside of cloud function api endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enough to try to fight it.
 
-A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is compact and highly compressible. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
+A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is lossless and highly compressible. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
 Here's what the data looks like as a PNG: (remember, "red" is `species`, "green" is `ra`, and blue is `rb`)
 ![data](data.png)
 
 The basic architecture of my backend is something like this:
 ![firebase](firebase.png)
 
-Firebase cloud functions have worked really well to handle demand (average 2 requests per second on the peak day of the launch)
-
-There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's reliable and (almost) cheap enough. Running the game for all of February cost about \$45, and 98% of that was "firestore reads" which I haven't tried to optimize for. I expect that once I re-design the browse functionality to paginate and be more frugal (it blindly pulls down 500 results, and most users probably don't look past the first 30), it will be sustainable for me to keep running for while at the current rate of traffic.
+There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's reliable and (almost) cheap enough. Running the game for all of February cost about \$45, and 98% of that was "firestore reads" which I haven't yet tried to optimize for 😬. I expect that once I re-design the browse functionality to paginate and be more frugal (it blindly pulls down 500 results, and most users probably don't look past the first 30), it will be sustainable for me to keep running for while at the current rate of traffic.
 
 ### Community
 
 A (couple thousand)[https://simpleanalytics.io/sandspiel.club] people play with Sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, etc etc.
 
-People have uploaded sophisticated rube goldberg reactions,
+People have uploaded sophisticated rube goldberg reactions, coloring book "complete the drawing" prompts, abstract art, crude graffiti, and everything in between. One upload that surpised me was when someone played with the data buffer directly, to write out-of-range species data. This resulted in an element with no defined behavior, the "MissingNo." of sandspiel.
 
 Doonaloona
 SparkyKat
@@ -328,7 +324,7 @@ Belp
 glitch liquid
 js api
 
-Thanks for reading!
+Thanks for reading, thanks for playing!
 
 #Resources to check out:
 
