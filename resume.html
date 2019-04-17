@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Max Bittker CV</title>
+  <style>
+    * {
+      /* border:1px red solid; */
+    }
+
+    code {
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+
+    code,
+    kbd {
+      padding: 2px 4px;
+    }
+
+    kbd {
+      color: #fff;
+      background-color: #333;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+    }
+
+    kbd kbd {
+      padding: 0;
+      font-size: 100%;
+      box-shadow: none;
+    }
+
+    pre {
+      display: block;
+      margin: 0 0 10px;
+      word-break: break-all;
+      word-wrap: break-word;
+      color: #333;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    pre code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      white-space: pre-wrap;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      content: " ";
+      display: table;
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    .center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pull-right {
+      float: right!important;
+    }
+
+    .pull-left {
+      float: left!important;
+    }
+
+    .hide {
+      display: none!important;
+    }
+
+    .show {
+      display: block!important;
+    }
+
+    .invisible {
+      visibility: hidden;
+    }
+
+    .text-hide {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .hidden {
+      display: none!important;
+      visibility: hidden!important;
+    }
+
+    .affix {
+      position: fixed;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #002b36;
+      color: #839496;
+      -webkit-text-size-adjust: none;
+    }
+
+    .hljs-keyword,
+    .hljs-winutils,
+    .method,
+    .hljs-addition,
+    .css .hljs-tag,
+    .hljs-request,
+    .hljs-status,
+    .nginx .hljs-title {
+      color: #859900;
+    }
+
+    .hljs-number,
+    .hljs-command,
+    .hljs-string,
+    .hljs-tag .hljs-value,
+    .hljs-rules .hljs-value,
+    .hljs-phpdoc,
+    .hljs-dartdoc,
+    .tex .hljs-formula,
+    .hljs-regexp,
+    .hljs-hexcolor,
+    .hljs-link_url {
+      color: #2aa198;
+    }
+
+    .hljs-title,
+    .hljs-localvars,
+    .hljs-chunk,
+    .hljs-decorator,
+    .hljs-built_in,
+    .hljs-identifier,
+    .vhdl .hljs-literal,
+    .hljs-id,
+    .css .hljs-function {
+      color: #268bd2;
+    }
+
+    .hljs-attribute,
+    .hljs-variable,
+    .lisp .hljs-body,
+    .smalltalk .hljs-number,
+    .hljs-constant,
+    .hljs-class .hljs-title,
+    .hljs-parent,
+    .hljs-type,
+    .hljs-link_reference {
+      color: #b58900;
+    }
+
+    .hljs-preprocessor,
+    .hljs-preprocessor .hljs-keyword,
+    .hljs-pragma,
+    .hljs-shebang,
+    .hljs-symbol,
+    .hljs-symbol .hljs-string,
+    .diff .hljs-change,
+    .hljs-special,
+    .hljs-attr_selector,
+    .hljs-subst,
+    .hljs-cdata,
+    .css .hljs-pseudo,
+    .hljs-header {
+      color: #cb4b16;
+    }
+
+    .hljs-deletion,
+    .hljs-important {
+      color: #dc322f;
+    }
+
+    .hljs-link_label {
+      color: #6c71c4;
+    }
+
+    .tex .hljs-formula {
+      background: #073642;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+
+    audio,
+    canvas,
+    progress,
+    video {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+
+    [hidden],
+    template {
+      display: none;
+    }
+
+    a {
+      background: 0 0;
+    }
+
+    a:active,
+    a:hover {
+      outline: 0;
+    }
+
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    dfn {
+      font-style: italic;
+    }
+
+    h1 {
+      margin: 0.67em 0;
+    }
+
+    mark {
+      background: #ff0;
+      color: #000;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sup {
+      top: -.5em;
+    }
+
+    sub {
+      bottom: -.25em;
+    }
+
+    images {
+      border: 0;
+    }
+
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    figure {
+      margin: 1em 40px;
+    }
+
+    hr {
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    code,
+    kbd {
+      font-size: 1em;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, monospace;
+    }
+
+    samp {
+      font-size: 1em;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    button {
+      overflow: visible;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    legend {
+      border: 0;
+      padding: 0;
+    }
+
+    optgroup {
+      font-weight: 700;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ir {
+      background-color: transparent;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .ir::before {
+      content: '';
+      display: block;
+      height: 150%;
+      width: 0;
+    }
+
+    html {
+      font-size: 0.875em;
+      background: #fafafa;
+      color: #373D49;
+    }
+
+    html,
+    body {
+      font-family: Georgia, Cambria, serif;
+      height: 100%;
+    }
+
+    body {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 2.0rem;
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0.83999rem;
+      padding-top: 0.16001rem;
+    }
+
+    li {
+      -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      margin-left: 1rem;
+    }
+
+    li>ul,
+    li>ol {
+      margin-bottom: 0;
+    }
+
+    p {
+      padding-top: 0.66001rem;
+      -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      margin-top: 0;
+    }
+
+    p,
+    pre {
+      margin-bottom: 0.33999rem !important;
+      line-height: 1.5rem;
+    }
+
+    ul {
+      line-height: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    pre {
+      font-size: 1rem;
+      padding: 0.66001rem 9.5px 9.5px;
+      line-height: 2rem;
+      background: -webkit-linear-gradient(top, #fff 0, #fff .75rem, #f5f7fa .75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+      background: linear-gradient(to bottom, #fff 0, #fff .75rem, #f5f7fa .75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+      background-size: 100% 4rem;
+      border-color: #D3DAEA;
+    }
+
+    blockquote {
+      margin: 0;
+    }
+
+    blockquote p {
+      font-size: 1rem;
+      margin-bottom: 0.33999rem;
+      font-style: italic;
+      padding: 0.66001rem 1rem 1rem;
+      border-left: 3px solid #A0AABF;
+    }
+
+    th,
+    td {
+      padding: 12px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    h1 {
+      line-height: 3rem;
+      font-size: 2.0571429rem;
+      margin-bottom: 0.21999rem;
+      padding-top: 0.78001rem;
+    }
+
+    h2 {
+      font-size: 1.953125rem;
+      margin-bottom: 0.1835837rem;
+      padding-top: 0.8164163rem;
+    }
+
+    h2,
+    h3 {
+      line-height: 3rem;
+    }
+
+    h3 {
+      font-size: 1.6457143rem;
+      margin-bottom: 0.07599rem;
+      padding-top: 0.92401rem;
+    }
+
+    h4 {
+      font-size: 1.5625rem;
+      margin-bottom: 0.546865rem;
+      padding-top: 0.453135rem;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+      margin-bottom: -.56251rem;
+      padding-top: 0.56251rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+      margin-bottom: -.65001rem;
+      padding-top: 0.65001rem;
+    }
+
+    a {
+      cursor: pointer;
+      color: #35D7BB;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      border-bottom-color: #35D7BB;
+      color: #dff9f4;
+    }
+
+    .sp-center {
+      position: relative;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    .open-menu>.wrapper {
+      overflow-x: hidden;
+    }
+
+    .page {
+      margin: 0 auto;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      background-color: #fff;
+      padding-top: 51px;
+      will-change: left;
+    }
+
+    .open-menu .page {
+      left: 270px;
+    }
+
+    .title {
+      line-height: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.77999rem;
+      padding-top: 0.22001rem;
+      font-weight: 500;
+      color: #A0AABF;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 1rem;
+    }
+
+    .split-preview .title {
+      padding-left: 0;
+    }
+
+    .title-document {
+      line-height: 1rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.89999rem;
+      padding-top: 0.10001rem;
+      font-weight: 400;
+      font-family: "Ubuntu Mono", Monaco;
+      color: #373D49;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: 80%;
+      min-width: 300px;
+      outline: 0;
+      border: none;
+    }
+
+    .icon {
+      display: block;
+      margin: 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .icon svg {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .icon-preview {
+      background-color: #373D49;
+      line-height: 40px;
+    }
+
+    .icon-preview svg {
+      width: 19px;
+      height: 12px;
+    }
+
+    .icon-settings {
+      background-color: #373D49;
+      line-height: 44px;
+    }
+
+    .icon-settings svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .icon-link {
+      width: 16px;
+      height: 16px;
+      line-height: 1;
+      margin-right: 24px;
+      text-align: right;
+    }
+
+    .navbar {
+      background-color: #373D49;
+      height: 51px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 6;
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      will-change: left;
+    }
+
+    .navbar:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .open-menu .navbar {
+      left: 270px;
+    }
+
+    .navbar-brand {
+      float: left;
+      margin: 0 0 0 24px;
+      padding: 0;
+      line-height: 42px;
+    }
+
+    .navbar-brand svg {
+      width: 85px;
+      height: 11px;
+    }
+
+    .nav-left {
+      float: left;
+    }
+
+    .nav-right {
+      float: right;
+    }
+
+    .nav-sidebar {
+      width: 100%;
+    }
+
+  
+
+    #preview {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #preview a {
+      color: #A0AABF;
+      text-decoration: underline;
+    }
+
+    .sr-only {
+      visibility: hidden;
+      text-overflow: 110%;
+      overflow: hidden;
+      top: -100px;
+      position: absolute;
+    }
+
+    .mnone {
+      margin: 0 !important;
+    }
+
+    @media (min-width:768px) {
+      .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+      .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+      }
+      .form-inline .input-group {
+        display: inline-table;
+        vertical-align: middle;
+      }
+      .form-inline .input-group .input-group-addon,
+      .form-inline .input-group .input-group-btn,
+      .form-inline .input-group .form-control {
+        width: auto;
+      }
+      .form-inline .input-group>.form-control {
+        width: 100%;
+      }
+      .form-inline .control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+      .form-inline .radio,
+      .form-inline .checkbox {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+      .form-inline .radio label,
+      .form-inline .checkbox label {
+        padding-left: 0;
+      }
+      .form-inline .radio input[type="radio"],
+      .form-inline .checkbox input[type="checkbox"] {
+        position: relative;
+        margin-left: 0;
+      }
+      .form-inline .has-feedback .form-control-feedback {
+        top: 0;
+      }
+      .form-horizontal .control-label {
+        text-align: right;
+        margin-bottom: 0;
+        padding-top: 7px;
+      }
+      .form-horizontal .form-group-lg .control-label {
+        padding-top: 14.3px;
+      }
+      .form-horizontal .form-group-sm .control-label {
+        padding-top: 6px;
+      }
+      .modal-dialog {
+        width: 600px;
+        margin: 30px auto;
+      }
+      .modal-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      }
+      .modal-sm {
+        width: 300px;
+      }
+    }
+
+    @media (min-width:992px) {
+      .modal-lg {
+        width: 900px;
+      }
+    }
+
+    @media screen and (min-width:27.5em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+      .title-document {
+        margin-bottom: 0.89999rem;
+        padding-top: 0.10001rem;
+      }
+      .title-document,
+      .settings a {
+        font-size: 1.25rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #zen {
+        width: 400px;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width:46.25em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+     
+      .title {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .title-document {
+        font-size: 1.25rem;
+        margin-bottom: 0.89999rem;
+        padding-top: 0.10001rem;
+      }
+      .settings a {
+        font-size: 1.25rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+    
+    }
+
+    @media screen and (min-width:62.5em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #zen {
+        width: 700px;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width:87.5em) {
+      html {
+        font-size: 0.875em;
+      }
+      body {
+        font-size: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 0.83999rem;
+        padding-top: 0.16001rem;
+      }
+      p {
+        padding-top: 0.66001rem;
+      }
+      p,
+      pre {
+        margin-bottom: 1.33999rem;
+      }
+      pre,
+      blockquote p {
+        font-size: 1rem;
+        padding-top: 0.66001rem;
+      }
+      blockquote p {
+        margin-bottom: 0.33999rem;
+      }
+      h1 {
+        font-size: 2.0571429rem;
+        margin-bottom: 0.21999rem;
+        padding-top: 0.78001rem;
+      }
+      h2 {
+        font-size: 1.953125rem;
+        margin-bottom: 0.1835837rem;
+        padding-top: 0.8164163rem;
+      }
+      h3 {
+        font-size: 1.6457143rem;
+        margin-bottom: 0.07599rem;
+        padding-top: 0.92401rem;
+      }
+      h4 {
+        font-size: 1.5625rem;
+        margin-bottom: 0.546865rem;
+        padding-top: 0.453135rem;
+      }
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: -.56251rem;
+        padding-top: 0.56251rem;
+      }
+      h6 {
+        font-size: 1rem;
+        margin-bottom: -.65001rem;
+        padding-top: 0.65001rem;
+      }
+     }
+      
+      .title {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .title-document {
+        margin-bottom: 0.89999rem;
+        padding-top: 0.10001rem;
+      }
+      .title-document,
+      .settings a {
+        font-size: 1.25rem;
+      }
+      .words {
+        font-size: 0.8rem;
+        margin-bottom: 0.77999rem;
+        padding-top: 0.22001rem;
+      }
+      .modal--dillinger.about .modal-dialog,
+      #zen {
+        font-size: 1.25rem;
+      }
+      #editor {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (max-width:46.1875em) {
+      .editor-header {
+        display: none;
+      }
+      .editor-header--first {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .contactbox {
+      float: right;
+      text-align: right;
+      margin-right: 20px;
+    }
+
+    .floatleft {
+      float: left;
+      margin-right: 40px;
+    }
+
+    .floatclear {
+      clear: both;
+    }
+  </style>
+</head>
+
+<body id="preview">
+  <div class="contactbox">
+    <p>
+      <a href="https://maxbittker.com">maxbittker.com</a>
+      <br>
+      <a href="http://github.com/maxbittker">github.com/maxbittker</a>
+      <br>
+      <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a>
+      <br>
+    </p>
+  </div>
+
+  <h5>
+    <a id="Max_Bittker_1"></a>Max Bittker | Software Engineer
+  </h5>
+  <p>
+    I care about building helpful, humane, & playful systems — be they composed of people or computers.
+  </p>
+  <h5>
+    <a id="Qualifications_13"></a>Qualifications</h5>
+  <hr>
+  <p>
+    Passion for communication, and working together to improve products, codebases, and processes. Experience building high quality
+    software: complex single page web applications, developer tooling/infrastructure, high-performance servers, complex interactive
+    games/simulations, IoT/embedded systems.
+    <br> Strong web application development experience using modern tools including React, Django, Postgres, WebGL, Clojure,
+    Rust &amp; Go.
+    <br> Solid fundamental knowledge of Software Architecture, Compilers, Data Structures, Algorithms, UNIX, C/C++, Networking,
+    Concurrency, Programming Languages, Microprocessors, Databases, Data Science, and Machine Learning.</p>
+  <hr>
+  <span class="contactbox">July 2018 – ongoing</span>
+  <h5>
+    <a ></a>Google |
+    <small>
+      User Experience Engineer
+    </small>
+  </h5>
+  <p>
+      Building user interfaces for the Fuchsia OS, a capability-based operating system under development.  
+  </p>
+  <span class="contactbox">Sept 2016 – June 2018</span>
+  <h5>
+    <a ></a>Sentry |
+    <small>
+      Software Engineer
+    </small>
+  </h5>
+  <p>
+    Open-source tool for tracking and managing live software errors in production systems. Empowers teams to assess impact and
+    manage triage/resolution of issues.
+  </p>
+  <ul>
+    <li>Implemented full-stack features, including product design, rich interfaces, API layer, data model, and developer documentation.</li>
+    <li>Contributed technical and engaging posts to company blog.</li>
+    <li>Supported and contributed to javascript instrumentation libraries raven-js and raven-node.</li>
+    <li> Provided technical mentorship and cross-functional communication.</li>
+    <li>Helped develop culture of learning and continous deployment on a quickly growing team.</li>
+    <li>React, Django, 3rd-party JS, Product Development, Developer Tooling, Growth Analysis, OSS Community Engagement</li>
+  </ul>
+  <span class="contactbox">March 2016 – May 2016</span>
+
+  <h5>
+    <a ></a>OpenRide |
+    <small>Web Developer</small>
+  </h5>
+  <p>
+    City to City ridesharing platform, built to provide seamless matchmaking and payment for long distance travelers and event
+    planners
+  </p>
+  <ul>
+    <li>Worked as employee #1 developing business-critical features of a complex SPA.</li>
+    <li>React, Redux, Webpack, Continuous integration, ES6, Product development, frontend testing</li>
+  </ul>
+
+  
+  <span class="contactbox">June 2014 – December 2014</span>
+  <h5>
+    <a id="PharmAdva_31"></a>PharmAdva |
+    <small>Software Intern</small>
+  </h5>
+<p>
+  Medical device manufacturer, member of the START-UP NY development program
+</p>
+  <ul>
+    <li>Prototyped advanced embedded Linux system. Implemented important patient-facing interactions in touch screen and SMS-based
+      interfaces
+    </li>
+    <li>C++, BeagleBone, Linux, Mechatronics, shell scripting, Gtk</li>
+  </ul>
+  <h5>
+    <h5>
+      <a id="Projects_42"></a>Selected Projects</h5>
+    <hr>
+    <h6>
+      Sandspiel.club</h6>
+    <p> Web-based particle simulation and drawing game, built with Rust, Wasm, WebGL, and Postgres.
+      People generally enjoy playing with it, and the embedded artistic community has painted and shared over 60k artworks.
+     </p>
+    <h6>
+    <h6>
+      @NYT_first_said</h6>
+    <p>Twitter bot which scrapes the New York Times and posts first-ever occurences of words, plus their context for an
+      audience of 50k+ followers. Covered in several major publications, including Newsweek and IEEE Spectrum.</p>
+    <h6>
+      Open Journalism Project Fellowship</h6>
+    <p>Embedded in the Queen’s Journal to innovate student journalistic process, build interactive web content, do data journalism,
+      and run technology workshops.</p>
+    <h6>
+    <h6>
+    <span class="contactbox">
+      <h5>Computer Engineering 2012-2016</h5>
+      Bachelor of Science GPA: 3.33
+    </span>
+    <h4>
+      Queen’s University</h4>
+    <ul>
+      <div class="floatleft">
+        <li>Neural And Genetic Computing</li>
+        <li>Programming Language Processors</li>
+        <li>Computer Networks</li>
+        <li>Digital Systems Engineering</li>
+      </div>
+      <li>Performance Analysis</li>
+      <li>Database Management Systems</li>
+      <li>Operating Systems</li>
+      <li>Advanced Human Computer Interaction</li>
+
+      <div class="floatclear"></div>
+    </ul>
+    <h5>
+      <a id="Interests_73"></a>Interests</h5>
+    <p>Attended the Recurse Center in Summer 2016, a self-directed educational retreat where I built creative interactive visual
+      experiments and implemented distributed system algorithms 
+      <br>Helped organize “Queen’s Hack Nights” a inclusive space for collaboration and discussion of computing.
+      <br>Enjoy making, looking at, and talking about art. Aspirationally anti-oppressive.</p>
+</body>
+
+</html>
