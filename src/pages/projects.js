@@ -9,7 +9,10 @@ export default class Games extends React.Component {
       <div>
         <h1>Projects & Games</h1>
         <a href="https://sandspiel.club/">Sandspiel</a>
-        <p>Loving homage to the falling sand genre of games. Rust + WebGL </p>
+        <p>
+          Loving homage to the falling sand genre of games. Online interactive
+          sandbox and artistic community. Built in Rust+WebGL.
+        </p>
 
         <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
         <p>
