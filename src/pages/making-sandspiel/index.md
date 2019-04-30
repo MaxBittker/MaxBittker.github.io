@@ -1,7 +1,7 @@
 ---
-title: Making Sandspiel (wip dont share pls)
+title: Making Sandspiel
 path: making-sandspiel
-date: 2019-02-16 00:00:00
+date: 2019-04-30 00:00:00
 ---
 
 [Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this and but you haven't played sandspiel, you should probably [go try it](https://sandspiel.club)!
@@ -24,9 +24,9 @@ I think that I love these games so much because their mode of play is creative i
 
 > "What happens if I do _this_?"
 
-In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. The interactions _between_ the elements and across the space is where the depth of the system unfolds. The result is a system with suprising depth and variety to explore.
+In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. The interactions _between_ the elements and across the space is where the depth of the system unfolds. The result is a system with surprising depth and variety to explore.
 
-It's also important that this system is engaging not just for it's complexity, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is visualizing imaginary versions of what you see represented on screen. Much like playing with dolls or other simplistic simulations, pouring some yellow pixels onto some green ones can invoke a scene in your mind far more vivid than what happens on the screen.
+It's also important that this system is engaging not just for its actual depth, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is visualizing imaginary versions of what you see represented on screen. Much like playing with dolls or other simplistic simulations, pouring some yellow pixels onto some green ones can invoke a scene in your mind far more vivid than what happens on the screen.
 
 > "Low-fidelity art is also appealingly open to interpretation. If a character is only eight pixels tall, a large part of what we see is within our own imagination." - Loren Schmidt
 
@@ -73,9 +73,9 @@ It's... a falling sand game! You can set things on fire, draw fountains, and the
 
 On the negative side, resolution is only 100x100 (Sandspiel has 9x more pixels), doesn't work on a phone, the interface is confusing and keyboard based, and the element logic is pretty janky.
 
-It's also rendered with canvas APIs, and the code is not organized in any intentional way. Plenty of dynamic typing, squishy abstractions, gnarly switch statements, and global variables. All of this made implementing and debugging each successive element's logic increasingly difficult-- to the point that it resulted in bugs that I domesticated and kept in the game, such as the element "Glitch" which behaves differently depending on what element you have selected.
+It's also rendered with canvas APIs, and the code is not organized in any intentional way. Plenty of dynamic typing, gnarly switch statements, and global variables. All of this made implementing and debugging each successive element's logic increasingly difficult-- to the point that it resulted in bugs that I domesticated and kept in the game, such as the element "Glitch" which behaves differently depending on what element you have selected.
 
-I was really proud of this game and had a great time building it, but it followed the familar arc of a system collapsing under its own weight as progress became more difficult and motivation waned. The last commit message was kind of classic, and I never did follow up on that "impending refactor".
+I was really proud of this game and had a great time building it, but it followed the familiar arc of a system collapsing under its own weight as progress became more difficult and motivation waned. The last commit message was kind of classic, and I never did follow up on that "impending refactor".
 
 ![last dust commit](dust_commits_master.png)
 
@@ -87,12 +87,13 @@ The [second approach](https://github.com/MaxBittker/sand-toy) was with Lua in 20
 A few things are briefly worth saying on this experience:
 First I need to gush that lua is super fast thanks to LuaJIT, and the [LÖVE](https://love2d.org/) framework is lovely tool for building games.
 Shaders, input handling, update and render loops -- everything clicked together thanks to LÖVE and made life easy - I could get things running quickly with minimal yak shaving and boilerplate.
-Coming from the browser, a tool into which I have personally sunk _hundreds_ of hours learning APIs, edge cases, and performance characteristics, it was a big surprise to see how effective a minimal programming environment for building games could be. So much complexity that we put up with is due to legacy and sunk costs!
+
+Coming from the browser, a tool into which I have personally sunk many hundreds of hours learning APIs, edge cases, and performance characteristics, it was a big surprise to see how effective a minimal programming environment for building games could be. So much complexity that we put up with is due to legacy and sunk costs!
 
   <figure>
 <video muted controls width="100%" autoplay="true" loop="true" name="lua video" src="lua.MOV"></video>
 
-  <figcaption>First vaugely working moment of the lua demo</figcaption>
+  <figcaption>First vaguely working moment of the lua demo</figcaption>
 </figure>
 
 Coming into this second attempt to build a sand game, I had 3 years of experience beyond what I had when building the pure javascript version. I also had an important new goal - not only did I want the game to be fun to play, but I also wanted elements to be fun to _write_.
@@ -130,7 +131,7 @@ Focusing on making the definition of a new element simple and self-contained rea
 
 Ultimately, I was excited about this approach and it was working well, but wanted to build on a platform where I could reach users. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the quirks and warts.
 
-I decided to put down the lua implementation and switch to Rust, but I was able to directly translate many lessons and patterns over. Having a good idea of what my datastructures would be and what types of APIs would be defined between components made writing the Rust version much smoother.
+I decided to put down the lua implementation and switch to Rust, but I was able to directly translate many lessons and patterns over. Having a good idea of what my data-structures would be and what types of APIs would be defined between components made writing the Rust version much smoother.
 
 Implementing one idea multiple times was a huge strength in my ability to structure my codebase, forsee pitfalls, and make more thoughtful and intentional tradeoffs. I would strongly recommend this experience to anyone - If you have a project that you've attempted in the past but either didn't finish or made compromises on due to your technical skills or endurance, taking another crack at it can a great opportunity to sweat the details and see new approaches.
 
@@ -138,7 +139,7 @@ Implementing one idea multiple times was a huge strength in my ability to struct
 
 Sandspiel.club can be described as four main components
 
-- the particle simulation code, writen in Rust
+- the particle simulation code, written in Rust
 - a fluid simulation, written in JS & GLSL
 - user interface written in React & JS
 - a CRUD backend written with TypeScript and ~~Firebase~~ Postgres
@@ -188,7 +189,7 @@ Nowhere in this cell state struct is a concept of location. This is because, as 
 
 ### Update Function
 
-The most important pieces of code in the game are the set of functions, one per element type, that define how each particle interacts with its neighbors each frame. Theoretically, you could delete these functions (which live in [species.rs](https://github.com/MaxBittker/sandspiel/blob/master/crate/src/species.rs) ) and write a new set that transform the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a cityscape, a paint canvas, an aquarium, or an abstract fractal playground.
+The most important pieces of code in the game are the set of functions, one per element type, that define how each particle interacts with its neighbors each frame. Theoretically, you could delete these functions (which live in [species.rs](https://github.com/MaxBittker/sandspiel/blob/master/crate/src/species.rs) ) and write a new set that transform the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a city-scape, a paint canvas, an aquarium, or an abstract fractal playground.
 
 Here's an example of how one of our elements is defined:
 
@@ -269,66 +270,89 @@ Sandspiel's fluid simulation usually really stands out to people who play with i
 
 Adapting the code was difficult because, in order to have interactions between the wind (simulated on the GPU) and the particles (simulated on the CPU), I needed to pass data from Web Assembly to WebGL (in the same fashion as I mentioned for the rendering), _and_ from WebGL back into to Web Assembly (this bit was trickier, as WebGL can by picky about which buffers are readable, and when you can read from them).
 
-I also needed to do this in a way that used only the subset WebGL features supported on most phones - WebGl is a pretty large spec, and for hardware and driver reasons, not all of it is available on all devices.
+I also needed to do this in a way that used only the subset of WebGL features supported on most phones - WebGl is a pretty large spec, and for hardware and driver reasons, not all of it is available on all devices.
 
-The texture types they support required some munging, because the fluid simulation is done with floats, but to support phones I could only move data in or out of the shaders via unsigned byte textures.
+<!--
+The texture types they do support required some munging, because the fluid simulation is done with floats, but to support phones I could only move data in or out of the shaders via unsigned byte textures. -->
 
-There’s also a maximum # of simultaneously bound texture units of 8, and I had to plug a lot of gaps in my knowledge of how OpenGL works in order to correctly bind textures for each shader and stay under that limit.
+<!-- There’s also a maximum number of simultaneously bound texture units of 8, and I had to plug a lot of gaps in my knowledge of how OpenGL works in order to correctly bind textures for each shader and stay under that limit. -->
 
-All of this was made worse by the fact that my only phone to test code on runs iOS, and Apple only allows you to connect to the mobile safari devtools from a Mac. So I was debugging many of these WebGL device-specific limitations without so much as a console. Frustrating!
+This process was made worse by the fact that my only phone on which to test code runs iOS, and Apple only allows you to connect to the mobile safari developer tools from a Mac (which I don't have). So I was debugging many of these WebGL device-specific limitations without so much as a console. Frustrating!
 
 ### User Interface
 
-Sandspiel's interface is actually much simpler than most falling sand games. This was an intentional result of trying to keep the UI light and fun on a touch screen, by avoiding interactions that require multiple taps to complete. Some examples of this are that none of the tools require cycling through different settings or drop-down menus, and I dropped the system of multiple selection that other games use for elements like clone.
+Sandspiel's interface is actually much simpler than most falling sand games. I made an intentional effort to keep the UI light and fun on a touch screen, by avoiding interactions that require multiple taps to complete. Some examples of this are that none of the tools require cycling through different settings or drop-down menus, and I dropped the system of two-stage selection that other games use to implement elements like clone and firework.
 
 ![sandspiel ui](ui.png)
 
-I also put a lot of care into the line drawing itself - there's some fiddly code handling edge cases related to taps, drags, scrolling, and other interaction events on and around the canvas. This is the sort of tuning that should be invisible if it's working, but I ran into a lot of interaction scenarios while testing the game, and tried to sand them down.
-A regret is that I disabled pinch-to-zoom as part of this work.
-After seeing people's intricate art, I wish I'd found a solution for interactions to be predictable and still zoomable, to let people draw at different scales. Facilitating and disambiguating multiple gestures in a single arena is a complex and fascinating corner of algorithms and human computer interaction, and I have new respect for the the work that goes into building rich touch screen experiences.
+I also put care into the line drawing itself - there's some fiddly edge cases related to handling taps, drags, scrolling, and other interaction events on the canvas. This is the sort of tuning that should be invisible if it's working, but I ran into a lot of interaction scenarios while testing the game, and tried to sand down the rough edges.
+
+As part of this work, I disabled pinch-to-zoom - it would be an interesting challenge to try to fit that back into the space of supported interactions.
+
+Facilitating and disambiguating multiple gestures in a single arena is a complex and fascinating corner of algorithms and human computer interaction, and I have new respect for the often invisible work that goes into building rich touch screen experiences.
 
 #### UI Code
 
-I threw the interface together mostly in React. If you have one takeaway about Web Assembly from this project, I want it to be that WASM is not an all or nothing undertaking! Having the ability to put low-level and performance-critical logic into Rust and still handle all the browsery stuff, glue code, and UI in Javascript was critical to this project coming together quickly and having a nice interface.
+I threw the interface together mostly in React. If you have one takeaway about Web Assembly from this project, I want it to be that WASM is not an all or nothing undertaking! Having the ability to put low-level and performance-critical logic into Rust and still handle all the browser API stuff, glue code, and UI in Javascript was critical to this project coming together quickly and having a nice interface.
 
 Leveraging the npm ecosystem for tools like React, Regl, and GLSLify, as well as exercising Javascript's flexibility to toss data anywhere I needed it without much planning or refactoring enabled me patch things together quickly and loosely.
 
 Nothing I wrote in JS would have been _impossible_ to accomplish in Rust, but it wouldn't have come together as easily and I wouldn't have been able to test as many ideas along the way.
 
-That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for the React part of the codebase. `ui.js` is basically one huge class and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now. Hopefully, I'll come re-write this when I'm feeling motivated to add some features or learn about React hooks or something.
+<!-- That being said, building high quality interfaces is something I value and respect, but I definitely did phone it in for the React part of the codebase. `ui.js` is basically one huge class and the experience suffers for it. There are still a bunch of absent small touches like loading indicators, proper routing (😬), visual feedback on buttons, pagination, etc. I was really itching to release the game and didn't budget the time to do a better job. But I have no regrets. Building polished interfaces is my day job, so it feels like work, and I think what I built is good enough for now. Hopefully, I'll come re-write this when I'm feeling motivated to add some features or learn about React hooks or something. -->
 
 ### Sharing & Persistence
 
-To fully capture the creative micro-community of other falling sand games, I wanted there to be functionality for uploading creations, and browsing others' works. I decided to try using Firebase to handle my backend needs, and I think that worked out pretty well! One design decision that turned out to be important was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
+To fully capture the creative micro-community of other falling sand games, I wanted there to be functionality for uploading creations, and browsing others' works. I decided to try using Firebase to handle my backend needs, and I think that worked out pretty well!
+One design decision that turned out to be important was that I wanted to avoid dealing with accounts and authorization. I find that stuff annoying for the user and boring to implement so I went to some lengths to do without it.
 
-The way that I handled data security without auth was putting all data writing inside of cloud function api endpoints, and using these to constrain what the client could do. (basically, insert and vote only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enough to try to fight it.
+The way that I handled data security without auth was putting all data writing inside of api endpoints, and using these to constrain what the client could do. (basically, GET, INSERT and voting only, no editing or deleting of other posts). My workaround for voting deduplication was to use IP addresses, which is possible to manipulate, but I don't really care enough to try to fight it.
 
-A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is lossless and highly compressible. Plus, browsers have PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
-Here's what the data looks like as a PNG: (remember, "red" is `species`, "green" is `ra`, and blue is `rb`)
-![data](data.png)
+I run these API endpoints as a cloud function, cloud functions seem cheap and great.
+
+A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is lossless and highly compressible. Plus, browsers have efficient PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
+Here's what the data looks like as a PNG: (remember, in each RGB pixel, "red" is `species`, "green" is `ra`, and blue is `rb`)
+![data as png](data.png)
 
 The basic architecture of my backend is something like this:
 ![firebase](firebase.png)
 
-There were times while debugging when I was really just wished I was writing a http server with a redis instance and a directory full of files, with nothing hidden behind proprietary services. But I don't want to be on the hook for availability and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's reliable and (almost) cheap enough. Running the game for all of February cost about \$45, and 98% of that was "firestore reads" which I haven't yet tried to optimize for 😬. I expect that once I re-design the browse functionality to paginate and be more frugal (it blindly pulls down 500 results, and most users probably don't look past the first 30), it will be sustainable for me to keep running for while at the current rate of traffic.
+There were times while debugging when I was really just wished I was writing a http server backed by a redis instance and a directory full of files, with nothing hidden behind proprietary services and configuration languages. But I don't want to be on the hook for availability, persistance, and server management - especially when the [other things](https://twitter.com/NYT_first_said) running on my VPS are already fragile, stateful, and ad hoc. Firebase was harder to debug and run adhoc scripts against, but I don't have to think about it now that the service is deployed, and it's reliable and cheap enough.
+
+Running the game for a few months started to become expensive as traffic ramped up, 99% dominated by Firestore reads. (I think the architecture I had of listing out large sections of documents without caching or pagination wasn't well suited to Firestore.)
+
+I didn't want to continue paying \$50 a month for Firestore, and I also wanted to implement more interesting query capabilities, including full-text search.
+
+This led me to migrate my ~60k records off of Firestore and into a Postgres instance, which I'm really glad to have done. Operating Postgres has been about 10% of the price, significantly lower latency, and allows me to run complex queries to power new features like the search box.
 
 ### Community
 
-A (couple thousand)[https://simpleanalytics.io/sandspiel.club] people play with Sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their tiktok accounts, etc etc.
+A [couple thousand](https://simpleanalytics.io/sandspiel.club) people play with sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their youtube accounts, etc etc.
 
-People have uploaded sophisticated rube goldberg reactions, coloring book "complete the drawing" prompts, abstract art, crude graffiti, and everything in between. One upload that surpised me was when someone played with the data buffer directly, to write out-of-range species data. This resulted in an element with no defined behavior, the "MissingNo." of sandspiel.
+If you load one creation, this irreverent homage to the Notre Dame cathedral might be my favorite:
+(Make sure to press ▷ once it's loaded)
+[![notre dame](notre.png)](https://sandspiel.club/#dac3ceca6a45502e8dc5)
 
-Doonaloona
-SparkyKat
-Belp
-glitch liquid
-js api
+People have uploaded more than 75 thousand creations, ranging from sophisticated rube goldberg reactions, coloring book "complete the drawing" [prompts](https://sandspiel.club/browse/search/?title=ponybase), [impressionist paintings](https://sandspiel.club/browse/search/?title=new%20mexico), [crude kinetic graffiti](https://sandspiel.club/#hic2GrXYo12ZdyBv1Qcw), and everything in between.
 
-Thanks for reading, thanks for playing!
+[![system](system.png)](https://sandspiel.club/#rcDbjakVCmpz0oceeZDf)
+
+One upload that surprised me was when someone manipulated the data buffer directly, to upload out-of-range species data.
+
+This resulted in a pink element with no intentionally defined behavior, like the "[MissingNo.](https://en.wikipedia.org/wiki/MissingNo.)" of sandspiel. It totally made my day when I realized what had happened, as this was not something I thought was possible! [I like to call it "belp".](https://sandspiel.club/#eMlYGC52XIto0NM1WjaJ)
+
+[![vampkiddle](vampkiddle.png)](https://sandspiel.club/browse/search/?title=vampkiddle)
+
+There's a healthy remix culture of people making new takes on popular templates. Two favorites are doonaloona, the puppy queen of sandspiel
+[![doona](doona.png)](https://sandspiel.club/browse/search/?title=doonaloona)
+and these images of reggie that someone was able to upload in different elements.
+[![reggie](reggie.png)](https://sandspiel.club/browse/search/?title=reggie)
+
+Thank you so much for reading, and thanks for playing!
 
 #Resources to check out:
 
-[The Rust Wasm Book](https://rustwasm.github.io/book/) is a _great_ succinct resource that covers all aspects of writing a hybrid JS & Rust application. I had basic rust knowledge before starting Sandspiel, but no knowledge of web assembly, and was able to follow this book to bootstrap the game. A lot of code from the book actually ended up in my game, since their example was cellular automota related.
+[The Rust Wasm Book](https://rustwasm.github.io/book/) is a _great_ succinct resource that covers all aspects of writing a hybrid JS & Rust application. I had basic rust knowledge before starting Sandspiel, but no knowledge of web assembly, and was able to follow this book to bootstrap the game. A lot of code from the book actually ended up in my game, since their example was cellular automata related.
 
 [The Book of Shaders](https://thebookofshaders.com/) I didn't specifically reference TBoS during this project, but I take any opportunity I can get to recommend it to anyone interested in learning graphics programming. I wish this book was a part of high school math curriculums.
 
