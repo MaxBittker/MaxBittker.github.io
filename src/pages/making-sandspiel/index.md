@@ -10,7 +10,7 @@ date: 2019-04-30 00:00:00
 
 ## I love falling sand games.
 
-If Sandspiel is the first "falling sand game" you've played, it's important to understand that it fits into a genre of games, independently developed, which are usually distributed as free webgames in the form of flash or java applets. In each game, you're given a pallette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen to discover how they interact.
+If Sandspiel is the first "falling sand game" you've played, it's important to understand that it fits into a genre of games, which are developed independently and usually distributed as free webgames in the form of flash or java applets. In each game, you're given a pallette of virtual solids, liquids, and gasses, and it's up to you to paint them onto the screen to discover how they interact.
 
 ![fsg](fsg.gif)
 
@@ -24,9 +24,9 @@ I think that I love these games so much because their mode of play is creative i
 
 > "What happens if I do _this_?"
 
-In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. The interactions _between_ the elements and across the space is where the depth of the system unfolds. The result is a system with surprising depth and variety to explore.
+In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. The interactions _between_ the elements and across the space is where the interesting complexity of the simulation unfolds. The result is a system with surprising depth and variety to explore.
 
-It's also important that this system is engaging not just for its actual depth, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is visualizing imaginary versions of what you see represented on screen. Much like playing with dolls or other simplistic simulations, pouring some yellow pixels onto some green ones can invoke a scene in your mind far more vivid than what happens on the screen.
+It's also important that this system is engaging not just for its actual depth, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is projecting your imagination over what you see represented on screen. Much like playing with dolls or other simplistic model, the pixels flowing around on the screen stand in for the story you tell yourself about them.
 
 > "Low-fidelity art is also appealingly open to interpretation. If a character is only eight pixels tall, a large part of what we see is within our own imagination." - Loren Schmidt
 
@@ -51,7 +51,7 @@ Games for the player, often with empty promises of some reward for voting.
 Grotesque "Don't Smoke" educational demonstrations. (I think these were directly fueled by children coming home after D.A.R.E. programs at school)
 ![dont smoke](dontsmoke3.png)
 
-Cool volcanos. (a real classic)
+Cool volcanos. (a true classic)
 ![volcano](volcano.png)
 
 Beautiful pixel-art architecture to destroy.
@@ -127,9 +127,9 @@ This API abstracts away concerns such as:
 
 That work relieved the individual elements from needing to take on these concerns into their own logic, and made the system more consistent and easier to experiment with as I implemented my cast of elements.
 
-Focusing on making the definition of a new element simple and self-contained really paid off, even though I ultimately ened up being the only person consuming these APIs. The system being more fun to iterate on was rewarding enough to justify the extra care put into the architecture early on.
+Focusing on making the definition of a new element simple and self-contained really paid off, even though I ultimately ended up being the only person consuming these APIs. The system being more fun to iterate on was rewarding enough to justify the extra care put into the architecture early on.
 
-Ultimately, I was excited about this approach and it was working well, but wanted to build on a platform where I could reach users. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the quirks and warts.
+I was excited about this approach and it was working well, but wanted to build the game in a way that I could reach users. Despite everything good I had to say about LÖVE, the web is too powerful of a platform to pass up, and it's worth the quirks and warts.
 
 I decided to put down the lua implementation and switch to Rust, but I was able to directly translate many lessons and patterns over. Having a good idea of what my data-structures would be and what types of APIs would be defined between components made writing the Rust version much smoother.
 
@@ -179,7 +179,7 @@ pub enum Species {
 }
 ```
 
-`ra` and `rb` are two 8 bit registers for storing extra some cell state beyond species, such as what color a given flower petal is, or how hot an ember of fire is. They're used in different ways by different element species, and some species don't use them at all (for instance, Wall has no extra state to track). The two state registers only differ in that ra is initialized to a random value, and rb is initialized to 0. Register A is also used in rendering to determine how light the pixel should be, which is where the slight grain effect comes from.
+`ra` and `rb` are two 8 bit "registers" for storing extra some cell state beyond species, such as what color a given flower petal is, or how hot an ember of fire is. They're used in different ways by different element species, and some species don't use them at all (for instance, a Wall particle has no extra state to track). The two state registers only differ in that ra is initialized to a random value, and rb is initialized to 0. ra is also used in rendering to determine how light the pixel should be, which is where the slight visual grain effect comes from.
 
 `clock` is just used to prevent a single particle from being simulated multiple times in a single tick if it moves in the same direction as the update scans. Because we execute cell update functions one at a time from left to right and top to bottom, if a particle something is moving down, it will keep bumping itself ahead of the "scan line" and could move many spaces in a single frame. Clock is meant to keep track of what elements have been simulated already - this could have been accomplished single bit that is flipped back and forth but it's important that my Cell type is represented by a total of exactly 32 bits, and I didn't have any use for the other 7 bits!
 
@@ -189,7 +189,7 @@ Nowhere in this cell state struct is a concept of location. This is because, as 
 
 ### Update Function
 
-The most important pieces of code in the game are the set of functions, one per element type, that define how each particle interacts with its neighbors each frame. Theoretically, you could delete these functions (which live in [species.rs](https://github.com/MaxBittker/sandspiel/blob/master/crate/src/species.rs) ) and write a new set that transform the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a city-scape, a paint canvas, an aquarium, or an abstract fractal playground.
+The most important pieces of code in the game are the set of functions, one for each type of element, that define how particles of that type interact with their neighbors each frame. Theoretically, you could delete these functions (which live in [species.rs](https://github.com/MaxBittker/sandspiel/blob/master/crate/src/species.rs) ) and write a new set that transform the game into a cellular automata simulator for some other system, such an ant farm, a petri dish, a city-scape, a paint canvas, an aquarium, or an abstract fractal playground.
 
 Here's an example of how one of our elements is defined:
 
@@ -209,7 +209,7 @@ pub fn update_sand(cell: Cell, mut api: SandApi) {
 }
 ```
 
-`SandApi` is a struct that holds the location of the element in a way that is transparent to the update function. It has two important functions: `get` and `set`, which accept relative coordinates and let you read and write to your neighboring cells. For instance, `api.get(0, 1).species` tells you the species of the particle below you, and calling
+`SandApi` is a struct provided to the function which holds the location of the particle without directly exposing their values. It exposes some important functions, like `get` and `set`, which accept relative coordinates and let you read and write to your neighboring cells. For instance, `api.get(0, 1).species` tells you the species of the particle below you, and calling
 
 ```rust
 api.set(0, 0,
@@ -224,7 +224,7 @@ will write a `Fire` particle to your current location (erasing yourself in the p
 
 Designing and tuning these update functions was a lot of fun, and I was able to test out a lot of ideas and play with different interactions. I didn't make use of syntax macros or anything as fancy as that, but the experience was a lot like that of building a system by first building a "Domain Specific Language" which encodes the shared behaviors and invariants of the system, and then scripting its inhabitants in that simplified DSL.
 
-Another thing to note here is that the update methods, which hold so much of the gameplay logic, are run thousands of time per frame! This means that they're simultaneously critical to the feel of the game, _and_ are some of the hottest lines of code in the project. Rust's commitment to enabling expressive, high level code without invisible performance cliffs really allowed me to write the logic how I wanted to write it, without accidentally causing a bunch of slow heap allocation or writing code that a JIT will capriciously decide not to optimize. It's probably possible that there are people out there who could carefully craft some high-performance javascript that would be competitive with my Rust code, but I was able to mostly "just code" and not worry too much about performance.
+Another thing to note here is that these update functions, which hold so much of the gameplay logic, are run thousands of time per frame! This means that they're simultaneously critical to the feel of the game, _and_ are some of the hottest lines of code in the project. Rust's commitment to enabling expressive, high level code without invisible performance cliffs really allowed me to write the logic how I wanted to write it, without accidentally causing a bunch of slow heap allocation or writing code that a JIT will capriciously decide not to optimize. It's probably possible that there are people out there who could carefully craft some high-performance javascript that would be competitive with my Rust code, but I was able to mostly "just code" and not worry too much about performance.
 
 Zero cost abstractions!
 
@@ -312,6 +312,7 @@ I run these API endpoints as a cloud function, cloud functions seem cheap and gr
 
 A cool thing here about the storage functionality is that I serialize the game state as a PNG file, which is lossless and highly compressible. Plus, browsers have efficient PNG encoders and decoders built in, so that's more code I don't need to import and ship with my bundle.
 Here's what the data looks like as a PNG: (remember, in each RGB pixel, "red" is `species`, "green" is `ra`, and blue is `rb`)
+
 ![data as png](data.png)
 
 The basic architecture of my backend is something like this:
@@ -327,28 +328,26 @@ This led me to migrate my ~60k records off of Firestore and into a Postgres inst
 
 ### Community
 
-A [couple thousand](https://simpleanalytics.io/sandspiel.club) people play with sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their youtube accounts, etc etc.
+A [couple thousand](https://simpleanalytics.io/sandspiel.club) people play with sandspiel every day now! The upload boards get spammed with all sorts of beauty and nonsense, and it warms my heart to see people playing, interacting and (mostly) having fun. The playerbase skews pretty young, and uploads are filled with memes, kids promoting their youtube accounts, etc etc. For the most part, it gets used as a paint program, and the actual simulation aspects are an afterthought!
+
+[![vampkiddle](vampkiddle.png)](https://sandspiel.club/browse/search/?title=vampkiddle)
 
 If you load one creation, this irreverent homage to the Notre Dame cathedral might be my favorite:
 (Make sure to press ▷ once it's loaded)
 [![notre dame](notre.png)](https://sandspiel.club/#dac3ceca6a45502e8dc5)
 
-People have uploaded more than 75 thousand creations, ranging from sophisticated rube goldberg reactions, coloring book "complete the drawing" [prompts](https://sandspiel.club/browse/search/?title=ponybase), [impressionist paintings](https://sandspiel.club/browse/search/?title=new%20mexico), [crude kinetic graffiti](https://sandspiel.club/#hic2GrXYo12ZdyBv1Qcw), and everything in between.
+People have uploaded more than 70,000 creations, ranging from sophisticated rube goldberg reactions, coloring book "complete the drawing" [prompts](https://sandspiel.club/browse/search/?title=ponybase), [impressionist paintings](https://sandspiel.club/browse/search/?title=new%20mexico), [crude kinetic graffiti](https://sandspiel.club/#hic2GrXYo12ZdyBv1Qcw), and everything in between.
 
 [![system](system.png)](https://sandspiel.club/#rcDbjakVCmpz0oceeZDf)
 
-One upload that surprised me was when someone manipulated the data buffer directly, to upload out-of-range species data.
+One upload that surprised me was when someone manipulated the data buffer directly, to upload out-of-range species data. This resulted in a pink element with no intentionally defined behavior, like the "[MissingNo.](https://en.wikipedia.org/wiki/MissingNo.)" of sandspiel. It totally made my day when I realized what had happened, as this was not something I thought was possible! [I like to call it "belp".](https://sandspiel.club/#eMlYGC52XIto0NM1WjaJ)
 
-This resulted in a pink element with no intentionally defined behavior, like the "[MissingNo.](https://en.wikipedia.org/wiki/MissingNo.)" of sandspiel. It totally made my day when I realized what had happened, as this was not something I thought was possible! [I like to call it "belp".](https://sandspiel.club/#eMlYGC52XIto0NM1WjaJ)
-
-[![vampkiddle](vampkiddle.png)](https://sandspiel.club/browse/search/?title=vampkiddle)
-
-There's a healthy remix culture of people making new takes on popular templates. Two favorites are doonaloona, the puppy queen of sandspiel
+There's a healthy remix culture of people making new takes on popular templates. Two favorites are doonaloona, the lithuanian puppy queen of sandspiel
 [![doona](doona.png)](https://sandspiel.club/browse/search/?title=doonaloona)
-and these images of reggie that someone was able to upload in different elements.
+and these images of reggie that someone was able to somehow hack into the game in different elements.
 [![reggie](reggie.png)](https://sandspiel.club/browse/search/?title=reggie)
 
-Thank you so much for reading, and thanks for playing!
+Thank you so much for reading this long post!
 
 #Resources to check out:
 
