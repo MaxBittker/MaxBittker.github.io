@@ -4,7 +4,7 @@ path: making-sandspiel
 date: 2019-04-30 00:00:00
 ---
 
-[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this and but you haven't played sandspiel, you should probably [go try it](https://sandspiel.club)!
+[Sandspiel](https://sandspiel.club) is a falling sand game I built in late 2018. I really enjoyed writing this game, and wanted to put into writing some of my goals, design decisions, and learnings from that process. If you're reading this but haven't played sandspiel, you should probably [go try it](https://sandspiel.club)!
 
 ![screenshot of the game](https://raw.githubusercontent.com/MaxBittker/sandspiel/master/Screenshot.png)
 
@@ -26,7 +26,7 @@ I think that I love these games so much because their mode of play is creative i
 
 In sand games, just like in other cellular automata (such as the _Game of Life_), the behavior of any single element is very simple. The interactions _between_ the elements and across the space is where the interesting complexity of the simulation unfolds. The result is a system with surprising depth and variety to explore.
 
-It's also important that this system is engaging not just for its actual depth, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is projecting your imagination over what you see represented on screen. Much like playing with dolls or other simplistic model, the pixels flowing around on the screen stand in for the story you tell yourself about them.
+It's also important that this system is engaging not just for its actual depth, but also because of the ways your imagination sees reality reflected in it. Predicting how a scenario will play out based on your physical intuition is a form of play, as is projecting your imagination over what you see represented on screen. Much like playing with dolls or other simplistic model, the pixels flowing around on the screen are stand ins for the story you tell yourself about them.
 
 > "Low-fidelity art is also appealingly open to interpretation. If a character is only eight pixels tall, a large part of what we see is within our own imagination." - Loren Schmidt
 
@@ -37,7 +37,7 @@ It's also important that this system is engaging not just for its actual depth, 
 
 ### Microcommunity
 
-Every loves to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, demos, propaganda, and art.
+Everyone loves to opine on their forgotten, weird corners of the internet, and mine is the upload gallery of dan-ball.jp's Powder Game around 2007-2013. There was a beautiful micro-culture of people making games, toys, demos, propaganda, and art.
 
 Powder Game's upload galleries were a special place -- the accessible venue to build something and share it led to people inspiring each other, riffing, and pushing the game in incredible directions! Sand games captured my free time and imagination throughout my childhood in large part because of this weird community.
 
