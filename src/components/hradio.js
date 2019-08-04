@@ -5,7 +5,7 @@ var checkedradio;
 
 const HRadio = createReactClass({
   render() {
-    let { n, flip } = this.props;
+    let { n, flip, type } = this.props;
     let array = Array.from(Array(n).keys());
     return (
       <div
@@ -18,10 +18,13 @@ const HRadio = createReactClass({
         {array.map(i => (
           <input
             key={i}
-            type="radio"
+            type={type ? type : "radio"}
             defaultChecked={i % 2}
             onClick={e => {
               let thisradio = e.target;
+              // if (thisradio.defaultChecked) {
+              //   checkedradio = thisradio;
+              // }
               if (checkedradio === thisradio) {
                 thisradio.checked = false;
                 checkedradio = null;

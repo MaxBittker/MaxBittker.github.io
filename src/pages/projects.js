@@ -11,13 +11,19 @@ export default class Games extends React.Component {
         <a href="https://sandspiel.club/">Sandspiel</a>
         <p>
           Loving homage to the falling sand genre of games. Online interactive
-          sandbox and artistic community. Built in Rust+WebGL.
+          sandbox and chaotic neutral artistic community. Built in Rust+WebGL.
         </p>
-
         <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
         <p>
           A twitter bot that records the first time The New York Times says a
-          new word.
+          new word.<a href="https://www.nytimes.com/2019/07/07/reader-center/nyt-first-said-words-twitter-bot.html?searchResultPosition=1">
+            {" "}
+            Covered by the NYT
+          </a>{" "}
+          in 2019, and got to tweet its own name :)
+          <a href="https://maxbittker.github.io/nyt-first-said/">
+            More Information
+          </a>
         </p>
         <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
           Webcam Shader Sketches{" "}

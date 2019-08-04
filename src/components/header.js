@@ -41,27 +41,27 @@ export default createReactClass({
       }
     }
     return (
-      <div>
+      <div className="header">
         <Wrap n={3} pack>
           <Link to={"/"} style={linkStyle}>
             max bittker
           </Link>
         </Wrap>
-        <Wrap n={3} pack>
-          <Link to={"/about/"} style={linkStyle}>
+        {/* <Wrap n={3} pack> */}
+        {/* <Link to={"/about/"} style={linkStyle}>
             about
-          </Link>
-        </Wrap>
+          </Link> */}
+        {/* </Wrap> */}
         <Wrap n={3} pack>
           <Link to={"/projects/"} style={linkStyle}>
             projects
           </Link>
         </Wrap>
-        <Wrap n={3} pack>
+        {/* <Wrap n={3} pack>
           <Link to={"/face/"} style={linkStyle}>
             :-)
           </Link>
-        </Wrap>
+        </Wrap> */}
         <Wrap n={3} pack>
           <Link to={"/art/"} style={linkStyle}>
             art

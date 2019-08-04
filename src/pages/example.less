@@ -5,6 +5,64 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.home {
+  // columns: 3 100px;
+  column-count: 3;
+  column-gap: 0;
+  // margin-left: -8px; /* Adjustment for the gutter */
+  margin: 0px;
+  width: calc(100% - 1px);
+  img {
+    margin: 0;
+    display: block;
+  }
+  font-size: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .home {
+    max-height: calc(100vh - 12 * 6px);
+    // overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .home {
+    column-count: 4;
+  }
+}
+
+.home-brick {
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  // overflow: hidden;
+  position: relative;
+}
+.x {
+  position: absolute;
+  z-index: 500;
+  right: -1px;
+  top: 0px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: monospace;
+  // vertical-align: middle;
+  height: 15px;
+  width: 15px;
+  // display: block;
+  line-height: 0px;
+  cursor: pointer;
+  border: black solid 1px;
+  background-color: #f4eeef;
+}
+
+marquee {
+  width: 100%;
+}
 .loom {
   // display: block;
   line-height: 0;
@@ -30,18 +88,18 @@ body {
 
 .hradio {
   line-height: 0px;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 .b-wrap {
   border: black 1px solid;
   padding: 5px;
-  display: inline-block;
   background-color: #f4eeef;
   z-index: 1;
-
+  // overflow: hidden;
   // position: absolute;
   // top:3px;
   // bottom: 3px;
@@ -56,6 +114,9 @@ body {
   // border-color: #0f0;
   // height: 100%;
 }
+.header .b-wrap {
+  display: inline-block;
+}
 .pack {
   margin-right: -1px;
   margin-bottom: -1px;
@@ -63,6 +124,9 @@ body {
 @media screen and (max-width: 500px) {
   .b-wrap {
     padding: 1px;
+  }
+  .home {
+    columns: 1;
   }
 }
 
@@ -502,10 +566,10 @@ a:active {
   }
 }
 .rc-scout {
-  display: none !important;
+  // display: none !important;
 }
 .rc-scout.rc-scout-react {
-  display: block !important;
+  // display: block !important;
 }
 
 .canvas {

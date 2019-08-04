@@ -15,7 +15,7 @@ const IndexPage = ({
 
   return (
     <div>
-      <h1>Blogposts</h1>
+      <h1>Blogposts & Talks</h1>
       {Posts}
     </div>
   );

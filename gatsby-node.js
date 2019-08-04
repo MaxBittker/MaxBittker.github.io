@@ -61,6 +61,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
+  if (page.path == "/") {
+    page.context.wide = true;
+    page.context.home = true;
+    createPage(page);
+  }
   if (page.path.match("/art")) {
     page.context.wide = true;
     createPage(page);
