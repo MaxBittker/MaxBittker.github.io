@@ -11,6 +11,7 @@ import HRadio from "../components/hradio.js";
 
 import Wrap from "../components/wrap";
 import face from "./face/face.jpg";
+import torus from "./face/point_cloud_torus.mp4";
 import dog from "./face/dog.jpg";
 Raven.config("https://00f21757ccfe49a49742d4f9d7f1ab30@sentry.io/1234724", {
   release: "2.0.0",
@@ -169,16 +170,20 @@ export default class Index extends React.Component {
           <HRadio n={80} />
         </HomeBrick>
         <HomeBrick>
-          <Wrap n={5} />
+          <Wrap n={2} />
         </HomeBrick>
         <HomeBrick>
-          <img alt="my face" src={face} />
+          <Wrap n={3}>
+            <img alt="my face" src={face} />
+          </Wrap>
         </HomeBrick>
         <HomeBrick>
           <Wrap n={20} />
         </HomeBrick>
         <HomeBrick>
-          <img alt="my cat pippin" src={dog} />
+          <Wrap n={6}>
+            <img alt="my cat pippin" src={dog} />
+          </Wrap>
         </HomeBrick>
 
         <HomeBrick>
@@ -200,10 +205,30 @@ export default class Index extends React.Component {
             </div>
           </div>
         </HomeBrick>
-
+        <HomeBrick>
+          <Wrap n={8}>
+            <video
+              preload="auto"
+              playsInline
+              muted
+              src={torus}
+              type="video/mp4"
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "block",
+                filter: "brightness(0.95) sepia(0.04)"
+              }}
+              alt="source: wikipedia user LucasVB"
+              autoPlay
+              loop
+            />
+          </Wrap>
+        </HomeBrick>
         <HomeBrick>
           <HRadio n={80} flip />
         </HomeBrick>
+
         <HomeBrick>
           <Wrap n={150} />
         </HomeBrick>
