@@ -11,7 +11,7 @@ import HRadio from "../components/hradio.js";
 
 import Wrap from "../components/wrap";
 import face from "./face/face.jpg";
-import torus from "./face/point_cloud_torus.mp4";
+import torus from "./face/Point_cloud_torus.gif";
 import dog from "./face/dog.jpg";
 Raven.config("https://00f21757ccfe49a49742d4f9d7f1ab30@sentry.io/1234724", {
   release: "2.0.0",
@@ -141,8 +141,10 @@ export default class Index extends React.Component {
               type="range"
               min="0"
               max="10"
-              defaultValue="3"
-              step="0.01"
+              defaultValue={
+                window.matchMedia("(max-width: 500px)").matches ? 1 : 3
+              }
+              step="0.1"
               style={{
                 width: "100%",
                 verticalAlign: "middle"
@@ -207,12 +209,8 @@ export default class Index extends React.Component {
         </HomeBrick>
         <HomeBrick>
           <Wrap n={8}>
-            <video
-              preload="auto"
-              playsInline
-              muted
+            <img
               src={torus}
-              type="video/mp4"
               style={{
                 width: "100%",
                 height: "100%",
@@ -220,8 +218,6 @@ export default class Index extends React.Component {
                 filter: "brightness(0.95) sepia(0.04)"
               }}
               alt="source: wikipedia user LucasVB"
-              autoPlay
-              loop
             />
           </Wrap>
         </HomeBrick>
