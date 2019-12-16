@@ -15,7 +15,7 @@ const IndexPage = ({
 
   return (
     <div>
-      <h1>Blogposts & Talks</h1>
+      <h1>Writing & Speaking</h1>
       {Posts}
     </div>
   );
@@ -34,6 +34,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            video
           }
         }
       }

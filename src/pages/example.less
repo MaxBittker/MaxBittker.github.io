@@ -19,6 +19,10 @@ body {
   }
   font-size: 0;
 }
+.home p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
 
 @media screen and (min-width: 900px) {
   .home {
@@ -40,11 +44,13 @@ body {
   // overflow: hidden;
   position: relative;
 }
-.x {
+.x,
+.min {
   position: absolute;
   z-index: 500;
   right: -1px;
   top: 0px;
+  padding: 0;
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -58,6 +64,17 @@ body {
   cursor: pointer;
   border: black solid 1px;
   background-color: #f4eeef;
+}
+.x svg {
+  pointer-events: none;
+}
+.x polyline {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+.min {
+  right: 13px;
 }
 
 marquee {
@@ -93,7 +110,6 @@ marquee {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
 .b-wrap {
   border: black 1px solid;
   padding: 5px;
@@ -525,8 +541,10 @@ a:active {
 
 .art-masonry {
   display: grid;
+  max-width: 800px;
+  margin: auto;
   // flex-wrap: wrap;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(1, 100%);
 }
 @media screen and (max-width: 600px) {
   .art-masonry {
@@ -544,6 +562,7 @@ a:active {
 
   img {
     margin: 0;
+    width: 100%;
   }
   // min-width: 300px;
   // margin: auto;

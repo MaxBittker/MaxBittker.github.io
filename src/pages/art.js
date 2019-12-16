@@ -17,7 +17,6 @@ const VideoWorkaround = ({ src }) => (
       autoplay
       playsinline
       loop
-      controls
       width="100%"
       name="art video"
       src="${src}"
@@ -35,11 +34,18 @@ export default createReactClass({
   componentDidMount() {
     this.expand = setInterval(() => {
       let { posts, lim } = this.state;
-      this.setState({ lim: lim + 2 });
+
+      if (
+        window.scrollY >
+        window.document.body.scrollHeight - window.innerHeight * 2.0
+      ) {
+        console.log("adding");
+        this.setState({ lim: lim + 2 });
+      }
       if (posts.length < lim) {
         clearInterval(this.expand);
       }
-    }, 2000);
+    }, 500);
   },
   getInitialState() {
     const { screenshots } = data;

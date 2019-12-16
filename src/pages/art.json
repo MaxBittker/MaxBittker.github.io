@@ -30,23 +30,11 @@
         },
         {
             "type": ".jpg",
-            "loc": "12aeaeb9a38e9d45e0d47f66c577e252.jpg"
-        },
-        {
-            "type": ".jpg",
             "loc": "1313bca04bccfcc9366f2e69f5276cde.jpg"
         },
         {
             "type": ".mp4",
-            "loc": "134b5ba30ebf4be18efa77bf10250488.mp4"
-        },
-        {
-            "type": ".mp4",
             "loc": "1a8b449398c64d2585f5cd69d8e02c97.mp4"
-        },
-        {
-            "type": ".mp4",
-            "loc": "1bbeb0eb2e3775635e69d35073c9e741.mp4"
         },
         {
             "type": ".mp4",
@@ -71,10 +59,6 @@
         {
             "type": ".jpg",
             "loc": "2713e1c67126b3e5d03218e992aa158f.jpg"
-        },
-        {
-            "type": ".jpg",
-            "loc": "27d13f2675ec16e5946b0c4f701c9ae2.jpg"
         },
         {
             "type": ".jpg",
@@ -145,16 +129,8 @@
             "loc": "4b7af9dfbcf58cda016d0e826216c301.mp4"
         },
         {
-            "type": ".mp4",
-            "loc": "554051cc41446b96f598e081f15e571e.mp4"
-        },
-        {
             "type": ".jpg",
             "loc": "5932a6a88e6432b747bc15ee9ccaae31.jpg"
-        },
-        {
-            "type": ".jpg",
-            "loc": "5b28c84223e11fa47feb39b638e06df7.jpg"
         },
         {
             "type": ".jpg",
@@ -177,10 +153,6 @@
             "loc": "6a5a5b9fa0c5305edfaf12cd87f8be09.jpg"
         },
         {
-            "type": ".jpg",
-            "loc": "6aedd3ec530accbe9bb382f2cad0d561.jpg"
-        },
-        {
             "type": ".mp4",
             "loc": "6ee0ff0f4cc365cff991fe38813704b2.mp4"
         },
@@ -191,10 +163,6 @@
         {
             "type": ".mp4",
             "loc": "7a94339b46e932f76999c38f41686330.mp4"
-        },
-        {
-            "type": ".jpg",
-            "loc": "7e17fd9f2cfd611c2dfe322b3b5d71d6.jpg"
         },
         {
             "type": ".jpg",
@@ -254,10 +222,6 @@
         },
         {
             "type": ".jpg",
-            "loc": "966c3ad7579fa3e5ab7bf2b931f302b9.jpg"
-        },
-        {
-            "type": ".jpg",
             "loc": "96ab3fb0545eb8ac929ccc7a529ef2d7.jpg"
         },
         {
@@ -267,10 +231,6 @@
         {
             "type": ".mp4",
             "loc": "9916e80da29ad474349540fb26e810ec.mp4"
-        },
-        {
-            "type": ".jpg",
-            "loc": "99ee29cdddd6a4be413e1efb572e9025.jpg"
         },
         {
             "type": ".jpg",
@@ -310,18 +270,6 @@
         },
         {
             "type": ".png",
-            "loc": "Screenshot 2017-01-14 21.32.18.png"
-        },
-        {
-            "type": ".png",
-            "loc": "Screenshot 2017-01-14 21.32.47.png"
-        },
-        {
-            "type": ".png",
-            "loc": "Screenshot 2017-01-14 21.33.18.png"
-        },
-        {
-            "type": ".png",
             "loc": "Screenshot 2017-01-26 22.46.43.png"
         },
         {
@@ -334,23 +282,11 @@
         },
         {
             "type": ".png",
-            "loc": "Screenshot 2017-01-28 14.50.49.png"
-        },
-        {
-            "type": ".png",
             "loc": "Screenshot 2017-01-28 15.04.17.png"
         },
         {
             "type": ".png",
             "loc": "Screenshot 2017-01-29 10.38.55.png"
-        },
-        {
-            "type": ".png",
-            "loc": "Screenshot 2017-01-29 10.39.15.png"
-        },
-        {
-            "type": ".png",
-            "loc": "Screenshot 2017-01-29 10.42.51.png"
         },
         {
             "type": ".png",
@@ -386,15 +322,7 @@
         },
         {
             "type": ".png",
-            "loc": "Screenshot 2017-02-05 21.41.56.png"
-        },
-        {
-            "type": ".png",
             "loc": "Screenshot 2017-02-05 21.43.58.png"
-        },
-        {
-            "type": ".png",
-            "loc": "Screenshot 2017-02-26 16.10.30.png"
         },
         {
             "type": ".png",
@@ -482,10 +410,6 @@
         },
         {
             "type": ".jpg",
-            "loc": "ab3d047f4f97c979359b5e3d6ae3c281.jpg"
-        },
-        {
-            "type": ".jpg",
             "loc": "abbc9ef3c7b55a49b6a6f026bf8a94b5.jpg"
         },
         {
@@ -525,10 +449,6 @@
             "loc": "c155aed5fc6845b2fb247b1cd58a46fc.mp4"
         },
         {
-            "type": ".jpg",
-            "loc": "c29101d4805cd7ba04ad8e86078c2c18.jpg"
-        },
-        {
             "type": ".mp4",
             "loc": "cc84bb47a919f15d7863864fd5879c39.mp4"
         },
@@ -554,10 +474,6 @@
         },
         {
             "type": ".jpg",
-            "loc": "d7b2560dfbf74edfdea89fde8f2f07bf.jpg"
-        },
-        {
-            "type": ".jpg",
             "loc": "da6acaa70747490c5e9eeec607ff67f3.jpg"
         },
         {
@@ -575,10 +491,6 @@
         {
             "type": ".jpg",
             "loc": "e74adfd216d17a54efa36b22f624c9a0.jpg"
-        },
-        {
-            "type": ".mp4",
-            "loc": "e7b68ea2fd69aaa99241844b3adfed52.mp4"
         },
         {
             "type": ".jpg",
@@ -627,10 +539,6 @@
         {
             "type": ".mp4",
             "loc": "f36c45078589d94b9c495a809d0ac1ab.mp4"
-        },
-        {
-            "type": ".jpg",
-            "loc": "f668ba07a5c98e8eac756a00c735eaea.jpg"
         },
         {
             "type": ".mp4",
