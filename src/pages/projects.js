@@ -7,7 +7,7 @@ export default class Games extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects & Games</h1>
+        <h1>Projects & Games </h1>
         <a href="https://sandspiel.club/">Sandspiel</a>
         <p>
           Loving homage to the falling sand genre of games. Online interactive
@@ -24,6 +24,12 @@ export default class Games extends React.Component {
           in 2019, and got to tweet its own name. &nbsp;
           <a href="https://maxbittker.github.io/nyt-first-said/">[more info]</a>
         </p>
+        <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a>
+        <p>
+          Recursive pastel rainbow bubble wrap fidget toy that I'm weirdly
+          satisfied with.
+        </p>
+
         <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
           Webcam Shader Sketches{" "}
         </a>
@@ -54,9 +60,6 @@ export default class Games extends React.Component {
           Lo-fi math function visualization sandbox. Check out the{" "}
           <a href="http://maxbittker.github.io/Mojulo/gallery.html">gallery</a>.
         </p>
-
-        <a href="http://maxbittker.github.io/orbs/">Hyper-Pop</a>
-        <p>Tactile recursive pastel rainbow fidget toy.</p>
 
         <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
           Hunt Night
