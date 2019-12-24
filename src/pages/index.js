@@ -129,8 +129,11 @@ export default class Index extends React.Component {
           <p>
             Some of projects that I'm proud of:
             <br />
+            <br />
             <a href="https://sandspiel.club/">Sandspiel</a>, a falling sand game
-            with an embedded online drawing community <br />
+            with an embedded online drawing community
+            <br />
+            <br />
             <a href="https://twitter.com/NYT_first_said"> @NYT_first_said </a>,
             a twitter bot that records when The New York Times says a word for
             the first time in its history.
@@ -168,10 +171,11 @@ export default class Index extends React.Component {
                 {" "}
                 instagram <small></small>
               </a>
-              {/* <a href="https://goodreads.com/maxbittker">
-              {" "}
-              goodreads <small>(AMZN)</small>
-            </a> */}
+              <a href="https://goodreads.com/maxbittker">
+                {" "}
+                goodreads
+                {/* <small>(AMZN)</small> */}
+              </a>
             </span>
           </p>
         </HomeBrick>
@@ -189,8 +193,8 @@ export default class Index extends React.Component {
             <div style={{ position: "relative" }}>
               <input
                 type="range"
-                min="0"
-                max="10"
+                min="1"
+                max="9"
                 orient="vertical"
                 defaultValue={5}
                 step="0.1"
@@ -223,8 +227,8 @@ export default class Index extends React.Component {
               />
               <input
                 type="range"
-                min="0"
-                max="10"
+                min="1"
+                max="9"
                 defaultValue={5}
                 step="0.1"
                 style={{

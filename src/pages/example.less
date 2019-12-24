@@ -44,6 +44,10 @@ body {
   // overflow: hidden;
   position: relative;
 }
+.home-brick p {
+  margin: 0.25em;
+  // text-align: justify;
+}
 .x,
 .min {
   position: absolute;
@@ -136,7 +140,17 @@ marquee {
   margin-right: -1px;
   margin-bottom: -1px;
 }
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 660px) {
+  .b-wrap {
+    padding: 1px;
+  }
+  .home {
+    columns: 2;
+  }
+}
+
+@media screen and (max-width: 370px) {
   .b-wrap {
     padding: 1px;
   }
@@ -144,7 +158,6 @@ marquee {
     columns: 1;
   }
 }
-
 .index {
   height: 100%;
   width: 100%;
