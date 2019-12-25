@@ -127,7 +127,7 @@ export default class Index extends React.Component {
 
         <HomeBrick>
           <p>
-            Some of projects that I'm proud of:
+            Some projects that I'm proud of:
             <br />
             <br />
             <a href="https://sandspiel.club/">Sandspiel</a>, a falling sand game
