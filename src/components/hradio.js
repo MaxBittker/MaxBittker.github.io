@@ -6,7 +6,13 @@ var checkedradio;
 const HRadio = createReactClass({
   render() {
     let { n, flip, type } = this.props;
-    let array = Array.from(Array(n).keys());
+    if (typeof window !== "undefined") {
+      if (window.matchMedia("(max-width: 700px)").matches) {
+        n = n / 3;
+      }
+    }
+    let array = Array.from(Array(Math.floor(n)).keys());
+
     return (
       <div
         className="hradio"
