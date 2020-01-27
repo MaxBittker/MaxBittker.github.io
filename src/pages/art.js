@@ -80,6 +80,10 @@ export default createReactClass({
       <div>
         <Helmet title="artwork" />
         <h1>Visual Artwork Dump:</h1>
+        <p>
+          I don't keep this up to date, the best place to look is probably
+          <a href="https://www.instagram.com/maxbittker/"> my instagram</a> :(
+        </p>
         <div className="art-masonry">{scs}</div>
       </div>
     );

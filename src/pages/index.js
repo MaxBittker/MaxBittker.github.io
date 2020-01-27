@@ -2,6 +2,7 @@ import React from "react";
 import Raven from "raven-js";
 import createReactClass from "create-react-class";
 import Link from "gatsby-link";
+import Favicon from "../components/favicon.js";
 
 // import WebGL from "../components/webgl.js";
 
@@ -78,6 +79,9 @@ const VideoWorkaround = ({ src }) => (
 );
 
 export default class Index extends React.Component {
+  componentDidMount() {
+    Favicon();
+  }
   render() {
     return (
       // <div className="index">
@@ -245,7 +249,7 @@ export default class Index extends React.Component {
           <Wrap n={20} />
         </HomeBrick> */}
 
-        <HomeBrick>
+        {/* <HomeBrick>
           <Wrap n={5}>
             <input
               placeholder="/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\"
@@ -256,7 +260,7 @@ export default class Index extends React.Component {
               alt="focus"
             />
           </Wrap>
-        </HomeBrick>
+        </HomeBrick> */}
 
         {/* 
         <HomeBrick>
