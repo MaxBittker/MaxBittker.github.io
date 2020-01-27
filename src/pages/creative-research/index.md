@@ -4,7 +4,7 @@ path: creative-research
 date: 2020-01-07 00:00:00
 ---
 
-### Or, what am I doing when I'm making art?
+### Or, what am I doing when I'm making art? (WIP DONT READ)
 
 <iframe src="https://maxbittker.github.io/chromatophore/"></iframe>
 
@@ -38,10 +38,16 @@ Convincing the computer to make art forces me to hold a focused state, like thre
 
 More positively, it's very gratifying to express an idea to a computer. Always,after the work of setting the pieces in place inside the computer and letting them play out, it responds to me with an exciting mixture of failures, surprises, gratification, and new ideas.
 
-![computer grass](https://www.atariarchives.org/artist/images/page20-1.jpg)
+<br>
+<br>
+<img src="https://www.atariarchives.org/artist/images/page20-1.jpg" alt="computer grass" style="float:left; width:200px; margin:10px ; border: 1px solid black;">
 
-> "I always seem to be in the process of learning about line and land forms. I learn from what I see and what I draw. What my hand-eye draws is different from what the computer draws. A computer helps by offering new visual ideas. These ideas in turn enrich new hand work which generates additional ideas which extends my thinking about computer generated lines." - Colette Bangert, [COMPUTER GRASS IS NATURAL GRASS (1975)
-> ](https://www.atariarchives.org/artist/sec5.php)
+> "I always seem to be in the process of learning about line and land forms. I learn from what I see and what I draw. What my hand-eye draws is different from what the computer draws. **A computer helps by offering new visual ideas.** These ideas in turn enrich new hand work which generates additional ideas which extends my thinking about computer generated lines."
+> <br> - Colette Bangert [COMPUTER GRASS IS NATURAL GRASS (1975) ](https://www.atariarchives.org/artist/sec5.php)
+
+<div style="clear:both;"></div>
+<br>
+<br>
 
 <!-- Another aspect of using computers to make art is the feeling of control. I think that working with a material that gives me precise control over its final shape feels pleasurable and safe to me in a way that music, paint, clay, or wood don't. But that may be reflective of my skills more than it is reflective of  -->
 
