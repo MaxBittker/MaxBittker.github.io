@@ -18,20 +18,25 @@ function setFavicon() {
   lgrd.addColorStop(1, "white");
   let color = Math.random() * 360;
 
-  rgrd.addColorStop(0, `hsla(${color}, 60%, 50%, 0.3)`);
+  rgrd.addColorStop(0, `hsla(${color}, 50%, 50%, 0.3)`);
   rgrd.addColorStop(
     1,
-    `hsla(${(color + 20 + Math.random() * 100) % 360}, 60%, 50%, 0.4)`
+    `hsla(${(color + 20 + Math.random() * 100) % 360}, 50%, 50%, 0.4)`
   );
 
   ctx.fillStyle = lgrd;
   ctx.beginPath();
-  ctx.arc(8, 8, 8, 0, 180);
+  ctx.arc(8, 8, 7.5, 0, Math.PI * 2);
   ctx.fill();
   ctx.fillStyle = rgrd;
+
   ctx.beginPath();
-  ctx.arc(8, 8, 8, 0, 180);
+  ctx.arc(8, 8, 7.5, 0, Math.PI * 2);
   ctx.fill();
+  ctx.strokeStyle = rgrd;
+  ctx.lineWidth = 1.5;
+
+  ctx.stroke();
 
   var link = document.createElement("link");
   link.type = "image/x-icon";
