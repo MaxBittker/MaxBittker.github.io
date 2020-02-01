@@ -108,15 +108,36 @@ requires optimism, math, different aproaches, design thinking,
 
 Building a world to play in.
 
-### exploration, recombinate creativity
+### Exploration & Recombinate Creativity
 
-parameter space exploration
+Often, there will be a point in a project where I'm comfortable with a basic foundation, but the result isn't clicking in the way I'd hoped it would. My reaction when I get to this sort of dead end is often to throw things at the wall and see what sticks!
 
-put it in a grid
-add some noise
-connect it to soud
+In other words, I'll enter a combinatoric approach to creativity where I'm throwing different effects and concepts from my toolbox into the mix, and seeing if anything interesting presents itself.
 
-hook up midi control
+The first step is just exploring the parameter space that already exists inside your system. Defining shared numbers like "each octopus has 8 arms" is a natural part of building an idea with code.
+
+The natural next step is asking, how does it look if I change that number to 18? 800? 1? ... -4? This is always a good source of glitches, suprises and ideas.
+
+Exploring a parameter space is it's own skill, and because it's important I put care into making it fun and expressive for myself. This can mean anything from making sure my code is well-organized, to using controller libraries like 'dat.GUI', to even attaching the knobs of a physical midi controller to different values in my program.
+
+<video src="midi.mp4" muted autoplay loop alt="inchworm" style="margin:auto; display:block;"> </video>
+(I love how this video shows peeks of the messy edges of a parameter space. Often, there is only a narrow region where a system is "well behaved". Just beyond those boundaries, unparseable or "degenerate" output lurks. Appreciate these spaces as a mystery and a source of beauty!)
+
+Then, I might:
+
+- add some noise.
+- not clear my buffer.
+- put everything in a grid or along a circle.
+- make it rainbow.
+- dither the colors.
+- wrap it around typography.
+- make it react to audio, video, or touch.
+
+These are just a few of my personal favorites, but they're all effects that I'm very comfortable with. Throwing them onto a project without too much thought or energy can be really fun when I'm not feeling .
+
+This form of creativity is something that I used to feel self-concious about, because I thought that I wasn't doing real art if I was just aimlessly smooshing ideas togther. Now, I embrace this as time to partially turn my brain off, and let possibilities present themselves.
+
+It doesn't mean you should never think about why you're doing something, but letting go of that urge can be a good way to keep things flowing :).
 
 ### ergonomic investments, oss contributions
 
