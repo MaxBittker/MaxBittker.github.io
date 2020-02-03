@@ -126,7 +126,7 @@ Exploring a parameter space is it's own skill, and because it's important I put 
 Then, I might:
 
 - add some noise.
-- not clear my buffer.
+- not clear the buffer.
 - put everything in a grid or along a circle.
 - make it rainbow.
 - dither the colors.
@@ -145,11 +145,22 @@ waiting for inspiration, reflecting on comfort, sharpening tools,
 
 ### outward energy, documentation
 
-Documenting and sharing your work is really important!
+Documenting and sharing your work is really important! It's a way to motivate yourself to "finish" something. Posting a gif or screenshot is a great micro goal to punctuate your research. It also makes you think about how your work can best present itself or what aspects connect with people.
+
+I try to put thought into doing this well.
+
+I love to use my phone for this. I mostly share things on twitter and instagram, and iOS based photo and video editing tools are really easy to use. I think it's important to remove as many barriers as possible here, because if it takes extra time to prepare documentation, it will probably never happen.
+
+Say something about why you thought a piece was interesting to work on, or what you learned. Your friends are probably more interested in that story than in the visual effect.
+
+I sometimes rely on social media too much for validation that my time was well spent or that I'm
+
 Endorphin payoff (or crash!)
 
 There are some emotional pitfalls.
 
 ### Not wanting to make things
 
-This is part of the cycle too! It's natural to have ebbs and flow in your excitement. Feeling guilty for this is harmful. I try to remember that creative output is a life-long journey, and that "performance" is a state of balance between forces in my life.
+This is part of the cycle too! It's natural to have ebbs and flow in your energy.
+
+The nature of social media amplifies a lot of harmful ideas about productivity. "I should be more creatively productive" is a bad way to motivate yourself. I try to remember that creativity is a life-long journey. Output is not a measurement of growth of self worth. Balance and sustainability are more healthy than obsession and external validation.
