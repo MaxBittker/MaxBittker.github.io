@@ -39,10 +39,10 @@ Convincing the computer to make art forces me to hold a focused state, like thre
 More positively, it's very gratifying to express an idea to a computer. Always,after the work of setting the pieces in place inside the computer and letting them play out, it responds to me with an exciting mixture of failures, surprises, gratification, and new ideas.
 
 <br>
-<img src="https://www.atariarchives.org/artist/images/page20-1.jpg" alt="computer grass" style="float:left; width:200px; margin:10px ; border: 1px solid black;">
+<img src="https://web.archive.org/web/20190517225514im_/https://www.atariarchives.org/artist/images/page20-1.jpg" alt="computer grass" style="float:left; width:200px; margin:10px ; border: 1px solid black;">
 
 > "I always seem to be in the process of learning about line and land forms. I learn from what I see and what I draw. What my hand-eye draws is different from what the computer draws. **A computer helps by offering new visual ideas.** These ideas in turn enrich new hand work which generates additional ideas which extends my thinking about computer generated lines."
-> <br> - Colette Bangert [COMPUTER GRASS IS NATURAL GRASS (1975) ](https://www.atariarchives.org/artist/sec5.php)
+> <br> - Colette Bangert [COMPUTER GRASS IS NATURAL GRASS (1975) ](https://web.archive.org/web/20190517225514/https://www.atariarchives.org/artist/sec5.php)
 
 <div style="clear:both;"></div>
 <br>
@@ -72,37 +72,46 @@ Because of the fiddly and frictive nature of using computers, and because of my 
 
 I tackle different tasks when I have different types of energy to spare. These complimentary types of work ideally come together to power my creative research.
 
-## points of departure
+## Points of departure
 
-Starting new things based on sparks or ideas!
+Throughout the week, I will have a bunch of soft-baked ideas while I'm on the train, talking to a friend, or on a walk. I write these down and keep a bunch of different disorganized lists of things I'm curious to explore.
 
-- natural beauty
-- ideas that I find beautiful
-- recreating an artwork
-- learning new technologies
-- forking other people's demos
+Jumping-off points usually take the form of wanting to recreate a form I see in nature or in someone's artwork. But other times I'm motivated to pursue an idea just because it involves a technique or tool that I want to learn.
 
--> happens when i'm in nature, or talking with people, or whenever.
+If I sit down and start working on something as soon as I think of it, I often find that I quickly lose direction.
 
--> I usually can't immediately start working on these, so i write them down for later, or do inital research on the web to learn more and build a list of resources.
+Keeping a rolling list has the advantage that if an idea sits on the shelf for days or weeks, yet it keeps bubbling up in my mind, my interest will probably either naturally fade away (one less thing to do!) or else accrete into something larger.
 
-### yak shaving, setup, schleping
+I also spend a lot of time on youtube and wikipedia learning about the concept. This is sometimes my favorite part of a project, just getting to learn new concepts and vocabulary about something that I'd never thought about before. I like youtube because often you find videos made by hobbyists who are even more excited about the idea than you are.
 
-Setting up new tools and debugging programming environments for myself can be really hard work. The nature of this difficulty is more emotional than technical.
+### Setup Schlep
 
-There is very little positive emotional payoff from environment setup work, and having the motivation to tackle it after dealing with my day job or instead of enjoying other activities mean that small things can become serious hurdles.
+Setting up new tools and debugging programming environments for can be really hard work. The nature of this difficulty is more emotional than technical.
+
+There is very little positive emotional payoff from this work! Finding the motivation to tackle it after dealing with my day job or instead of enjoying other activities mean that small things can become serious hurdles.
 
 That being said, this preparation is crucial to having a condusive area to do creative work, and getting it out of the way lowers the activation energy you need in the future to quickly explore ideas!
 
-One way around this is pre-built environments that require little setup. A few examples: - Create React App - glitch.com - shadertoy - editor.p5js.org
+I've developed a few strategies for counteracting this problem:
 
-I also love to maintain boiler-plate repos that I can clone and go. I'm done this for
-
+First is just
 do it in advance, prep your area, lower activation energy for the future.
-
 Installing dependencies and writing the first layers of code that set me up
 
+I think this is a great place to ask for help. Because a lot of the barrier here is information overload and the emotional drudgery of making lots of decisions, asking someone for their advice, pointers, or opinions can help get over the hurdle.
+
+One is that I love to maintain little boilerplate repos that I can clone in the future. This approach helps make the work I put into setup feel more like doing a favor for a friend, and makes it fun to try to find the simplest solution and to document my work.
+
+Another way around this is pre-built environments that require little setup. I love quick-start tools like "Create React App", glitch.com, Shadertoy, editor.p5js.org, etc.
+
+> Quick aside about this sort of tool: I think that "software people" underestimate how huge of a lever it is to lower the cost of starting a project. Things like Arduino and Processing that lower the number of decisions and setup steps you need to start making something, enfranchise entirely different forms of making **and new kinds of _makers_**.
+>
+> Lowering friction for creativity is something that the big companies bankrolling our software environments don't understand or invest in. If you care about this, you can have a big impact. The first step is find ways to make life easier for your future self!
+
 ### building out core abstractions
+
+A key component of creative coding for me is building systems to play inside of.
+This is different than the aforemented work to setting up my coding environment - I'm talking about imagining a system and building out that model. For instance, if I want to build art inspired by the movements of a heard of sheep in a pasture, I might need to encode some basic ideas about acceleration, turning radius, and neighbor detection. Or, if I wanted to make artwork dealing with the visual form of text messaging, I might need to build a simple model of the way that chat bubbles push up from the bottom of the screen in iMessage.
 
 requires optimism, math, different aproaches, design thinking,
 
@@ -161,6 +170,8 @@ There are some emotional pitfalls.
 
 ### Not wanting to make things
 
-This is part of the cycle too! It's natural to have ebbs and flow in your energy.
+Downtime is an important part of the cycle too! It's natural to have ebbs and flow in your energy.
 
-The nature of social media amplifies a lot of harmful ideas about productivity. "I should be more creatively productive" is a bad way to motivate yourself. I try to remember that creativity is a life-long journey. Output is not a measurement of growth of self worth. Balance and sustainability are more healthy than obsession and external validation.
+The nature of social media amplifies a lot of harmful ideas about productivity. "I should be more creatively productive" is a harmful framing for motivation. I try to remember that creativity is a life-long journey, and that my output is not a measurement of growth or self worth. Balance and sustainability are more healthy than obsession and external validation.
+
+If I'm not feeling interested in creative pursuits, I don't try to force myself to do it anyway or spend energy on feeling guilty. Instead it's better to focus that energy towards other aspects of my life. Using creativity as an escape from feeling bad is a negative pattern that I've fallen into in the past.
