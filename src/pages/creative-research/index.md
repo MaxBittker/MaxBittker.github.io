@@ -108,20 +108,28 @@ Another way around this is pre-built environments that require little setup. I l
 >
 > Lowering friction for creativity is something that the big companies bankrolling our software environments don't understand or invest in. If you care about this, you can have a big impact. The first step is find ways to make life easier for your future self!
 
-### building out core abstractions
+### Structuring an idea
 
-A key component of creative coding for me is building systems to play inside of.
-This is different than the aforemented work to setting up my coding environment - I'm talking about imagining a system and building out that model. For instance, if I want to build art inspired by the movements of a heard of sheep in a pasture, I might need to encode some basic ideas about acceleration, turning radius, and neighbor detection. Or, if I wanted to make artwork dealing with the visual form of text messaging, I might need to build a simple model of the way that chat bubbles push up from the bottom of the screen in iMessage.
+A key component of creative coding is building myself a world to play in.
 
-requires optimism, math, different aproaches, design thinking,
+This is different than the aforemented work to setting up my coding environment -
+I'm talking about developing a structure to be creative within.
 
-Building a world to play in.
+For instance, if I want to build art inspired by the movements of a heard of sheep in a pasture, I might need to encode some basic ideas about acceleration, turning radius, and neighbor detection.
+
+For an exploration of generative vines, I may need to build abstractions for growing branching shapes that interact with static geometry.
+
+Or, if I wanted to present abstract poetry dealing with the visual form of text messaging, I might need to implement a model of the way chat bubbles push up from the bottom of the screen in iMessage.
+
+This kind of work is not as expressive as splashing paint on a canvas - It's more about creating constraints and leverages for yourself. Maybe it's anologous to designing a pin hole camera with which to take photographs, or building a set of wooden molds & stamps to shape clay with.
+
+I really love this stage of my creative process, but it requires a combination of optimism, focus, and inspiration that I can only inhabit occasionally. Once I've built an abstraction like this, I try to squeeze different effects out of it, and push against its edges.
 
 ### Exploration & Recombinate Creativity
 
-Often, there will be a point in a project where I'm comfortable with a basic foundation, but the result isn't clicking in the way I'd hoped it would. My reaction when I get to this sort of dead end is often to throw things at the wall and see what sticks!
+Often, there will be a point in a project where I'm comfortable with a basic foundation, but I'm not sure where I want to go with it anymore. My reaction when I get to this sort of dead end is often to just throw things at the wall and see what sticks!
 
-In other words, I'll enter a combinatoric approach to creativity where I'm throwing different effects and concepts from my toolbox into the mix, and seeing if anything interesting presents itself.
+This is a combinatoric approach to creativity where I'm throwing different effects and concepts from my toolbox into the mix, and seeing if anything interesting presents itself.
 
 The first step is just exploring the parameter space that already exists inside your system. Defining shared numbers like "each octopus has 8 arms" is a natural part of building an idea with code.
 
@@ -129,7 +137,7 @@ The natural next step is asking, how does it look if I change that number to 18?
 
 Exploring a parameter space is it's own skill, and because it's important I put care into making it fun and expressive for myself. This can mean anything from making sure my code is well-organized, to using controller libraries like 'dat.GUI', to even attaching the knobs of a physical midi controller to different values in my program.
 
-<video src="midi.mp4" muted autoplay loop alt="inchworm" style="margin:auto; display:block;"> </video>
+<video src="midi.mp4" muted autoplay loop alt="inchworm" style="margin:auto; display:block; max-width:100%"> </video>
 (I love how this video shows peeks of the messy edges of a parameter space. Often, there is only a narrow region where a system is "well behaved". Just beyond those boundaries, unparseable or "degenerate" output lurks. Appreciate these spaces as a mystery and a source of beauty!)
 
 Then, I might:
@@ -150,6 +158,7 @@ It doesn't mean you should never think about why you're doing something, but let
 
 ### ergonomic investments, oss contributions
 
+This whole process is a cycle. Sometimes after  
 waiting for inspiration, reflecting on comfort, sharpening tools,
 
 ### outward energy, documentation
