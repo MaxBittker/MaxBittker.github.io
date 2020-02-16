@@ -9,34 +9,33 @@ date: 2020-01-07 00:00:00
 <!-- <iframe src="https://maxbittker.github.io/cute-mushrooms/"></iframe> -->
 <iframe src="https://maxbittker.github.io/chromatophore/"></iframe>
 
-I like making art with computers, but it can feel strange sometimes. Art and computing are two fields that come wrapped up with a lot of ideas about what is the proper way to go about them. When mixed, their respective preconceptions can come into tension. Existing at this intersection requires reconsidering things you've learned about the correct way to develop software, or the right way to make art.
+I like making art with computers, but it can feel strange sometimes. Art and computing each come wrapped up with a lot of external ideas about the proper way to go about them. When mixed, their respective preconceptions can come into tension. Existing at this intersection requires reconsidering things you've learned about the correct way to develop software, or the right way to make art.
 
-This is a road I've mostly traveled on my own (most computer-based hobbies involve spending a lot of time at home). Recently, especially after attending SFPC, being able to be around more artists and seeing how very differently each person practices their craft has prompted me to be more reflective about my own process.
+This is a balance I've mostly learned to navigate on my own. This fall, I spent some time at the School for Poetic Computation. I was able to meet other computer artists and see first-hand how differently each person practices their craft. This prompted me to be more reflective about my own process.
 
-So, this blog post is me writing down some thoughts about my creative process in order to better understand it, and hopefully to prompt others to reflect on their own patterns of making or learning.
-<small> Everything I say is contextualized to what is true for _me_, and some of it is only half true! So please be patient if you experience these things differently. </small>
+So, this blog post is me writing down some thoughts about my creative process in order to better understand it, and hopefully to prompt others to reflect on their own patterns of making or learning. I don't expect that these ideas will be strongly generalizable towards other people's experiences, so please be patient with me if you see things differently!
 
 ### Why do I make art?
 
 Creating things is a way to have a conversation with the world.
 
-I might have a passing thought or observation, like: "I enjoy the pattern on this fabric" or "These birds move in a beautiful way."
+I might have a passing thought or observation, like: "I enjoy the pattern of this fabric" or "These birds move in a beautiful way."
 
 ![starling murmuration](https://cdn.hswstatic.com/gif/murmuration.jpg)
 
-Holding that idea and re-forming it my own hands means engaging with the idea for a longer time and from different angles.
+Holding onto that idea and re-forming it my own hands means engaging with the idea for a longer time and from different angles.
 
-Making art builds my understanding of the world and of my own perception. It gives me a space and structure to think through ideas and teaches me new ways to appreciate the world.
+Making art builds my understanding of the world and of my own perception. It gives me a space and structure to think, and teaches me new ways to appreciate the world.
 
-If art is giving shape to an idea, working towards that shape also helps me to communicate it. Sharing something with others and hearing their perspectives on it is yet another layer of learning and understanding the original idea, or generating new ones.
+If art is giving shape to an idea, working towards that shape also helps me to communicate it. Sharing something with others gives them a window into the way I understand it, and hearing their perspective on that is yet another angle of insight towards the original idea.
 
 ## Why do I make art with computers?
 
-I wish I knew! If you've programmed a computer, you probably know that it's not an inately pleasurable experience. Computers seem to prefer not to make artwork, or at least they're extremely efficient at finding ways to avoid doing it how you intended them to.
+I wish I knew! If you've programmed a computer, you probably know that it's not an inately pleasurable experience. Computers prefer not to make artwork, or at least they're extremely efficient at finding ways to avoid doing it how you intended them to.
 
-Convincing the computer to make art forces me to hold a focused state, like threading a series of needles while holding an idea in my head. Left alone, my mind spends its energy worrying about things I can't control or generally bouncing around like shoes in a washing machine. Writing code is a good activity for me because I can tire my mind out on less destructive activities, such as naming variables.
+Convincing the computer to make art forces me to hold a focused state, like threading a series of needles while holding an form in my head. Left alone, my mind spends its energy worrying about things I can't control or generally bouncing around like shoes in a washing machine. Writing code is a good activity for me because I can tire my mind out on less destructive activities, such as naming variables.
 
-More positively, it's very gratifying to express an idea to a computer. Always,after the work of setting the pieces in place inside the computer and letting them play out, it responds to me with an exciting mixture of failures, surprises, gratification, and new ideas.
+More positively, it's very gratifying to express an idea to a computer. Always,after the work of setting pieces into place inside the computer and letting them play out, it responds to me with an exciting mixture of failures, surprises, gratification, and new ideas.
 
 <br>
 <img src="https://web.archive.org/web/20190517225514im_/https://www.atariarchives.org/artist/images/page20-1.jpg" alt="computer grass" style="float:left; width:200px; margin:10px ; border: 1px solid black;">
@@ -53,18 +52,18 @@ More positively, it's very gratifying to express an idea to a computer. Always,a
 
 Like other forms of art, programming teaches you new ways to pay attention to your surroundings.
 
-Writing programs can be seen as the process of translating an idea into a new language. That translation process raises questions and pulls your focus across different aspects of your subject.
+Writing computer programs can be seen as the process of translating an idea into a new language. That translation process raises questions and directs your focus slowly across different aspects of your subject, the way that drawing forces you to focus your attention on small aspects of a whole.
 
 If you want to animate a digital inch worm, you're forced to to observe their motions carefully, breaking it into smaller components and understanding how those fit together.
 
 <img src="https://www.researchgate.net/profile/Weiting_Liu3/publication/260295776/figure/fig1/AS:284272142372864@1444787168031/An-inchworm-on-a-leaf-a-its-simple-structure-b-and-locomotion-sequence-c.png" alt="inchworm" style="margin:auto; display:block;">
 <br>
 
-This process of close observation, modeling, and first-hand experimentation means building intuitions for the system that can be deeper than what I gain through reading other people's findings, or through observation alone. Shaping an idea in your own hands and touching it from many angles results in a multi-faceted understanding. It's my experiece that when I've understood an idea in this way, it's more readily availble to the creative part of my brain in the future, when I'm forming new connections or acting on hunches.
+This process of close observation, modeling, and first-hand experimentation means building intuitions for the system that can be deeper than what I gain through reading other people's findings, or through observation alone. Shaping an idea in your own hands and touching it from many angles results in a multi-faceted understanding. It's my experiece that when I've understood an idea in this way, I'm remember it better, and it will be more readily available to the creative connection-forming part of my brain in the future.
 
 ## Art as research
 
-I make artwork in order to learn
+While making artwork does build my understanding of a concept through focus and contemplation, it also motivates me to learn through like, actual research. Artistic work in particular can take inspiration from many sorts of resources, so I really enjoy having a good reason to find things to read, skim, or look at
 
 ## Creative & emotional cyles:
 
@@ -154,12 +153,13 @@ These are just a few of my personal favorites, but they're all effects that I'm 
 
 This form of creativity is something that I used to feel self-concious about, because I thought that I wasn't doing real art if I was just aimlessly smooshing ideas togther. Now, I embrace this as time to partially turn my brain off, and let possibilities present themselves.
 
-It doesn't mean you should never think about why you're doing something, but letting go of that urge can be a good way to keep things flowing :).
+It doesn't mean you should never think about why you're doing something, but sometimes letting go of that urge can be a good way to keep things flowing :).
 
 ### ergonomic investments, oss contributions
 
-This whole process is a cycle. Sometimes after  
-waiting for inspiration, reflecting on comfort, sharpening tools,
+This whole process is a cycle. After exploring an idea, there are often things you can do to tidy up, make your environment more ergonomic, or seperate out tools to make them easier to re-use in the future. Re-organizing a codebase isn't what you want to be doing when you're deep in the flow of an idea, but it's a nice activity for a different day, to reflect and invest in the future.
+
+I especially love when this work can mean contributing back to the open source ecosystems you use, to return the favor.
 
 ### outward energy, documentation
 
