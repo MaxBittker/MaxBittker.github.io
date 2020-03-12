@@ -23,10 +23,10 @@ const ribbon =
   "•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•";
 const HomeBrick = createReactClass({
   render() {
-    let { children } = this.props;
+    let { children, hideOnMobile } = this.props;
 
     return (
-      <div className="home-brick">
+      <div className={`home-brick ${hideOnMobile ? "desktopOnly" : " "}`}>
         <button
           className="x"
           onClick={e => {
@@ -126,7 +126,7 @@ export default class Index extends React.Component {
           </p>
         </HomeBrick>
         <HomeBrick>
-          <HRadio n={80} />
+          <HRadio n={30} />
         </HomeBrick>
 
         <HomeBrick>
@@ -149,7 +149,7 @@ export default class Index extends React.Component {
         </HomeBrick>
 
         <HomeBrick>
-          <HRadio n={80} type="checkbox" flip />
+          <HRadio n={30} type="checkbox" flip />
         </HomeBrick>
 
         <HomeBrick>
@@ -191,50 +191,38 @@ export default class Index extends React.Component {
             </p>
           </Wrap>
         </HomeBrick>
-
         <HomeBrick>
-          <Wrap n={8}>
-            <div style={{ position: "relative" }}>
-              <input
-                type="range"
-                min="1"
-                max="9"
-                defaultValue={5}
-                step="0.1"
-                style={{
-                  // position: "absolute",
-                  left: 0,
-                  top: 0,
-                  width: "100%",
-                  verticalAlign: "middle"
-                }}
-                alt="focus"
-                onChange={e => {
-                  let value = e.target.value;
-                  let style = document.getElementById("slider-style-2");
-                  if (style) style.remove();
-                  style = document.createElement("style");
-                  style.id = "slider-style-2";
-                  document.head.appendChild(style);
+          <Wrap n={5}>
+            <input
+              type="range"
+              min="1"
+              max="9"
+              defaultValue={1}
+              step="0.1"
+              style={{
+                // position: "absolute",
+                left: 0,
+                top: 0,
+                width: "100%",
+                verticalAlign: "middle"
+              }}
+              alt="focus"
+              onChange={e => {
+                let value = e.target.value;
+                let style = document.getElementById("slider-style");
+                if (style) style.remove();
+                style = document.createElement("style");
+                style.id = "slider-style";
+                document.head.appendChild(style);
 
-                  let mult = window.matchMedia("(max-width: 500px)").matches
-                    ? 1
-                    : 5;
-                  let tot = mult * 2;
-                  style.sheet.insertRule(
-                    `.b-wrap {padding-top: ${(value / 5) * mult}px}`
-                  );
-                  style.sheet.insertRule(
-                    `.b-wrap {padding-bottom: ${tot - (value / 5) * mult}px}`
-                  );
-                }}
-              />
-            </div>
+                style.sheet.insertRule(`* {border-radius: ${value * value}px}`);
+              }}
+            />
           </Wrap>
         </HomeBrick>
 
         {/* <HomeBrick> */}
-        {/* <HRadio n={80} /> */}
+        {/* <HRadio n={30} /> */}
         {/* </HomeBrick> */}
 
         <HomeBrick>
@@ -247,19 +235,6 @@ export default class Index extends React.Component {
         </HomeBrick> */}
         {/* <HomeBrick>
           <Wrap n={20} />
-        </HomeBrick> */}
-
-        {/* <HomeBrick>
-          <Wrap n={5}>
-            <input
-              placeholder="/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\"
-              style={{
-                width: "100%",
-                verticalAlign: "middle"
-              }}
-              alt="focus"
-            />
-          </Wrap>
         </HomeBrick> */}
 
         {/* 
@@ -303,7 +278,7 @@ export default class Index extends React.Component {
           </Wrap>
         </HomeBrick> */}
         <HomeBrick>
-          <HRadio n={80} flip />
+          <HRadio n={30} flip />
         </HomeBrick>
         <HomeBrick>
           <Wrap n={6}>
@@ -311,6 +286,46 @@ export default class Index extends React.Component {
           </Wrap>
         </HomeBrick>
         <HomeBrick>
+          <Wrap n={8}>
+            <div style={{ position: "relative" }}>
+              <input
+                type="range"
+                min="1"
+                max="9"
+                defaultValue={5}
+                step="0.1"
+                style={{
+                  // position: "absolute",
+                  left: 0,
+                  top: 0,
+                  width: "100%",
+                  verticalAlign: "middle"
+                }}
+                alt="focus"
+                onChange={e => {
+                  let value = e.target.value;
+                  let style = document.getElementById("slider-style-2");
+                  if (style) style.remove();
+                  style = document.createElement("style");
+                  style.id = "slider-style-2";
+                  document.head.appendChild(style);
+
+                  let mult = window.matchMedia("(max-width: 500px)").matches
+                    ? 1
+                    : 5;
+                  let tot = mult * 2;
+                  style.sheet.insertRule(
+                    `.b-wrap {padding-top: ${(value / 5) * mult}px}`
+                  );
+                  style.sheet.insertRule(
+                    `.b-wrap {padding-bottom: ${tot - (value / 5) * mult}px}`
+                  );
+                }}
+              />
+            </div>
+          </Wrap>
+        </HomeBrick>
+        {/* <HomeBrick>
           <Wrap n={25}>
             <input
               type="range"
@@ -346,8 +361,9 @@ export default class Index extends React.Component {
               }}
             />
           </Wrap>
-        </HomeBrick>
-        <HomeBrick>
+        </HomeBrick> */}
+
+        <HomeBrick hideOnMobile>
           <Wrap n={150} />
         </HomeBrick>
       </div>

@@ -24,10 +24,17 @@ export default class Games extends React.Component {
           in 2019, and got to tweet its own name. &nbsp;
           <a href="https://maxbittker.github.io/nyt-first-said/">[more info]</a>
         </p>
+        <a href="https://maxbittker.github.io/broider/">Broider</a>
+        <p>
+          Fun tool for designing lo-fi "embroidered" border decorations. Border
+          styles can be exported as CSS!
+        </p>
+
         <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a>
         <p>
           Recursive pastel rainbow bubble wrap fidget toy that I'm weirdly
-          satisfied with.
+          satisfied with. See also:{" "}
+          <a href="https://maxbittker.github.io/div-mitosis/">div mitosis</a>
         </p>
 
         <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
@@ -72,7 +79,7 @@ export default class Games extends React.Component {
         <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
         <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
 
-        <a href="http://maxbittker.github.io/fish/">
+        {/* <a href="http://maxbittker.github.io/fish/">
           Ethical Fishing Simulator
         </a>
         <p>
@@ -84,7 +91,7 @@ export default class Games extends React.Component {
         <p>
           This is an interactive swirling particle simulator that reacts to
           touch.
-        </p>
+        </p> */}
         {/* 
         <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
           Phone Brain

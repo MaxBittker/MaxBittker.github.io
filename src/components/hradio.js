@@ -8,7 +8,7 @@ const HRadio = createReactClass({
     let { n, flip, type } = this.props;
     if (typeof window !== "undefined") {
       if (window.matchMedia("(max-width: 700px)").matches) {
-        n = n / 3;
+        n = n / 3.1;
       }
     }
     let array = Array.from(Array(Math.floor(n)).keys());

@@ -6,6 +6,9 @@ input[type="range"][orient="vertical"] {
   padding: 0 5px;
 }
 
+input {
+  filter: grayscale(1);
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

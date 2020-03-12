@@ -11,6 +11,10 @@ function setFavicon() {
   canvas.height = 16;
   var ctx = canvas.getContext("2d");
 
+  ctx.translate(8, 8);
+  ctx.rotate(Math.random() * 100);
+  ctx.translate(-8, -8);
+
   let lgrd = ctx.createLinearGradient(0 - 8, 0 - 8, 0 + 8, 0 + 8);
   let rgrd = ctx.createRadialGradient(0, 0, 16, 0, 0, 8);
 
@@ -37,6 +41,9 @@ function setFavicon() {
   ctx.lineWidth = 1.5;
 
   ctx.stroke();
+  // ctx.strokeStyle = "white";
+  // ctx.font = " 10px arvo";
+  // ctx.strokeText("max", 0, 12);
 
   var link = document.createElement("link");
   link.type = "image/x-icon";
