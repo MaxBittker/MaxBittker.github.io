@@ -1,9 +1,13 @@
+.maxbittker {
+  font-family: "Astloch", sans-serif;
+}
 html,
 body {
   margin: 0;
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
+  border-radius: 0 !important;
 }
 
 .home {
@@ -127,7 +131,7 @@ marquee {
   // bottom: 3px;
   // right: 3px;
   // left:3px;
-  box-shadow: 3px 3px 6px #cfcacb, -3px -3px 6px #ffffff;
+  // box-shadow: 3px 3px 6px #cfcacb, -3px -3px 6px #ffffff;
 }
 .b-wrap.fill {
   display: flex;
@@ -152,8 +156,10 @@ marquee {
   }
   .home {
     columns: 2;
-    column-gap: 1px;
+    // column-gap: 1px;
   }
+}
+@media screen and (max-width: 960px) {
   .desktopOnly {
     display: none;
   }

@@ -29,6 +29,7 @@ const HomeBrick = createReactClass({
       <div className={`home-brick ${hideOnMobile ? "desktopOnly" : " "}`}>
         <button
           className="x"
+          tabIndex="-1"
           onClick={e => {
             let parentElement = e.target.parentElement;
             parentElement.style = "transform: scaleX(1.01) scaleY(0.99);";
@@ -108,10 +109,10 @@ export default class Index extends React.Component {
             <marquee style={{ position: "absolute", top: -5 }} scrollamount="4">
               {ribbon}
             </marquee>
-            <marquee style={{ position: "absolute", top: -5 }} scrollamount="5">
+            <marquee style={{ position: "absolute", top: -5 }} scrollamount="1">
               {ribbon}
             </marquee>
-            <marquee style={{ position: "absolute", top: -5 }} scrollamount="6">
+            <marquee style={{ position: "absolute", top: -5 }} scrollamount="2">
               {ribbon}
             </marquee>
             {/* <marquee style={{ position: "absolute", top: -5 }} scrollamount="7">
@@ -131,16 +132,13 @@ export default class Index extends React.Component {
 
         <HomeBrick>
           <p>
-            Some projects that I'm proud of:
+            <a href="https://sandspiel.club/">Sandspiel</a> is a falling sand
+            game with an embedded online drawing community
             <br />
             <br />
-            <a href="https://sandspiel.club/">Sandspiel</a>, a falling sand game
-            with an embedded online drawing community
-            <br />
-            <br />
-            <a href="https://twitter.com/NYT_first_said"> @NYT_first_said </a>,
-            a twitter bot that records when The New York Times says a word for
-            the first time in its history.
+            <a href="https://twitter.com/NYT_first_said"> @NYT_first_said </a>
+            is a twitter bot that records when The New York Times says a word
+            for the first time in its history.
           </p>
           <p style={{ textAlign: "right" }}>
             {/* <Link to={"/art/"}> art</Link> and weird{" "} */}
@@ -215,7 +213,12 @@ export default class Index extends React.Component {
                 style.id = "slider-style";
                 document.head.appendChild(style);
 
-                style.sheet.insertRule(`* {border-radius: ${value * value}px}`);
+                style.sheet.insertRule(
+                  `* {border-radius: ${Math.pow(
+                    value,
+                    window.innerWidth > 800 ? 2.5 : 1.9
+                  )}px}`
+                );
               }}
             />
           </Wrap>
@@ -285,7 +288,7 @@ export default class Index extends React.Component {
             <img alt="my cat pippin" src={dog} />
           </Wrap>
         </HomeBrick>
-        <HomeBrick>
+        {/* <HomeBrick>
           <Wrap n={8}>
             <div style={{ position: "relative" }}>
               <input
@@ -314,17 +317,25 @@ export default class Index extends React.Component {
                     ? 1
                     : 5;
                   let tot = mult * 2;
+
+
                   style.sheet.insertRule(
                     `.b-wrap {padding-top: ${(value / 5) * mult}px}`
                   );
                   style.sheet.insertRule(
                     `.b-wrap {padding-bottom: ${tot - (value / 5) * mult}px}`
                   );
+                  style.sheet.insertRule(
+                    `.b-wrap {padding-right: ${(value / 5) * mult}px}`
+                  );
+                  style.sheet.insertRule(
+                    `.b-wrap {padding-left: ${tot - (value / 5) * mult}px}`
+                  );
                 }}
               />
             </div>
           </Wrap>
-        </HomeBrick>
+        </HomeBrick> */}
         {/* <HomeBrick>
           <Wrap n={25}>
             <input

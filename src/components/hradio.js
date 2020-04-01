@@ -26,6 +26,7 @@ const HRadio = createReactClass({
             key={i}
             type={type ? type : "radio"}
             defaultChecked={i % 2}
+            tabIndex="-1"
             onClick={e => {
               let thisradio = e.target;
               // if (thisradio.defaultChecked) {
