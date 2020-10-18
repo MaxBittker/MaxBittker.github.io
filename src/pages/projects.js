@@ -29,7 +29,17 @@ export default class Games extends React.Component {
           Fun tool for designing lo-fi "embroidered" border decorations. Border
           styles can be exported as CSS!
         </p>
-
+        <a href="https://orb.farm">Orb.Farm</a>
+        <p>
+          Virtual aquarium and simulated ecosystem. Arrange materials, plants,
+          and animals inside a glass orb, and watch them live out their lives
+          together as a self-contained world.
+        </p>
+        <a href="https://shaderbooth.com">Shaderbooth</a>
+        <p>
+          Live-coding environment for writing and sharing indie face filters in
+          GLSL.
+        </p>
         <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a>
         <p>
           Recursive pastel rainbow bubble wrap fidget toy that I'm weirdly
@@ -37,14 +47,14 @@ export default class Games extends React.Component {
           <a href="https://maxbittker.github.io/div-mitosis/">div mitosis</a>
         </p>
 
-        <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
+        {/* <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
           Webcam Shader Sketches{" "}
-        </a>
-        <p>
+        </a> */}
+        {/* <p>
           A collection of filters you can interact with via video input from
           your webcam. Implemented as fragment shaders using with regl and
           glslify.
-        </p>
+        </p> */}
         <a href="http://maxbittker.github.io/fridgepoet/">Fridge Poet</a>
         <p>
           A web toy for writing fridge-magnet style poetry. Word suggestions are

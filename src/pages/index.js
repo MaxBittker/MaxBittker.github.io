@@ -121,9 +121,12 @@ export default class Index extends React.Component {
           </div>
         </HomeBrick>
         <HomeBrick>
+          <p>Artist building tools for play, creativity, & communication.</p>
           <p>
-            Computer artist building tools for play, creativity, &
-            communication.
+            Currently Teaching:<br></br>{" "}
+            <a href="https://maxbittker.github.io/Hand-Held-ITP-2020/">
+              "Hand Held: Creative Tools for Phones"
+            </a>{" "}
           </p>
         </HomeBrick>
         <HomeBrick>
