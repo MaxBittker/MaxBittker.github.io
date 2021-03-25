@@ -47,11 +47,7 @@ export default createReactClass({
             max bittker
           </Link>
         </Wrap>
-        {/* <Wrap n={3} pack> */}
-        {/* <Link to={"/about/"} style={linkStyle}>
-            about
-          </Link> */}
-        {/* </Wrap> */}
+
         <Wrap n={3} pack>
           <Link to={"/projects/"} style={linkStyle}>
             projects

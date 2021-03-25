@@ -32,16 +32,16 @@ const HomeBrick = createReactClass({
           tabIndex="-1"
           onClick={(e) => {
             let parentElement = e.target.parentElement;
-            parentElement.style = "transform: scaleX(1.01) scaleY(0.99);";
-            // parentElement.style = "filter: brightness(0.8);";
+            // parentElement.style = "transform: scaleX(1.00) scaleY(0.99);";
+            parentElement.style = "opacity:0.4;"
             window.setTimeout(() => {
               parentElement.style = "display:none;";
             }, 150);
           }}
         >
-          <svg height="10" width="10" id="d" viewBox="0 0 10 10">
-            <polyline points="0,0 , 10,10" />
-            <polyline points="10,0 , 0,10" />
+          <svg height="13" width="13" id="d" viewBox="0 0 13 13">
+            <polyline points="0,0 , 13,13" />
+            <polyline points="13,0 , 0,13" />
           </svg>
         </button>
         <Wrap n={3} pack>
@@ -263,24 +263,10 @@ export default class Index extends React.Component {
         </HomeBrick> */}
 
         <HomeBrick>
-          <Wrap n={8}>
+          <Wrap n={9}>
             <img alt="my face" src={face} />
           </Wrap>
         </HomeBrick>
-        {/* <HomeBrick>
-          <Wrap n={8}>
-            <img
-              src={torus}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "block",
-                filter: "brightness(0.95) sepia(0.04)"
-              }}
-              alt="source: wikipedia user LucasVB"
-            />
-          </Wrap>
-        </HomeBrick> */}
         <HomeBrick>
           <HRadio n={30} flip />
         </HomeBrick>
@@ -377,6 +363,20 @@ export default class Index extends React.Component {
 
         <HomeBrick hideOnMobile>
           <Wrap n={150} />
+        </HomeBrick>
+        <HomeBrick hideOnMobile>
+          <Wrap n={12}>
+            <img
+              src={torus}
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "block",
+                filter: "brightness(0.95) sepia(0.04)"
+              }}
+              alt="source: wikipedia user LucasVB"
+            />
+          </Wrap>
         </HomeBrick>
       </div>
     );
