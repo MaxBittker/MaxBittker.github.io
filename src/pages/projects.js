@@ -7,7 +7,7 @@ export default class Games extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects & Games </h1>
+        <h1>Projects, Tools, and Games </h1>
         <a href="https://sandspiel.club/">Sandspiel</a>
         <p>
           Loving homage to the falling sand genre of games. Online interactive
@@ -40,26 +40,40 @@ export default class Games extends React.Component {
           Live-coding environment for writing and sharing indie face filters in
           GLSL.
         </p>
-        <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a>
         <p>
-          Recursive pastel rainbow bubble wrap fidget toy that I'm weirdly
-          satisfied with. See also:{" "}
-          <a href="https://maxbittker.github.io/div-mitosis/">div mitosis</a>
+          <h3> Miscellaneous toys & experiments:</h3>
+          <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
+          <a href="https://maxbittker.github.io/div-mitosis/">
+            Div Mitosis
+          </a>{" "}
+          <br />
+          <a href="https://maxbittker.github.io/alphabet-soup/">
+            Magnetic Alphabet Soup
+          </a>
+          <br />
+          <a href="https://maxbittker.github.io/kinematic-typewriter/">
+            Kinematic Typewriter
+          </a>
+          <br />
+          <a href="https://maxbittker.github.io/divloom/">Div Loom</a> <br />
+          <a href="https://maxbittker.github.io/touch-reveal/">
+            Scratch & Sniff
+          </a>
+          <br />
+          <a href="https://maxbittker.github.io/noise-draw/">Draw With Noise</a>
+          <br />
+          <a href="https://maxbittker.github.io/soft-touch/">Touch Draw</a>{" "}
+          <br />
+          <a href="https://maxbittker.github.io/glitter/">
+            Scrolling Glitter
+          </a>{" "}
+          <br />
         </p>
-
-        {/* <a href="https://maxbittker.github.io/webcam-sketches/slowlinescan/">
-          Webcam Shader Sketches{" "}
-        </a> */}
-        {/* <p>
-          A collection of filters you can interact with via video input from
-          your webcam. Implemented as fragment shaders using with regl and
-          glslify.
-        </p> */}
+        <p>Some older links:</p>
         <a href="http://maxbittker.github.io/fridgepoet/">Fridge Poet</a>
         <p>
           A web toy for writing fridge-magnet style poetry. Word suggestions are
-          based on markov chain analysis of famous poets, and you can select
-          which model to run.
+          based on markov chain analysis of famous poets.
         </p>
         {/* <a href="http://159.203.112.6:8888/"> Spotify Song Block</a>
         <p>
@@ -71,43 +85,33 @@ export default class Games extends React.Component {
           neural network and over time the population evolves to efficiently
           find food.
         </p>
-
         <a href="http://maxbittker.github.io/Mojulo/">Mojulo</a>
         <p>
           Lo-fi math function visualization sandbox. Check out the{" "}
           <a href="http://maxbittker.github.io/Mojulo/gallery.html">gallery</a>.
         </p>
-
         <a href="https://maxbittker.github.io/pico-8-plink/plink.p8.html">
           Hunt Night
         </a>
-        <p>A short story game built in pico-8.</p>
+        <p>A short story game built in pico-8. (hold x to draw bow)</p>
         <a href="https://www.flickgame.org/play.html?p=07885489aad75d09629dd9c52c07a229&a=1">
           Can't Sleep
         </a>
         <p>A flick game about insomnia.</p>
         <a href="https://maxbittker.github.io/lunarbocce/"> Lunar Bocce </a>
         <p>The beautiful game of Bocce ball, in space, for two+ players.</p>
-
-        {/* <a href="http://maxbittker.github.io/fish/">
+        <a href="http://maxbittker.github.io/fish/">
           Ethical Fishing Simulator
         </a>
         <p>
-          Local two player game exploring tradgedy of the commons, with a cool
-          flocking algorithm.
+          Two player game exploring cooperation and the tradgedy of the commons
         </p>
-
-        <a href="http://maxbittker.github.io/orbs/">Orbs</a>
-        <p>
-          This is an interactive swirling particle simulator that reacts to
-          touch.
-        </p> */}
+        <br />
         {/* 
         <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
           Phone Brain
         </a>
         <p>A flickgame about phone looking.</p> */}
-
         <RcScout />
       </div>
     );

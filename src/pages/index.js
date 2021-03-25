@@ -17,7 +17,7 @@ import dog from "./face/dog.jpg";
 import plug from "./face/plug.mp4";
 Raven.config("https://00f21757ccfe49a49742d4f9d7f1ab30@sentry.io/1234724", {
   release: "2.0.0",
-  enviroment: "production"
+  enviroment: "production",
 }).install();
 const ribbon =
   "•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•";
@@ -30,7 +30,7 @@ const HomeBrick = createReactClass({
         <button
           className="x"
           tabIndex="-1"
-          onClick={e => {
+          onClick={(e) => {
             let parentElement = e.target.parentElement;
             parentElement.style = "transform: scaleX(1.01) scaleY(0.99);";
             // parentElement.style = "filter: brightness(0.8);";
@@ -49,7 +49,7 @@ const HomeBrick = createReactClass({
         </Wrap>
       </div>
     );
-  }
+  },
 });
 
 const VideoWorkaround = ({ src }) => (
@@ -74,7 +74,7 @@ const VideoWorkaround = ({ src }) => (
 
 
       />
-  `
+  `,
     }}
   />
 );
@@ -94,7 +94,7 @@ export default class Index extends React.Component {
                 lineHeight: "45px",
                 fontSize: "40px",
                 margin: 0,
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               Max Bittker
@@ -155,31 +155,29 @@ export default class Index extends React.Component {
 
         <HomeBrick>
           <p>
-            You can follow me on social media if you like!
             <span
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                justifyContent: "space-around"
+                justifyContent: "space-around",
                 // marginBottom: "1em"
               }}
             >
               <a href="https://twitter.com/MaxBittker">
                 {" "}
-                twitter <small></small>
+                twitter &nbsp;<small></small>
               </a>
               <a href="https://github.com/MaxBittker">
                 {" "}
-                github <small></small>{" "}
+                github &nbsp;<small></small>{" "}
               </a>
               <a href="https://www.instagram.com/maxbittker/">
                 {" "}
-                instagram <small></small>
+                instagram &nbsp;<small></small>
               </a>
               <a href="https://goodreads.com/maxbittker">
                 {" "}
-                goodreads
-                {/* <small>(AMZN)</small> */}
+                goodreads {/* <small>(AMZN)</small> */}
               </a>
             </span>
           </p>
@@ -205,10 +203,10 @@ export default class Index extends React.Component {
                 left: 0,
                 top: 0,
                 width: "100%",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
               alt="focus"
-              onChange={e => {
+              onChange={(e) => {
                 let value = e.target.value;
                 let style = document.getElementById("slider-style");
                 if (style) style.remove();
