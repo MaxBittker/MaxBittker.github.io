@@ -21,8 +21,9 @@ export default class Games extends React.Component {
             {" "}
             Covered by the NYT
           </a>{" "}
-          in 2019, and got to tweet its own name. &nbsp;
-          <a href="https://maxbittker.github.io/nyt-first-said/">[more info]</a>
+          in 2019, and got to tweet its own name. 
+          <a href="https://maxbittker.github.io/clear-pipes/">[visualization]</a>
+          
         </p>
         <a href="https://maxbittker.github.io/broider/">Broider</a>
         <p>
@@ -41,6 +42,13 @@ export default class Games extends React.Component {
           GLSL.
         </p>
         <p>
+        <h3> Roblox Games:</h3>
+        <a href="https://www.roblox.com/games/7000824340/Melon-Rancher/">Melon Rancher</a> <br />
+        <a href="https://www.roblox.com/games/7019688123/Sheep-Dog-Simulator">Sheep Dog Simulator</a> <br />
+        <a href="https://www.roblox.com/games/7123914887/Dont-Shot-Anyone">Don't Shot Anyone</a> <br />
+        </p>
+        <p>
+        
           <h3> Miscellaneous toys & experiments:</h3>
           <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
           <a href="https://maxbittker.github.io/div-mitosis/">
@@ -69,7 +77,7 @@ export default class Games extends React.Component {
           </a>{" "}
           <br />
         </p>
-        <p>Some older links:</p>
+        <p>other links:</p>
         <a href="http://maxbittker.github.io/fridgepoet/">Fridge Poet</a>
         <p>
           A web toy for writing fridge-magnet style poetry. Word suggestions are

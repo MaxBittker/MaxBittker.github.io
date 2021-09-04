@@ -39,9 +39,9 @@ const HomeBrick = createReactClass({
             }, 150);
           }}
         >
-          <svg height="13" width="13" id="d" viewBox="0 0 13 13">
-            <polyline points="0,0 , 13,13" />
-            <polyline points="13,0 , 0,13" />
+          <svg height="11" width="11" id="d" viewBox="0 0 11 11">
+            <polyline points="0,0 , 11,11" />
+            <polyline points="11,0 , 0,11" />
           </svg>
         </button>
         <Wrap n={3} pack>
@@ -81,6 +81,7 @@ const VideoWorkaround = ({ src }) => (
 
 export default class Index extends React.Component {
   componentDidMount() {
+    window.setInterval(()=>Favicon(),333);
     Favicon();
   }
   render() {
@@ -88,11 +89,11 @@ export default class Index extends React.Component {
       // <div className="index">
       <div className="home">
         <HomeBrick>
-          <Wrap n={5}>
+          <Wrap n={8}>
             <p
               style={{
-                lineHeight: "45px",
-                fontSize: "40px",
+                lineHeight: "35px",
+                fontSize: "30px",
                 margin: 0,
                 textAlign: "center",
               }}
@@ -124,7 +125,7 @@ export default class Index extends React.Component {
           <p>Artist building tools for play, creativity, & communication.</p>
           <p>
             Currently Teaching:<br></br>{" "}
-            <a href="https://maxbittker.github.io/Hand-Held-ITP-2020/">
+            <a href="https://maxbittker.github.io/Hand-Held-ITP-2021/">
               "Hand Held: Creative Tools for Phones"
             </a>{" "}
           </p>
@@ -213,7 +214,7 @@ export default class Index extends React.Component {
                 style = document.createElement("style");
                 style.id = "slider-style";
                 document.head.appendChild(style);
-
+                window.l = value;
                 style.sheet.insertRule(
                   `* {border-radius: ${Math.pow(
                     value,
