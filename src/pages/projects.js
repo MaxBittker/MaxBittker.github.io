@@ -7,7 +7,13 @@ export default class Games extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects, Tools, and Games </h1>
+        <h1>Selected Links </h1>
+        {/* <p>These mostly represent my personal wor</p> */}
+        <a href="https://maxbittker.github.io/Hand-Held-ITP-2022/">
+              "Hand Held: Creative Tools for Phones"
+            </a>{" "}
+          <p>Class covering the theory, design and development process of creative tools. Offered through NYU/ITP's Masters program, since 2020.</p>
+
         <a href="https://sandspiel.club/">Sandspiel</a>
         <p>
           Loving homage to the falling sand genre of games. Online interactive
@@ -36,10 +42,21 @@ export default class Games extends React.Component {
           and animals inside a glass orb, and watch them live out their lives
           together as a self-contained world.
         </p>
+        <a href="https://studio.sandspiel.club">Sandspiel Studio</a>
+        <p>
+          Visual programming environment for designing new cellular automata!
+          Make or remix you own Sanspiel elements, and share them with the community.
+        </p>
+
         <a href="https://shaderbooth.com">Shaderbooth</a>
         <p>
           Live-coding environment for writing and sharing indie face filters in
           GLSL.
+        </p>
+
+        <a href="https://walky.space">walky.space</a>
+        <p>
+      Online lo-fi spatial image gallery builder.        
         </p>
         <p>
         <h3> Roblox Games:</h3>
@@ -50,6 +67,7 @@ export default class Games extends React.Component {
         <p>
         
           <h3> Miscellaneous toys & experiments:</h3>
+          <a href="https://max-notes.vercel.app/">Notes</a><br/>
           <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
           <a href="https://maxbittker.github.io/div-mitosis/">
             Div Mitosis
@@ -115,6 +133,9 @@ export default class Games extends React.Component {
           Two player game exploring cooperation and the tradgedy of the commons
         </p>
         <br />
+        <p>
+          
+        </p>
         {/* 
         <a href="https://www.flickgame.org/play.html?p=62d3c6019d3482bb259f239ccd51ef85&a=1">
           Phone Brain

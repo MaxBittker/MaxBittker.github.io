@@ -635,3 +635,16 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+#fullFrame{
+  position: fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  overflow: hidden;
+  
+}
+html:has( #fullFrame){
+  overflow: hidden;
+}

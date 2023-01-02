@@ -58,11 +58,11 @@ export default createReactClass({
             :-)
           </Link>
         </Wrap> */}
-        <Wrap n={3} pack>
+        {/* <Wrap n={3} pack>
           <Link to={"/art/"} style={linkStyle}>
             art
           </Link>
-        </Wrap>
+        </Wrap> */}
         <Wrap n={3} pack>
           <Link to={"/blog/"} style={linkStyle}>
             blog

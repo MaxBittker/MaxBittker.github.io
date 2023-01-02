@@ -85,9 +85,11 @@ export default class Index extends React.Component {
     Favicon();
   }
   render() {
+    return <iframe id="fullFrame" src="https://postcard.maxbittker.repl.co/"></iframe>
     return (
       // <div className="index">
       <div className="home">
+        
         <HomeBrick>
           <Wrap n={8}>
             <p
