@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState }  from "react";
 import Raven from "raven-js";
 import createReactClass from "create-react-class";
 import Link from "gatsby-link";
@@ -79,29 +79,56 @@ const VideoWorkaround = ({ src }) => (
   />
 );
 
+
+const useBbox = () => {
+  const ref = useRef();
+  const [bbox, setBbox] = useState({});
+
+  const set = () =>
+    setBbox(ref && ref.current ? ref.current.getBoundingClientRect() : {});
+
+  useEffect(() => {
+    set();
+    window.addEventListener('resize', set);
+    return () => window.removeEventListener('resize', set);
+  }, []);
+
+  return [bbox, ref];
+};
+
+const MailtoButton = ({})=>{
+  const [bbox, ref] = useBbox();
+
+ return ( <a href="/mailto">
+  <svg ref={ref} height="50" width="200" id="d" viewBox={`0 0 ${bbox.width} ${bbox.height}`}
+  style={{width:"calc(100% + 8px)", height:"100%", margin:-4}}>
+  <polyline points={`0,0 , ${bbox.width/2},${bbox.height-2}`} stroke="black"/>
+  <polyline points={`${bbox.width},0 , ${bbox.width/2},${bbox.height-2}`} stroke="black"/>
+</svg>
+        <p
+    style={{
+      margin: 0,
+      textAlign: "center",
+    }}
+  >
+    Send me a letter? 
+  </p>
+  </a>);
+}
+
 export default class Index extends React.Component {
   componentDidMount() {
     window.setInterval(()=>Favicon(),333);
     Favicon();
   }
   render() {
-    return <iframe id="fullFrame" src="https://postcard.maxbittker.repl.co/"></iframe>
+    // return <iframe id="fullFrame" src="https://postcard.maxbittker.repl.co/"></iframe>
     return (
       // <div className="index">
       <div className="home">
-        
         <HomeBrick>
-          <Wrap n={8}>
-            <p
-              style={{
-                lineHeight: "35px",
-                fontSize: "30px",
-                margin: 0,
-                textAlign: "center",
-              }}
-            >
-              Max Bittker
-            </p>
+          <Wrap n={5}>
+           <MailtoButton/>
           </Wrap>
         </HomeBrick>
         <HomeBrick>

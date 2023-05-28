@@ -643,6 +643,7 @@ pre tt:after {
   height:100vh;
   width:100vw;
   border:none;
+  z-index: 101;
   overflow: hidden;
   
 }
