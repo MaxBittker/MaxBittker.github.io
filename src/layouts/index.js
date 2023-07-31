@@ -13,7 +13,6 @@ const Layout = ({ children, pageContext }) => (
   <div>
     <Helmet
       title={title}
-      meta={[{ name: "description", content: "Max's website" }]}
     >
       <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />
