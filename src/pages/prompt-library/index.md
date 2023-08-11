@@ -7,7 +7,7 @@ date: 2023-07-31 00:00:00
 ### Interactive Prompt Library
 
 
-Last week, I contributed a new interactive prompt library for Artbreeder's image generation tool, [Mixer](https://www.artbreeder.com/create/mixer). It's an interface that allows your to build up an image by browsing and clicking buttons to combine ideas, instead of by writing free-form text prompts. (You can [try it here](https://www.artbreeder.com/create/mixer), press the + and then select "prompt library")
+Last week, I contributed a new interactive prompt library for Artbreeder's image generation tool, [Mixer](https://www.artbreeder.com/create/mixer). It's an interface that allows you to build up an image by browsing and clicking buttons to combine ideas, instead of by writing free-form text prompts. (You can [try it here](https://www.artbreeder.com/create/mixer), press the + and then select "prompt library")
 
 <video src="usage.webm" muted autoplay loop alt="inchworm" style="margin:auto; display:block; max-width:100%"> </video>
 
