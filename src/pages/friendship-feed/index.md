@@ -13,11 +13,11 @@ It isn't pretty to watch,  but I remind myself that endings are also opportuniti
 
 Bluesky is one experiment that I've been following with a lot of interest. I like that they're prioritizing  simplicity and snappiness on the surface,  with thought-out capabilities underneath. It's still very early days,  but the project's vision of giving users a credible "right to exit" through portable data,  as well as making major components of the experience customizable has made me feel cautiously excited. 
 
-One example is Bluesky's system for [custom feeds](https://blueskyweb.xyz/blog/7-27-2023-custom-feeds). To understand it: you might be aware of the two feeds built into Twitter: 
+An example is Bluesky's system for [custom feeds](https://blueskyweb.xyz/blog/7-27-2023-custom-feeds). To understand it: you might be aware of the two feeds built into Twitter: 
 
-"Home": algorithmic engagement-optimized schlock and 
+"Home": algorithmic engagement-bait  
 
-"Following": spammy,  lovable,  and ultra-timely.
+"Following": spammy, live, manually curated
 
 Bluesky has a few built-in feeds that are similar: "Discover" and "Following" — But they also have a system that allows for *any* user to design and host their own arbitrary feed of posts,  and to share that feed *through the app* in a way that allows it to be easily publicized and adopted. This chance to wrestle back some control over my social media feed algorithm has absolutely captured my interest. 
 
@@ -27,7 +27,7 @@ Instagram might show me some cool animal videos and jiu jitsu techniques,  but i
 
 ## Design and goals 
 
-Back to Bluesky — with the option to imagine my *own* feed on Bluesky,  I have to think about what it is that I want to see! Which means asking myself,  what my hopes and values actually are when it comes to social media,  as well as facing the challenge of realizing those goals under the constraints of what I can encode as an algorithm. 
+Back to Bluesky — with the option to imagine my *own* feed on Bluesky,  I have to think about what I want to see! Which means asking myself,  what my hopes and values actually are when it comes to social media,  as well as facing the challenge of realizing those goals under the constraints of what I can encode as an algorithm. 
 
 I like to figure things out by building,  and so I've been getting my hands dirty this past week digging into Bluesky development and hosting my first feed experiment,  which I am very proud of: the [Friendship feed](https://bsky.app/profile/did:plc:wmhp7mubpgafjggwvaxeozmu/feed/bestoffollows)!
 
@@ -51,7 +51,7 @@ This isn't the distribution I want! I care about what all my friends are saying,
 
 I think a lot about the way visibility is mediated by digital communication. On apps,  the only way to be seen is to speak. Silence is a meaningful form of communication,  but it's not one that social media apps have any patience for. Apps want you to put on good face,  to be happy and desirable — or at least loud. 
 
-During the pandemic,  a lot of my friends were having a hard time,  and the way that tends to look on social media is going silent.  Instagram and twitter have 100 ways to surface the people who are having a great time,  and utter invisibility for those who are not speaking. There is no empty chair at the table or empty columns on the chore chart. Pay attention when people disappear. 
+During the pandemic,  a lot of my friends were having a hard time,  and the way that tends to look on social media is going silent.  Instagram and twitter have 100 ways to surface the people who are having a great time,  and utter invisibility for those who are not speaking. There is no empty chair at the table or empty columns on the chore chart. I think's important to have the chance to pay attention when people disappear. 
 
 
 
