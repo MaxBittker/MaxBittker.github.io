@@ -142,3 +142,8 @@ Thanks for reading these notes! I would love to see things you find in the tool.
 
 
 ![](Screen Shot 2023-09-21 at 2.55.31 AM.png)
+
+
+
+
+Thanks to Joel Simon, Laurel Schwulst, Chigozie Nri, Evan Casey, Kate Compton, Ryan Murdock, Are.na community,  Are.na API developers, & everyone who playtested and gave feedback :\)
