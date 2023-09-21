@@ -116,6 +116,8 @@ Iteratively traversing the embedding space gave me a similar sensation, and I wa
 
 This meant tuning up the backend to be fast, and making most of my design decisions on the frontend with the goal of sensory feedback to help you "stay in the zone". The layout tries to maintain your bearings by preventing re-flow as the images load in, and the sound effects that trigger when an image finishes loading provide bits of feedback on the underlying machinations of the data-fetching (For instance, pages you've visited recently sound different than fresh ones, because the images are already cached).
 
+![](Screen Shot 2023-09-21 at 2.55.31 AM.png)
+
 
 ### Loose threads: 
 
@@ -141,8 +143,7 @@ So much internet now is one dimensional scrolling. We don't get to rudder our ow
 Thanks for reading these notes! I would love to see things you find in the tool. I created a channel for this purpose, [found in the river](https://www.are.na/max-bittker/found-in-the-river) that you're invited to add things to.
 
 
-![](Screen Shot 2023-09-21 at 2.55.31 AM.png)
-
+![](Screen Shot 2023-09-21 at 3.15.28 AM.png)
 
 
 
