@@ -10,21 +10,18 @@ River is an immersive exploration engine for wandering through visual culture. [
 
 This post is a place for me to put down some notes on the design and technical architecture.
 
-### Feelings on the state of Diffusion:
-The leap forward in generative ai and associated control techniques has been fascinating to experience as a tool maker. 
-
+### Feelings on Image Diffusion:
 When something is this new, it's not clear which limitations are incidental and which are innate, posing interesting challenges for interface design. How should we make good tradeoffs when the underlying capabilities change so quickly? 
 
-It makes sense that we end up with tools like Midjourney (opinionated and minimal) or Automatic1111, an evolved mess of nested tabs and options that does everything (if you can manage to tape together a working permutation of weights, plugins, LORAs and parameters).
-
+It makes sense that we end up with tools like Midjourney (opinionated and minimal) or Automatic1111, an evolved mess of nested tabs with infinite options, plugins, and parameters.
 
 ![Automatic1111 + controlnet](Pasted image 20230918145601.png)
 
-Beyond that, I find that these tools lack the sturdiness and control required for developing a deeper sense of craft - still feeling more like a slot machine and less like a pencil.
+These tools are exciting, but they lack the sturdiness and control required for a deeper sense of craft - they're still feeling more like a slot machine and less like a pencil.
 
 Four deficiencies of diffusion that nag me:
 1) Reliance on discrete language and named ideas, versus continuous exploration
-2) Diffusion is slow and doesn't work at the speed of thought, pulling you out of flow state 
+2) Slow and doesn't work at the speed of thought, pulling you out of flow state 
 3) Artificial images are disposable and unmoored from concrete grounding in cultural context. It makes each individual image less useful as a shared meeting point.
 4) Alienation of source material: laundering references and reheating / amplifying existing biases of the dataset 
 
@@ -35,8 +32,7 @@ Tumblr was a formative online scene for teenage me.  My favorite aspect of the c
 
 ![](Pasted image 20230919155849.png)
 
-People took this job seriously! Similar to the art of a good radio jockey - hunting for deep cuts, balancing ingredients, and managing pacing. It's been nice to see this style of playful curation alive and well on instagram accounts like these: 
-
+People took this job seriously! Similar to the art of a good radio jockey - hunting for deep cuts, balancing ingredients, and managing pacing. This style of playful curation is alive and well on the internet, for instance on instagram accounts like these:
 [@massive.archive](https://www.instagram.com/massive.archive/),
 [@markrothko](https://www.instagram.com/markrothko/),
 [@dusttodigital](https://www.instagram.com/dusttodigital),
@@ -46,8 +42,7 @@ I'm particularly interested in a brain-feel that these sequences can create. It'
 
 The tracing of an invisible through-line, circling an idea that resists explicit description.
 
-I think that the balance of similarity and difference is key to creating that feeling.
-
+I think that the balance of similarity and difference is key to creating that feeling, as well as the balance between forming expectations and breaking them.
 
 ![](Pasted image 20230915215807.png)
 
@@ -56,7 +51,7 @@ I think that the balance of similarity and difference is key to creating that fe
 
 Vector embeddings, such as the ones produced by the CLIP library, allow you to project an image into a mathematical space, where it can be compared as a set of numbers. 
 
-Clip-guided diffusion (a la text-to-image) is one way to turn that embedding back into an "hallucinated" image, but you can also do something much simpler - find the nearest neighbor within some dataset of *real* images! 
+Clip-guided diffusion (as used in text-to-image) is one way to turn that embedding back into an "hallucinated" image, but you can also do something much simpler - find the nearest neighbor within some dataset of *real* images! 
 
 I was curious about trying to explore the concept of visual rhymes (curated balances of similarity and difference) through vector embeddings.
 
@@ -110,7 +105,7 @@ Bluesky people enjoyed the feed and called out this specific use-case!
 
 As I experimented with ways to navigate the space more widely and rapidly, cruising through vast regions of Bluesky images started to feel too voyeuristic (like flying a drone over someone's back yard).
   
-I embedded a new dataset of ~1 million images from the site [are.na](https://are.na). Are.na hosts the creative research of a lot of talented designers and artists with broad and developed tastes, which makes navigating from region to region highly rewarding. This was when the tool really started to click with me, and I found myself totally sucked in.
+I embedded a new dataset of ~1 million images from the site [are.na](https://are.na). Are.na hosts the creative research of a lot of designers and artists with broad and developed interests, which makes navigating from region to region highly rewarding. This was when the tool really started to click with me, and I found myself totally sucked in.
 
 ### Latent-Space Flow-State  
 I was struck by the powerful feeling of *movement* through the data – recognizing landmarks,  following gradients, escaping attractors, or stumbling suddenly into new regions – it all felt immersive and game-like.
@@ -124,9 +119,15 @@ This meant tuning up the backend to be fast, and making most of my design decisi
 
 ### Loose threads: 
 
-Many playtests include people getting sucked into "gravity wells" - areas of the embedding space that are dense & strongly self-connected, making them harder to walk out of. If you've used the tool long enough, you likely have found yourself trapped for some period of time within a labyrinth of reaction jpgs, interior design photoshoots, or minimalist monochrome logotypes. I did some manual work pruning and thinning certain regions of the dataset to try to mitigate this feeling, but there's a lot more that could be done to regularize the density of different regions. 
+Many playtests include people getting sucked into "gravity wells" - areas of the embedding space that are dense & strongly self-connected, making them harder to walk out of. If you've used the tool long enough, you likely have found yourself trapped for some period of time within a labyrinth of reaction jpgs, interior design photoshoots, or monochrome logotypes. I did some manual work pruning and thinning certain regions of the dataset to try to mitigate this feeling, but there's a lot more that could be done to regularize the density of different regions. 
 
-People seem to particularly enjoy the feeling of searching through the landscape for a certain goal, like the "wikipedia game", and it would be fun to flesh out gamified layers of the tool, like daily challenges.
+![Reaction images are a dense region of the space that a few people got stuck in](Screen Shot 2023-09-21 at 2.56.31 AM.png)
+
+
+People seem to particularly enjoy the feeling of searching through the landscape for a certain goal, "wikipedia game"-style, and it would be fun to flesh out more gamified layers of the tool, like daily challenges.
+
+![Bingo Card from a playtest](IMG_7792.jpg)
+
 
 I'm also fascinated by the social potential of meeting the like-minded souls who show up in the same locations as yourself in nodal space. What would it be like to make a new friend by running into each other at the intersection of egyptology and acid house rave posters, or to find a note pinned to the wall in a hallway of antique digital wristwatch adverts? 
 
@@ -135,6 +136,9 @@ I also should say that while this interface provides a unique view onto are.na's
 
 ### One more thought: 
 
-So much internet now is one dimensional scrolling. We don't get to rudder our own boat, we go downstream to wherever the algorithm predicts we might find "most engaging". Let's bring back the feeling of surfing, and empower each other with the ability to navigate and make our own decisions. 
+So much internet now is one dimensional scrolling. We don't get to rudder our own boat: we are dragged downstream towards wherever the algorithm predicts we might find "most engaging". Let's bring back the feeling of surfing, and empower ourselves with the ability to navigate and make our own decisions. 
 
-Thanks for reading these notes! I would love to see things you find in the tool, I have a channel on are.na, (found in the river)[https://www.are.na/max-bittker/found-in-the-river] that you're invited to add things to.
+Thanks for reading these notes! I would love to see things you find in the tool. I created a channel for this purpose, [found in the river](https://www.are.na/max-bittker/found-in-the-river) that you're invited to add things to.
+
+
+![](Screen Shot 2023-09-21 at 2.55.31 AM.png)
