@@ -1,48 +1,51 @@
 ---
-title: River Notes 
+title: River, an embedding-based exploration interface 
 path: river-notes
 date: 2023-09-20 00:00:00
 ---
 
-River is an immersive exploration engine for wandering through visual culture. [Try it out](https://river.maxbittker.com)
+River is an exploration engine, allowing you to navigate rapidly through slices of visual culture via machine learning based connections. [Try it out ↗](https://river.maxbittker.com)
 
 ![](Screen Shot 2023-09-21 at 2.11.39 AM.png)
 
 This post is a place for me to put down some notes on the design and technical architecture.
 
-### Feelings on Image Diffusion:
-When something is this new, it's not clear which limitations are incidental and which are innate, posing interesting challenges for interface design. How should we make good tradeoffs when the underlying capabilities change so quickly? 
+### Designing for Diffusion:
+River is in some ways my attempt to leveraging ML capabilities to fill some of the negative space left unexplored by the excitement about generative diffusion models.
+
+
+Text to image tools are exciting, but they lack the sturdiness and control required the sense of craft that I'm looking for - they still feel more like a slot machine than a pencil.
+
+I expect many of these problems are solvable, but when something is new as image diffusion, it's not clear which limitations are incidental and which are innate, posing interesting challenges for interface design. It's hard to make good tradeoffs when the underlying capabilities change so quickly! 
 
 It makes sense that we end up with tools like Midjourney (opinionated and minimal) or Automatic1111, an evolved mess of nested tabs with infinite options, plugins, and parameters.
 
 ![Automatic1111 + controlnet](Pasted image 20230918145601.png)
 
-These tools are exciting, but they lack the sturdiness and control required for a deeper sense of craft - they're still feeling more like a slot machine and less like a pencil.
-
 Four deficiencies of diffusion that nag me:
 1) Reliance on discrete language and named ideas, versus continuous exploration
 2) Slow and doesn't work at the speed of thought, pulling you out of flow state 
 3) Artificial images are disposable and unmoored from concrete grounding in cultural context. It makes each individual image less useful as a shared meeting point.
-4) Alienation of source material: laundering references and reheating / amplifying existing biases of the dataset 
+4) Alienation of source material: laundering references and reheating existing biases of the dataset 
 
-For me, River is an experiment in leveraging ML capabilities towards some of the negative space left unexplored by the excitement about text-to-image.
+Skipping diffusion entirely and leaning into the capabilities of machine learning techniques as ways to better explore existing datasets feels like a fruitful direction to me.
 
 ### Curation as Poetry
-Tumblr was a formative online scene for teenage me.  My favorite aspect of the community was way that curation was something that everyone played at.  It was normal to have multiple blogs, and registering a single-topic page under a username like "fuckyeahsweaters" , "onlydavidbowie", or "powerlinesinanime" was all you needed to self-deputize as a librarian, taking on the mantle of curating the theme or idea to the best of your ability.  
+One definition of poetry might be the circling of an idea that resists explicit description.
+
+Tumblr was a formative online scene for teenage Max.  My favorite aspect of the community was way that curation was something that everyone played at.  It was normal to have multiple blogs, and registering a single-topic page under a username like "fuckyeahsweaters" , "onlydavidbowie", or "powerlinesinanime" was all you needed to self-deputize as a librarian, taking on the mantle of curating the theme or idea to the best of your ability.  
 
 ![](Pasted image 20230919155849.png)
 
-People took this job seriously! Similar to the art of a good radio jockey - hunting for deep cuts, balancing ingredients, and managing pacing. This style of playful curation is alive and well on the internet, for instance on instagram accounts like these:
+People took this job seriously! Similar to the art of a good radio jockey - hunting for deep cuts, sequencing ingredients, and managing tempo. This style of playful curation is at home on the internet, for instance on instagram accounts like these:
 [@massive.archive](https://www.instagram.com/massive.archive/),
 [@markrothko](https://www.instagram.com/markrothko/),
 [@dusttodigital](https://www.instagram.com/dusttodigital),
 [@nature.is.not.metal](https://www.instagram.com/nature.is.not.metal/), as well as the whole tiktok genre of "corecore".
 
-I'm particularly interested in a brain-feel that these sequences can create. It's a form of internet art that engages our subconscious pattern matching abilities. 
+There's something special to the brain-feel that these sequences create. It's a form of internet art that engages our subconscious pattern matching abilities, retracing an invisible through-line. 
 
-The tracing of an invisible through-line, circling an idea that resists explicit description.
-
-I think that the balance of similarity and difference is key to creating that feeling, as well as the balance between forming expectations and breaking them.
+Key to this effect is a balance of forming expectations and breaking them. A rhyme is, after all, the pleasurable tension between similarity and difference.
 
 ![](Pasted image 20230915215807.png)
 
