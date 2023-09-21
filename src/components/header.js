@@ -35,11 +35,14 @@ export default createReactClass({
     // let headerStyle = {
     //   transition: "background-color 0.3s ease"
     // };
-    Favicon();
     if (typeof window != "undefined") {
-      if (window.location.pathname !== "/") {
-      }
+      window.l = 9;
     }
+    Favicon();
+    // if (typeof window != "undefined") {
+    //   if (window.location.pathname !== "/") {
+    //   }
+    // }
     return (
       <div className="header">
         <Wrap n={3} pack>
