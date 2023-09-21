@@ -173,7 +173,7 @@
     </span></p>
 <h3>Mathematics of a Visual Rhyme</h3>
 <p>Vector embeddings, such as the ones produced by the CLIP library, allow you to project an image into a mathematical space, where it can be compared as a set of numbers. </p>
-<p>Clip-guided diffusion (a la text-to-image) is one way to turn that embedding back into an “hallucinated” image, but you can also do something much simpler - find the nearest neighbor within some dataset of <em>real</em> images! </p>
+<p>Clip-guided diffusion (as used in text-to-image) is one way to turn that embedding back into an “hallucinated” image, but you can also do something much simpler - find the nearest neighbor within some dataset of <em>real</em> images! </p>
 <p>I was curious about trying to explore the concept of visual rhymes (curated balances of similarity and difference) through vector embeddings.</p>
 <p>One formulation of this problem is taking a set of image embeddings and quantifying which dimensions they mostly share in common, versus those that they mostly differ along, and use these ranges to extrapolate the shape of a mathematical volume. You might then sample points from inside that volume to find other images. </p>
 <p>I did a bunch of experiments towards this idea, and had exciting but ultimately inconsistent results.  Doing simple geometric operations on vectors such as adding, subtracting, or averaging them would work well in some toy examples, but behave incomprehensibly when I tried to generalize. </p>
@@ -395,10 +395,112 @@
 <p>Iteratively traversing the embedding space gave me a similar sensation, and I wanted to play into that feeling with the design of the tool. </p>
 <p>This meant tuning up the backend to be fast, and making most of my design decisions on the frontend with the goal of sensory feedback to help you “stay in the zone”. The layout tries to maintain your bearings by preventing re-flow as the images load in, and the sound effects that trigger when an image finishes loading provide bits of feedback on the underlying machinations of the data-fetching (For instance, pages you’ve visited recently sound different than fresh ones, because the images are already cached).</p>
 <h3>Loose threads:</h3>
-<p>Many playtests include people getting sucked into “gravity wells” - areas of the embedding space that are dense &#x26; strongly self-connected, making them harder to walk out of. If you’ve used the tool long enough, you likely have found yourself trapped for some period of time within a labyrinth of reaction jpgs, interior design photoshoots, or minimalist monochrome logotypes. I did some manual work pruning and thinning certain regions of the dataset to try to mitigate this feeling, but there’s a lot more that could be done to regularize the density of different regions. </p>
-<p>People seem to particularly enjoy the feeling of searching through the landscape for a certain goal, like the “wikipedia game”, and it would be fun to flesh out gamified layers of the tool, like daily challenges.</p>
+<p>Many playtests include people getting sucked into “gravity wells” - areas of the embedding space that are dense &#x26; strongly self-connected, making them harder to walk out of. If you’ve used the tool long enough, you likely have found yourself trapped for some period of time within a labyrinth of reaction jpgs, interior design photoshoots, or monochrome logotypes. I did some manual work pruning and thinning certain regions of the dataset to try to mitigate this feeling, but there’s a lot more that could be done to regularize the density of different regions. </p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cde1a926d72edf58532be33d9b596ed0/70c12/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.05521472392638%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADFklEQVR42h2SXWyaBRSGP6PxwktNvNfE6IWZ8SfW6U1jphcasviTqttcuq26LDO6LVm2Jr0w6jrWdj/VpXGN0IqbG3EUWkqBwkpRmB39GzBaWuArFGgZfIyWfmXjpzx+9iTn5JzkPe85b/IKq+k0yeQQmYSBeEzEO7GM53YCl8vP1eujdLR+zKOsmoeSmgHNMVKimXp2N+VAI6VMEDlqY3PpEhtLl5V0I2RDw1B8HuLPcv/uMNHgDKHJScLhHHcD93Cee4+4rYmIYy/pG5+waH2FGf3T+PueYsP8JkHNTyyYT7Pq3k/wchNCaOhbMtbHSBkfx68/RsjZwexIOz5flN6+m3x/4F2Kpr34ez6n94QKr0bFRM/reLp3IBqbyV9rJvXrc+T7n+HBwNcI8ekB5Hu/sRG4wtKUESm9yP2IFUkcxjNmRNu+m6ELuzh7tIG3Gz8in0mymfobKTZOqVShnF+i4Gil6PqR6oaEgBJZhSw31/d/y6y7A7/7FLOONhamdGQX7Jj/VGP4o4uxcS/FvEjStYew+TOK0vL2Tr3kJS0nKG6hEColoW8iNXiIaqWCwXwRg/Y4eu0pRq06SHYqF/dA5lPYdFKI/8uc5iUi/S+Sj02wGR9n0d2CxdZKOh1FqOb9VAt2autjlPIh7gSnsGn2YdcdZnp+nrLnfQr2J0npn2DtThs15aOItYuku4eqMlSkMJm/GikMqajLqwii6SCLgSOIwa8QnW2wtcYj2UN5/Z9tOZXVaR7c+ADJ0ExNXqOa84KsfF74nfr6/DamVghRLcapK73g6D6MxXgGx2Abzv5zSL4LZOa+Iek7gDRvUSBbVNYUBeUolFaIj+zDZT+C19FC1PQlD2NaSlI38kqH4kcjQkStQvzlZSIXX2Dl6mlS3iuMql9l9Oxr5AJm8qGfuWXZj8t2ksxkF7FrKkxdDZg73yKt2Ynuh0NYrh9Ec+kLbvWeRCglZsiaW8iNHFUskKBSKRPWnyAy0LotJ+c7z83zuzB2voM4doZaYhx58A3Sug+pLE+SMH1HXLeTmLaBlL2d/wAPTrze8HIgvQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Reaction images are a dense region of the space that a few people got stuck in"
+        title="Reaction images are a dense region of the space that a few people got stuck in"
+        src="/static/cde1a926d72edf58532be33d9b596ed0/a6d36/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png"
+        srcset="/static/cde1a926d72edf58532be33d9b596ed0/222b7/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 163w,
+/static/cde1a926d72edf58532be33d9b596ed0/ff46a/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 325w,
+/static/cde1a926d72edf58532be33d9b596ed0/a6d36/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 650w,
+/static/cde1a926d72edf58532be33d9b596ed0/e548f/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 975w,
+/static/cde1a926d72edf58532be33d9b596ed0/3c492/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 1300w,
+/static/cde1a926d72edf58532be33d9b596ed0/70c12/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 2110w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Reaction images are a dense region of the space that a few people got stuck in</figcaption>
+  </figure></p>
+<p>People seem to particularly enjoy the feeling of searching through the landscape for a certain goal, “wikipedia game”-style, and it would be fun to flesh out more gamified layers of the tool, like daily challenges.</p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e67110b4095dc988297ffaf93cbe7f69/512ee/IMG_7792.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 104.9079754601227%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuZsVBiC0J/8QAFRABAQAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCkY//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ah//xAAdEAACAQQDAAAAAAAAAAAAAAAAAREQIVGhQWFx/9oACAEBAAE/IW4buS9i9OXcnvVC+SXkl5P/2gAMAwEAAgADAAAAEKcoP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/EGM//8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QIT//xAAeEAEAAgMAAgMAAAAAAAAAAAABABEhMUFRYZHB0f/aAAgBAQABPxBU0C9sQ2mbblwoCXyXo64fkyMp+X1LBu1vsQDa84gHU9if/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Bingo Card from a playtest"
+        title="Bingo Card from a playtest"
+        src="/static/e67110b4095dc988297ffaf93cbe7f69/6aca1/IMG_7792.jpg"
+        srcset="/static/e67110b4095dc988297ffaf93cbe7f69/d2f63/IMG_7792.jpg 163w,
+/static/e67110b4095dc988297ffaf93cbe7f69/c989d/IMG_7792.jpg 325w,
+/static/e67110b4095dc988297ffaf93cbe7f69/6aca1/IMG_7792.jpg 650w,
+/static/e67110b4095dc988297ffaf93cbe7f69/7c09c/IMG_7792.jpg 975w,
+/static/e67110b4095dc988297ffaf93cbe7f69/01ab0/IMG_7792.jpg 1300w,
+/static/e67110b4095dc988297ffaf93cbe7f69/512ee/IMG_7792.jpg 2857w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Bingo Card from a playtest</figcaption>
+  </figure></p>
 <p>I’m also fascinated by the social potential of meeting the like-minded souls who show up in the same locations as yourself in nodal space. What would it be like to make a new friend by running into each other at the intersection of egyptology and acid house rave posters, or to find a note pinned to the wall in a hallway of antique digital wristwatch adverts? </p>
 <p>I also should say that while this interface provides a unique view onto are.na’s data, it would be nice to layer back in some of their wonderful human curation, and allow you to travel smoothly along the organically defined channels in addition to the embedding-based connections. </p>
 <h3>One more thought:</h3>
-<p>So much internet now is one dimensional scrolling. We don’t get to rudder our own boat, we go downstream to wherever the algorithm predicts we might find “most engaging”. Let’s bring back the feeling of surfing, and empower each other with the ability to navigate and make our own decisions. </p>
-<p>Thanks for reading these notes! I would love to see things you find in the tool, I have a channel on are.na, (found in the river)[https://www.are.na/max-bittker/found-in-the-river] that you’re invited to add things to.</p></div><hr style="margin-bottom:1.65rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/friendship-feed/">← <!-- -->Friendship Feed</a></li></ul></div></div></div></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/river-notes";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-8d4b75a2d1f40b917928.js"],"app":["/app-fcbe65706a73bb6273df.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e8cd133e71d39587a498.js"],"component---src-pages-art-js":["/component---src-pages-art-js-fcd91153e2ffe8e454be.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-f437a17d44519764490b.js"],"component---src-pages-face-js":["/component---src-pages-face-js-c06572c49e1a2a5ed869.js"],"component---src-pages-index-js":["/component---src-pages-index-js-14ac085804f81be41f19.js"],"component---src-pages-projects-js":["/component---src-pages-projects-js-0ddc86b88ba41819cad4.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js"]};/*]]>*/</script><script src="/polyfill-8d4b75a2d1f40b917928.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-fcbe65706a73bb6273df.js" async=""></script><script src="/framework-b6211828bac0bb31fab5.js" async=""></script><script src="/webpack-runtime-6ded0917fc0d792bf352.js" async=""></script></body></html>
+<p>So much internet now is one dimensional scrolling. We don’t get to rudder our own boat, we are dragged downstream towards wherever the algorithm predicts we might find “most engaging”. Let’s bring back the feeling of surfing, and empower ourselves with the ability to navigate and make our own decisions. </p>
+<p>Thanks for reading these notes! I would love to see things you find in the tool. I created a channel for this purpose, <a href="https://www.are.na/max-bittker/found-in-the-river">found in the river</a> that you’re invited to add things to.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f7b7f199cc8f87a55221bec0f95a3296/8079d/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.21472392638037%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADIElEQVR42g3S20/bBRjG8V4ZjbeLmdtwODPsBLZFGIJdsSItzpXoNigRWmnLqayUlrL+WLeWbuUQoEdOpVBYadfiZNi1pWMnJSZgcI5MXTZj/Ce88NKLr7/rN3nzPs/nlWhVFdTXnKTk3UOUl0vJbd0n++QXNgqPuDHqYPvuDPv301xsUGLTawksZol+m8MXnEKr1WI3d5C5k8DhFugwapB0qU5SeaKIIwfepLi4iHzue6KxFDvPnuO6IRAMTaPVdXGm8hPq5Ar8yR+4nSnw+5/7eK8PYlUfIjLSQ4PqY9R15Ui8pkZ0GhWNX9SgUFYxExwjHBwnmYrRqlGzOD9NcH6VigoZb7z2Ov3WCQSbHd9Ngb29PXJJH+7+FgyXGtDVHkNiMLVQX69kOGxladvH8LCDleVZNjfTtF34nKtiJMFup73la9pbtWTzBVq/OsevP23x6q+/sZh78fkC2Ab7CHht4oUxE5falDQbu9EPObj38DFP9//gn3//I5lI43NaCYmxjYYuFPJa3C4XRl0zhfw68e+ySIsO4B2yM+a1s7XzGEkg7WYiegXB6+TKqJlbyVVevnzFz09/Y2E6wvyon5XoDC9ePKNHXOR09JC/lyK7sYZrxMMHIqbP0k4mFadQeIAkm8kz1K1nzO3gmt1GWelpQuEFysqrKZWWshYLczvqJx5P4J+cotvYxlxyjbn0XYRrNqprZVidLqwWE50GHRJzZ4eI8iXl7x/jePFR5DI5TRebUJ+/gKxGRp++EZvJgNnqIbe5Q2+ripnoNKuZHK7xEd575yB1ys/EWZ5oeBKJ3dInCjdw8O3DnK8/S2xujHh0kr7OVo4fPYL89CmCEx4Ej5d282WE6zYit+KkEhFCY700ffohevVZUukV7oQDSHoNWvEVBrHbBWZ9I1RVnkJeXYHlGw3Sw29xTqVgetbP0oKfjstdXHUJRFbiItQkS6FxHvy4ye7+LnvPd4kuziOZEEse1DfxMD3P+mKAyrITSEtKUFRXUffRGVyCmURqmf6BATQtzXjcA0RFpFB4lqlRLxuPcqxvP8F508VyMsb/2qUOo6uLVpkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 21 at 2 55 31 AM"
+        title="Screen Shot 2023 09 21 at 2 55 31 AM"
+        src="/static/f7b7f199cc8f87a55221bec0f95a3296/a6d36/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png"
+        srcset="/static/f7b7f199cc8f87a55221bec0f95a3296/222b7/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 163w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/ff46a/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 325w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/a6d36/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 650w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/e548f/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 975w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/3c492/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 1300w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/8079d/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 2100w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p></div><hr style="margin-bottom:1.65rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/friendship-feed/">← <!-- -->Friendship Feed</a></li></ul></div></div></div></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/river-notes";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-8d4b75a2d1f40b917928.js"],"app":["/app-fcbe65706a73bb6273df.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e8cd133e71d39587a498.js"],"component---src-pages-art-js":["/component---src-pages-art-js-fcd91153e2ffe8e454be.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-f437a17d44519764490b.js"],"component---src-pages-face-js":["/component---src-pages-face-js-c06572c49e1a2a5ed869.js"],"component---src-pages-index-js":["/component---src-pages-index-js-14ac085804f81be41f19.js"],"component---src-pages-projects-js":["/component---src-pages-projects-js-0ddc86b88ba41819cad4.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js"]};/*]]>*/</script><script src="/polyfill-8d4b75a2d1f40b917928.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-fcbe65706a73bb6273df.js" async=""></script><script src="/framework-b6211828bac0bb31fab5.js" async=""></script><script src="/webpack-runtime-6ded0917fc0d792bf352.js" async=""></script></body></html>
