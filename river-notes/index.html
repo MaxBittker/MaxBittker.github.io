@@ -1,0 +1,510 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.65 'Arvo',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Arvo',sans-serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2.25rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.62671rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.38316rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.85028rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;color:inherit;font-family:'Montserrat',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.78405rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}ul{margin-left:1.65rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.65rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.65rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;font-size:1rem;line-height:1.65rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}blockquote{margin-left:1.65rem;margin-right:1.65rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.65rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.65rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.65rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.65rem;margin-bottom:calc(1.65rem / 2);margin-top:calc(1.65rem / 2);}li > ul{margin-left:1.65rem;margin-bottom:calc(1.65rem / 2);margin-top:calc(1.65rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.65rem / 2);}code{font-size:0.85rem;line-height:1.65rem;}kbd{font-size:0.85rem;line-height:1.65rem;}samp{font-size:0.85rem;line-height:1.65rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.1rem;padding-right:1.1rem;padding-top:0.825rem;padding-bottom:calc(0.825rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:none;}</style><style data-href="/styles.908900b3fd37c0d89e2e.css" id="gatsby-global-css">input[type=range][orient=vertical]{-ms-writing-mode:bt-lr;writing-mode:bt-lr;-webkit-appearance:slider-vertical;width:8px;height:175px;padding:0 5px}input{filter:grayscale(1)}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px;text-align:center}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{color:rgba(0,0,0,.8);font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt"}img{max-width:100%;padding:0;margin:0 0 1.45rem}h1{font-size:2.25rem}h1,h2{padding:0;margin:0 0 1.45rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{padding:0;margin:0 0 1.45rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{padding:0;margin:0 0 1.45rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{padding:0;margin:0 0 1.45rem}ol,ul{padding:0;margin:0 0 1.45rem 1.45rem;list-style-position:outside;list-style-image:none}dd,dl,figure,p{padding:0;margin:0 0 1.45rem}pre{margin:0 0 1.45rem;font-size:.85rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset,table{padding:0;margin:0 0 1.45rem}blockquote{padding:0;margin:0 1.45rem 1.45rem}form,iframe,noscript{padding:0;margin:0 0 1.45rem}hr{padding:0;margin:0 0 calc(1.45rem - 1px);background:rgba(0,0,0,.2);border:none;height:1px}address{padding:0;margin:0 0 1.45rem}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}@media only screen and (max-width:480px){html{font-size:100%}}#fullFrame{position:fixed;top:0;left:0;height:100vh;width:100vw;border:none;z-index:101;overflow:hidden;height:-webkit-fill-available!important}html:has(#fullFrame){overflow:hidden}code[class*=language-],pre[class*=language-]{color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{color:#657b83;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.maxbittker{font-family:Astloch,sans-serif}body,html{margin:0;padding:0;max-width:100%;overflow-x:hidden;border-radius:0!important}.home{column-count:3;column-gap:0;margin:0;width:calc(100% - 1px);font-size:0}.home img{margin:0;display:block}.home p{margin-top:.25em;margin-bottom:.25em}@media screen and (min-width:900px){.home{max-height:calc(100vh - 72px)}}@media screen and (min-width:1500px){.home{column-count:4}}.home-brick{display:inline-block;width:100%;font-size:1rem;position:relative}.home-brick p{margin:.25em}.min,.x{position:absolute;z-index:500;right:-1px;top:0;padding:0;font-size:10px;display:flex;justify-content:center;align-content:center;font-family:monospace;height:13px;width:13px;line-height:0;cursor:pointer;border:1px solid #000;background-color:#f4eeef}.x svg{pointer-events:none}.x polyline{fill:none;stroke:#000;stroke-width:1px}.min{right:13px}marquee{width:100%}.loom{line-height:0;position:absolute;left:0;top:0;right:0;width:100vw;height:100vh;overflow:hidden;z-index:0;pointer-events:none;stroke:#000;stroke-width:1px}.loom-row{width:100%;display:flex;overflow:hidden}.hradio{line-height:0;margin-bottom:0;display:flex;flex-wrap:wrap;justify-content:space-evenly}.b-wrap{border:1px solid #000;padding:5px;background-color:#f4eeef;z-index:1}.b-wrap.fill{display:flex;align-items:stretch;width:100%}.header .b-wrap{display:inline-block}.pack{margin-right:-1px;margin-bottom:-1px;box-shadow:none}@media screen and (max-width:660px){.b-wrap{padding:1px;box-shadow:none}.home{column-count:2}}@media screen and (max-width:960px){.desktopOnly{display:none}}@media screen and (max-width:370px){.b-wrap{padding:1px}.home{column-count:1}}.index{height:100%;width:100%}.less-nav-example ul{margin:0;padding:0;list-style:none}.less-nav-example li{display:inline-block}.less-nav-example a{background:pink;border-radius:3px;display:block;margin-right:6px;padding:3px 9px;text-decoration:none}.the-less-class{text-decoration:underline}.headroom *{color:#382e31!important}body{background:#f4eeef}pre{border:1px solid #000;border-radius:0!important}h1{border-bottom:1px dashed #000;margin-top:.2em}#canvas{position:fixed;z-index:1}a{color:#55e;text-decoration:none}a:link{color:#58c}a:visited{color:#97c}a:hover{color:#55e}a:active{color:#00f}.markdown img{max-height:50vh;float:right;display:block;margin:10px}.red{color:#ff0;text-shadow:-1px -1px 0 #00f,1px -1px 0 #0f0,-1px 1px 0 #00f,1px 1px 0 red}.ground{width:100%;height:100%;margin:0}.plate{width:90%;height:60vh;margin:30px auto;display:flex;border:30px solid #fff}.plate .paper{height:20%;width:100%}.plate .ground-left{background-color:#fff;width:50%}.plate .ground-left .paper{background-color:#fa9}.plate .ground-left .paper:first-child{opacity:1}.plate .ground-left .paper:nth-child(2){opacity:.8}.plate .ground-left .paper:nth-child(3){opacity:.6}.plate .ground-left .paper:nth-child(4){opacity:.4}.plate .ground-left .paper:nth-child(5){opacity:.2}.plate .ground-left .paper:nth-child(6){opacity:0}.plate .ground-right{background-color:#fff;width:50%}.plate .ground-right .paper,.plate .ground-right .paper:first-child{background-color:#9af}.plate .ground-right .paper:nth-child(2){background-color:#adbbff}.plate .ground-right .paper:nth-child(3){background-color:#c2ccff}.plate .ground-right .paper:nth-child(4){background-color:#d6ddff}.plate .ground-right .paper:nth-child(5){background-color:#ebeeff}.plate .ground-right .paper:nth-child(6){background-color:#fff}.plate-two{width:90%;height:60vh;margin:30px auto;display:flex;border:30px solid #fff;overflow:hidden;position:relative}.plate-two .paper{position:absolute;width:50%}.plate-two .ground-left{background-color:#fff;width:50%}.plate-two .ground-left .paper{background-color:#5b83ad;height:100%;opacity:.2}.plate-two .ground-left .paper:first-child{height:100%}.plate-two .ground-left .paper:nth-child(2){height:80%}.plate-two .ground-left .paper:nth-child(3){height:60%}.plate-two .ground-left .paper:nth-child(4){height:40%}.plate-two .ground-left .paper:nth-child(5){height:20%}.plate-two .ground-left .paper:nth-child(6){height:0%}.plate-two .ground-right{background-color:#fff;width:50%;height:100%;right:0}.plate-two .ground-right .paper{background-color:#5b83ad}.plate-two .ground-right .paper:first-child{height:20%;z-index:100;background-color:#5b83ad}.plate-two .ground-right .paper:nth-child(2){height:40%;z-index:80;background-color:#7c9cbd}.plate-two .ground-right .paper:nth-child(3){height:60%;z-index:60;background-color:#9db5ce}.plate-two .ground-right .paper:nth-child(4){height:80%;z-index:40;background-color:#bdcdde}.plate-two .ground-right .paper:nth-child(5){background-color:#dee6ef;height:100%;z-index:20}.plate-two .ground-right .paper:nth-child(6){z-index:10;background-color:#fff}.plate-three{width:90%;height:60vh;margin:30px auto;display:flex;border:30px solid #fff;overflow:hidden;position:relative}.plate-three .paper{position:absolute;width:50%}.plate-three .ground-left{background-color:#fff;width:50%}.plate-three .ground-left .paper{height:100%}.plate-three .ground-left .paper .layer{position:absolute;width:100%;background-color:#5b83ad;height:100%;opacity:.2}.plate-three .ground-left .paper:first-child{height:100%}.plate-three .ground-left .paper:nth-child(2){height:80%}.plate-three .ground-left .paper:nth-child(3){height:60%}.plate-three .ground-left .paper:nth-child(4){height:40%}.plate-three .ground-left .paper:nth-child(5){height:20%}.plate-three .ground-left .paper:nth-child(6){height:0%}.plate-three .ground-right{background-color:#fff;width:50%;height:100%;right:0}.plate-three .ground-right .paper{background-color:#5b83ad}.plate-three .ground-right .paper:first-child{height:20%;z-index:100;background-color:#5b83ad}.plate-three .ground-right .paper:nth-child(2){height:40%;z-index:80;background-color:#7c9cbd}.plate-three .ground-right .paper:nth-child(3){height:60%;z-index:60;background-color:#9db5ce}.plate-three .ground-right .paper:nth-child(4){height:80%;z-index:40;background-color:#bdcdde}.plate-three .ground-right .paper:nth-child(5){background-color:#dee6ef;height:100%;z-index:20}.plate-three .ground-right .paper:nth-child(6){z-index:10;background-color:#fff}.art-masonry{display:grid;max-width:800px;margin:auto;grid-template-columns:repeat(1,100%)}@media screen and (max-width:600px){.art-masonry{grid-template-columns:repeat(1,100%);margin:0 -2em}}.art-card{border:2px solid #f4eaed;overflow:hidden;box-sizing:content-box;width:100%}.art-card img{margin:0;width:100%}.ipost,.ipost div{overflow:hidden}.ipost div{margin-top:-55px;margin-bottom:-35%}@media screen and (max-width:500px){.art-card{width:100%;height:95vw}}.canvas{image-rendering:optimizeSpeed;image-rendering:-moz-crisp-edges;image-rendering:-o-crisp-edges;-ms-interpolation-mode:nearest-neighbor;image-rendering:pixelated}iframe.header{width:100%;height:300px;max-height:50vw;border:1px solid #000}blockquote{padding:.5em 1em;font-size:1.1em;background-color:wheat}</style><meta name="generator" content="Gatsby 2.32.11"/><title data-react-helmet="true">River, an embedding-based exploration interface | max-bittker</title><script data-react-helmet="true" async="" defer="" src="https://www.recurse-scout.com/loader.js?t=3a128824cb3dacb3e5bf25cec6f3b40e"></script><link href="//fonts.googleapis.com/css?family=Montserrat:700|Arvo:400,400i,700" rel="stylesheet" type="text/css"/><link as="script" rel="preload" href="/webpack-runtime-89e6f58bb1a8883cd220.js"/><link as="script" rel="preload" href="/framework-b6211828bac0bb31fab5.js"/><link as="script" rel="preload" href="/app-fcbe65706a73bb6273df.js"/><link as="script" rel="preload" href="/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js"/><link as="fetch" rel="preload" href="/page-data/river-notes/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div class="b-wrap fill" style="min-height:100vh"><div class="b-wrap fill"><div class="b-wrap fill"><div class="b-wrap fill"><div class="b-wrap fill"><div class="b-wrap fill"><div style="width:100%"><div class="header"><div class="b-wrap pack"><div class="b-wrap"><div class="b-wrap"><div class="b-wrap"><a style="color:black;text-decoration:none;padding:0px  3px;position:relative;z-index:100;text-shadow:-1px -1px  #f4eeef,
+   1px -1px  #f4eeef,
+   -1px 1px  #f4eeef,
+  1px 1px  #f4eeef,
+  -2px -2px  #f4eeef,
+   2px -2px  #f4eeef,
+   -2px 2px  #f4eeef,
+  2px 2px  #f4eeef" href="/">max bittker</a></div></div></div></div><div class="b-wrap pack"><div class="b-wrap"><div class="b-wrap"><div class="b-wrap"><a style="color:black;text-decoration:none;padding:0px  3px;position:relative;z-index:100;text-shadow:-1px -1px  #f4eeef,
+   1px -1px  #f4eeef,
+   -1px 1px  #f4eeef,
+  1px 1px  #f4eeef,
+  -2px -2px  #f4eeef,
+   2px -2px  #f4eeef,
+   -2px 2px  #f4eeef,
+  2px 2px  #f4eeef" href="/projects/">projects</a></div></div></div></div><div class="b-wrap pack"><div class="b-wrap"><div class="b-wrap"><div class="b-wrap"><a style="color:black;text-decoration:none;padding:0px  3px;position:relative;z-index:100;text-shadow:-1px -1px  #f4eeef,
+   1px -1px  #f4eeef,
+   -1px 1px  #f4eeef,
+  1px 1px  #f4eeef,
+  -2px -2px  #f4eeef,
+   2px -2px  #f4eeef,
+   -2px 2px  #f4eeef,
+  2px 2px  #f4eeef" href="/blog/">blog</a></div></div></div></div></div><div style="margin:0 auto;max-width:960px;padding-top:0"><div><h1>River, an embedding-based exploration interface</h1><p style="font-size:0.85028rem;line-height:1.65rem;display:block;margin-bottom:1.65rem;margin-top:-1.65rem">September 20, 2023</p><div><p>River is an exploration engine, allowing you to navigate rapidly through slices of visual culture via machine learning based connections. <a href="https://river.maxbittker.com">Try it out ↗</a></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/144f22484a3a9fb56b921fa828136b0b/410b4/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 53.37423312883436%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC8ElEQVR42g2SWW8bBRRG/W9AQkV9KGppUVrRggI4JDhOgmMbO463eKv3yXgdx9vY420mjuPEsWM3TVIXStuHPkAl2goJVIGEAPGG+CuHefge73d17j2G++tmjkoZjtUe1z68htW2wny2z9tfX6FUi9y49QFGv42RVuHxkcxeyUeyvIPSDjLQ0vQHAq7UKuowTL3jwaAkw4j6wHC/zcLCTZJBO6+enfPfP38gxGJcvX2TQj7NQMpyKAskMlaEWpBOO8D0uMDFOEdIMCNIdho9L4aXM5nZcYfx6QnXlz/j3cWPiHRrHD69RCwILNqM5KUwmhxjoIrsygmknsjJpMLgqITcTJKr+dlO28jKAQw/v7jk+ZM5/fEjbFqHxZaEb6qwXA8idlIovRDbwioHowiVgwjSvkC67qIzrVAdtbjnthOUs8RbBbLdEobRaEShriE0pzx8csqfvz8m0/2G1ZyJ5/MuQzWCL2UmV7bRHQnElCAb2RV2auv4ZR+iUiLezJJqiVgidgzaaECj38YZcOmb91AfDLji+JL+gwN++uEpe0oKSQ6yHrKSKYdo1eJIeS+ZopuCsEmhZCUiGAlmjbgiRgzDucrkOxVtmEM9O8eSlXCkUvz19je00zFxOUOymsUa2WIz7kLU8TrpAHUxjJB3UhDvIOgRS3eJlL7A0BzXyGoi7UmDpNoiWhT58fsL/v3lJV1Nxp4K4Eh4iWachENf0+hkkAQ3rYiLUMjEmvMqnvgC0cQCm+nPMdQeneHdNuM1f0JNSXIxr9MaRklNqywVowTzIa6s3qGtP2P2sEu6maPdjzFsmemVl/AXHTh17LuiiXe8JgyBk4ledo+16++hNnfonyW437Ji39/hdsbLWNfqlucrLs9kXjw7wFLP41cbxA8lcg03y74VtpN2THEHH+d1baKTGeGgA+un71OrbLFVXcNd3kCbZfCU/HjLUey7Hv5+fc6bb0u63Eu0ZQtKN0BSiWEKWPDtutjwm7mh3/h/va0Ysot8a3UAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 21 at 2 11 39 AM"
+        title="Screen Shot 2023 09 21 at 2 11 39 AM"
+        src="/static/144f22484a3a9fb56b921fa828136b0b/a6d36/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png"
+        srcset="/static/144f22484a3a9fb56b921fa828136b0b/222b7/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 163w,
+/static/144f22484a3a9fb56b921fa828136b0b/ff46a/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 325w,
+/static/144f22484a3a9fb56b921fa828136b0b/a6d36/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 650w,
+/static/144f22484a3a9fb56b921fa828136b0b/e548f/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 975w,
+/static/144f22484a3a9fb56b921fa828136b0b/3c492/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 1300w,
+/static/144f22484a3a9fb56b921fa828136b0b/410b4/Screen%20Shot%202023-09-21%20at%202.11.39%20AM.png 2102w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This post is a place for me to put down some notes on the design and technical architecture.</p>
+<h3>Designing for Diffusion:</h3>
+<p>River is in some ways my way of leveraging ML capabilities to fill negative space left unexplored by generative diffusion models.</p>
+<p>Text to image tools are exciting, but they lack the sturdiness and control required the sense of craft that I’m looking for - they still feel more like a slot machine than a pencil.</p>
+<p>I expect many of these problems are solvable, but when something is new as image diffusion, it’s not clear which limitations are incidental and which are innate, posing interesting challenges for interface design. It’s hard to make good tradeoffs when the underlying capabilities change so quickly! </p>
+<p>It makes sense that we end up with tools like Midjourney (opinionated and minimal) or Automatic1111, an evolved mess of nested tabs with infinite options, plugins, and parameters.</p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1cd90562228f96a0043daca0f0d5d124/c2d13/Pasted%20image%2020230918145601.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.533742331288344%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNklEQVR42k2QzU8TURTFZweEFtoO7Uw7b2Y6bzrz5nXa+WbmtbTSApFvCUokMUrEioqKEYLGhbqQnUTDwoWJa/8lFqzBRSES2CARxNe4Mfnl5ubmnNxzL5ODloSCjFQckEu5gsvJJgswD206T4s4BYpADyTNpYi4yqH6gEqSYrmrd0DHPiOormJWlFI1XySiEVLkIhH0IKf52YJH4RSHgx2A7rujiytj7rfpzNcJ9smYzQiar1h1wYgSktUPSn2gFBdMXgtETMB/5FBFwMRvzHm18SisO26FDE8wXL7EqR4ZmXu/tf1ua/vth4+UqHkjDV0eOv28HucQJ+jzZn5OBJMZoZxWujmjiy0gu84IaDApO0uPN66urv5cXl5c/KbNg+evE7INUJjgjRhnABFvjDnfX019mR1sZFE8i2NpDVlDDD0vlXfutNb29vb29/fPzs7Oz38tP91MUrM+mMzi3gyGGvr80NpZX1gdsuoQU3M8oxt2rWOmunuP1o+Pf+7u7rYPD9vtNg1CX5DTAyrqYXURqjtr8FOLtCplk4MxDvWkILKqNHZn8/3VTZr26Ojox8HB6enJyos3adWTMMnjUEKRjEnBrk5PzdYaM7JRUcs1ySDR8AyjmET3mmFz/ubd1VtLz24vv1xsrUej81Z1smBfEzUfFAKgBTk1YCWXVz3ai3rIQ8+rXmcUZ0SNZnW/qdp1aNW0cMqsTJfI+ND4ghk0ehNCPCX+o4/t1FgS9LFSd5wvWuQv6/yWKc9HIykAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Automatic1111 + controlnet"
+        title="Automatic1111 + controlnet"
+        src="/static/1cd90562228f96a0043daca0f0d5d124/a6d36/Pasted%20image%2020230918145601.png"
+        srcset="/static/1cd90562228f96a0043daca0f0d5d124/222b7/Pasted%20image%2020230918145601.png 163w,
+/static/1cd90562228f96a0043daca0f0d5d124/ff46a/Pasted%20image%2020230918145601.png 325w,
+/static/1cd90562228f96a0043daca0f0d5d124/a6d36/Pasted%20image%2020230918145601.png 650w,
+/static/1cd90562228f96a0043daca0f0d5d124/e548f/Pasted%20image%2020230918145601.png 975w,
+/static/1cd90562228f96a0043daca0f0d5d124/3c492/Pasted%20image%2020230918145601.png 1300w,
+/static/1cd90562228f96a0043daca0f0d5d124/c2d13/Pasted%20image%2020230918145601.png 2560w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Automatic1111 + controlnet</figcaption>
+  </figure></p>
+<p>Four deficiencies of diffusion that nag me:</p>
+<ol>
+<li>Reliance on discrete language and named ideas, versus continuous exploration</li>
+<li>Slow: don’t work at the speed of thought, pulling you out of flow state </li>
+<li>Artificial images are disposable and unmoored from concrete grounding in cultural context. It makes each individual image less useful as a shared meeting point.</li>
+<li>Alienation of source material: laundering references and reheating existing biases of the dataset </li>
+</ol>
+<p>Skipping diffusion entirely and experimenting with machine learning techniques as ways to explore existing datasets felt like a fruitful direction to experiment with.</p>
+<h3>Curation as Poetry</h3>
+<p>One definition of poetry might be the circling of an idea that resists explicit description.</p>
+<p>Tumblr was a formative online scene for me as teenager.  My favorite aspect of the community was way that curation was something that everyone played at.  It was normal to have multiple blogs: registering a page under a username like “fuckyeahsweaters” , “onlydavidbowie”, or “powerlinesinanime” was all you needed to self-deputize as a librarian, taking on the mantle of curating the theme or idea to the best of your ability.  </p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b93c4831c855650fe7a6abe353e1cc6d/2bef9/Pasted%20image%2020230919155849.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.44171779141104%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR42hXCh1LaAAAA0PyWVz2vtcVqPRBSPUFq0UOGOKgUHJQlQ4YCQpAAEgIahhISVlFkCWQhjk/q9d0Dnm9E4zw4zglHd+LnOwmLzsdMU+WzrxwiZFCQTYNUmk8XRFxa+J4RobYZ0/YUGRe91zc7BTnAZWWj2x8jfJ0jFExJPsDEkGW2EF5icfkQ+0lhUrogYYpS+lY6rijQ4JJ1/1MptfHWPmgX1QBbVI0IFU1s/48r+jlZzMXPRlZpYovCNxlczhBKtqziCPVLQ4+E1nTqyWJK9doztcldgCnrhyVtFd0Y4jt0STMsKJGzZTKpGFUNLKnlqrpR/YCr69n64ahphgNrOs10Pql+6ztbFQPQqzv6NWs5vdUnj+ia6blmxiBZs/B7/GBlGxa26WCbdrbtYTs+rueDLxS67WksqX2jgq2/TuCpiwx7yGM1wDwhw26M7SRIzNSq+0dUhh5iDJVnhlmawmkap6m7RMzmcqiwm9PXl2qrXQQGdJnhap0WQpaMl6nVUHQFgaVJCGzdQwxTYegKy9RY5p7jWt0ugab815lwDoM4qvpQQwGqFh7cBmuYxXXBO40KLME5+8VHd2gOhVebFWu34X4g9hukbNAyP7axaNQSDGii/pV6cS8V+QzUfRrCrcnYN+12ntkze2yZ9/lm3K5F/9FiFlLGz79DnomYd7KCLBCIMhkUxy6/ee0TeZhXzvGBQtR4DR9nIoc4ZosE5Bat8GSPb9LwwzYp5Fm/gnZi55pkWJ+LG+Pu9fAJCHnEIddSDpKh5xKgkjUhARXsVSa8v6xy0CAWbC0v7Eq+eHfAQwXPaRDATk3gCAz8mQ9ZRQnX3NXJZNj4IekQZE6X/wEC03wlZASgRwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Pasted image 20230919155849"
+        title="Pasted image 20230919155849"
+        src="/static/b93c4831c855650fe7a6abe353e1cc6d/a6d36/Pasted%20image%2020230919155849.png"
+        srcset="/static/b93c4831c855650fe7a6abe353e1cc6d/222b7/Pasted%20image%2020230919155849.png 163w,
+/static/b93c4831c855650fe7a6abe353e1cc6d/ff46a/Pasted%20image%2020230919155849.png 325w,
+/static/b93c4831c855650fe7a6abe353e1cc6d/a6d36/Pasted%20image%2020230919155849.png 650w,
+/static/b93c4831c855650fe7a6abe353e1cc6d/e548f/Pasted%20image%2020230919155849.png 975w,
+/static/b93c4831c855650fe7a6abe353e1cc6d/2bef9/Pasted%20image%2020230919155849.png 1024w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>People took this job seriously! Similar to the craft of a good radio jockey: hunting for deep cuts, sequencing ingredients, and managing tempo. This style of playful curation is at home on the internet, for instance on instagram accounts like these:
+<a href="https://www.instagram.com/massive.archive/">@massive.archive</a>,
+<a href="https://www.instagram.com/markrothko/">@markrothko</a>,
+<a href="https://www.instagram.com/dusttodigital">@dusttodigital</a>,
+<a href="https://www.instagram.com/nature.is.not.metal/">@nature.is.not.metal</a>, as well as the whole tiktok genre of “corecore”.</p>
+<p>There’s something special to the brain-feel that these sequences create. It’s a form of internet art that engages our subconscious pattern matching abilities, retracing an invisible through-line. </p>
+<p>Key to this effect is a balance of forming expectations and breaking them. A rhyme is, after all, the pleasurable tension between similarity and difference.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/23f1b6fc04dc57496b187381b57879dd/6ee58/rhyme.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30.061349693251532%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAABeUlEQVR42gFuAZH+ANnT18rO0ZWpmbnBtdHY56rF6qzE5qe/4LDH6OLn7OPb0rq4sH+EiqeaiK2wsl6LzGqItF2FwliEx1mBvgDV0dOSp5BghFeNp4jY3OPM1OG1ucCXm6HHzdrt7/LBvbnOwbLGwb3az8rCvcBnmNp7m8Z+kat4f4dnhK4AoaabVHVKY4lVn7mdy8nKwr22mZeXh4eHsKqqxLe0raKgu7nAvbm+2t3nuL/OdISYenZyaF5TY299ZpjWAKytp3COanyMesXGxsjExJGRkYGCg39/gWppa56Ff6B9c5uAeq+cnNvd5sLM2HmTrWh5i0VGSmF+oXWr5QC9tbe4vLuQfXzIt7qup6dycXB/f3+Cg4SBhYmyop+mhnyUbmOvoKC6ucDH0+KQwe6UvuVnaWxke5GDr9kApImFr5aUnHl0z7CotKejgIGBjo2OlpeZn6KppJKPh2RZeF1YhHN2cVdTppuZcHqBk5aZgX59UE9PW1ZSYUDe1eCpxXEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="rhyme"
+        title="rhyme"
+        src="/static/23f1b6fc04dc57496b187381b57879dd/a6d36/rhyme.png"
+        srcset="/static/23f1b6fc04dc57496b187381b57879dd/222b7/rhyme.png 163w,
+/static/23f1b6fc04dc57496b187381b57879dd/ff46a/rhyme.png 325w,
+/static/23f1b6fc04dc57496b187381b57879dd/a6d36/rhyme.png 650w,
+/static/23f1b6fc04dc57496b187381b57879dd/e548f/rhyme.png 975w,
+/static/23f1b6fc04dc57496b187381b57879dd/3c492/rhyme.png 1300w,
+/static/23f1b6fc04dc57496b187381b57879dd/6ee58/rhyme.png 1640w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>Mathematics of a Visual Rhyme</h3>
+<p>Vector embeddings, such as the ones produced by the CLIP library, allow you to project an image into a mathematical space, where it can be compared as a set of numbers. </p>
+<p>Clip-guided diffusion (as used in text-to-image) is one way to turn that embedding back into an “hallucinated” image, but you can also do something much simpler - find the nearest neighbor within some dataset of <em>real</em> images! </p>
+<p>I was curious about trying to explore the concept of visual rhymes (curated balances of similarity and difference) through vector embeddings.</p>
+<p>One formulation of this problem is taking a set of image embeddings and quantifying which dimensions they mostly share in common, versus those that they mostly differ along, and use these ranges to extrapolate the shape of a mathematical volume. You might then sample points from inside that volume to find other images. </p>
+<p>I did a bunch of experiments towards this idea, and had exciting but ultimately inconsistent results.  Doing simple geometric operations on vectors such as adding, subtracting, or averaging them would work well in some toy examples, but behave incomprehensibly when I tried to generalize. </p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ae8125b74c3ae7df85a650e0044c7aac/e8950/Pasted%20image%2020230915220943.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 84.04907975460122%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEFElEQVR42i3RaVNaBxQG4PsP+hf6oR86mWkaJ7Z2jFPbwdY0CVaNGpeIaxLFFSVqxMjiAkJAhZAoal0vMSggILhcBIIbl8UrmyIo4IIKMdVamqYV0pI2Z+bMvDNnnnk/HOBs1/THm923wZPfz1+/O93XOdfUxnn/nuOf/2YTXpwf5Zm1GotW+UoMvuRS1YJRJ2KMnN6Hw8CqSSZzmt4FAwqzyrZn2Q94xcviXYfhf+yxrQu6KXxuG7ul+ikFR8XlDrbW7Tu3PuD3YcCNSD2HxtDfv7n3EM/+2sX5QdCzGnCtfWxeQ8TPOweZ5D5awxCLPMCoH+cydjfsH5uDTq3fqX97aDt0mf/cQw527Kc7Rq/TFtyEtowq6+IsND7kWlLYtQq7agqBRI5FhUUzHfAfh0MXwLlhzKzXnuvBDVj5KwxaV+b9K3y7Tnmse7mtk782Cr2mOR8s3NbPHOrFPvPCsUm6B0t9BtnJ0S7gW+abtLN7WtCxIncvTfjtWo9hNmCe9xrnAhZoB5YH9JMHCOQ3ybzLQsvcmGVuxAErvVadb9sGDPb2gEzSK9EoNMzWSF6cHPtcG2bPpm3buv7myLsBjZwpOZ5pzqnqF+MzPCblVmNVCY3YWFWEGeJ2A1Mv+fJ+Jizjzwyx5SBve8NiNcDw0rLbtePb2ViX9jrE1ClOrYSJU3Nqy/MxTTjccyadVFcrHB0A4AW5jMeAJaOLgl4Br+to2+reWt9ymP1u15FVbxOzd6af2OQcRMRc4DaU33vQQmxns7oeVVfz+58BHodtU6dZkAiKM9C4ohxmK6ECW4IpKKA8JmhlYy8GWrTDRJOAZRBxZIxSfO6NZmyWbHxACUEIvAKEw+HI0+aUatTlT01CpqKfSKrIJmBzE+K+aqjNpJPv0on3dJM96hHOJKOyOSv6cfpl+7I0QsKhUASHIkmj0XIrU84QwTEi3l8cDtrkkr6WtoZMSSeGRS6cneBCEl5XXUHpzUs1GVdXlbIICUVwZCPJhuiLE6OqU+NxP1+j1RVxSJVP6opppMKHuGR2G3YWZKzODD9tLC5I+LL+drRB9aH54uIvgIQvSk6MzUtP+DYm5k5qIb2+JSf7dkd5dEceemGQ3dtFaCq+Tq9M7yFgyNjUkswbFdgMSktZO5vW0MkE8jPRVCoenARNq5qjwEHwLAB1P5zuQ8snO4SdHVR86X30JWopCpcT/yA1FpMUTyFkjzSlcetyH1HKAbVaAatH7OsqEOQRGqr6OcTVCTpI/1EkJAtorTVFmHTU5+k/RJWnfVOYfC0rCdXTHLdCiYPwqKm2LwCJSFCS9l3uT1dRsTFfX4kqy4w3SpukbdfHq5KmmO0sBik/O6WmLJ/VdP/Ore/RiaiKu1cqkj8h5n021ZfxL20ImmXD3/jFAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Pasted image 20230915220943"
+        title="Pasted image 20230915220943"
+        src="/static/ae8125b74c3ae7df85a650e0044c7aac/a6d36/Pasted%20image%2020230915220943.png"
+        srcset="/static/ae8125b74c3ae7df85a650e0044c7aac/222b7/Pasted%20image%2020230915220943.png 163w,
+/static/ae8125b74c3ae7df85a650e0044c7aac/ff46a/Pasted%20image%2020230915220943.png 325w,
+/static/ae8125b74c3ae7df85a650e0044c7aac/a6d36/Pasted%20image%2020230915220943.png 650w,
+/static/ae8125b74c3ae7df85a650e0044c7aac/e548f/Pasted%20image%2020230915220943.png 975w,
+/static/ae8125b74c3ae7df85a650e0044c7aac/3c492/Pasted%20image%2020230915220943.png 1300w,
+/static/ae8125b74c3ae7df85a650e0044c7aac/e8950/Pasted%20image%2020230915220943.png 2000w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>From what I’ve read,  this has to do with the lumpy nature of the embedding space created by CLIP’s attempt to squish all of visual culture into a 512 dimensional space. </p>
+<p>Within <em>local</em> regions, you can treat this space as euclidean: geometric relationships hold meaning. (you can interpolate smoothly between points, or compute averages) </p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/356d88ab0a63ad88da43bcff400ebcc0/3ceac/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.760736196319016%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB7ElEQVR42p2SPWhTURTHX95LSvI+mg/zbYRUiBlMBW26JZuz3erkYB2Eqji4WSp26OIgDk6NWq1a0IKlraChUBBKUcSSqUTEIkInqbSQdDDiz3dv3qtpVQSHP/e9c+/93fM/5yiKotApjyPl/+WAPB40Vd2zaVkmuq6TTqcJhUIkk0kikQjRaJREIoFpmn8GCpgb8Hd10W3ovzL2qBIWCATkGovFiMfj8hG/3//3DH0+H6MXh3n9dJo3M9PMX7/EYP8hTBtuGIbMRqwCJIAi00wmIx3sAaqOzcqtm9Bq0tpY53u9xvbSAh/ujXDu5HGCB2IctEGpVErChF2RaTabJRgMyvuapuGwFE4c66X19Qs7Gx9pvF/l84tZVibv8m1xnvGh0+0LzsNuedxVQIQ7r9croRI4OHCK1qc62/VVdparvJu8Q/3RfVicY+LK5fbFjjr/s8v9vQWatRW2bMDW8xka1QU2n0zx4+Uso2fPtGtsZ6Dum4L9kvua1j708NpVeLtM07bbePYYXlVZn6rQY9erEyjshcNh2Qwh0X0h8S1sK24tArrBjQvnqU3cZu1BhbmxEY4e7kG3LIp9fRzJ58nbEjNYLBalyuUyhUKBXC5HqVSSDfttDkOmRTIS3v33Ot0TZzotuzE37jJ+AsTaSB0hGttaAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Euclidean relationships hold within a tangent region"
+        title="Euclidean relationships hold within a tangent region"
+        src="/static/356d88ab0a63ad88da43bcff400ebcc0/a6d36/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png"
+        srcset="/static/356d88ab0a63ad88da43bcff400ebcc0/222b7/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 163w,
+/static/356d88ab0a63ad88da43bcff400ebcc0/ff46a/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 325w,
+/static/356d88ab0a63ad88da43bcff400ebcc0/a6d36/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 650w,
+/static/356d88ab0a63ad88da43bcff400ebcc0/e548f/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 975w,
+/static/356d88ab0a63ad88da43bcff400ebcc0/3c492/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 1300w,
+/static/356d88ab0a63ad88da43bcff400ebcc0/3ceac/Screen%20Shot%202023-09-19%20at%204.53.39%20PM.png 1456w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Euclidean relationships hold within a tangent region</figcaption>
+  </figure></p>
+<p>But beyond a small local region, these relationship break down. The space has very irregular density, and is “folded up” with overlapping semantics for a given vector.  The meaning you might be able to ascribe to a vector, such as “this dimensions maps to size of the dog, this dimension maps to lighting style” will not hold up globally - they won’t be applicable to another region containing images of cars.</p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2a59e1e7d91160da2970feb8cca053d7/7f15f/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.05521472392638%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACI0lEQVR42n1SXUhTcRS/u19uK1IiZc2aNTCwMoJgaWH1YguGlBhCkBC4l8CKPoYl+OLLHrJain2oxJy7etN23VhbTSoQfNqLj0EPUiQtd9vsJXqqX+deb5ua6+H8z/n//+f8zu98MCaTCX+FZdmCcBwHgedQ73SS5vU7Sz4Mw+i+mi4h/z6aDC0SSOiOD9srKop/WvLSYKuAm2U813gU+6t34v2MDM+JJhxw7kWtY/c6H3ZzpsREFGG32cASI2/7eYiCgLG+XswN3scnaRQLo0/weSqMx75relDtrmqYy8p022I2g9faYbSK4ak/2ofL5YLVasXbQD8uut0I37yK3++SWJaDWEnFkVNkfEsoGOnpxsepEAauX0HH6WZ0tbWttkcUIBCRQg8P7alBy6mTWJgMY/GFhMXgI2SVCWRfKsgmFWQiZE+P4+dcCmoygnxsEj8oQUNd3fpB6TTJKLdYkB4KIB+R8V0aoYBpZBMxfCGGuVQMy1EZXyMSMqRVSvBhIgh3Y4Mey60tWTt4AzQeuIvEw3vwezuJyRusvIoin5yBSkxVRYI6Swmeh/DrdRRjvT0FsA1DpUcDsPtCOy63tmDrtnJk4grSA/2YfzpI5UpYkp4hR6Wmhx7g1lkPmo8cLjXp4qVqiwX2yh26PevvQ6fnDByVVVgaH8bwbR98lDB4o+t/O1gE3LiLrU3Hsa/Godt+7yUcqz+o2067rbjghqyN+wOvI3mPcukNvAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="These relationship break down outside of specific local regions"
+        title="These relationship break down outside of specific local regions"
+        src="/static/2a59e1e7d91160da2970feb8cca053d7/a6d36/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png"
+        srcset="/static/2a59e1e7d91160da2970feb8cca053d7/222b7/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 163w,
+/static/2a59e1e7d91160da2970feb8cca053d7/ff46a/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 325w,
+/static/2a59e1e7d91160da2970feb8cca053d7/a6d36/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 650w,
+/static/2a59e1e7d91160da2970feb8cca053d7/e548f/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 975w,
+/static/2a59e1e7d91160da2970feb8cca053d7/3c492/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 1300w,
+/static/2a59e1e7d91160da2970feb8cca053d7/7f15f/Screen%20Shot%202023-09-19%20at%204.54.57%20PM.png 1530w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">These relationship break down outside of specific local regions</figcaption>
+  </figure></p>
+<p>Images taken from <a href="https://www.youtube.com/watch?v=FQ9l4v7zB3I">Non-Euclidean Therapy for AI Trauma</a></p>
+<p>My solution for this problem was to focus only on local comparisons, and use repeated hopping to navigate from region to region. When this hopping was fast enough, it worked incredibly well and the feeling of “surfing”. </p>
+<p>But, still curious to return to some of those more nuanced mathematical relationships between embeddings if anyone has pointers on new ways to model them.</p>
+<h3>Infrastructure</h3>
+<p>I had an assumptions that ML techniques are hard to set up and expensive to run - requiring special knowledge, expensive APIs, or deployment of GPU-equipped machines. It was rewarding to discover how far I could get with well-documented open source libraries running on cheap commodity boxes.</p>
+<p>I’m downloading images, and embedding them with a CLIP python library (turning them into 512 floats). CLIP is pre-trained, and only takes around 200ms to embed an image using a CPU! </p>
+<p>These embeddings are then stored in a Postgres table using the  <code class="language-text">pgvector</code> extension, a really handy open source tool that supports different query patterns and indexes. </p>
+<p>There are bunch of proprietary vector database solutions competing for market share right now. I’m sure that there will be good ideas from this field, but I would personally recommend anyone already familiar with SQL to reach for <code class="language-text">pgvector</code> first. (And if you’re a frontend person who feels shy about writing SQL, GPT4 is incredibly useful for writing queries if you provide your schema)</p>
+<h3>Connections</h3>
+<p>This tool operates as a super-connector, helping you rapidly browse and find things by chaining fuzzy connections. Those discoveries are only really valuable if you can follow the thread back into the domain of real world. I tried to use datasets that could be traced back to real people or curatorial contexts – so that when you find “gold”, you can follow the trail out of the latent space and connect with real humans. </p>
+<p>For instance, the first image set I embedded was images posted to the social media site Bluesky. I used this to build a feed called “Surf” on the service (Bluesky supports content-curation algorithms). The beauty was that when you found images, they’re connected to a specific post by a real user - giving you the ability re-share, follow, ask questions, or otherwise support their work.</p>
+<p>Bluesky people enjoyed the feed and called out this specific use-case! </p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3d853406df2bf6799084e869a44778ac/7321b/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.122699386503065%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABq0lEQVR42p2S3VLiQBCF86J75QP4anvljVVeeLsUCyFEIGBAIJBA/hMMmHDs024sai1Ld7tqpqdnOp1v+ozhPnn4eXMP3w+w2wXwvDVWqxV88XWyx/NzhbqucT6fPx20um40z7i9u8ePq2uYpoXZ7BG2PXpbOw5ib4UwSvCVsSiLacEsSzEaPSDPc4RhKL5QH0UxoiRFHMdIkkTHfr/XuPVRFGmRSzOYaNu2FB2h3+9jOp1iMBhgYJrve91uV+hnmtfr9TTmPmO2JwjYrt0boed5sCwLw+EQnU4H4/EYjlyXlKRgIkkOh4N60hEiTVONee77PgLxTdPAqKoKZVmiLApN5tWTJMb/mvFyrODYFrzNBkVRClUqf8+0l1mWqy/kZ63SpLhUmHG7p4Sn0wnm71+YOhMspR+LxUKezgaPriv9nMF155jPF1iv11gul3q97Xar69bzm40AaQ/5ippjLtPLt55HS3RJdTmE8IjJxPmj4lAV5poqUmWeUXmKxn2SUhSKyXVLTlol5ETZQxGEylI1isOrtQoz5siy7EPvPhCeZfoXY/77YPG//CsS/o+LuUB2+wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 20 at 4 04 22 PM"
+        title="Screen Shot 2023 09 20 at 4 04 22 PM"
+        src="/static/3d853406df2bf6799084e869a44778ac/a6d36/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png"
+        srcset="/static/3d853406df2bf6799084e869a44778ac/222b7/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png 163w,
+/static/3d853406df2bf6799084e869a44778ac/ff46a/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png 325w,
+/static/3d853406df2bf6799084e869a44778ac/a6d36/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png 650w,
+/static/3d853406df2bf6799084e869a44778ac/e548f/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png 975w,
+/static/3d853406df2bf6799084e869a44778ac/7321b/Screen%20Shot%202023-09-20%20at%204.04.22%20PM.png 1184w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7962f7c00bcb7d0d48e6692e173b9908/d43b4/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 22.085889570552148%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAzElEQVR42m2Pa2qEMBSFXXehv7qCQhfQRVk6bbSOOhQnRvOQaAwkZ66XoaXQwAc3D76cU/TdGa/PT2hP7/j4FCjLkrleJYxxmGcD5xZY6xjvV+a/lXNG0XcdXh4f0L6VOPcX1PUXWjqTUkLPGtZYjOMIpRTUpDAMA7TW9JlhpmniO+89S4t8t2/bRrIaTdMwQgiIWqCqKhasKyWjpAulPOYD647Ulho4hBDuwpR4CGGHoccxRsQ9IuwB3/6Cbf+tl+UC+PCzTykT6U/lG+IfLyrvfYNLAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 20 at 3 58 52 PM"
+        title="Screen Shot 2023 09 20 at 3 58 52 PM"
+        src="/static/7962f7c00bcb7d0d48e6692e173b9908/a6d36/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png"
+        srcset="/static/7962f7c00bcb7d0d48e6692e173b9908/222b7/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png 163w,
+/static/7962f7c00bcb7d0d48e6692e173b9908/ff46a/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png 325w,
+/static/7962f7c00bcb7d0d48e6692e173b9908/a6d36/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png 650w,
+/static/7962f7c00bcb7d0d48e6692e173b9908/e548f/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png 975w,
+/static/7962f7c00bcb7d0d48e6692e173b9908/d43b4/Screen%20Shot%202023-09-20%20at%203.58.52%20PM.png 1202w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0a336451109adce6bad208af01d76308/04784/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.78527607361963%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABw0lEQVR42pVSXW8SQRTd3+0vMPHFB20q0KLVGhNjqpSPlm2Fon2gpSD7wXa/6GJZkgV2d2ZRSwhwvLOb+FxvcnLuPXPmzr3JSCyaw/ccMM4w8X0wxrBcLrHdbiFC8GOw2WywWq0gXV+28OzpE1hDG5ZpwfNGiKIYnHEkPMFmvcZjY01eidNEvX4X85gh5r8wixhmYYww5ghZgogQ80XKczoTumC++J1yzDNPSPdFSMliAb3dhNIsYfTjAoPLKnqNL7CvzjC8aUD/XoX2rYLu+RFxOc0FnOtzKBfHUFrlVL/X21nD+diFcfoajryP21oBSmkXWvnVP9j1fXiNAxi1PKGQaiIXXvN0D1olB620g0iVs4aB1UXv8w7sr4fQT4roVwpwG4cwz95CrdIjMjWrH8Ah7aaUS3VRC79ao3OqHcrvWh/wJ3AhTV0FaiUPt/keg/obmLIwv4NOEwwIRm0vZatehF6lyU7EVHmYVHeOXkIt52DLRRikP8w8SOPBFTofn6fmPq3b+fQCyvEugts2mO8gHBlIJjaCoQ42tlJM77I8GGqI783UwydutvJDEsK3FUw9En0bM+Lwp0nfZYX/DfEf/wI0bn+efCEOAgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 20 at 4 04 00 PM"
+        title="Screen Shot 2023 09 20 at 4 04 00 PM"
+        src="/static/0a336451109adce6bad208af01d76308/a6d36/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png"
+        srcset="/static/0a336451109adce6bad208af01d76308/222b7/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png 163w,
+/static/0a336451109adce6bad208af01d76308/ff46a/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png 325w,
+/static/0a336451109adce6bad208af01d76308/a6d36/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png 650w,
+/static/0a336451109adce6bad208af01d76308/e548f/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png 975w,
+/static/0a336451109adce6bad208af01d76308/04784/Screen%20Shot%202023-09-20%20at%204.04.00%20PM.png 1174w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>As I experimented with ways to navigate the space more widely and rapidly, cruising through vast regions of Bluesky images started to feel too voyeuristic (like flying a drone over someone’s back yard).</p>
+<p>I embedded a new dataset of ~1 million images from the site <a href="https://are.na">are.na</a>. Are.na hosts the creative research of a lot of designers and artists with broad and developed interests, which makes navigating from region to region highly rewarding. This was when the tool really started to click with me, and I found myself totally sucked in.</p>
+<h3>Latent-Space Flow-State</h3>
+<p>I was struck by the powerful feeling of <em>movement</em> through the data – recognizing landmarks,  following gradients, escaping attractors, or stumbling suddenly into new regions – it all felt immersive and game-like.</p>
+<p>William Gibson novels have a recurring character archetype with the ability to project their consciousness into the world of data. Blessed (and cursed) to navigate the infosphere intuitively and see patterns, or to follow invisible threads. </p>
+<p>Iteratively traversing the embedding space gave me a similar sensation, and I wanted to play into that feeling with the design of the tool. </p>
+<p>This meant tuning up the backend to be fast, and making most of my design decisions on the frontend with the goal of sensory feedback to help you “stay in the zone”. The layout tries to maintain your bearings by preventing re-flow as the images load in, and the sound effects that trigger when an image finishes loading provide bits of feedback on the underlying machinations of the data-fetching (For instance, pages you’ve visited recently sound different than fresh ones, because the images are already cached).</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; text-decoration: none; background-image: none;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f7b7f199cc8f87a55221bec0f95a3296/8079d/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.21472392638037%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADIElEQVR42g3S20/bBRjG8V4ZjbeLmdtwODPsBLZFGIJdsSItzpXoNigRWmnLqayUlrL+WLeWbuUQoEdOpVBYadfiZNi1pWMnJSZgcI5MXTZj/Ce88NKLr7/rN3nzPs/nlWhVFdTXnKTk3UOUl0vJbd0n++QXNgqPuDHqYPvuDPv301xsUGLTawksZol+m8MXnEKr1WI3d5C5k8DhFugwapB0qU5SeaKIIwfepLi4iHzue6KxFDvPnuO6IRAMTaPVdXGm8hPq5Ar8yR+4nSnw+5/7eK8PYlUfIjLSQ4PqY9R15Ui8pkZ0GhWNX9SgUFYxExwjHBwnmYrRqlGzOD9NcH6VigoZb7z2Ov3WCQSbHd9Ngb29PXJJH+7+FgyXGtDVHkNiMLVQX69kOGxladvH8LCDleVZNjfTtF34nKtiJMFup73la9pbtWTzBVq/OsevP23x6q+/sZh78fkC2Ab7CHht4oUxE5falDQbu9EPObj38DFP9//gn3//I5lI43NaCYmxjYYuFPJa3C4XRl0zhfw68e+ySIsO4B2yM+a1s7XzGEkg7WYiegXB6+TKqJlbyVVevnzFz09/Y2E6wvyon5XoDC9ePKNHXOR09JC/lyK7sYZrxMMHIqbP0k4mFadQeIAkm8kz1K1nzO3gmt1GWelpQuEFysqrKZWWshYLczvqJx5P4J+cotvYxlxyjbn0XYRrNqprZVidLqwWE50GHRJzZ4eI8iXl7x/jePFR5DI5TRebUJ+/gKxGRp++EZvJgNnqIbe5Q2+ripnoNKuZHK7xEd575yB1ys/EWZ5oeBKJ3dInCjdw8O3DnK8/S2xujHh0kr7OVo4fPYL89CmCEx4Ej5d282WE6zYit+KkEhFCY700ffohevVZUukV7oQDSHoNWvEVBrHbBWZ9I1RVnkJeXYHlGw3Sw29xTqVgetbP0oKfjstdXHUJRFbiItQkS6FxHvy4ye7+LnvPd4kuziOZEEse1DfxMD3P+mKAyrITSEtKUFRXUffRGVyCmURqmf6BATQtzXjcA0RFpFB4lqlRLxuPcqxvP8F508VyMsb/2qUOo6uLVpkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Screen Shot 2023 09 21 at 2 55 31 AM"
+        title="Screen Shot 2023 09 21 at 2 55 31 AM"
+        src="/static/f7b7f199cc8f87a55221bec0f95a3296/a6d36/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png"
+        srcset="/static/f7b7f199cc8f87a55221bec0f95a3296/222b7/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 163w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/ff46a/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 325w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/a6d36/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 650w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/e548f/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 975w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/3c492/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 1300w,
+/static/f7b7f199cc8f87a55221bec0f95a3296/8079d/Screen%20Shot%202023-09-21%20at%202.55.31%20AM.png 2100w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>Loose threads:</h3>
+<p>Many playtests include people getting sucked into “gravity wells” - areas of the embedding space that are dense &#x26; strongly self-connected, making them harder to walk out of. If you’ve used the tool long enough, you likely have found yourself trapped for some period of time within a labyrinth of reaction jpgs, interior design photoshoots, or monochrome logotypes. I did some manual work pruning and thinning certain regions of the dataset to try to mitigate this feeling, but there’s a lot more that could be done to regularize the density of different regions. </p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cde1a926d72edf58532be33d9b596ed0/70c12/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.05521472392638%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADFklEQVR42h2SXWyaBRSGP6PxwktNvNfE6IWZ8SfW6U1jphcasviTqttcuq26LDO6LVm2Jr0w6jrWdj/VpXGN0IqbG3EUWkqBwkpRmB39GzBaWuArFGgZfIyWfmXjpzx+9iTn5JzkPe85b/IKq+k0yeQQmYSBeEzEO7GM53YCl8vP1eujdLR+zKOsmoeSmgHNMVKimXp2N+VAI6VMEDlqY3PpEhtLl5V0I2RDw1B8HuLPcv/uMNHgDKHJScLhHHcD93Cee4+4rYmIYy/pG5+waH2FGf3T+PueYsP8JkHNTyyYT7Pq3k/wchNCaOhbMtbHSBkfx68/RsjZwexIOz5flN6+m3x/4F2Kpr34ez6n94QKr0bFRM/reLp3IBqbyV9rJvXrc+T7n+HBwNcI8ekB5Hu/sRG4wtKUESm9yP2IFUkcxjNmRNu+m6ELuzh7tIG3Gz8in0mymfobKTZOqVShnF+i4Gil6PqR6oaEgBJZhSw31/d/y6y7A7/7FLOONhamdGQX7Jj/VGP4o4uxcS/FvEjStYew+TOK0vL2Tr3kJS0nKG6hEColoW8iNXiIaqWCwXwRg/Y4eu0pRq06SHYqF/dA5lPYdFKI/8uc5iUi/S+Sj02wGR9n0d2CxdZKOh1FqOb9VAt2autjlPIh7gSnsGn2YdcdZnp+nrLnfQr2J0npn2DtThs15aOItYuku4eqMlSkMJm/GikMqajLqwii6SCLgSOIwa8QnW2wtcYj2UN5/Z9tOZXVaR7c+ADJ0ExNXqOa84KsfF74nfr6/DamVghRLcapK73g6D6MxXgGx2Abzv5zSL4LZOa+Iek7gDRvUSBbVNYUBeUolFaIj+zDZT+C19FC1PQlD2NaSlI38kqH4kcjQkStQvzlZSIXX2Dl6mlS3iuMql9l9Oxr5AJm8qGfuWXZj8t2ksxkF7FrKkxdDZg73yKt2Ynuh0NYrh9Ec+kLbvWeRCglZsiaW8iNHFUskKBSKRPWnyAy0LotJ+c7z83zuzB2voM4doZaYhx58A3Sug+pLE+SMH1HXLeTmLaBlL2d/wAPTrze8HIgvQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Reaction images are a dense region of the space that a few people got stuck in"
+        title="Reaction images are a dense region of the space that a few people got stuck in"
+        src="/static/cde1a926d72edf58532be33d9b596ed0/a6d36/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png"
+        srcset="/static/cde1a926d72edf58532be33d9b596ed0/222b7/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 163w,
+/static/cde1a926d72edf58532be33d9b596ed0/ff46a/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 325w,
+/static/cde1a926d72edf58532be33d9b596ed0/a6d36/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 650w,
+/static/cde1a926d72edf58532be33d9b596ed0/e548f/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 975w,
+/static/cde1a926d72edf58532be33d9b596ed0/3c492/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 1300w,
+/static/cde1a926d72edf58532be33d9b596ed0/70c12/Screen%20Shot%202023-09-21%20at%202.56.31%20AM.png 2110w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Reaction images are a dense region of the space that a few people got stuck in</figcaption>
+  </figure></p>
+<p>People seem to particularly enjoy the feeling of searching through the landscape for a certain goal, “wikipedia game”-style, and it would be fun to flesh out more gamified layers of the tool, like daily challenges.</p>
+<p><figure class="gatsby-resp-image-figure" style="text-decoration: none; background-image: none;">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e67110b4095dc988297ffaf93cbe7f69/512ee/IMG_7792.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 104.9079754601227%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuZsVBiC0J/8QAFRABAQAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCkY//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ah//xAAdEAACAQQDAAAAAAAAAAAAAAAAAREQIVGhQWFx/9oACAEBAAE/IW4buS9i9OXcnvVC+SXkl5P/2gAMAwEAAgADAAAAEKcoP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/EGM//8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QIT//xAAeEAEAAgMAAgMAAAAAAAAAAAABABEhMUFRYZHB0f/aAAgBAQABPxBU0C9sQ2mbblwoCXyXo64fkyMp+X1LBu1vsQDa84gHU9if/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Bingo Card from a playtest"
+        title="Bingo Card from a playtest"
+        src="/static/e67110b4095dc988297ffaf93cbe7f69/6aca1/IMG_7792.jpg"
+        srcset="/static/e67110b4095dc988297ffaf93cbe7f69/d2f63/IMG_7792.jpg 163w,
+/static/e67110b4095dc988297ffaf93cbe7f69/c989d/IMG_7792.jpg 325w,
+/static/e67110b4095dc988297ffaf93cbe7f69/6aca1/IMG_7792.jpg 650w,
+/static/e67110b4095dc988297ffaf93cbe7f69/7c09c/IMG_7792.jpg 975w,
+/static/e67110b4095dc988297ffaf93cbe7f69/01ab0/IMG_7792.jpg 1300w,
+/static/e67110b4095dc988297ffaf93cbe7f69/512ee/IMG_7792.jpg 2857w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Bingo Card from a playtest</figcaption>
+  </figure></p>
+<p>I’m also fascinated by the social potential of meeting the like-minded souls who show up in the same locations as yourself in nodal space. What would it be like to make a new friend by running into each other at the intersection of egyptology and acid house rave posters, or to find a note pinned to the wall in a hallway of antique digital wristwatch adverts? </p>
+<p>I also should say that while this interface provides a unique view onto are.na’s data, it would be nice to layer back in some of their wonderful human curation, and allow you to travel smoothly along the organically defined channels in addition to the embedding-based connections. </p>
+<h3>One more thought:</h3>
+<p>So much internet now is one dimensional scrolling. We don’t get to rudder our own boat: we are dragged downstream towards wherever the algorithm predicts we might find “most engaging”. Let’s bring back the feeling of surfing, and empower ourselves with the ability to navigate and make our own decisions. </p>
+<p>Thanks for reading these notes! I would love to see things you find in the tool. I created a channel for this purpose, <a href="https://www.are.na/max-bittker/found-in-the-river">found in the river</a> that you’re invited to add things to.</p>
+<p>Thanks to Joel Simon, Laurel Schwulst, Chigozie Nri, Evan Casey, Kate Compton, Ryan Murdock, Stochastic Labs, Are.na community, &#x26; everyone who playtested and gave feedback :)</p></div><hr style="margin-bottom:1.65rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/friendship-feed/">← <!-- -->Friendship Feed</a></li></ul></div></div></div></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/river-notes";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-8d4b75a2d1f40b917928.js"],"app":["/app-fcbe65706a73bb6273df.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e8cd133e71d39587a498.js"],"component---src-pages-art-js":["/component---src-pages-art-js-fcd91153e2ffe8e454be.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-f437a17d44519764490b.js"],"component---src-pages-face-js":["/component---src-pages-face-js-c06572c49e1a2a5ed869.js"],"component---src-pages-index-js":["/component---src-pages-index-js-14ac085804f81be41f19.js"],"component---src-pages-projects-js":["/component---src-pages-projects-js-0ddc86b88ba41819cad4.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js"]};/*]]>*/</script><script src="/polyfill-8d4b75a2d1f40b917928.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-4047b62bf1fe23e9fef7.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-fcbe65706a73bb6273df.js" async=""></script><script src="/framework-b6211828bac0bb31fab5.js" async=""></script><script src="/webpack-runtime-89e6f58bb1a8883cd220.js" async=""></script></body></html>
