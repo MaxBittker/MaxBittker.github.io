@@ -11,7 +11,7 @@ River is an exploration engine, allowing you to navigate rapidly through slices 
 This post is a place for me to put down some notes on the design and technical architecture.
 
 ### Designing for Diffusion:
-River is in some ways my attempt to leveraging ML capabilities to fill some of the negative space left unexplored by the excitement about generative diffusion models.
+River is in some ways my way of leveraging ML capabilities to fill negative space left unexplored by generative diffusion models.
 
 
 Text to image tools are exciting, but they lack the sturdiness and control required the sense of craft that I'm looking for - they still feel more like a slot machine than a pencil.
@@ -24,20 +24,20 @@ It makes sense that we end up with tools like Midjourney (opinionated and minima
 
 Four deficiencies of diffusion that nag me:
 1) Reliance on discrete language and named ideas, versus continuous exploration
-2) Slow and doesn't work at the speed of thought, pulling you out of flow state 
+2) Slow: don't work at the speed of thought, pulling you out of flow state 
 3) Artificial images are disposable and unmoored from concrete grounding in cultural context. It makes each individual image less useful as a shared meeting point.
 4) Alienation of source material: laundering references and reheating existing biases of the dataset 
 
-Skipping diffusion entirely and leaning into the capabilities of machine learning techniques as ways to better explore existing datasets feels like a fruitful direction to me.
+Skipping diffusion entirely and experimenting with machine learning techniques as ways to explore existing datasets felt like a fruitful direction to experiment with.
 
 ### Curation as Poetry
 One definition of poetry might be the circling of an idea that resists explicit description.
 
-Tumblr was a formative online scene for teenage Max.  My favorite aspect of the community was way that curation was something that everyone played at.  It was normal to have multiple blogs, and registering a single-topic page under a username like "fuckyeahsweaters" , "onlydavidbowie", or "powerlinesinanime" was all you needed to self-deputize as a librarian, taking on the mantle of curating the theme or idea to the best of your ability.  
+Tumblr was a formative online scene for me as teenager.  My favorite aspect of the community was way that curation was something that everyone played at.  It was normal to have multiple blogs: registering a page under a username like "fuckyeahsweaters" , "onlydavidbowie", or "powerlinesinanime" was all you needed to self-deputize as a librarian, taking on the mantle of curating the theme or idea to the best of your ability.  
 
 ![](Pasted image 20230919155849.png)
 
-People took this job seriously! Similar to the art of a good radio jockey - hunting for deep cuts, sequencing ingredients, and managing tempo. This style of playful curation is at home on the internet, for instance on instagram accounts like these:
+People took this job seriously! Similar to the craft of a good radio jockey: hunting for deep cuts, sequencing ingredients, and managing tempo. This style of playful curation is at home on the internet, for instance on instagram accounts like these:
 [@massive.archive](https://www.instagram.com/massive.archive/),
 [@markrothko](https://www.instagram.com/markrothko/),
 [@dusttodigital](https://www.instagram.com/dusttodigital),
@@ -47,7 +47,7 @@ There's something special to the brain-feel that these sequences create. It's a 
 
 Key to this effect is a balance of forming expectations and breaking them. A rhyme is, after all, the pleasurable tension between similarity and difference.
 
-![](Pasted image 20230915215807.png)
+![](rhyme.png)
 
 
 ### Mathematics of a Visual Rhyme
@@ -77,7 +77,7 @@ But beyond a small local region, these relationship break down. The space has ve
 Images taken from [Non-Euclidean Therapy for AI Trauma](https://www.youtube.com/watch?v=FQ9l4v7zB3I)
 
 
-My solution for this problem was to focus only on local comparisons, and use quick repeated hopping to navigate from region to region - a "surfing" metaphor. 
+My solution for this problem was to focus only on local comparisons, and use repeated hopping to navigate from region to region. When this hopping was fast enough, it worked incredibly well and the feeling of "surfing". 
 
 But, still curious to return to some of those more nuanced mathematical relationships between embeddings if anyone has pointers on new ways to model them.
 
@@ -146,8 +146,7 @@ So much internet now is one dimensional scrolling. We don't get to rudder our ow
 Thanks for reading these notes! I would love to see things you find in the tool. I created a channel for this purpose, [found in the river](https://www.are.na/max-bittker/found-in-the-river) that you're invited to add things to.
 
 
-![](Screen Shot 2023-09-21 at 3.15.28 AM.png)
 
 
 
-Thanks to Joel Simon, Laurel Schwulst, Chigozie Nri, Evan Casey, Kate Compton, Ryan Murdock, Are.na community,  Are.na API developers, & everyone who playtested and gave feedback :\)
+Thanks to Joel Simon, Laurel Schwulst, Chigozie Nri, Evan Casey, Kate Compton, Ryan Murdock, Stochastic Labs, Are.na community, & everyone who playtested and gave feedback :\)
