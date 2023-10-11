@@ -742,6 +742,7 @@ pre tt:after {
   z-index: 101;
   overflow: hidden;
   height: -webkit-fill-available !important;
+  margin: 0 !important;
 
 }
 
