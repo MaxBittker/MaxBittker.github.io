@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{w2l6:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a);t.default=function(){return r.a.createElement("div",null,"return ",r.a.createElement("iframe",{id:"fullFrame",src:"https://postcards.maxbittker.com/write/"}),r.a.createElement("h1",null,"NOT FOUND"),r.a.createElement("p",null,"You just hit a route that doesn't exist..."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-2bff5a6ff1b78f60e695.js.map
