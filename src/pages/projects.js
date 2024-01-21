@@ -8,6 +8,12 @@ export default class Games extends React.Component {
     return (
       <div>
         <h1>Selected Links </h1>
+        <a href="https://river.maxbittker.com/">
+             River
+            </a>{" "}
+          <p>A Visual Connection Engine. Clear your mind and surf laterally though image space.</p>
+        <a href="https://sandspiel.club/">Sandspiel</a>
+
         {/* <p>These mostly represent my personal wor</p> */}
         <a href="https://maxbittker.github.io/Hand-Held-ITP-2022/">
               "Hand Held: Creative Tools for Phones"

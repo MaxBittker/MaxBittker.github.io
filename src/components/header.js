@@ -71,6 +71,11 @@ export default createReactClass({
             blog
           </Link>
         </Wrap>
+        <Wrap n={3} pack>
+          <Link to={"/bookshelf/"} style={linkStyle}>
+          bookshelf
+          </Link>
+        </Wrap>
       </div>
     );
   }

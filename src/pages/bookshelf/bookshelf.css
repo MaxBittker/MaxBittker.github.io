@@ -1,0 +1,23 @@
+.book {
+    max-width: 300px;
+    max-height: 400px;
+    ;
+    margin: 0;
+
+}
+
+.album {
+    width: 200px;
+    margin: 0;
+}
+
+.shelf {
+    line-height: 0;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    padding: 40px;
+    padding-top: 0;
+
+
+}
