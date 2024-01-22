@@ -1,12 +1,14 @@
 .book {
-    max-width: 300px;
+    max-width: min(300px, 50%);
     max-height: 300px;
+
     margin: 0;
 
 }
 
 .album {
-    height: 200px;
+    /* height: 200px; */
+    max-width: min(200px, calc(50% - 8px));
     margin: 0;
     align-self: end;
 
@@ -22,6 +24,7 @@
     position: relative;
     max-width: 115vh;
     margin: auto;
+    margin-bottom: 2em;
 }
 
 .main-shelf img {
@@ -44,10 +47,7 @@ rect {
 
 }
 
-rect:hover {
-    /* fill: red; */
-    /* stroke: blue; */
-}
+rect:hover {}
 
 #overlay-img {
     position: absolute;
@@ -56,7 +56,6 @@ rect:hover {
     z-index: 5;
     width: 30%;
     pointer-events: none;
-    /* border: 1px solid red; */
 }
 
 .rest {
@@ -71,12 +70,8 @@ rect:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: calc(100vw- 4em); */
-    /* position: absolute; */
-    /* left: 0; */
-    /* margin: 2em; */
+
     padding-top: 4px;
-    /* background-color: #f4eeef; */
 
 
 
