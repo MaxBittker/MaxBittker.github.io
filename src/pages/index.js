@@ -151,13 +151,15 @@ export default class Index extends React.Component {
           </div>
         </HomeBrick>
         <HomeBrick>
-          <p>Artist building tools for play, creativity, & communication.</p>
+          <p>Building tools for creative play & communication.</p>
           <p>
             Currently Teaching:<br></br>{" "}
             <a href="https://maxbittker.github.io/Hand-Held-ITP-2021/">
               "Hand Held: Creative Tools for Phones"
             </a>{" "}
           </p>
+         
+
         </HomeBrick>
         <HomeBrick>
           <HRadio n={30} />
@@ -175,14 +177,22 @@ export default class Index extends React.Component {
           </p>
           <p style={{ textAlign: "right" }}>
             {/* <Link to={"/art/"}> art</Link> and weird{" "} */}
-            <Link to={"/projects/"}> More projects ></Link>{" "}
+            <Link to={"/projects/"}> More projects →</Link>{" "}
           </p>
         </HomeBrick>
 
         <HomeBrick>
           <HRadio n={30} type="checkbox" flip />
         </HomeBrick>
-
+        {/* <HomeBrick>
+          <Wrap n={2}>
+          <p>
+            
+             
+              and 
+            </p>
+          </Wrap>
+        </HomeBrick> */}
         <HomeBrick>
           <p>
             <span
@@ -193,33 +203,23 @@ export default class Index extends React.Component {
                 // marginBottom: "1em"
               }}
             >
+               <Link to={"/bookshelf/"}> bookshelf </Link>
+               <Link to={"/blog/"}> blog </Link>
               <a href="https://twitter.com/MaxBittker">
-                {" "}
-                twitter &nbsp;<small></small>
+                twitter
               </a>
               <a href="https://github.com/MaxBittker">
-                {" "}
-                github &nbsp;<small></small>{" "}
+                github
               </a>
               <a href="https://www.instagram.com/maxbittker/">
-                {" "}
-                instagram &nbsp;<small></small>
+                instagram
               </a>
-              <a href="https://goodreads.com/maxbittker">
-                {" "}
-                goodreads {/* <small>(AMZN)</small> */}
-              </a>
+
+              
             </span>
           </p>
         </HomeBrick>
-        <HomeBrick>
-          <Wrap n={2}>
-            <p>
-              I also blog and give talks, you can find some of that stuff over
-              <Link to={"/blog/"}> here.</Link>{" "}
-            </p>
-          </Wrap>
-        </HomeBrick>
+       
         <HomeBrick>
           <Wrap n={5}>
             <input
@@ -254,7 +254,6 @@ export default class Index extends React.Component {
             />
           </Wrap>
         </HomeBrick>
-
         {/* <HomeBrick> */}
         {/* <HRadio n={30} /> */}
         {/* </HomeBrick> */}

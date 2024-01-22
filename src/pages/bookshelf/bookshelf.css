@@ -1,23 +1,83 @@
 .book {
     max-width: 300px;
-    max-height: 400px;
-    ;
+    max-height: 300px;
     margin: 0;
 
 }
 
 .album {
-    width: 200px;
+    height: 200px;
     margin: 0;
+    align-self: end;
+
+}
+
+.album,
+.shelf {
+    margin: 4px;
+}
+
+.main-shelf {
+    width: 100%;
+    position: relative;
+    max-width: 115vh;
+    margin: auto;
+}
+
+.main-shelf img {
+    margin: 0px;
+}
+
+.main-shelf svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+rect {
+    fill: none;
+    stroke: #55555555;
+    pointer-events: all;
+    fill-opacity: .2;
+
+}
+
+rect:hover {
+    /* fill: red; */
+    /* stroke: blue; */
+}
+
+#overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 30%;
+    pointer-events: none;
+    /* border: 1px solid red; */
+}
+
+.rest {
+    line-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .shelf {
     line-height: 0;
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    padding: 40px;
-    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: calc(100vw- 4em); */
+    /* position: absolute; */
+    /* left: 0; */
+    /* margin: 2em; */
+    padding-top: 4px;
+    /* background-color: #f4eeef; */
+
 
 
 }
