@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState }  from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Raven from "raven-js";
 import createReactClass from "create-react-class";
 import Link from "gatsby-link";
 import Favicon from "../components/favicon.js";
-
+import { Shelf } from "./bookshelf.js";
 // import WebGL from "../components/webgl.js";
 
 import "./example.less";
@@ -33,7 +33,7 @@ const HomeBrick = createReactClass({
           onClick={(e) => {
             let parentElement = e.target.parentElement;
             // parentElement.style = "transform: scaleX(1.00) scaleY(0.99);";
-            parentElement.style = "opacity:0.4;"
+            parentElement.style = "opacity:0.4;";
             window.setTimeout(() => {
               parentElement.style = "display:none;";
             }, 150);
@@ -79,7 +79,6 @@ const VideoWorkaround = ({ src }) => (
   />
 );
 
-
 const useBbox = () => {
   const ref = useRef();
   const [bbox, setBbox] = useState({});
@@ -89,36 +88,50 @@ const useBbox = () => {
 
   useEffect(() => {
     set();
-    window.addEventListener('resize', set);
-    return () => window.removeEventListener('resize', set);
+    window.addEventListener("resize", set);
+    return () => window.removeEventListener("resize", set);
   }, []);
 
   return [bbox, ref];
 };
 
-const MailtoButton = ({})=>{
+const MailtoButton = ({}) => {
   const [bbox, ref] = useBbox();
 
- return ( <a href="/mailto">
-  <svg ref={ref} height="50" width="200" id="d" viewBox={`0 0 ${bbox.width} ${bbox.height}`}
-  style={{width:"calc(100% + 8px)", height:"100%", margin:-4}}>
-  <polyline points={`0,0 , ${bbox.width/2},${bbox.height-2}`} stroke="black"/>
-  <polyline points={`${bbox.width},0 , ${bbox.width/2},${bbox.height-2}`} stroke="black"/>
-</svg>
-        <p
-    style={{
-      margin: 0,
-      textAlign: "center",
-    }}
-  >
-    Send me a letter? 
-  </p>
-  </a>);
-}
+  return (
+    <a href="https://postcards.maxbittker.com/write/">
+      <svg
+        ref={ref}
+        height="50"
+        width="200"
+        id="d"
+        viewBox={`0 0 ${bbox.width} ${bbox.height}`}
+        style={{ width: "calc(100% + 8px)", height: "100%", margin: -4 }}
+      >
+        <polyline
+          points={`0,0 , ${bbox.width / 2},${bbox.height - 2}`}
+          stroke="black"
+        />
+        <polyline
+          points={`${bbox.width},0 , ${bbox.width / 2},${bbox.height - 2}`}
+          stroke="black"
+        />
+      </svg>
+      <p
+        style={{
+          margin: 0,
+          textAlign: "center",
+        }}
+      >
+        Send me a letter?
+      </p>
+    </a>
+  );
+};
 
 export default class Index extends React.Component {
   componentDidMount() {
-    window.setInterval(()=>Favicon(),333);
+    window.setInterval(() => Favicon(), 333);
     Favicon();
   }
   render() {
@@ -128,7 +141,7 @@ export default class Index extends React.Component {
       <div className="home">
         <HomeBrick>
           <Wrap n={5}>
-           <MailtoButton/>
+            <MailtoButton />
           </Wrap>
         </HomeBrick>
         <HomeBrick>
@@ -158,8 +171,6 @@ export default class Index extends React.Component {
               "Hand Held: Creative Tools for Phones"
             </a>{" "}
           </p>
-         
-
         </HomeBrick>
         <HomeBrick>
           <HRadio n={30} />
@@ -203,23 +214,19 @@ export default class Index extends React.Component {
                 // marginBottom: "1em"
               }}
             >
-               <Link to={"/bookshelf/"}> bookshelf </Link>
-               <Link to={"/blog/"}> blog </Link>
-              <a href="https://twitter.com/MaxBittker">
-                twitter
-              </a>
-              <a href="https://github.com/MaxBittker">
-                github
-              </a>
-              <a href="https://www.instagram.com/maxbittker/">
-                instagram
-              </a>
-
-              
+              {/* <Link to={"/bookshelf/"}> shelf </Link> */}
+              <Link to={"/blog/"}> blog </Link>
+              <a href="https://twitter.com/MaxBittker">twitter</a>
+              <a href="https://github.com/MaxBittker">github</a>
+              <a href="https://www.instagram.com/maxbittker/">instagram</a>
             </span>
           </p>
         </HomeBrick>
-       
+        <HomeBrick>
+          <Link to={"/bookshelf/"}>
+            <Shelf />
+          </Link>
+        </HomeBrick>
         <HomeBrick>
           <Wrap n={5}>
             <input
@@ -299,11 +306,11 @@ export default class Index extends React.Component {
         <HomeBrick>
           <HRadio n={30} flip />
         </HomeBrick>
-        <HomeBrick>
+        {/* <HomeBrick>
           <Wrap n={6}>
             <img alt="my cat pippin" src={dog} />
           </Wrap>
-        </HomeBrick>
+        </HomeBrick> */}
         {/* <HomeBrick>
           <Wrap n={8}>
             <div style={{ position: "relative" }}>
@@ -401,7 +408,7 @@ export default class Index extends React.Component {
                 width: "100%",
                 height: "100%",
                 display: "block",
-                filter: "brightness(0.95) sepia(0.04)"
+                filter: "brightness(0.95) sepia(0.04)",
               }}
               alt="source: wikipedia user LucasVB"
             />

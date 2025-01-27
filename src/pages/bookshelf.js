@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./example.less";
-import shelf from "./bookshelf/shelf.webp";
+import shelf from "./bookshelf/shelf_small.webp";
 import connie from "./bookshelf/connie.jpeg";
 import ttc from "./bookshelf/tao_te_ching.png";
 import weaving from "./bookshelf/weaving.webp";
@@ -66,8 +66,7 @@ import c54 from "./bookshelf/covers/54.png";
 import c55 from "./bookshelf/covers/55.png";
 import c56 from "./bookshelf/covers/56.png";
 
-
-let titles= {
+let titles = {
   [c1]: "The Cold Start Problem, Andrew Chen",
   [c2]: "How to Do Nothing, Jenny Odell",
   [c3]: "A Year with Swollen Appendices, Brian Eno",
@@ -90,7 +89,8 @@ let titles= {
   [c20]: "The Case for Black Reparations, Boris Bittker",
   [c21]: "How Buildings Learn, Stewart Brand",
   [c22]: "Landscape and Desire, John Bell",
-  [c23]: "68 Ways to make Really Big Puppets, Sara Peattie and the Puppeteers Collective",
+  [c23]:
+    "68 Ways to make Really Big Puppets, Sara Peattie and the Puppeteers Collective",
   [c24]: "Making Comics, Lynda Barry",
   [c25]: "Children's Experiences in Art, Pearl Greenberg",
   [c26]: "Taking a Line for a Walk Assignments in Design Education, Nina Paim",
@@ -111,7 +111,8 @@ let titles= {
 
   [c40]: "The Living, Annie Dillard",
   [c41]: "Wolf in White Van, John Darnielle",
-  [c42]: "Seeing is forgetting the name of the thing one sees, Lawrence Weschler",
+  [c42]:
+    "Seeing is forgetting the name of the thing one sees, Lawrence Weschler",
   [c43]: "Underground, Haruki Murakami",
   [c44]: "Lonely Hearts Killer, Tomoyuki Hoshino",
   [c45]: "There is no antimimetics Division, qntm",
@@ -127,9 +128,7 @@ let titles= {
   [c54]: "The Earthsea Trilogy, Ursula K. Le Guin",
   [c55]: "Moby Dick, Herman Melville",
   [c56]: "Dream Work, Mary Oliver",
-
-}
-
+};
 
 // width={4033}
 // height={3025}
@@ -140,6 +139,47 @@ const MapSvg = (props) => (
     viewBox="0 0 4033 3025"
     {...props}
   >
+    <path
+      d="M3083.34 194.976C3084 193.273 3086.41 193.273 3087.07 194.976L3095.59 216.961C3095.88 217.693 3096.56 218.192 3097.35 218.235L3120.89 219.546C3122.71 219.647 3123.46 221.939 3122.04 223.093L3103.77 237.99C3103.16 238.486 3102.89 239.293 3103.1 240.052L3109.12 262.847C3109.59 264.612 3107.64 266.029 3106.11 265.039L3086.29 252.261C3085.63 251.836 3084.78 251.836 3084.12 252.261L3064.31 265.039C3062.77 266.029 3060.82 264.612 3061.29 262.847L3067.32 240.052C3067.52 239.293 3067.26 238.486 3066.65 237.99L3048.37 223.093C3046.96 221.939 3047.7 219.647 3049.53 219.546L3073.07 218.235C3073.85 218.192 3074.54 217.693 3074.82 216.961L3083.34 194.976Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M523.377 1625.75C524.037 1624.05 526.446 1624.05 527.106 1625.75L535.627 1647.73C535.911 1648.47 536.597 1648.96 537.381 1649.01L560.923 1650.32C562.747 1650.42 563.491 1652.71 562.076 1653.87L543.8 1668.76C543.191 1669.26 542.929 1670.07 543.13 1670.82L549.159 1693.62C549.626 1695.38 547.676 1696.8 546.141 1695.81L526.325 1683.03C525.666 1682.61 524.818 1682.61 524.158 1683.03L504.342 1695.81C502.807 1696.8 500.857 1695.38 501.324 1693.62L507.353 1670.82C507.554 1670.07 507.292 1669.26 506.683 1668.76L488.408 1653.87C486.992 1652.71 487.737 1650.42 489.56 1650.32L513.102 1649.01C513.886 1648.96 514.572 1648.47 514.856 1647.73L523.377 1625.75Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M776.612 1673.01C777.272 1671.31 779.681 1671.31 780.341 1673.01L788.862 1695C789.146 1695.73 789.832 1696.23 790.616 1696.27L814.158 1697.58C815.982 1697.68 816.726 1699.97 815.311 1701.13L797.035 1716.03C796.426 1716.52 796.164 1717.33 796.365 1718.09L802.394 1740.88C802.861 1742.65 800.911 1744.06 799.376 1743.07L779.56 1730.3C778.9 1729.87 778.053 1729.87 777.393 1730.3L757.577 1743.07C756.042 1744.06 754.092 1742.65 754.559 1740.88L760.588 1718.09C760.789 1717.33 760.527 1716.52 759.918 1716.03L741.642 1701.13C740.227 1699.97 740.971 1697.68 742.795 1697.58L766.337 1696.27C767.121 1696.23 767.807 1695.73 768.091 1695L776.612 1673.01Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M901.077 1715.95C901.737 1714.24 904.147 1714.24 904.807 1715.95L913.328 1737.93C913.611 1738.66 914.297 1739.16 915.081 1739.21L938.623 1740.52C940.447 1740.62 941.192 1742.91 939.776 1744.06L921.5 1758.96C920.891 1759.46 920.629 1760.26 920.83 1761.02L926.859 1783.82C927.326 1785.58 925.377 1787 923.842 1786.01L904.026 1773.23C903.366 1772.81 902.518 1772.81 901.858 1773.23L882.042 1786.01C880.507 1787 878.558 1785.58 879.025 1783.82L885.054 1761.02C885.254 1760.26 884.992 1759.46 884.384 1758.96L866.108 1744.06C864.692 1742.91 865.437 1740.62 867.26 1740.52L890.803 1739.21C891.587 1739.16 892.272 1738.66 892.556 1737.93L901.077 1715.95Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M1569.35 1539.88C1570.01 1538.18 1572.42 1538.18 1573.08 1539.88L1581.6 1561.86C1581.88 1562.6 1582.57 1563.09 1583.35 1563.14L1606.89 1564.45C1608.72 1564.55 1609.46 1566.84 1608.04 1567.99L1589.77 1582.89C1589.16 1583.39 1588.9 1584.19 1589.1 1584.95L1595.13 1607.75C1595.6 1609.51 1593.65 1610.93 1592.11 1609.94L1572.29 1597.16C1571.63 1596.74 1570.79 1596.74 1570.13 1597.16L1550.31 1609.94C1548.78 1610.93 1546.83 1609.51 1547.29 1607.75L1553.32 1584.95C1553.52 1584.19 1553.26 1583.39 1552.65 1582.89L1534.38 1567.99C1532.96 1566.84 1533.71 1564.55 1535.53 1564.45L1559.07 1563.14C1559.86 1563.09 1560.54 1562.6 1560.83 1561.86L1569.35 1539.88Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M1666.16 1564C1666.82 1562.3 1669.23 1562.3 1669.89 1564L1678.41 1585.99C1678.69 1586.72 1679.38 1587.22 1680.16 1587.26L1703.7 1588.57C1705.53 1588.67 1706.27 1590.97 1704.86 1592.12L1686.58 1607.02C1685.97 1607.51 1685.71 1608.32 1685.91 1609.08L1691.94 1631.87C1692.41 1633.64 1690.46 1635.06 1688.92 1634.07L1669.11 1621.29C1668.45 1620.86 1667.6 1620.86 1666.94 1621.29L1647.12 1634.07C1645.59 1635.06 1643.64 1633.64 1644.11 1631.87L1650.13 1609.08C1650.34 1608.32 1650.07 1607.51 1649.47 1607.02L1631.19 1592.12C1629.77 1590.97 1630.52 1588.67 1632.34 1588.57L1655.88 1587.26C1656.67 1587.22 1657.35 1586.72 1657.64 1585.99L1666.16 1564Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M2050.89 1810.46C2051.55 1808.76 2053.96 1808.76 2054.62 1810.46L2063.14 1832.45C2063.42 1833.18 2064.11 1833.68 2064.89 1833.72L2088.43 1835.03C2090.26 1835.13 2091 1837.42 2089.59 1838.58L2071.31 1853.48C2070.7 1853.97 2070.44 1854.78 2070.64 1855.54L2076.67 1878.33C2077.14 1880.1 2075.19 1881.51 2073.65 1880.53L2053.84 1867.75C2053.18 1867.32 2052.33 1867.32 2051.67 1867.75L2031.85 1880.53C2030.32 1881.51 2028.37 1880.1 2028.84 1878.33L2034.86 1855.54C2035.07 1854.78 2034.8 1853.97 2034.19 1853.48L2015.92 1838.58C2014.5 1837.42 2015.25 1835.13 2017.07 1835.03L2040.61 1833.72C2041.4 1833.68 2042.08 1833.18 2042.37 1832.45L2050.89 1810.46Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M3610.05 2063.92C3610.71 2062.21 3613.12 2062.21 3613.78 2063.92L3622.31 2085.9C3622.59 2086.63 3623.27 2087.13 3624.06 2087.18L3647.6 2088.49C3649.42 2088.59 3650.17 2090.88 3648.75 2092.03L3630.48 2106.93C3629.87 2107.43 3629.61 2108.23 3629.81 2108.99L3635.84 2131.79C3636.3 2133.55 3634.35 2134.97 3632.82 2133.98L3613 2121.2C3612.34 2120.78 3611.5 2120.78 3610.84 2121.2L3591.02 2133.98C3589.48 2134.97 3587.54 2133.55 3588 2131.79L3594.03 2108.99C3594.23 2108.23 3593.97 2107.43 3593.36 2106.93L3575.09 2092.03C3573.67 2090.88 3574.41 2088.59 3576.24 2088.49L3599.78 2087.18C3600.56 2087.13 3601.25 2086.63 3601.53 2085.9L3610.05 2063.92Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M789.077 23.2356C789.737 21.5326 792.147 21.5326 792.807 23.2356L801.328 45.2206C801.612 45.9528 802.297 46.4511 803.081 46.4948L826.624 47.8049C828.447 47.9063 829.192 50.198 827.776 51.352L809.5 66.2496C808.892 66.7457 808.63 67.5521 808.83 68.3112L814.859 91.1059C815.326 92.8716 813.377 94.2879 811.842 93.2981L792.026 80.5203C791.366 80.0948 790.518 80.0948 789.858 80.5203L770.042 93.2981C768.507 94.2879 766.558 92.8716 767.025 91.1059L773.054 68.3112C773.255 67.5521 772.993 66.7457 772.384 66.2496L754.108 51.352C752.692 50.198 753.437 47.9063 755.261 47.8049L778.803 46.4948C779.587 46.4511 780.273 45.9528 780.556 45.2206L789.077 23.2356Z"
+      fill="#E7CC86"
+    />
+    <path
+      d="M579.054 47.1138C579.714 45.4108 582.123 45.4108 582.783 47.1138L591.304 69.0988C591.588 69.8309 592.274 70.3293 593.058 70.3729L616.6 71.683C618.423 71.7845 619.168 74.0762 617.752 75.2302L599.477 90.1277C598.868 90.6239 598.606 91.4302 598.807 92.1893L604.836 114.984C605.303 116.75 603.353 118.166 601.818 117.176L582.002 104.398C581.342 103.973 580.494 103.973 579.835 104.398L560.019 117.176C558.484 118.166 556.534 116.75 557.001 114.984L563.03 92.1893C563.231 91.4302 562.969 90.6239 562.36 90.1277L544.084 75.2302C542.669 74.0762 543.413 71.7845 545.237 71.683L568.779 70.3729C569.563 70.3293 570.249 69.8309 570.533 69.0988L579.054 47.1138Z"
+      fill="#E7CC86"
+    />
+
     <rect
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
@@ -692,233 +732,468 @@ const MapSvg = (props) => (
 
 // let options =
 const Games = (props) => {
-  let [hovered, setHovered] = React.useState(false);
-  const main = React.useRef(null);
-
-  let bounds = main.current?.getBoundingClientRect();
-  let midpoint = (bounds?.left + bounds?.right) / 2;
-
-  let overlayStyle = {
-    top: hovered?.pos?.top + hovered?.pos?.height / 2 - bounds?.top,
-    transform: "translateY(-50%)",
-  };
-
-  if (hovered?.pos?.right < midpoint) {
-    overlayStyle.left = hovered?.pos?.right - bounds?.left;
-  } else {
-    overlayStyle.left = hovered?.pos?.left - bounds?.left;
-    overlayStyle.transform = "translateX(-100%) translateY(-50%)";
-  }
   return (
     <div className="shelf">
-      <div className="main-shelf" ref={main}>
-        <img src={shelf}></img>
-        <img id="overlay-img" src={hovered?.url} style={overlayStyle}></img>
-        <MapSvg
-          onMouseEnter={(e) => {
-            // console.log(e.target.getBoundingClientRect())
-            if (e.target.id == hovered?.url) return;
-            setHovered({
-              url: e.target.id,
-              pos: e.target.getBoundingClientRect(),
-            });
-            // e.target.style.fill = "yellow";
-          }}
-          onMouseLeave={(e) => {
-            let id = e.target.id;
-            setHovered((v) => {
-              if (v?.url == id) {
-                return { url: null };
-              }
-              return v;
-            });
-            e.target.style.fill = "none";
-          }}
-        ></MapSvg>
+      <Shelf />
+      <div className="rest">
+        <img
+          className="book"
+          src={ttc}
+          alt="The Tao te Ching translation by Ursula K. Le Guin "
+          title="The Tao te Ching translation by Ursula K. Le Guin "
+        ></img>
+        <img
+          className="book"
+          src={weaving}
+          alt="Anni Albers, on Weaving"
+          title="Anni Albers, on Weaving"
+        ></img>
+        <img
+          className="book"
+          src={mindstorms}
+          alt="Seymour Papert, Mindstorms"
+          title="Seymour Papert, Mindstorms"
+        ></img>
+        <img
+          className="book"
+          src={c1}
+          alt={titles[c1]}
+          title={titles[c1]}
+        ></img>
+        <img
+          className="book"
+          src={c2}
+          alt={titles[c2]}
+          title={titles[c2]}
+        ></img>
+        <img
+          className="book"
+          src={c3}
+          alt={titles[c3]}
+          title={titles[c3]}
+        ></img>
+        <img
+          className="book"
+          src={c4}
+          alt={titles[c4]}
+          title={titles[c4]}
+        ></img>
+        <img
+          className="book"
+          src={c5}
+          alt={titles[c5]}
+          title={titles[c5]}
+        ></img>
+        <img
+          className="book"
+          src={c6}
+          alt={titles[c6]}
+          title={titles[c6]}
+        ></img>
+        <img
+          className="book"
+          src={c7}
+          alt={titles[c7]}
+          title={titles[c7]}
+        ></img>
+        <img
+          className="book"
+          src={c8}
+          alt={titles[c8]}
+          title={titles[c8]}
+        ></img>
+        <img
+          className="book"
+          src={c9}
+          alt={titles[c9]}
+          title={titles[c9]}
+        ></img>
+        <img
+          className="book"
+          src={c10}
+          alt={titles[c10]}
+          title={titles[c10]}
+        ></img>
+        <img
+          className="book"
+          src={c11}
+          alt={titles[c11]}
+          title={titles[c11]}
+        ></img>
+        <img
+          className="book"
+          src={c12}
+          alt={titles[c12]}
+          title={titles[c12]}
+        ></img>
+        <img
+          className="book"
+          src={c13}
+          alt={titles[c13]}
+          title={titles[c13]}
+        ></img>
+        <img
+          className="book"
+          src={c14}
+          alt={titles[c14]}
+          title={titles[c14]}
+        ></img>
+        <img
+          className="book"
+          src={c15}
+          alt={titles[c15]}
+          title={titles[c15]}
+        ></img>
+        <img
+          className="book"
+          src={c16}
+          alt={titles[c16]}
+          title={titles[c16]}
+        ></img>
+        <img
+          className="book"
+          src={c17}
+          alt={titles[c17]}
+          title={titles[c17]}
+        ></img>
+        <img
+          className="book"
+          src={c18}
+          alt={titles[c18]}
+          title={titles[c18]}
+        ></img>
+        <img
+          className="book"
+          src={c19}
+          alt={titles[c19]}
+          title={titles[c19]}
+        ></img>
+        <img
+          className="book"
+          src={c20}
+          alt={titles[c20]}
+          title={titles[c20]}
+        ></img>
+        <img
+          className="book"
+          src={c21}
+          alt={titles[c21]}
+          title={titles[c21]}
+        ></img>
+        <img
+          className="book"
+          src={c22}
+          alt={titles[c22]}
+          title={titles[c22]}
+        ></img>
+        <img
+          className="book"
+          src={c23}
+          alt={titles[c23]}
+          title={titles[c23]}
+        ></img>
+        <img
+          className="book"
+          src={c24}
+          alt={titles[c24]}
+          title={titles[c24]}
+        ></img>
+        <img
+          className="book"
+          src={c25}
+          alt={titles[c25]}
+          title={titles[c25]}
+        ></img>
+        <img
+          className="book"
+          src={c26}
+          alt={titles[c26]}
+          title={titles[c26]}
+        ></img>
+        <img
+          className="book"
+          src={c27}
+          alt={titles[c27]}
+          title={titles[c27]}
+        ></img>
+        <img
+          className="book"
+          src={c28}
+          alt={titles[c28]}
+          title={titles[c28]}
+        ></img>
+        <img
+          className="book"
+          src={c29}
+          alt={titles[c29]}
+          title={titles[c29]}
+        ></img>
+        <img
+          className="book"
+          src={c30}
+          alt={titles[c30]}
+          title={titles[c30]}
+        ></img>
+        <img
+          className="book"
+          src={c31}
+          alt={titles[c31]}
+          title={titles[c31]}
+        ></img>
+        <img
+          className="book"
+          src={c32}
+          alt={titles[c32]}
+          title={titles[c32]}
+        ></img>
+        <img
+          className="book"
+          src={c33}
+          alt={titles[c33]}
+          title={titles[c33]}
+        ></img>
+        <img
+          className="book"
+          src={c34}
+          alt={titles[c34]}
+          title={titles[c34]}
+        ></img>
+        <img
+          className="book"
+          src={c35}
+          alt={titles[c35]}
+          title={titles[c35]}
+        ></img>
+        <img
+          className="book"
+          src={c36}
+          alt={titles[c36]}
+          title={titles[c36]}
+        ></img>
+        <img
+          className="book"
+          src={c37}
+          alt={titles[c37]}
+          title={titles[c37]}
+        ></img>
+        <img
+          className="book"
+          src={c38}
+          alt={titles[c38]}
+          title={titles[c38]}
+        ></img>
+        <img
+          className="book"
+          src={c39}
+          alt={titles[c39]}
+          title={titles[c39]}
+        ></img>
+        <img
+          className="book"
+          src={c40}
+          alt={titles[c40]}
+          title={titles[c40]}
+        ></img>
+        <img
+          className="book"
+          src={c41}
+          alt={titles[c41]}
+          title={titles[c41]}
+        ></img>
+        <img
+          className="book"
+          src={c42}
+          alt={titles[c42]}
+          title={titles[c42]}
+        ></img>
+        <img
+          className="book"
+          src={c43}
+          alt={titles[c43]}
+          title={titles[c43]}
+        ></img>
+        <img
+          className="book"
+          src={c44}
+          alt={titles[c44]}
+          title={titles[c44]}
+        ></img>
+        <img
+          className="book"
+          src={c45}
+          alt={titles[c45]}
+          title={titles[c45]}
+        ></img>
+        <img
+          className="book"
+          src={c46}
+          alt={titles[c46]}
+          title={titles[c46]}
+        ></img>
+        <img
+          className="book"
+          src={c47}
+          alt={titles[c47]}
+          title={titles[c47]}
+        ></img>
+        <img
+          className="book"
+          src={c48}
+          alt={titles[c48]}
+          title={titles[c48]}
+        ></img>
+        <img
+          className="book"
+          src={c49}
+          alt={titles[c49]}
+          title={titles[c49]}
+        ></img>
+        <img
+          className="book"
+          src={c50}
+          alt={titles[c50]}
+          title={titles[c50]}
+        ></img>
+        <img
+          className="book"
+          src={c51}
+          alt={titles[c51]}
+          title={titles[c51]}
+        ></img>
+        <img
+          className="book"
+          src={c52}
+          alt={titles[c52]}
+          title={titles[c52]}
+        ></img>
+        <img
+          className="book"
+          src={c53}
+          alt={titles[c53]}
+          title={titles[c53]}
+        ></img>
+        <img
+          className="book"
+          src={c54}
+          alt={titles[c54]}
+          title={titles[c54]}
+        ></img>
+        <img
+          className="book"
+          src={c55}
+          alt={titles[c55]}
+          title={titles[c55]}
+        ></img>
+        <img
+          className="book"
+          src={c56}
+          alt={titles[c56]}
+          title={titles[c56]}
+        ></img>
+
+        <img
+          className="album star"
+          src={water}
+          alt="The Microphones - It was Hot, we stayed in the water"
+          title="The Microphones - It was Hot, we stayed in the water"
+        ></img>
+        <img
+          className="album"
+          src={connie}
+          alt="Connie Converse - How Sad, How Lovely"
+          title="Connie Converse - How Sad, How Lovely"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/dWCXUaPJxNF-Elbfl7YUZzZiC402aiP4KQUBgM3HpVk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1MTcy/NDYtMTIyNTUwNjk3/MC5qcGVn.jpeg"
+          alt="Arthur Russel - Love is Overtaking Me"
+          title="Arthur Russel - Love is Overtaking Me"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/-TPDOxjQITpy0SkFxeCjHgsTWhUz8TKocSRyr8ICYqo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NjU4/MzUtMTY3NjY5NjI3/NC03OTc5LmpwZWc.jpeg"
+          alt="Ramshackle Glory - Live the Dream"
+          title="Ramshackle Glory - Live the Dream"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/YhjoHEONf_RFb9EUcXjt3orGv1vBTlvhhKRK2Ltb4aI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNjE4/NzY2LTE1MDEwNTg0/ODgtNjM5Mi5qcGVn.jpeg"
+          alt="Nana Grizol - Ursa Minor"
+          title="Nana Grizol - Ursa Minor"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/d_08H2Id3o-LqzLnQN72LcihGmeY6QKTTlBupa9HmBs/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc4OTM1/NC0xNjAzMDE3MTk3/LTk1MjEuanBlZw.jpeg"
+          alt="Songs: Ohia - The Magnolia Electric Co."
+          title="Songs: Ohia - The Magnolia Electric Co."
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/FR9lCzrV0Eqs2V0oFMbICij-ZKSnF_eWZw9x6MkiJVY/rs:fit/g:sm/q:90/h:548/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNzE4/NDY0LTE1NTAwOTE5/MzYtNDU0My5qcGVn.jpeg"
+          alt="Robyn - Honey"
+          title="Robyn - Honey"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/Q-8eWi3F2f4JmB7fT8BsqLvwF3fiCX-OH0wJWh7tsCs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3Mjgw/ODgtMTM2NjkyMjA4/Ny0yNTAyLmpwZWc.jpeg"
+          alt="Bill Callahan - Sometimes I Wish We Were an Eagle"
+          title="Bill Callahan - Sometimes I Wish We Were an Eagle"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/A2lx7X0oz1AQCceuSJlFzDmTWtAYf8S0GN-1-gDGvnk/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDI1/ODA2LTE1MTYxMTUx/NDMtNTU3Mi5qcGVn.jpeg"
+          alt="Laaraji - Vision Songs Vol. 1"
+          title="Laaraji - Vision Songs Vol. 1"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/RuVS-efrxKKAvQXK98YdtyHc6EDfn7Eh3G2N11L8_2U/rs:fit/g:sm/q:90/h:600/w:586/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ0MzA2/NS0xNjk5NjI4MzY3/LTcyMDguanBlZw.jpeg"
+          alt="Yo La Tengo - I can hear the heart beating as one"
+          title="Yo La Tengo - I can hear the heart beating as one"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/-rz_gYvNwQ-Rw_jAbF9IwIiG0SSp6N3aEu5EOZo-AaM/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0ODI1/MDYzLTE1ODIzMjIz/MjAtNzE2Ni5qcGVn.jpeg"
+          alt="Swamp Dogg - Sorry You Couldn't Make It"
+          title="Swamp Dogg - Sorry You Couldn't Make It"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/58iCXHy_Lx31iEDm1xuSfmpBRjDVVmXj9CXoAfTTDs0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0Njk4/NzIxLTE1Nzk4ODE0/MDItMTA2Ny5qcGVn.jpeg"
+          alt="Andy Shauf - The Neon Skyline"
+          title="Andy Shauf - The Neon Skyline"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/BgfL5cm5mkVWFI3L1YFuy7QSgBpyrWEgiZ51Z96XYf4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0ODQ3/ODktMTI2NTc3MzI5/MC5qcGVn.jpeg"
+          alt="Lucinda Williams - Car Wheels on a Gravel Road"
+          title="Lucinda Williams - Car Wheels on a Gravel Road"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/FptRWHXBR9mOYo0OTvy_D3uHy4ny0fBTt_Mn-qR53PI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNzI3/NDMzLTE1NTk4NTUx/NjUtODc2NC5qcGVn.jpeg"
+          alt="Katie Dey - Solipsisters"
+          title="Katie Dey - Solipsisters"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/dGMgrschNI2ZMMp19Eg8ndGSRGy1-JBevujgLq5k1oY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MDUw/MDAtMTQ2ODM5NTY5/MC00MjQwLmpwZWc.jpeg"
+          alt="Daniel Johnston - 1990"
+          title="Daniel Johnston - 1990"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/IBRO5X1WPDdFXflUG65VpdPzQJVzqUVFlsLoFkRV7vw/rs:fit/g:sm/q:90/h:348/w:386/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1MDIw/ODItMTIyNDQ2NjIw/Mi5qcGVn.jpeg"
+          alt="Chad VanGaalen - Soft Airplane"
+          title="Chad VanGaalen - Soft Airplane"
+        ></img>
+        <img
+          className="album"
+          src="https://i.discogs.com/Vt0ngf1T_ZeDgVwtDk9ISD-ALFNcenFidkBiN0MRSUY/rs:fit/g:sm/q:90/h:600/w:592/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MjE2/MjQtMTI1MTA1ODc2/My5qcGVn.jpeg"
+          alt="Tom T Hall - Greatest Hits"
+          title="Tom T Hall - Greatest Hits"
+        ></img>
       </div>
-
-      <br></br>
-    <div className="rest">
-    <img
-        className="book"
-        src={ttc}
-        alt="The Tao te Ching translation by Ursula K. Le Guin "
-        title="The Tao te Ching translation by Ursula K. Le Guin "
-      ></img>
-      <img
-        className="book"
-        src={weaving}
-        alt="Anni Albers, on Weaving"
-        title="Anni Albers, on Weaving"
-      ></img>
-      <img
-        className="book"
-        src={mindstorms}
-        alt="Seymour Papert, Mindstorms"
-        title="Seymour Papert, Mindstorms"
-      ></img>
-      <img className="book" src={c1} alt={titles[c1]} title={titles[c1]}></img>
-      <img className="book" src={c2} alt={titles[c2]} title={titles[c2]}></img>
-<img className="book" src={c3} alt={titles[c3]} title={titles[c3]}></img>
-<img className="book" src={c4} alt={titles[c4]} title={titles[c4]}></img>
-<img className="book" src={c5} alt={titles[c5]} title={titles[c5]}></img>
-<img className="book" src={c6} alt={titles[c6]} title={titles[c6]}></img>
-<img className="book" src={c7} alt={titles[c7]} title={titles[c7]}></img>
-<img className="book" src={c8} alt={titles[c8]} title={titles[c8]}></img>
-<img className="book" src={c9} alt={titles[c9]} title={titles[c9]}></img>
-<img className="book" src={c10} alt={titles[c10]} title={titles[c10]}></img>
-<img className="book" src={c11} alt={titles[c11]} title={titles[c11]}></img>
-<img className="book" src={c12} alt={titles[c12]} title={titles[c12]}></img>
-<img className="book" src={c13} alt={titles[c13]} title={titles[c13]}></img>
-<img className="book" src={c14} alt={titles[c14]} title={titles[c14]}></img>
-<img className="book" src={c15} alt={titles[c15]} title={titles[c15]}></img>
-<img className="book" src={c16} alt={titles[c16]} title={titles[c16]}></img>
-<img className="book" src={c17} alt={titles[c17]} title={titles[c17]}></img>
-<img className="book" src={c18} alt={titles[c18]} title={titles[c18]}></img>
-<img className="book" src={c19} alt={titles[c19]} title={titles[c19]}></img>
-<img className="book" src={c20} alt={titles[c20]} title={titles[c20]}></img>
-<img className="book" src={c21} alt={titles[c21]} title={titles[c21]}></img>
-<img className="book" src={c22} alt={titles[c22]} title={titles[c22]}></img>
-<img className="book" src={c23} alt={titles[c23]} title={titles[c23]}></img>
-<img className="book" src={c24} alt={titles[c24]} title={titles[c24]}></img>
-<img className="book" src={c25} alt={titles[c25]} title={titles[c25]}></img>
-<img className="book" src={c26} alt={titles[c26]} title={titles[c26]}></img>
-<img className="book" src={c27} alt={titles[c27]} title={titles[c27]}></img>
-<img className="book" src={c28} alt={titles[c28]} title={titles[c28]}></img>
-<img className="book" src={c29} alt={titles[c29]} title={titles[c29]}></img>
-<img className="book" src={c30} alt={titles[c30]} title={titles[c30]}></img>
-<img className="book" src={c31} alt={titles[c31]} title={titles[c31]}></img>
-<img className="book" src={c32} alt={titles[c32]} title={titles[c32]}></img>
-<img className="book" src={c33} alt={titles[c33]} title={titles[c33]}></img>
-<img className="book" src={c34} alt={titles[c34]} title={titles[c34]}></img>
-<img className="book" src={c35} alt={titles[c35]} title={titles[c35]}></img>
-<img className="book" src={c36} alt={titles[c36]} title={titles[c36]}></img>
-<img className="book" src={c37} alt={titles[c37]} title={titles[c37]}></img>
-<img className="book" src={c38} alt={titles[c38]} title={titles[c38]}></img>
-<img className="book" src={c39} alt={titles[c39]} title={titles[c39]}></img>
-<img className="book" src={c40} alt={titles[c40]} title={titles[c40]}></img>
-<img className="book" src={c41} alt={titles[c41]} title={titles[c41]}></img>
-<img className="book" src={c42} alt={titles[c42]} title={titles[c42]}></img>
-<img className="book" src={c43} alt={titles[c43]} title={titles[c43]}></img>
-<img className="book" src={c44} alt={titles[c44]} title={titles[c44]}></img>
-<img className="book" src={c45} alt={titles[c45]} title={titles[c45]}></img>
-<img className="book" src={c46} alt={titles[c46]} title={titles[c46]}></img>
-<img className="book" src={c47} alt={titles[c47]} title={titles[c47]}></img>
-<img className="book" src={c48} alt={titles[c48]} title={titles[c48]}></img>
-<img className="book" src={c49} alt={titles[c49]} title={titles[c49]}></img>
-<img className="book" src={c50} alt={titles[c50]} title={titles[c50]}></img>
-<img className="book" src={c51} alt={titles[c51]} title={titles[c51]}></img>
-<img className="book" src={c52} alt={titles[c52]} title={titles[c52]}></img>
-<img className="book" src={c53} alt={titles[c53]} title={titles[c53]}></img>
-<img className="book" src={c54} alt={titles[c54]} title={titles[c54]}></img>
-<img className="book" src={c55} alt={titles[c55]} title={titles[c55]}></img>
-<img className="book" src={c56} alt={titles[c56]} title={titles[c56]}></img>
-    
-
-      <img
-        className="album"
-        src={water}
-        alt="The Microphones - It was Hot, we stayed in the water"
-        title="The Microphones - It was Hot, we stayed in the water"
-      ></img>
-      <img
-        className="album"
-        src={connie}
-        alt="Connie Converse - How Sad, How Lovely"
-        title="Connie Converse - How Sad, How Lovely"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/dWCXUaPJxNF-Elbfl7YUZzZiC402aiP4KQUBgM3HpVk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1MTcy/NDYtMTIyNTUwNjk3/MC5qcGVn.jpeg"
-        alt="Arthur Russel - Love is Overtaking Me"
-        title="Arthur Russel - Love is Overtaking Me"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/-TPDOxjQITpy0SkFxeCjHgsTWhUz8TKocSRyr8ICYqo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NjU4/MzUtMTY3NjY5NjI3/NC03OTc5LmpwZWc.jpeg"
-        alt="Ramshackle Glory - Live the Dream"
-        title="Ramshackle Glory - Live the Dream"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/YhjoHEONf_RFb9EUcXjt3orGv1vBTlvhhKRK2Ltb4aI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNjE4/NzY2LTE1MDEwNTg0/ODgtNjM5Mi5qcGVn.jpeg"
-        alt="Nana Grizol - Ursa Minor"
-        title="Nana Grizol - Ursa Minor"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/d_08H2Id3o-LqzLnQN72LcihGmeY6QKTTlBupa9HmBs/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc4OTM1/NC0xNjAzMDE3MTk3/LTk1MjEuanBlZw.jpeg"
-        alt="Songs: Ohia - The Magnolia Electric Co."
-        title="Songs: Ohia - The Magnolia Electric Co."
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/FR9lCzrV0Eqs2V0oFMbICij-ZKSnF_eWZw9x6MkiJVY/rs:fit/g:sm/q:90/h:548/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNzE4/NDY0LTE1NTAwOTE5/MzYtNDU0My5qcGVn.jpeg"
-        alt="Robyn - Honey"
-        title="Robyn - Honey"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/Q-8eWi3F2f4JmB7fT8BsqLvwF3fiCX-OH0wJWh7tsCs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3Mjgw/ODgtMTM2NjkyMjA4/Ny0yNTAyLmpwZWc.jpeg"
-        alt="Bill Callahan - Sometimes I Wish We Were an Eagle"
-        title="Bill Callahan - Sometimes I Wish We Were an Eagle"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/A2lx7X0oz1AQCceuSJlFzDmTWtAYf8S0GN-1-gDGvnk/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNDI1/ODA2LTE1MTYxMTUx/NDMtNTU3Mi5qcGVn.jpeg"
-        alt="Laaraji - Vision Songs Vol. 1"
-        title="Laaraji - Vision Songs Vol. 1"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/RuVS-efrxKKAvQXK98YdtyHc6EDfn7Eh3G2N11L8_2U/rs:fit/g:sm/q:90/h:600/w:586/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ0MzA2/NS0xNjk5NjI4MzY3/LTcyMDguanBlZw.jpeg"
-        alt="Yo La Tengo - I can hear the heart beating as one"
-        title="Yo La Tengo - I can hear the heart beating as one"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/-rz_gYvNwQ-Rw_jAbF9IwIiG0SSp6N3aEu5EOZo-AaM/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0ODI1/MDYzLTE1ODIzMjIz/MjAtNzE2Ni5qcGVn.jpeg"
-        alt="Swamp Dogg - Sorry You Couldn't Make It"
-        title="Swamp Dogg - Sorry You Couldn't Make It"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/58iCXHy_Lx31iEDm1xuSfmpBRjDVVmXj9CXoAfTTDs0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0Njk4/NzIxLTE1Nzk4ODE0/MDItMTA2Ny5qcGVn.jpeg"
-        alt="Andy Shauf - The Neon Skyline"
-        title="Andy Shauf - The Neon Skyline"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/BgfL5cm5mkVWFI3L1YFuy7QSgBpyrWEgiZ51Z96XYf4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0ODQ3/ODktMTI2NTc3MzI5/MC5qcGVn.jpeg"
-        alt="Lucinda Williams - Car Wheels on a Gravel Road"
-        title="Lucinda Williams - Car Wheels on a Gravel Road"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/FptRWHXBR9mOYo0OTvy_D3uHy4ny0fBTt_Mn-qR53PI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNzI3/NDMzLTE1NTk4NTUx/NjUtODc2NC5qcGVn.jpeg"
-        alt="Katie Dey - Solipsisters"
-        title="Katie Dey - Solipsisters"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/dGMgrschNI2ZMMp19Eg8ndGSRGy1-JBevujgLq5k1oY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MDUw/MDAtMTQ2ODM5NTY5/MC00MjQwLmpwZWc.jpeg"
-        alt="Daniel Johnston - 1990"
-        title="Daniel Johnston - 1990"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/IBRO5X1WPDdFXflUG65VpdPzQJVzqUVFlsLoFkRV7vw/rs:fit/g:sm/q:90/h:348/w:386/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1MDIw/ODItMTIyNDQ2NjIw/Mi5qcGVn.jpeg"
-        alt="Chad VanGaalen - Soft Airplane"
-        title="Chad VanGaalen - Soft Airplane"
-      ></img>
-      <img
-        className="album"
-        src="https://i.discogs.com/Vt0ngf1T_ZeDgVwtDk9ISD-ALFNcenFidkBiN0MRSUY/rs:fit/g:sm/q:90/h:600/w:592/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MjE2/MjQtMTI1MTA1ODc2/My5qcGVn.jpeg"
-        alt="Tom T Hall - Greatest Hits"
-        title="Tom T Hall - Greatest Hits"
-      ></img>
-
-</div>
 
       <span style={{ padding: "2em", width: "100%" }}>
         <a href="https://goodreads.com/maxbittker">
@@ -931,3 +1206,60 @@ const Games = (props) => {
 };
 
 export default Games;
+export function Shelf() {
+  let [hovered, setHovered] = React.useState(false);
+  const main = React.useRef(null);
+
+  let bounds = main.current?.getBoundingClientRect();
+  let midpoint = (bounds?.left + bounds?.right) / 2;
+  let vmidpoint = (bounds?.top + bounds?.bottom) / 2;
+  let tx = "TranslateX(0%)";
+  let ty = "TranslateY(-50%)";
+
+  let overlayStyle = {};
+
+  if (hovered?.pos?.bottom > vmidpoint) {
+    let midpoint = (hovered?.pos?.top + hovered?.pos?.bottom) / 2;
+    overlayStyle.bottom = bounds?.bottom - midpoint;
+    ty = "TranslateY(50%)";
+  } else {
+    overlayStyle.top =
+      hovered?.pos?.top + hovered?.pos?.height / 2 - bounds?.top;
+  }
+
+  if (hovered?.pos?.right < midpoint) {
+    overlayStyle.left = hovered?.pos?.right - bounds?.left;
+  } else {
+    overlayStyle.left = hovered?.pos?.left - bounds?.left;
+    tx = "TranslateX(-100%)";
+  }
+  overlayStyle.transform = tx + " " + ty;
+  // main, hovered, overlayStyle, setHovered
+  return (
+    <div className="main-shelf" ref={main}>
+      <img src={shelf}></img>
+      <img id="overlay-img" src={hovered?.url} style={overlayStyle}></img>
+      <MapSvg
+        onMouseEnter={(e) => {
+          // console.log(e.target.getBoundingClientRect())
+          if (e.target.id == hovered?.url) return;
+          setHovered({
+            url: e.target.id,
+            pos: e.target.getBoundingClientRect(),
+          });
+          // e.target.style.fill = "yellow";
+        }}
+        onMouseLeave={(e) => {
+          let id = e.target.id;
+          setHovered((v) => {
+            if (v?.url == id) {
+              return { url: null };
+            }
+            return v;
+          });
+          e.target.style.fill = "none";
+        }}
+      ></MapSvg>
+    </div>
+  );
+}

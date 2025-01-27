@@ -20,14 +20,14 @@ let linkStyle = {
   -2px -2px  #f4eeef,
    2px -2px  #f4eeef,
    -2px 2px  #f4eeef,
-  2px 2px  #f4eeef`
+  2px 2px  #f4eeef`,
 };
 
 export default createReactClass({
   propTypes() {
     return {
       children: React.PropTypes.any,
-      siteTitle: React.PropTypes.string
+      siteTitle: React.PropTypes.string,
     };
   },
 
@@ -73,10 +73,10 @@ export default createReactClass({
         </Wrap>
         <Wrap n={3} pack>
           <Link to={"/bookshelf/"} style={linkStyle}>
-          bookshelf
+            shelf
           </Link>
         </Wrap>
       </div>
     );
-  }
+  },
 });

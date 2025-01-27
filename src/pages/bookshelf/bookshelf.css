@@ -1,22 +1,26 @@
 .book {
-    max-width: min(300px, 50%);
+    max-width: min(300px, calc(50% - 8px));
     max-height: 300px;
 
-    margin: 0;
 
 }
 
 .album {
     /* height: 200px; */
     max-width: min(200px, calc(50% - 8px));
-    margin: 0;
     align-self: end;
 
 }
 
 .album,
-.shelf {
+.book {
     margin: 4px;
+    transition: all .1s ease-in-out;
+}
+
+.album:hover,
+.book:hover {
+    /* transform: scale(1.5); */
 }
 
 .main-shelf {
@@ -24,7 +28,6 @@
     position: relative;
     max-width: 115vh;
     margin: auto;
-    margin-bottom: 2em;
 }
 
 .main-shelf img {
@@ -47,15 +50,25 @@ rect {
 
 }
 
+.star {
+    /* background-image: url("star.png");
+    background-position: 0 0;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    position: relative;
+    z-index: 20; */
+}
+
 rect:hover {}
 
 #overlay-img {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
+
+    z-index: 5000;
     width: 30%;
     pointer-events: none;
+    /* border: 1px solid black; */
 }
 
 .rest {
@@ -63,6 +76,7 @@ rect:hover {}
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 1em;
 }
 
 .shelf {
