@@ -12,18 +12,19 @@ import HRadio from "../components/hradio.js";
 
 import Wrap from "../components/wrap";
 import face from "./face/face.jpg";
-import torus from "./face/Point_cloud_torus.gif";
 import dog from "./face/dog.jpg";
 import plug from "./face/plug.mp4";
+import tweetsData from "../data/filtered_tweets";
+import { withPrefix } from "gatsby-link";
 Raven.config("https://00f21757ccfe49a49742d4f9d7f1ab30@sentry.io/1234724", {
   release: "2.0.0",
   enviroment: "production",
 }).install();
 const ribbon =
-  "•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•";
+  "•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•";
 const HomeBrick = createReactClass({
   render() {
-    let { children, hideOnMobile } = this.props;
+    let { children, hideOnMobile, onClose } = this.props;
 
     return (
       <div className={`home-brick ${hideOnMobile ? "desktopOnly" : " "}`}>
@@ -36,6 +37,7 @@ const HomeBrick = createReactClass({
             parentElement.style = "opacity:0.4;";
             window.setTimeout(() => {
               parentElement.style = "display:none;";
+              if (onClose) onClose();
             }, 150);
           }}
         >
@@ -69,7 +71,6 @@ const VideoWorkaround = ({ src }) => (
         width: 100%;
         height: 100%;
         display: block;
-        filter: brightness(0.95) sepia(0.04);
       "
 
 
@@ -126,6 +127,147 @@ const MailtoButton = ({}) => {
         Send me a letter?
       </p>
     </a>
+  );
+};
+
+// Component for rendering random media from filtered_tweets
+const RandomMediaItem = ({ tweet }) => {
+  const { id_str, extended_entities } = tweet;
+  if (!extended_entities || !extended_entities.media) return null;
+  
+  const media = extended_entities.media[0];
+  const isVideo = media.type === "video" || media.type === "animated_gif";
+  const mediaFilename = media.media_url ? media.media_url.split('/').pop() : "";
+  const assetPath = `/good_assets/${id_str}-${mediaFilename}`;
+  
+  // Get video source if it's a video
+  const getVideoSource = () => {
+    if (media.video_info && media.video_info.variants) {
+      const mp4Variants = media.video_info.variants.filter(
+        variant => variant.content_type === "video/mp4"
+      );
+      
+      const sortedVariants = mp4Variants.sort(
+        (a, b) => (b.bitrate || 0) - (a.bitrate || 0)
+      );
+      
+      if (sortedVariants.length > 0) {
+        return sortedVariants[0].url;
+      }
+    }
+    
+    return withPrefix(assetPath);
+  };
+  
+  return (
+    <div style={{ width: "100%", height: "100%" }}>
+      {isVideo ? (
+        <video 
+          autoPlay
+          muted
+          loop
+          src={getVideoSource()}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+            filter: "brightness(0.95) sepia(0.04)",
+          }}
+        />
+      ) : (
+        <img 
+          src={media.media_url_https}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+            filter: "brightness(0.95) sepia(0.04)",
+            objectFit: "cover"
+          }}
+          alt=""
+        />
+      )}
+    </div>
+  );
+};
+
+// Component to display random tweets
+const RandomTweets = () => {
+  const [displayedTweets, setDisplayedTweets] = useState([]);
+  const [queuedTweets, setQueuedTweets] = useState([]);
+  const [wrapValues, setWrapValues] = useState({});
+  
+  // Function to get a random n value between 1 and 5
+  const getRandomN = () => Math.floor(Math.random() * 5) + 1;
+  
+  // Initialize wrapValues for a tweet
+  const initWrapValue = (id) => {
+    if (!wrapValues[id]) {
+      setWrapValues(prev => ({
+        ...prev,
+        [id]: getRandomN()
+      }));
+    }
+  };
+  
+  // Handle when an item is closed
+  const handleClose = (closedId) => {
+    // Remove the closed tweet
+    setDisplayedTweets(prev => prev.filter(item => item.tweet.id_str !== closedId));
+    
+    // Add a new tweet from the queue if available
+    if (queuedTweets.length > 0) {
+      const nextTweet = queuedTweets[0];
+      const remainingQueue = queuedTweets.slice(1);
+      
+      // Initialize wrap value for the new tweet
+      initWrapValue(nextTweet.tweet.id_str);
+      
+      // Add to displayed and remove from queue
+      setDisplayedTweets(prev => [...prev, nextTweet]);
+      setQueuedTweets(remainingQueue);
+    }
+  };
+  
+  useEffect(() => {
+    // Filter tweets with media
+    const tweetsWithMedia = tweetsData.filter(
+      item => item.tweet.extended_entities && item.tweet.extended_entities.media
+    );
+    
+    // Shuffle all tweets
+    const shuffled = [...tweetsWithMedia].sort(() => 0.5 - Math.random());
+    
+    // Take first 10 for display and rest for queue
+    const initialDisplay = shuffled.slice(0, 10);
+    const initialQueue = shuffled.slice(10);
+    
+    // Initialize wrap values for initial display
+    const initialWrapValues = {};
+    initialDisplay.forEach(item => {
+      initialWrapValues[item.tweet.id_str] = getRandomN();
+    });
+    
+    setDisplayedTweets(initialDisplay);
+    setQueuedTweets(initialQueue);
+    setWrapValues(initialWrapValues);
+  }, []);
+  
+  return (
+    <>
+      {displayedTweets.map((tweetItem) => {
+        const tweetId = tweetItem.tweet.id_str;
+        const n = wrapValues[tweetId] || 3; // Default to 3 if not set
+        
+        return (
+          <HomeBrick key={tweetId} onClose={() => handleClose(tweetId)}>
+            <Wrap n={n}>
+              <RandomMediaItem tweet={tweetItem.tweet} />
+            </Wrap>
+          </HomeBrick>
+        );
+      })}
+    </>
   );
 };
 
@@ -400,20 +542,7 @@ export default class Index extends React.Component {
         <HomeBrick hideOnMobile>
           <Wrap n={150} />
         </HomeBrick>
-        <HomeBrick hideOnMobile>
-          <Wrap n={12}>
-            <img
-              src={torus}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "block",
-                filter: "brightness(0.95) sepia(0.04)",
-              }}
-              alt="source: wikipedia user LucasVB"
-            />
-          </Wrap>
-        </HomeBrick>
+          <RandomTweets />
       </div>
     );
   }

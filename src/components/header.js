@@ -72,6 +72,11 @@ export default createReactClass({
           </Link>
         </Wrap>
         <Wrap n={3} pack>
+          <Link to={"/roll/"} style={linkStyle}>
+            roll
+          </Link>
+        </Wrap>
+        <Wrap n={3} pack>
           <Link to={"/bookshelf/"} style={linkStyle}>
             shelf
           </Link>

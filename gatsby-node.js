@@ -74,6 +74,10 @@ exports.onCreatePage = ({ page, actions }) => {
     page.context.wide = true;
     createPage(page);
   }
+  if (page.path.match("/roll")) {
+    page.context.wide = true;
+    createPage(page);
+  }
 };
 
 var p = "./static/screenshots";
