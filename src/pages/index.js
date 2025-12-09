@@ -306,9 +306,9 @@ export default class Index extends React.Component {
           </div>
         </HomeBrick>
         <HomeBrick>
-          <p>Building tools for creative play & communication.</p>
+          <p>Building tools for creative learning at <a href="https://websim.com/">Websim.com</a></p>
           <p>
-            Currently Teaching:<br></br>{" "}
+            Teaching:<br></br>{" "}
             <a href="https://maxbittker.github.io/Hand-Held-ITP-2021/">
               "Hand Held: Creative Tools for Phones"
             </a>{" "}

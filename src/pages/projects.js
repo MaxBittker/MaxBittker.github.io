@@ -12,7 +12,6 @@ export default class Games extends React.Component {
              River
             </a>{" "}
           <p>A Visual Connection Engine. Clear your mind and surf laterally though image space.</p>
-        <a href="https://sandspiel.club/">Sandspiel</a>
 
         {/* <p>These mostly represent my personal wor</p> */}
         <a href="https://maxbittker.github.io/Hand-Held-ITP-2022/">
@@ -24,6 +23,14 @@ export default class Games extends React.Component {
         <p>
           Loving homage to the falling sand genre of games. Online interactive
           sandbox and lovable chaotic artistic community. Built in Rust+WebGL.
+        </p>
+        <a href="https://clicksynth.com/">ClickSynth</a>
+        <p>
+          Early phenotype-driven vibe coding exploration With Joel Simon.
+        </p>
+        <a href="https://latentscape.com/">Latentscape</a>
+        <p>
+        Social landscape for exploring latent space. Built in Berkeley December 2023 With Joel Simon and Jim Martin.
         </p>
         <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
         <p>
@@ -73,6 +80,9 @@ export default class Games extends React.Component {
         <p>
         
           <h3> Miscellaneous toys & experiments:</h3>
+          <a href="https://websim.com/@maxbittker/emoji-stretcher">Emoji Stretcher</a><br/>
+          <a href="https://maxbittker.github.io/warms/">Warms</a><br/>
+          <a href="https://maxbittker.github.io/paints/">Paints</a><br/>
           <a href="https://max-notes.vercel.app/">Notes</a><br/>
           <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
           <a href="https://maxbittker.github.io/div-mitosis/">
