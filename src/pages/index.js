@@ -151,11 +151,14 @@ const RandomMediaItem = ({ tweet }) => {
         (a, b) => (b.bitrate || 0) - (a.bitrate || 0)
       );
       
+      // Use the locally rehosted copy of the best quality variant
+      // (video.twimg.com no longer allows hotlinking)
       if (sortedVariants.length > 0) {
-        return sortedVariants[0].url;
+        const base = sortedVariants[0].url.split("/").pop().split("?")[0];
+        return withPrefix(`/good_assets/${id_str}-${base}`);
       }
     }
-    
+
     return withPrefix(assetPath);
   };
   
@@ -175,8 +178,8 @@ const RandomMediaItem = ({ tweet }) => {
           }}
         />
       ) : (
-        <img 
-          src={media.media_url_https}
+        <img
+          src={withPrefix(assetPath)}
           style={{
             width: "100%",
             height: "100%",

@@ -56,12 +56,14 @@ const MediaItem = ({ id_str, media }) => {
         (a, b) => (b.bitrate || 0) - (a.bitrate || 0)
       );
       
-      // Return the URL of the best quality variant, or fall back to local asset
+      // Use the locally rehosted copy of the best quality variant
+      // (video.twimg.com no longer allows hotlinking)
       if (sortedVariants.length > 0) {
-        return sortedVariants[0].url;
+        const base = sortedVariants[0].url.split("/").pop().split("?")[0];
+        return withPrefix(`/good_assets/${id_str}-${base}`);
       }
     }
-    
+
     // Fall back to local asset if no video_info or no valid variants
     return withPrefix(assetPath);
   };
