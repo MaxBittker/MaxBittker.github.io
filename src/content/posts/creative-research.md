@@ -56,7 +56,7 @@ Writing computer programs can be seen as the process of translating an idea into
 
 If you want to animate a digital inch worm, you're forced to observe their motions carefully, breaking it into smaller components and understanding how those fit together.
 
-<img src="https://www.researchgate.net/profile/Weiting_Liu3/publication/260295776/figure/fig1/AS:284272142372864@1444787168031/An-inchworm-on-a-leaf-a-its-simple-structure-b-and-locomotion-sequence-c.png" alt="inchworm" style="margin:auto; display:block;">
+<img src="https://www.researchgate.net/profile/Weiting-Liu-5/publication/260295776/figure/fig1/AS:11431281307396919@1738675779012/An-inchworm-on-a-leaf-a-its-simple-structure-b-and-locomotion-sequence-c.jpg" alt="inchworm" style="margin:auto; display:block;">
 <br>
 
 This process of close observation, modeling, and first-hand experimentation means building intuitions for the system that can be deeper than what I gain through reading other people's findings, or through observation alone. Shaping an idea in your own hands and touching it from many angles results in a multi-faceted understanding. It's my experiece that when I've understood an idea in this way, I remember it better, and it will be more readily available to the creative connection-forming part of my brain in the future.
