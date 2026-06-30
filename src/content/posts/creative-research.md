@@ -1,0 +1,180 @@
+---
+title: My Creative Research Process
+path: creative-research
+date: "2020-01-07 00:00:00"
+---
+
+### Or, what am I doing when I'm making art?
+
+<!-- <iframe src="https://maxbittker.github.io/cute-mushrooms/"></iframe> -->
+<iframe src="https://maxbittker.github.io/chromatophore/" style="width:100%; height:400px; border:0;"></iframe>
+
+I like making art with computers, but it can feel strange sometimes. Art and computing each come wrapped up with a lot of external ideas about the proper way to go about them. When mixed, their respective preconceptions can come into tension. Existing at this intersection requires reconsidering things you've learned about the correct way to develop software, or the right way to make art.
+
+This is a balance I've mostly learned to navigate on my own. This fall, I spent some time at the School for Poetic Computation. I was able to meet other computer artists and see first-hand how differently each person practices their craft. This prompted me to be more reflective about my own process.
+
+So, this blog post is me writing down some thoughts about my creative process in order to better understand it, and hopefully to prompt others to reflect on their own patterns of making or learning. I don't expect that these ideas will be strongly generalizable towards other people's experiences, so please be patient with me if you see things differently!
+
+### Why do I make art?
+
+Creating things is a way to have a conversation with the world.
+
+I might have a passing thought or observation, like: "I enjoy the pattern of this fabric" or "These birds move in a beautiful way."
+
+![starling murmuration](https://cdn.hswstatic.com/gif/murmuration.jpg)
+
+Holding onto that idea and re-forming it my own hands means engaging with the idea for a longer time and from different angles.
+
+Making art builds my understanding of the world and of my own perception. It gives me a space and structure to think, and teaches me new ways to appreciate the world.
+
+If art is giving shape to an idea, working towards that shape also helps me to communicate it. Sharing something with others gives them a window into the way I understand it, and hearing their perspective on that is yet another angle of insight towards the original idea.
+
+## Why do I make art with computers?
+
+I wish I knew! If you've programmed a computer, you probably know that it's not an innately pleasurable experience. Computers prefer not to make artwork, or at least they're extremely efficient at finding ways to avoid doing it how you intended them to.
+
+Convincing the computer to make art forces me to hold a focused state, like threading a series of needles while holding an form in my head. Left alone, my mind spends its energy worrying about things I can't control or generally bouncing around like shoes in a washing machine. Writing code is a good activity for me because I can tire my mind out on less destructive activities, such as naming variables.
+
+More positively, it's very gratifying to express an idea to a computer. Always, after the work of setting pieces into place inside the computer and letting them play out, it responds to me with an exciting mixture of failures, surprises, gratification, and new ideas.
+
+<br>
+<img src="/post-assets/creative-research/grass.jpg" alt="computer grass" style="float:left; width:200px; margin:10px ; border: 1px solid black;">
+
+> "I always seem to be in the process of learning about line and land forms. I learn from what I see and what I draw. What my hand-eye draws is different from what the computer draws. **A computer helps by offering new visual ideas.** These ideas in turn enrich new hand work which generates additional ideas which extends my thinking about computer generated lines."
+> <br> - Colette Bangert [COMPUTER GRASS IS NATURAL GRASS (1975) ](https://web.archive.org/web/20190517225514/https://www.atariarchives.org/artist/sec5.php)
+
+<div style="clear:both;"></div>
+<br>
+
+<!-- Another aspect of using computers to make art is the feeling of control. I think that working with a material that gives me precise control over its final shape feels pleasurable and safe to me in a way that music, paint, clay, or wood don't. But that may be reflective of my skills more than it is reflective of  -->
+
+## Coding as understanding
+
+Like other forms of art, programming teaches you new ways to pay attention to your surroundings.
+
+Writing computer programs can be seen as the process of translating an idea into a new language. That translation process raises questions and directs your focus slowly across different aspects of your subject, the way that drawing forces you to focus your attention on small aspects of a whole.
+
+If you want to animate a digital inch worm, you're forced to observe their motions carefully, breaking it into smaller components and understanding how those fit together.
+
+<img src="https://www.researchgate.net/profile/Weiting_Liu3/publication/260295776/figure/fig1/AS:284272142372864@1444787168031/An-inchworm-on-a-leaf-a-its-simple-structure-b-and-locomotion-sequence-c.png" alt="inchworm" style="margin:auto; display:block;">
+<br>
+
+This process of close observation, modeling, and first-hand experimentation means building intuitions for the system that can be deeper than what I gain through reading other people's findings, or through observation alone. Shaping an idea in your own hands and touching it from many angles results in a multi-faceted understanding. It's my experiece that when I've understood an idea in this way, I remember it better, and it will be more readily available to the creative connection-forming part of my brain in the future.
+
+## Art as research
+
+While making artwork does build my understanding of a concept through focus and contemplation, it also motivates me to learn through like, actual research. Artistic work in particular can take inspiration from many sorts of resources, so I really enjoy having a good reason to find things to read, skim, or look at.
+
+## Creative & emotional cycles:
+
+Because of the fiddly and frictive nature of using computers, and because of my own moodiness, I've found that creativity is something that comes in phases for me.
+
+I tackle different tasks when I have different types of energy to spare. These complementary types of work ideally come together to power my creative research.
+
+## Points of departure
+
+Throughout the week, I will have a bunch of soft-baked ideas while I'm on the train, talking to a friend, or on a walk. I write these down and keep a bunch of different disorganized lists of things I'm curious to explore.
+
+Jumping-off points usually take the form of wanting to recreate a form I see in nature or in someone's artwork. But other times I'm motivated to pursue an idea just because it involves a technique or tool that I want to learn.
+
+If I sit down and start working on something as soon as I think of it, I often find that I quickly lose direction.
+
+Keeping a rolling list has the advantage that if an idea sits on the shelf for days or weeks, yet it keeps bubbling up in my mind, my interest will probably either naturally fade away (one less thing to do!) or else accrete into something larger.
+
+I also spend a lot of time on youtube and wikipedia learning about the concept. This is sometimes my favorite part of a project, just getting to learn new concepts and vocabulary about something that I'd never thought about before. I like youtube because often you find videos made by hobbyists who are even more excited about the idea than you are.
+
+### Setup Schlep
+
+Setting up new tools and debugging programming environments can be really hard work. The nature of this difficulty is more emotional than technical.
+
+There is very little positive emotional payoff from this work! Finding the motivation to tackle it after dealing with my day job or instead of enjoying other activities means that small things can become serious hurdles.
+
+That being said, this preparation is crucial to having a conducive area to do creative work, and getting it out of the way lowers the activation energy you need in the future to quickly explore ideas!
+
+I've developed a few strategies for counteracting this problem:
+
+First is just to do it in advance, prep your area, lower activation energy for the future.
+
+I think this is a great place to ask for help. Because a lot of the barrier here is information overload and the emotional drudgery of making lots of decisions, asking someone for their advice, pointers, or opinions can help get over the hurdle.
+
+One is that I love to maintain little boilerplate repos that I can clone in the future. This approach helps make the work I put into setup feel more like doing a favor for a friend, and makes it fun to try to find the simplest solution and to document my work.
+
+Another way around this is pre-built environments that require little setup. I love quick-start tools like "Create React App", glitch.com, Shadertoy, editor.p5js.org, etc.
+
+> Quick aside about this sort of tool: I think that "software people" underestimate how huge of a lever it is to lower the cost of starting a project. Things like Arduino and Processing that lower the number of decisions and setup steps you need to start making something, enfranchise entirely different forms of making **and new kinds of _makers_**.
+>
+> Lowering friction for creativity is something that the big companies bankrolling our software environments don't understand or invest in. If you care about this, you can have a big impact. The first step is find ways to make life easier for your future self!
+
+### Structuring an idea
+
+A key component of creative coding is building myself a world to play in.
+
+This is different than the aforementioned work of setting up my coding environment -
+I'm talking about developing a structure to be creative within.
+
+For instance, if I want to build art inspired by the movements of a herd of sheep in a pasture, I might need to encode some basic ideas about acceleration, turning radius, and neighbor detection.
+
+For an exploration of generative vines, I may need to build abstractions for growing branching shapes that interact with static geometry.
+
+Or, if I wanted to present abstract poetry dealing with the visual form of text messaging, I might need to implement a model of the way chat bubbles push up from the bottom of the screen in iMessage.
+
+This kind of work is not as expressive as splashing paint on a canvas - It's more about creating constraints and leverages for yourself. Maybe it's analogous to designing a pin hole camera with which to take photographs, or building a set of wooden molds & stamps to shape clay with.
+
+I really love this stage of my creative process, but it requires a combination of optimism, focus, and inspiration that I can only inhabit occasionally. Once I've built an abstraction like this, I try to squeeze different effects out of it, and push against its edges.
+
+### Exploration & Recombinate Creativity
+
+Often, there will be a point in a project where I'm comfortable with a basic foundation, but I'm not sure where I want to go with it anymore. My reaction when I get to this sort of dead end is often to just throw things at the wall and see what sticks!
+
+This is a combinatoric approach to creativity where I'm throwing different effects and concepts from my toolbox into the mix, and seeing if anything interesting presents itself.
+
+The first step is just exploring the parameter space that already exists inside your system. Defining shared numbers like "each octopus has 8 arms" is a natural part of building an idea with code.
+
+The natural next step is asking, how does it look if I change that number to 18? 800? 1? ... -4? This is always a good source of glitches, surprises and ideas.
+
+Exploring a parameter space is it's own skill, and because it's important I put care into making it fun and expressive for myself. This can mean anything from making sure my code is well-organized, to using controller libraries like 'dat.GUI', to even attaching the knobs of a physical midi controller to different values in my program.
+
+<video src="/post-assets/creative-research/midi.mp4" muted autoplay loop alt="inchworm" style="margin:auto; display:block; max-width:100%"> </video>
+(I love how this video shows peeks of the messy edges of a parameter space. Often, there is only a narrow region where a system is "well behaved". Just beyond those boundaries, unparseable or "degenerate" output lurks. Appreciate these spaces as a mystery and a source of beauty!)
+
+Then, I might:
+
+- add some noise.
+- not clear the buffer.
+- put everything in a grid or along a circle.
+- make it rainbow.
+- dither the colors.
+- wrap it around typography.
+- make it react to audio, video, or touch.
+
+These are just a few of my personal favorites, but they're all effects that I'm very comfortable with. Throwing them onto a project without too much thought or energy can be really fun.
+
+This form of creativity is something that I used to feel self-concious about, because I thought that I wasn't doing real art if I was just aimlessly smooshing ideas togther. Now, I embrace this as time to partially turn my brain off, and let possibilities present themselves.
+
+It doesn't mean you should never think about why you're doing something, but sometimes letting go of that urge can be a good way to keep things flowing :).
+
+### ergonomic investments, oss contributions
+
+This whole process is a cycle. After exploring an idea, there are often things you can do to tidy up, make your environment more ergonomic, or seperate out tools to make them easier to re-use in the future. Re-organizing a codebase isn't what you want to be doing when you're deep in the flow of an idea, but it's a nice activity for a different day, to reflect and invest in the future.
+
+I especially love when this work can mean contributing back to the open source ecosystems you use, to return the favor.
+
+### outward energy, documentation
+
+Documenting and sharing your work is really important! It's a way to motivate yourself to "finish" something. Posting a gif or screenshot is a great micro goal to punctuate your research. It also makes you think about how your work can best present itself or what aspects connect with people.
+
+I try to put thought into doing this well.
+
+I love to use my phone for this. I mostly share things on twitter and instagram, and iOS based photo and video editing tools are really easy to use. I think it's important to remove as many barriers as possible here, because if it takes extra time to prepare documentation, it will probably never happen.
+
+Say something about why you thought a piece was interesting to work on, or what you learned. Your friends are probably more interested in that story than in the visual effect.
+
+I sometimes rely on social media too much for validation that my time was well spent.
+
+### Not wanting to make things
+
+Downtime is an important part of the cycle too! It's natural to have ebbs and flow in your energy.
+
+The nature of social media amplifies a lot of harmful ideas about productivity. "I should be more creatively productive" is a harmful framing for motivation. I try to remember that creativity is a life-long journey, and that my output is not a measurement of growth or self worth. Balance and sustainability are more healthy than obsession and external validation.
+
+If I'm not feeling interested in creative pursuits, I don't try to force myself to do it anyway or spend energy on feeling guilty. Instead it's better to focus that energy towards other aspects of my life. Using creativity as an escape from feeling bad is a negative pattern that I've fallen into in the past.

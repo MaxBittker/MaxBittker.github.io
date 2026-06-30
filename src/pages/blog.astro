@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { dateSortKey, formatDate } from "../utils/date";
+
+const posts = (await getCollection("posts"))
+  .filter((p) => !!p.data.date)
+  .sort((a, b) => dateSortKey(b.data.date) - dateSortKey(a.data.date));
+---
+
+<Layout title="max-bittker">
+  <h1>Writing & Speaking</h1>
+  {
+    posts.map((post) => (
+      <div style="margin:0 1em">
+        <a style="display:flex" href={"/" + post.data.path}>
+          <p style="flex-grow:1">
+            {post.data.title}
+            {post.data.video && ` [Video, ${post.data.video}] `}
+          </p>
+          <small style="white-space:nowrap; color:black">
+            {formatDate(post.data.date)}
+          </small>
+        </a>
+      </div>
+    ))
+  }
+</Layout>
