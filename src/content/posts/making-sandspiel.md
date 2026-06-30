@@ -32,7 +32,7 @@ It's also important that this system is engaging not just for its actual depth, 
 
 <figure>
 <img src="/post-assets/making-sandspiel/bitsy.gif"/>
-  <figcaption><a href="https://candle.itch.io/flotsam"><i>flotsam</i> by mark wonnacott<a/></figcaption>
+  <figcaption><a href="https://candle.itch.io/flotsam"><i>flotsam</i> by mark wonnacott</a></figcaption>
 </figure>
 
 ### Microcommunity
