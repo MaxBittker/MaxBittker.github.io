@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { dateSortKey, formatDate } from "../utils/date";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("posts")).sort(
+    (a, b) => dateSortKey(b.data.date) - dateSortKey(a.data.date),
+  );
+
+  return posts.map((post, index) => ({
+    // The frontmatter `path` is the canonical URL slug (mirrors the old Gatsby setup).
+    params: { slug: post.data.path },
+    props: {
+      post,
+      previous: index === posts.length - 1 ? null : posts[index + 1],
+      next: index === 0 ? null : posts[index - 1],
+    },
+  }));
+}
+
+const { post, previous, next } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | max-bittker`}>
+  <h1>{post.data.title}</h1>
+  <p style="display:block; font-size:0.8rem; color:#555;">
+    {formatDate(post.data.date)}
+  </p>
+  <div class="post-body">
+    <Content />
+  </div>
+  <hr />
+  <ul
+    style="display:flex; flex-wrap:wrap; justify-content:space-between; list-style:none; padding:0;"
+  >
+    {
+      previous && (
+        <li>
+          <a href={"/" + previous.data.path} rel="prev">
+            ← {previous.data.title}
+          </a>
+        </li>
+      )
+    }
+    {
+      next && (
+        <li>
+          <a href={"/" + next.data.path} rel="next">
+            {next.data.title} →
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</Layout>

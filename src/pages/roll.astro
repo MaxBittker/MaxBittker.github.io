@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Roll from "../components/Roll.jsx";
+import "../styles/roll.css";
+---
+
+<Layout title="Roll | Max Bittker" wide={true}>
+  <Roll client:only="react" />
+</Layout>

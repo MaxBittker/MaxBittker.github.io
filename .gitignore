@@ -1,8 +1,7 @@
 node_modules
-/public
-/.cache
+# Astro build output
+/dist
+# Astro/Vite caches
+.astro/
 .cache/
-.cache
-.cache*
-.cache/*
-public/
+.DS_Store

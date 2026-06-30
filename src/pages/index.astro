@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Index from "../components/Index.jsx";
+---
+
+<Layout title="max-bittker" home={true} wide={true}>
+  <Index client:only="react" />
+</Layout>

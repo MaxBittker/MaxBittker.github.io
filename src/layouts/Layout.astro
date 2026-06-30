@@ -1,0 +1,44 @@
+---
+import "../styles/typography.css";
+import "../styles/global.css";
+import "../styles/example.less";
+import "../assets/bookshelf/bookshelf.css";
+import Header from "../components/Header.jsx";
+import Wrap from "../components/Wrap.jsx";
+
+const { title = "max-bittker", wide = false, home = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700|Arvo:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      defer
+      src="https://www.recurse-scout.com/loader.js?t=3a128824cb3dacb3e5bf25cec6f3b40e"
+    ></script>
+  </head>
+  <body>
+    <div class="b-wrap fill" style="min-height:100vh">
+      <Wrap n={4} fill={true}>
+        <div style="width:100%">
+          {home ? null : <Header client:load />}
+          <div
+            style={`margin:0 auto; max-width:${wide ? 20000 : 960}px; padding-top:0`}
+          >
+            <slot />
+          </div>
+        </div>
+      </Wrap>
+    </div>
+  </body>
+</html>
