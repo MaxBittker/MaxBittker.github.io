@@ -7,6 +7,19 @@ export default class Games extends React.Component {
     return (
       <div>
         <h1>Selected Links </h1>
+        <a href="https://github.com/MaxBittker/runebench">RuneScape-Bench</a>
+        <p>
+          Benchmark suite evaluating coding agents on long-horizon
+          problem solving in an MMO.
+        </p>
+        <a href="https://github.com/MaxBittker/rs-sdk">rs-sdk</a>
+        <p>
+          TypeScript SDK and agent harness for automating RuneScape, and a public community server for experimenting.
+        </p>
+        <a href="https://websim.com/">Websim</a>
+        <p>
+          Vibe-coding tool and creative community for game development and social software building.
+        </p>
         <a href="https://river.maxbittker.com/">
              River
             </a>{" "}
@@ -31,7 +44,7 @@ export default class Games extends React.Component {
         <p>
         Social landscape for exploring latent space. Built in Berkeley December 2023 With Joel Simon and Jim Martin.
         </p>
-        <a href="https://twitter.com/NYT_first_said"> New New York Times </a>
+        <a href="https://x.com/NYT_first_said"> New New York Times </a>
         <p>
           A twitter bot that records the first time The New York Times says a
           new word.
@@ -72,7 +85,7 @@ export default class Games extends React.Component {
         </p>
         <p>
         <h3> Roblox Games:</h3>
-        <a href="https://www.roblox.com/games/7000824340/Melon-Rancher/">Melon Rancher</a> <br />
+        <a href="https://www.roblox.com/games/7000824340/Melon-Rancher">Melon Rancher</a> <br />
         <a href="https://www.roblox.com/games/7019688123/Sheep-Dog-Simulator">Sheep Dog Simulator</a> <br />
         <a href="https://www.roblox.com/games/7123914887/Dont-Shot-Anyone">Don't Shot Anyone</a> <br />
         </p>
@@ -83,7 +96,7 @@ export default class Games extends React.Component {
           <a href="https://maxbittker.github.io/warms/">Warms</a><br/>
           <a href="https://maxbittker.github.io/paints/">Paints</a><br/>
           <a href="https://max-notes.vercel.app/">Notes</a><br/>
-          <a href="https://csb-s0xhs.netlify.com/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
+          <a href="https://csb-s0xhs.netlify.app/">🅗🅨🅟🅔🅡 🅟🅞🅟</a> <br />
           <a href="https://maxbittker.github.io/div-mitosis/">
             Div Mitosis
           </a>{" "}
