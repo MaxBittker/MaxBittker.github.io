@@ -281,8 +281,12 @@ img {
 /* Mirror gatsby-remark-images, which capped post images at 650px wide.
    Inline-styled <img> tags inside posts keep their own widths (inline wins). */
 .post-body img {
-  max-width: 650px;
+  max-width: min(650px, 100%);
   height: auto;
+}
+.post-body video,
+.post-body iframe {
+  max-width: 100%;
 }
 
 /* Captions for single-image paragraphs (mirrors gatsby showCaptions). */
@@ -769,4 +773,47 @@ pre tt:after {
 
 html:has(#fullFrame) {
   overflow: hidden;
+}
+/* Blog post spacing: gutters, heading proximity, list rhythm. */
+.post {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.45rem 1rem 2.9rem;
+}
+.post > h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3em;
+}
+.post-body > :first-child {
+  margin-top: 0;
+}
+.post-body h2 {
+  margin-top: 2.9rem;
+  margin-bottom: 0.725rem;
+}
+.post-body h3 {
+  margin-top: 2.175rem;
+  margin-bottom: 0.725rem;
+}
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  margin-top: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+.post-body p > img {
+  margin-top: 0.725rem;
+}
+.post li {
+  margin-bottom: 0.35rem;
+}
+@media screen and (max-width: 660px) {
+  .post {
+    padding: 1rem 0.75rem 2rem;
+  }
+  .post-body blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

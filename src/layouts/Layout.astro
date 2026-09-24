@@ -6,7 +6,14 @@ import "../assets/bookshelf/bookshelf.css";
 import Header from "../components/Header.jsx";
 import Wrap from "../components/Wrap.jsx";
 
-const { title = "max-bittker", wide = false, home = false } = Astro.props;
+const {
+  title = "max-bittker",
+  wide = false,
+  home = false,
+  layers = 6,
+  navLayers = 4,
+  mobileFrameless = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -28,10 +35,13 @@ const { title = "max-bittker", wide = false, home = false } = Astro.props;
     ></script>
   </head>
   <body>
-    <div class="b-wrap fill" style="min-height:100vh">
-      <Wrap n={4} fill={true}>
+    <div
+      class={`b-wrap fill${mobileFrameless ? " mobile-frameless" : ""}`}
+      style="min-height:100vh"
+    >
+      <Wrap n={layers - 2} fill={true}>
         <div style="width:100%">
-          {home ? null : <Header client:load />}
+          {home ? null : <Header client:load layers={navLayers} />}
           <div
             style={`margin:0 auto; max-width:${wide ? 20000 : 960}px; padding-top:0`}
           >

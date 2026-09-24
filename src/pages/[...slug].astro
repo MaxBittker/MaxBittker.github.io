@@ -23,35 +23,44 @@ const { post, previous, next } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={`${post.data.title} | max-bittker`}>
-  <h1>{post.data.title}</h1>
-  <p style="display:block; font-size:0.8rem; color:#555;">
-    {formatDate(post.data.date)}
-  </p>
-  <div class="post-body">
-    <Content />
-  </div>
-  <hr />
-  <ul
-    style="display:flex; flex-wrap:wrap; justify-content:space-between; list-style:none; padding:0;"
-  >
-    {
-      previous && (
-        <li>
-          <a href={"/" + previous.data.path} rel="prev">
-            ← {previous.data.title}
-          </a>
-        </li>
-      )
-    }
-    {
-      next && (
-        <li>
-          <a href={"/" + next.data.path} rel="next">
-            {next.data.title} →
-          </a>
-        </li>
-      )
-    }
-  </ul>
+<Layout
+  title={`${post.data.title} | max-bittker`}
+  layers={2}
+  navLayers={2}
+  mobileFrameless
+>
+  <article class="post">
+    <h1>{post.data.title}</h1>
+    <p
+      style="display:block; font-size:0.8rem; color:#555; margin-bottom:2.175rem;"
+    >
+      {formatDate(post.data.date)}
+    </p>
+    <div class="post-body">
+      <Content />
+    </div>
+    <hr style="margin-top:2.9rem;" />
+    <ul
+      style="display:flex; flex-wrap:wrap; justify-content:space-between; list-style:none; padding:0; margin:0;"
+    >
+      {
+        previous && (
+          <li>
+            <a href={"/" + previous.data.path} rel="prev">
+              ← {previous.data.title}
+            </a>
+          </li>
+        )
+      }
+      {
+        next && (
+          <li>
+            <a href={"/" + next.data.path} rel="next">
+              {next.data.title} →
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </article>
 </Layout>
