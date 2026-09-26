@@ -19,7 +19,7 @@ Raven.config("https://00f21757ccfe49a49742d4f9d7f1ab30@sentry.io/1234724", {
 }).install();
 const ribbon =
   "•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•";
-const HomeBrick = ({ children, hideOnMobile, onClose }) => {
+const HomeBrick = ({ children, hideOnMobile, onClose, rings = 4 }) => {
     return (
       <div className={`home-brick ${hideOnMobile ? "desktopOnly" : " "}`}>
         <button
@@ -40,7 +40,7 @@ const HomeBrick = ({ children, hideOnMobile, onClose }) => {
             <polyline points="11,0 , 0,11" />
           </svg>
         </button>
-        <Wrap n={3} pack>
+        <Wrap n={rings - 1} pack>
           {children}
         </Wrap>
       </div>
@@ -191,21 +191,7 @@ const RandomMediaItem = ({ tweet }) => {
 const RandomTweets = () => {
   const [displayedTweets, setDisplayedTweets] = useState([]);
   const [queuedTweets, setQueuedTweets] = useState([]);
-  const [wrapValues, setWrapValues] = useState({});
-  
-  // Function to get a random n value between 1 and 5
-  const getRandomN = () => Math.floor(Math.random() * 5) + 1;
-  
-  // Initialize wrapValues for a tweet
-  const initWrapValue = (id) => {
-    if (!wrapValues[id]) {
-      setWrapValues(prev => ({
-        ...prev,
-        [id]: getRandomN()
-      }));
-    }
-  };
-  
+
   // Handle when an item is closed
   const handleClose = (closedId) => {
     // Remove the closed tweet
@@ -215,10 +201,7 @@ const RandomTweets = () => {
     if (queuedTweets.length > 0) {
       const nextTweet = queuedTweets[0];
       const remainingQueue = queuedTweets.slice(1);
-      
-      // Initialize wrap value for the new tweet
-      initWrapValue(nextTweet.tweet.id_str);
-      
+
       // Add to displayed and remove from queue
       setDisplayedTweets(prev => [...prev, nextTweet]);
       setQueuedTweets(remainingQueue);
@@ -231,35 +214,28 @@ const RandomTweets = () => {
       item => item.tweet.extended_entities && item.tweet.extended_entities.media
     );
     
-    // Shuffle all tweets
-    const shuffled = [...tweetsWithMedia].sort(() => 0.5 - Math.random());
-    
+    // Shuffle all tweets, giving each a random 1-3 rings
+    const shuffled = [...tweetsWithMedia]
+      .sort(() => 0.5 - Math.random())
+      .map((item) => ({ ...item, rings: 1 + Math.floor(Math.random() * 3) }));
+
     // Take first 10 for display and rest for queue
-    const initialDisplay = shuffled.slice(0, 10);
-    const initialQueue = shuffled.slice(10);
-    
-    // Initialize wrap values for initial display
-    const initialWrapValues = {};
-    initialDisplay.forEach(item => {
-      initialWrapValues[item.tweet.id_str] = getRandomN();
-    });
-    
-    setDisplayedTweets(initialDisplay);
-    setQueuedTweets(initialQueue);
-    setWrapValues(initialWrapValues);
+    setDisplayedTweets(shuffled.slice(0, 10));
+    setQueuedTweets(shuffled.slice(10));
   }, []);
-  
+
   return (
     <>
       {displayedTweets.map((tweetItem) => {
         const tweetId = tweetItem.tweet.id_str;
-        const n = wrapValues[tweetId] || 3; // Default to 3 if not set
-        
+
         return (
-          <HomeBrick key={tweetId} onClose={() => handleClose(tweetId)}>
-            <Wrap n={n}>
-              <RandomMediaItem tweet={tweetItem.tweet} />
-            </Wrap>
+          <HomeBrick
+            key={tweetId}
+            rings={tweetItem.rings}
+            onClose={() => handleClose(tweetId)}
+          >
+            <RandomMediaItem tweet={tweetItem.tweet} />
           </HomeBrick>
         );
       })}
