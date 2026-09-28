@@ -1,0 +1,40 @@
+---
+// where i answer what's asked at /questions. needs the postcards key;
+// src/questions/answer.js does the rest
+import "../../questions/questions.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex" />
+    <title>answer | max bittker</title>
+  </head>
+  <body class="answering">
+    <main>
+      <a class="home" href="/questions/"><span class="sr">questions</span></a>
+
+      <form id="login" hidden>
+        <input
+          name="pw"
+          type="password"
+          aria-label="key"
+          autocomplete="current-password"
+        />
+        <button type="submit" aria-label="go"></button>
+      </form>
+      <p class="status" aria-live="polite"></p>
+
+      <section id="inbox" aria-label="unanswered questions"></section>
+      <section id="answered" aria-label="answered questions"></section>
+      <section id="trash" aria-label="trashed questions"></section>
+    </main>
+
+    <script>
+      import "../../questions/answer.js";
+    </script>
+  </body>
+</html>

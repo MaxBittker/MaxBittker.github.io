@@ -89,11 +89,11 @@ const useBbox = () => {
   return [bbox, ref];
 };
 
-const MailtoButton = ({}) => {
+const QuestionsButton = ({}) => {
   const [bbox, ref] = useBbox();
 
   return (
-    <a href="https://postcards.maxbittker.com/write/">
+    <a href="/questions/">
       <svg
         ref={ref}
         height="50"
@@ -117,7 +117,7 @@ const MailtoButton = ({}) => {
           textAlign: "center",
         }}
       >
-        Send me a letter?
+        Questions
       </p>
     </a>
   );
@@ -255,7 +255,7 @@ export default class Index extends React.Component {
       <div className="home">
         <HomeBrick>
           <Wrap n={5}>
-            <MailtoButton />
+            <QuestionsButton />
           </Wrap>
         </HomeBrick>
         <HomeBrick>
@@ -334,6 +334,9 @@ export default class Index extends React.Component {
               <a href="https://github.com/MaxBittker">github</a>
               <a href="https://www.instagram.com/maxbittker/">instagram</a>
             </span>
+          </p>
+          <p style={{ textAlign: "center" }}>
+            <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a>
           </p>
         </HomeBrick>
         <HomeBrick>

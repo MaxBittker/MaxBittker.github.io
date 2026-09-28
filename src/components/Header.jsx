@@ -53,6 +53,11 @@ const Header = ({ layers = 4 }) => {
           shelf
         </a>
       </Wrap>
+      <Wrap n={layers - 1} pack>
+        <a href={"/questions/"} style={linkStyle}>
+          questions
+        </a>
+      </Wrap>
     </div>
   );
 };

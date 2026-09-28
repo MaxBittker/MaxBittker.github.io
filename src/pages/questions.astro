@@ -1,0 +1,54 @@
+---
+// ask me a question, bill wurtz style (billwurtz.com/questions), drawn like
+// the postcards write page. src/questions/ask.js does the drawing; i answer
+// from /questions/answer
+import "../questions/questions.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="ask a question" />
+    <title>questions | max bittker</title>
+  </head>
+  <body>
+    <main>
+      <h1><span class="sr">Questions:</span></h1>
+
+      <form id="ask">
+        <div class="card">
+          <textarea
+            aria-label="your question"
+            autocomplete="off"
+            spellcheck="false"></textarea>
+        </div>
+        <input
+          name="website"
+          class="trap"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+        <div class="row">
+          <div class="tools" role="toolbar" aria-label="card tools">
+            <button type="button" class="active" data-tool="text" aria-label="type" aria-pressed="true"></button>
+            <button type="button" data-tool="pen" aria-label="pencil" aria-pressed="false"></button>
+            <button type="button" data-tool="erase" aria-label="eraser" aria-pressed="false"></button>
+          </div>
+          <button type="submit" class="send" aria-label="send"></button>
+        </div>
+        <p class="status" aria-live="polite"></p>
+      </form>
+
+      <h2 class="answers-title"><span class="sr">Answers:</span></h2>
+      <section id="answers" aria-label="answered questions"></section>
+    </main>
+
+    <script>
+      import "../questions/ask.js";
+    </script>
+  </body>
+</html>
