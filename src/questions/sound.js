@@ -77,6 +77,7 @@ export function scribbleStart(kind) {
     filter = context.createBiquadFilter();
     filter.type = "bandpass";
     filter.frequency.value = 600;
+    filter.Q.value = 0.4;
     level = context.createGain();
     envelope = context.createGain();
     envelope.gain.value = 0;
@@ -89,7 +90,7 @@ export function scribbleStart(kind) {
   const now = context.currentTime;
   envelope.gain.cancelScheduledValues(now);
   envelope.gain.setValueAtTime(envelope.gain.value, now);
-  envelope.gain.linearRampToValueAtTime(0.5, now + 0.1);
+  envelope.gain.linearRampToValueAtTime(1, now + 0.1);
   if (!grainTimer) {
     lastGrain = performance.now();
     grainTimer = setInterval(grain, 1000 / GRAINS_PER_SECOND);

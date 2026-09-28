@@ -319,24 +319,25 @@ export default class Index extends React.Component {
           </Wrap>
         </HomeBrick> */}
         <HomeBrick>
-          <p>
+          <p style={{ containerType: "inline-size" }}>
             <span
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "space-around",
+                // a touch smaller when the brick is narrow, so it's one row
+                fontSize: "min(1em, 8.3cqw)",
+                columnGap: "0.4em",
                 // marginBottom: "1em"
               }}
             >
               {/* <a href={"/bookshelf/"}> shelf </a> */}
               <a href={"/blog/"}> blog </a>
               <a href="https://twitter.com/MaxBittker">twitter</a>
-              <a href="https://github.com/MaxBittker">github</a>
-              <a href="https://www.instagram.com/maxbittker/">instagram</a>
+              <a href="https://github.com/MaxBittker">gh</a>
+              <a href="https://www.instagram.com/maxbittker/">ig</a>
+              <a href="mailto:maxbittker@gmail.com">email</a>
             </span>
-          </p>
-          <p style={{ textAlign: "center" }}>
-            <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a>
           </p>
         </HomeBrick>
         <HomeBrick>

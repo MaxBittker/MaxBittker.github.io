@@ -197,7 +197,6 @@ button.pixel:focus-visible {
   display: block;
   width: calc(var(--w, 0) * var(--card-px, 2) * 1px);
   max-width: 100%;
-  margin-top: 12px;
   image-rendering: pixelated;
 }
 

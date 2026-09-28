@@ -660,12 +660,6 @@ export function homeLink(el) {
 
 // ---- a question and its answer ----
 
-// 9.26.26, like bill's
-function when(ms) {
-  const d = new Date(ms);
-  return `${d.getMonth() + 1}.${d.getDate()}.${String(d.getFullYear()).slice(2)}`;
-}
-
 // a drawn card, at the pixel size it was drawn at (or as near as fits), with
 // what's written on it for anyone who can't see it
 function drawing(src, className, text) {
@@ -676,24 +670,17 @@ function drawing(src, className, text) {
   return img;
 }
 
-// The date, the question, then my answer if there is one, in an article
-export function exchange(q, date) {
+// The question, then my answer if there is one, in an article
+export function exchange(q) {
   const el = element("article", "qa");
   el.id = `q-${q.id}`;
   el.append(element("h2", "sr", "a question, drawn on a card"));
-  if (q.answer) el.append(element("p", "sr", "my answer, drawn on a card"));
-  return {
-    el,
-    // blocks need to be on the page to measure, so this happens after
-    draw() {
-      const head = el.appendChild(element("div"));
-      // as big as the writing on the cards below it
-      const size = () => Math.round((CARD.text * S.cardPx) / S.px);
-      textBlock(head, [{ text: when(date), color: INK.green }], () => ({ size: size() }), { lazy: true });
-      el.append(drawing(q.question, "question", q.questionText));
-      if (q.answer) el.append(drawing(q.answer, "answer", q.answerText));
-    },
-  };
+  el.append(drawing(q.question, "question", q.questionText));
+  if (q.answer) {
+    el.append(element("p", "sr", "my answer, drawn on a card"));
+    el.append(drawing(q.answer, "answer", q.answerText));
+  }
+  return el;
 }
 
 // answered questions, most recently answered first, into a section. `after`
@@ -711,9 +698,7 @@ export async function showAnswers(section, ink, after) {
   }
   clear(section);
   for (const q of list) {
-    const x = exchange(q, q.answeredAt);
-    section.append(x.el);
-    x.draw();
+    section.append(exchange(q));
     after?.(q, section);
   }
 }

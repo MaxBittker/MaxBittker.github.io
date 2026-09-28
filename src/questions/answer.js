@@ -45,9 +45,7 @@ async function load() {
   clear(inbox);
   for (const q of list) {
     const item = inbox.appendChild(element("div", "asked"));
-    const x = exchange(q, q.askedAt);
-    item.append(x.el);
-    x.draw();
+    item.append(exchange(q));
     answerer(item, q);
   }
 
@@ -77,9 +75,7 @@ async function showTrash() {
   title.append(element("span", "sr", "Trash:"));
   textBlock(title, [{ text: "Trash:", color: INK.pink }], () => ({ font: "plain", size: S.title }));
   for (const q of list) {
-    const x = exchange(q, q.trashedAt || q.askedAt);
-    trashed.append(x.el);
-    x.draw();
+    trashed.append(exchange(q));
     const row = trashed.appendChild(element("div", "edit")).appendChild(element("div", "row"));
     row.appendChild(newButton("undo trash", INK.pink, "undo")).addEventListener("click", async () => {
       try {
