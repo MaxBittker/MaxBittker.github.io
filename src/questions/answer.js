@@ -41,9 +41,10 @@ async function load() {
   localStorage.setItem(KEY, key);
   login.hidden = true;
 
-  // unanswered, oldest first, each looking just as it will to everyone else
+  // unanswered, newest first (the server sends them oldest first), each
+  // looking just as it will to everyone else
   clear(inbox);
-  for (const q of list) {
+  for (const q of list.toReversed()) {
     const item = inbox.appendChild(element("div", "asked"));
     item.append(exchange(q));
     answerer(item, q);

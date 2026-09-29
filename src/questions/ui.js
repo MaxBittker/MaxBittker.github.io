@@ -172,7 +172,7 @@ export function paintCard(el, { color, onChange = () => {} }) {
 
   const bounds = () => inkBounds(inkCtx);
 
-  // Blows ink off the right of the card like a cellular automaton: every
+  // Blows ink off the card like a cellular automaton: every
   // step, each pixel tries to go right, stay, go up or go down, 4:1:1:1, and
   // only moves if nothing's there. Pixels step right to left, so a run of
   // them can all move off together
@@ -198,12 +198,15 @@ export function paintCard(el, { color, onChange = () => {} }) {
           const i = y * w + x;
           if (!cells[i] || stepped[i] === n) continue;
           const r = Math.floor(Math.random() * 7);
-          if (r < 4 && x === w - 1) {
-            cells[i] = 0;
+          // ink leaves off the right, top or bottom, but the edges only let
+          // 8% through, so it piles up against them and trickles off
+          if ((r < 4 && x === w - 1) || (r === 5 && y === 0) || (r === 6 && y === h - 1)) {
+            if (Math.random() < 0.08) cells[i] = 0;
+            else left++;
             continue;
           }
           left++;
-          if (r === 4 || (r === 5 && y === 0) || (r === 6 && y === h - 1)) continue;
+          if (r === 4) continue;
           const j = r < 4 ? i + 1 : r === 5 ? i - w : i + w;
           if (cells[j]) continue;
           cells[j] = cells[i];
