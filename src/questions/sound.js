@@ -48,6 +48,29 @@ export function swoosh() {
   play("swoosh", 0, 10, 0.4);
 }
 
+// A grain of blown ink landing on another, `delay` seconds from now: a few
+// milliseconds of fading noise, made once, rung at a different pitch each time
+let grit = null;
+export function tick(delay) {
+  if (!context) return;
+  if (!grit) {
+    const length = Math.round(context.sampleRate * 0.012);
+    grit = context.createBuffer(1, length, context.sampleRate);
+    const data = grit.getChannelData(0);
+    for (let i = 0; i < length; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / length) ** 3;
+  }
+  const source = context.createBufferSource();
+  source.buffer = grit;
+  const band = context.createBiquadFilter();
+  band.type = "bandpass";
+  band.frequency.value = 1500 + Math.random() * 3500;
+  band.Q.value = 1.5;
+  const env = context.createGain();
+  env.gain.value = 0.16 + Math.random() * 0.24;
+  source.connect(band).connect(env).connect(context.destination);
+  source.start(context.currentTime + delay);
+}
+
 // The postcards pencil and eraser sound: a steady stream of short grains
 // from a recording, swaying back and forth through it, louder the faster
 // you move and filtered by which way you're going. Presets are the write

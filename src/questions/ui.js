@@ -3,7 +3,7 @@
 // are shown. Everything is drawn in the postcards style and kept on the
 // postcards server.
 import { layout, draw, drawCaret, dashedBox, line, drawable, graphemes, inkBounds, INK } from "./pixel.js";
-import { warmUp, click, scribbleStart, scribbleMove, scribbleEnd } from "./sound.js";
+import { warmUp, click, tick, scribbleStart, scribbleMove, scribbleEnd } from "./sound.js";
 
 const API = import.meta.env.PUBLIC_QUESTIONS_API || "https://postcards.maxbittker.com";
 
@@ -175,7 +175,8 @@ export function paintCard(el, { color, onChange = () => {} }) {
   // Blows ink off the card like a cellular automaton: every
   // step, each pixel tries to go right, stay, go up or go down, 4:1:1:1, and
   // only moves if nothing's there. Pixels step right to left, so a run of
-  // them can all move off together
+  // them can all move off together. A pixel that moved last step and runs
+  // into another ticks
   function blow(img) {
     const { width: w, height: h } = img;
     const cells = new Uint32Array(img.data.buffer);
@@ -185,7 +186,8 @@ export function paintCard(el, { color, onChange = () => {} }) {
     layer.height = h;
     const layerCtx = layer.getContext("2d");
     gust = layer;
-    let n = 0;
+    let n = 1; // so nothing looks like it moved the step before the first
+    let hits = 0;
 
     // returns how many pixels are still on the card
     function step() {
@@ -208,7 +210,10 @@ export function paintCard(el, { color, onChange = () => {} }) {
           left++;
           if (r === 4) continue;
           const j = r < 4 ? i + 1 : r === 5 ? i - w : i + w;
-          if (cells[j]) continue;
+          if (cells[j]) {
+            if (stepped[i] === n - 1) hits++;
+            continue;
+          }
           cells[j] = cells[i];
           cells[i] = 0;
           stepped[j] = n;
@@ -217,14 +222,19 @@ export function paintCard(el, { color, onChange = () => {} }) {
       return left;
     }
 
-    // a step every 2ms, so the ink's gone as the swoosh ends
+    // a step every 2ms. thousands of pixels hit each frame at first, so
+    // that's squashed down to at most 8 ticks, spread out over the next frame
     let last = performance.now();
     requestAnimationFrame(function frame(t) {
       if (gust !== layer) return;
+      const dt = Math.min(t - last, 50) / 1000;
       const steps = Math.max(1, Math.min(16, Math.round((t - last) / 2)));
       last = t;
       let left = 1;
+      hits = 0;
       for (let s = 0; s < steps && left; s++) left = step();
+      const ticks = Math.floor(Math.min(8, Math.sqrt(hits) / 6) + Math.random());
+      for (let k = 0; k < ticks; k++) tick(Math.random() * dt);
       layerCtx.putImageData(img, 0, 0);
       if (!left) gust = null;
       render();
