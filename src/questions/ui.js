@@ -5,7 +5,7 @@
 import { layout, draw, drawCaret, dashedBox, line, drawable, graphemes, inkBounds, INK } from "./pixel.js";
 import { warmUp, click, tick, scribbleStart, scribbleMove, scribbleEnd } from "./sound.js";
 
-const API = import.meta.env.PUBLIC_QUESTIONS_API || "https://postcards.maxbittker.com";
+const API = import.meta.env.PUBLIC_QUESTIONS_API || "https://questions-api.maxbittker.com";
 
 // text on a card is the same size in art pixels whatever it's drawn on, so a
 // card drawn on a phone and one drawn on a laptop come out alike. phones get
